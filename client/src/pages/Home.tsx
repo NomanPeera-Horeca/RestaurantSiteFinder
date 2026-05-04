@@ -443,46 +443,7 @@ export default function Home() {
       {/* Promotional Banners */}
       <PromoBannerStrip />
 
-      {/* Blog Section */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              <BookOpen className="h-4 w-4" />
-              Restaurant Guides by Horeca Store
-            </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Expert Guides for New Restaurant Owners
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              From choosing a location to equipping your kitchen. Read our expert guides brought to you by{" "}
-              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {blogArticles.slice(0, 3).map((article) => (
-              <Link key={article.slug} href={`/blog/${article.slug}`}>
-                <div className="group bg-card rounded-xl border border-border/50 p-6 hover:shadow-md hover:border-primary/30 transition-all cursor-pointer h-full">
-                  <span className="text-3xl mb-3 block">{article.heroEmoji}</span>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-medium text-primary">{article.category}</span>
-                    <span className="text-xs text-muted-foreground flex items-center gap-1"><Clock className="h-3 w-3" /> {article.readTime}</span>
-                  </div>
-                  <h3 className="font-semibold text-card-foreground group-hover:text-primary transition-colors mb-2 text-sm leading-snug">{article.title}</h3>
-                  <p className="text-xs text-muted-foreground line-clamp-2">{article.excerpt}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/blog">
-              <Button variant="outline" className="rounded-xl">
-                View All Guides <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+{/* Blog Section hidden - coming soon */}
 
       {/* CTA Section with Horeca Store branding */}
       <section className="py-20 bg-gradient-to-br from-[oklch(0.22_0.04_260)] to-[oklch(0.30_0.04_260)]">
