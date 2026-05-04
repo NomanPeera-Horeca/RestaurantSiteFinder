@@ -5,8 +5,8 @@ export const HORECA = {
   phone: "866.446.7322",
   phoneHref: "tel:+18664467322",
   website: "https://www.thehorecastore.com",
-  logo: "https://www.thehorecastore.com/logo.png",
-  icon: "https://www.thehorecastore.com/favicon.ico",
+  logo: "https://www.thehorecastore.com/images/logo/11_Sep_2025_logo.png",
+  icon: "https://www.thehorecastore.com/images/logo/11_Sep_2025_logo.png",
   links: {
     cooking: "https://www.thehorecastore.com/commercial-cooking-equipment",
     equipment: "https://www.thehorecastore.com/restaurant-equipment",
