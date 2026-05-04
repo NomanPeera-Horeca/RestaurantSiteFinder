@@ -683,37 +683,7 @@ export default function Report() {
                 </p>
               </div>
               {recommendationBadge(report.recommendation)}
-              <Button
-                variant="outline"
-                size="sm"
-                className="gap-1.5 border-primary/30 text-primary hover:bg-primary/5"
-                onClick={async () => {
-                  try {
-                    toast.info("Generating PDF report...");
-                    const res = await fetch("/api/report/pdf", {
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify(report),
-                    });
-                    if (!res.ok) throw new Error("PDF generation failed");
-                    const blob = await res.blob();
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement("a");
-                    a.href = url;
-                    a.download = `Restaurant-Site-Finder-Report-${report.address.replace(/[^a-zA-Z0-9]/g, "-").substring(0, 40)}.pdf`;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                    toast.success("PDF downloaded!");
-                  } catch {
-                    toast.error("Failed to generate PDF. Please try again.");
-                  }
-                }}
-              >
-                <Download className="h-3.5 w-3.5" />
-                Download PDF
-              </Button>
+{/* PDF Download button hidden - feature coming soon */}
             </div>
           </div>
         </div>
