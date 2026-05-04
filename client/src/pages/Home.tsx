@@ -83,12 +83,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors hidden sm:block">
-              Blog
-            </Link>
-            <Link href="/glossary" className="text-sm text-muted-foreground hover:text-primary transition-colors hidden sm:block">
-              Glossary
-            </Link>
+{/* Blog and Glossary nav links hidden - coming soon */}
             <a
               href={HORECA.website}
               target="_blank"
