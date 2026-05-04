@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE `leads` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`email` varchar(320) NOT NULL,\n\t`phone` varchar(32) NOT NULL,\n\t`address` text,\n\t`lat` decimal(10,7),\n\t`lng` decimal(10,7),\n\t`opportunityScore` int,\n\t`recommendation` varchar(16),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `leads_id` PRIMARY KEY(`id`)\n);\n\nCREATE TABLE `reports` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`leadId` int,\n\t`address` text NOT NULL,\n\t`lat` decimal(10,7) NOT NULL,\n\t`lng` decimal(10,7) NOT NULL,\n\t`competitors` json,\n\t`marketAnalysis` json,\n\t`concepts` json,\n\t`equipmentList` json,\n\t`opportunityScore` int,\n\t`recommendation` varchar(16),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `reports_id` PRIMARY KEY(`id`)\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4VYqcTALPrCPzzj.2d3a7e98dd69 --database HwLz9SBGbDEkubjg5ygWVH --execute CREATE TABLE `leads` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`email` varchar(320) NOT NULL,\n\t`phone` varchar(32) NOT NULL,\n\t`address` text,\n\t`lat` decimal(10,7),\n\t`lng` decimal(10,7),\n\t`opportunityScore` int,\n\t`recommendation` varchar(16),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `leads_id` PRIMARY KEY(`id`)\n);\n\nCREATE TABLE `reports` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`leadId` int,\n\t`address` text NOT NULL,\n\t`lat` decimal(10,7) NOT NULL,\n\t`lng` decimal(10,7) NOT NULL,\n\t`competitors` json,\n\t`marketAnalysis` json,\n\t`concepts` json,\n\t`equipmentList` json,\n\t`opportunityScore` int,\n\t`recommendation` varchar(16),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\tCONSTRAINT `reports_id` PRIMARY KEY(`id`)\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 680
+}
