@@ -1,0 +1,12 @@
+# Render Blueprint
+# Do NOT use "npm install -g pnpm" or "corepack enable" — Render's /usr is read-only.
+# Use npx to run pnpm from the project directory instead.
+services:
+  - type: web
+    name: restaurantsitefinder
+    runtime: node
+    buildCommand: npx --yes pnpm@10.4.1 install --frozen-lockfile && npx --yes pnpm@10.4.1 run build
+    startCommand: node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production

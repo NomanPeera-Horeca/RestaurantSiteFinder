@@ -1,0 +1,463 @@
+{
+  "terms": [
+    {
+      "term": "Prime Cost",
+      "slug": "prime-cost",
+      "shortDefinition": "The sum of cost of goods sold (food and beverage) plus total labor cost, expressed as a percentage of sales.",
+      "longDefinition": "Prime cost is the most watched efficiency metric in full-service and fast-casual restaurants because it combines the two largest variable expenses operators can influence weekly. Most independent full-service restaurants target prime cost between 60% and 65% of gross sales, though pizza-focused and beverage-heavy concepts may run lower on food while higher on labor.\n\nOperators who manage prime cost well review sales category mix, waste, scheduling, and purchasing together rather than in silos. A 2-point improvement in prime cost on $1.2 million annual sales adds $24,000 to gross profit before rent and fixed overhead.\n\nPrime cost does not include rent, marketing, repairs, or debt service. Those belong in operating profit analysis and break-even modeling.",
+      "relatedTerms": ["food-cost-percentage", "labor-cost-percentage", "cogs"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics", "how-much-does-it-cost-to-open-a-restaurant-2026"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Food Cost Percentage",
+      "slug": "food-cost-percentage",
+      "shortDefinition": "Cost of food sold divided by food sales, multiplied by 100, for a given period.",
+      "longDefinition": "Food cost percentage measures how much of every food dollar leaves the restaurant as ingredient and beverage cost. Full-service restaurants often target 28% to 35% depending on protein mix, theft controls, and waste. Fast casual with strong purchasing may run 25% to 30%.\n\nAccurate food cost requires consistent inventory counts, proper receiving, and recipe costing scaled to actual portion sizes. Menu engineering should align star items with sustainable food cost, not only popularity.\n\nFood cost percentage is only half of prime cost; labor must be managed in parallel or margin gains disappear.",
+      "relatedTerms": ["prime-cost", "cogs", "yield"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics", "restaurant-concept-development-guide"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Labor Cost Percentage",
+      "slug": "labor-cost-percentage",
+      "shortDefinition": "Total labor cost including wages, taxes, and benefits divided by gross sales, expressed as a percentage.",
+      "longDefinition": "Labor cost percentage captures front-of-house, back-of-house, and management payroll as a share of revenue. Targets vary widely: quick-service may run 25% to 30%, while full-service with table service often runs 30% to 35% or higher in high-wage markets.\n\nEffective labor management uses sales forecasting by daypart, cross-training, and clear prep pars to avoid overstaffing slow periods. Minimum wage changes and tip credit rules materially shift achievable percentages by state.\n\nLabor plus food cost equals prime cost for most independent operators. Scheduling software tied to POS sales history improves accuracy after the first 90 days of operation.",
+      "relatedTerms": ["prime-cost", "food-cost-percentage", "foh"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics", "how-to-write-restaurant-business-plan"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Break-Even Point",
+      "slug": "break-even-point",
+      "shortDefinition": "The sales level at which total revenue equals total fixed and variable costs, yielding zero operating profit.",
+      "longDefinition": "Break-even analysis answers how many dollars or covers you must sell monthly to cover rent, debt service, management salary, utilities, and variable food and labor. The formula uses contribution margin: sales minus variable costs as a percent of sales.\n\nRestaurant investors and landlords increasingly ask for break-even cover counts, not only rent as a percent of sales. A site that breaks even only if you outperform every competitor on the block is a red flag.\n\nUpdate break-even after menu price changes, labor law shifts, or new delivery channel fees. Opening budgets should include three months of working capital beyond break-even month one.",
+      "relatedTerms": ["prime-cost", "covers", "check-average"],
+      "relatedBlogSlugs": ["how-much-does-it-cost-to-open-a-restaurant-2026", "how-to-choose-restaurant-location"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Covers",
+      "slug": "covers",
+      "shortDefinition": "One guest served one meal; used to forecast volume, labor, and inventory.",
+      "longDefinition": "A cover is a single diner meal occasion in planning parlance, whether dine-in, takeout, or delivery counted as one transaction guest. Operators translate covers into seat turns, kitchen throughput, and purchasing pars.\n\nMiscounting covers—especially blending lunch and dinner or ignoring seasonality—causes chronic over- or under-ordering. POS reports should segment covers by daypart for scheduling.\n\nWhen underwriting a lease, divide required monthly sales by realistic average check to estimate minimum covers per day. Compare that to observed foot traffic and competitor volumes in the trade area.",
+      "relatedTerms": ["check-average", "seat-turn", "foot-traffic"],
+      "relatedBlogSlugs": ["restaurant-market-analysis-guide", "how-to-choose-restaurant-location"],
+      "category": "Operations"
+    },
+    {
+      "term": "Check Average",
+      "slug": "check-average",
+      "shortDefinition": "Average revenue per guest or per transaction, depending on POS configuration.",
+      "longDefinition": "Check average (or average guest spend) drives revenue alongside cover count. A location with strong foot traffic but low check average may suit fast casual, not fine dining. Beverage programs, add-ons, and prix fixe menus materially move check average without adding kitchen complexity.\n\nSegment check average by daypart: lunch tickets often run 40% to 60% of dinner in hybrid concepts. Delivery checks may differ from dine-in because of platform fees and basket size.\n\nRaising check average through menu design is usually more sustainable than raising prices alone without perceived value.",
+      "relatedTerms": ["covers", "break-even-point", "menu-engineering"],
+      "relatedBlogSlugs": ["restaurant-concept-development-guide", "restaurant-profit-margins-unit-economics"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Foot Traffic",
+      "slug": "foot-traffic",
+      "shortDefinition": "The number of pedestrians or vehicles passing a site, measured by time period and direction.",
+      "longDefinition": "Foot traffic quantifies potential exposure but does not equal customers. A busy commuter corridor may deliver lunch covers while starving dinner; a entertainment district may invert that pattern.\n\nMeasure foot traffic during the dayparts you plan to operate, on the same weekdays you will open, across multiple weeks to avoid event skew. Combine counts with conversion assumptions in your pro forma.\n\nMobile data and municipal counts help desk research; field tallies and license-plate patterns validate before lease execution. Tools like Restaurant Site Finder accelerate competitor and trade-area context before you invest in full feasibility studies.",
+      "relatedTerms": ["trade-area", "covers", "break-even-point"],
+      "relatedBlogSlugs": ["how-to-choose-restaurant-location", "restaurant-market-analysis-guide"],
+      "category": "Site Selection"
+    },
+    {
+      "term": "Trade Area",
+      "slug": "trade-area",
+      "shortDefinition": "The geographic zone from which a restaurant draws the majority of its customers.",
+      "longDefinition": "Trade area analysis defines who lives, works, and visits within a reasonable travel time of your site—often 5, 10, or 15 minutes by car or a tight radius for urban walkable locations. Demographics, income, daytime population, and competitive density shape concept fit.\n\nUrban sites may draw from multiple micro-neighborhoods; suburban sites often depend on parking and arterial visibility. Delivery extends the trade area but adds fee and packaging economics.\n\nMatch cuisine and price point to trade area demand. Underserved cuisine type alone does not prove demand if demographics do not align.",
+      "relatedTerms": ["foot-traffic", "market-analysis", "second-generation-space"],
+      "relatedBlogSlugs": ["restaurant-market-analysis-guide", "how-to-choose-restaurant-location"],
+      "category": "Site Selection"
+    },
+    {
+      "term": "Mise en Place",
+      "slug": "mise-en-place",
+      "shortDefinition": "French for \"everything in its place\"; the prep organization required before service.",
+      "longDefinition": "Mise en place is the operational discipline of prepped ingredients, labeled containers, tools, and station setup so line cooks execute consistently under rush. Strong mise reduces ticket times, waste, and labor stress.\n\nMenu design should respect mise limits: too many proteins and sauces that do not cross-utilize inflate prep labor and food cost. Prep lists and par levels tie mise to forecasted covers.\n\nNew kitchens should be designed around mise flow from receiving to cold prep to hot line, not only equipment aesthetics.",
+      "relatedTerms": ["par-level", "fifo", "food-cost-percentage"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners", "restaurant-concept-development-guide"],
+      "category": "Operations"
+    },
+    {
+      "term": "86",
+      "slug": "86",
+      "shortDefinition": "Kitchen slang meaning an item is sold out or removed from service.",
+      "longDefinition": "To 86 an item means it is unavailable for the rest of the shift or until replenished. Frequent 86s signal forecasting errors, supplier issues, or menu complexity beyond kitchen capacity.\n\nGuests encountering 86s on core menu items experience brand damage worse than a temporary price increase. POS modifiers and inventory alerts reduce surprise outs.\n\nTraining FOH to suggest alternatives protects average check when 86s occur on popular dishes.",
+      "relatedTerms": ["par-level", "mise-en-place", "inventory"],
+      "relatedBlogSlugs": ["restaurant-concept-development-guide"],
+      "category": "Operations"
+    },
+    {
+      "term": "FOH",
+      "slug": "foh",
+      "shortDefinition": "Front of house: guest-facing areas and roles including service, bar, and hosting.",
+      "longDefinition": "FOH encompasses dining room, bar, host stand, and guest restrooms, plus staff who interact directly with customers. FOH labor, training, and aesthetics define perceived value as much as food for many concepts.\n\nLayout affects turns and average check: bar seating, patio, and private dining each carry different revenue per square foot. Acoustic design and lighting are capital items with operational payoff.\n\nFOH coordination with BOH through expo and ticketing systems reduces ticket errors and comped meals.",
+      "relatedTerms": ["boh", "covers", "labor-cost-percentage"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
+      "category": "Operations"
+    },
+    {
+      "term": "BOH",
+      "slug": "boh",
+      "shortDefinition": "Back of house: kitchen, prep, dish, and storage areas not open to guests.",
+      "longDefinition": "BOH includes cooking line, prep, walk-in storage, dish pit, and receiving. BOH design drives labor efficiency, food safety, and hood and refrigeration requirements.\n\nInsufficient BOH square footage creates perpetual bottlenecks even with skilled staff. Health inspectors focus on BOH hand sinks, temperature logs, and cross-contamination controls.\n\nGhost kitchens are almost entirely BOH operations with packaging and dispatch replacing traditional FOH.",
+      "relatedTerms": ["foh", "hood-system", "mise-en-place"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant", "restaurant-equipment-checklist-new-owners"],
+      "category": "Operations"
+    },
+    {
+      "term": "Combi Oven",
+      "slug": "combi-oven",
+      "shortDefinition": "A commercial oven combining convection heat and steam for versatile cooking and holding.",
+      "longDefinition": "Combi ovens use dry heat, steam, or both to roast, bake, retherm, and hold proteins with consistent results. They can replace multiple pieces in compact kitchens when the menu supports batch cooking.\n\nOperators value combis for labor savings on proteins and vegetables and for reduced hood load versus open broilers on some menus. Water filtration and descaling maintenance are required for longevity.\n\nSpec combi capacity against peak cover counts and menu mix; undersizing creates service failures on busy nights.",
+      "relatedTerms": ["convection-oven", "hood-system", "holding-cabinet"],
+      "relatedBlogSlugs": ["commercial-kitchen-equipment-buying-guide", "restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Walk-In Cooler",
+      "slug": "walk-in-cooler",
+      "shortDefinition": "A refrigerated room for bulk cold storage of perishable ingredients.",
+      "longDefinition": "Walk-in coolers provide high-volume cold storage with shelving for cases, prep, and beverages. Sizing depends on delivery frequency, menu breadth, and peak inventory.\n\nInstallation requires refrigeration engineering, floor insulation, door hardware, and often structural coordination. Used walk-ins can work with documented compressor maintenance; undersized evaporators increase spoilage.\n\nMatch walk-in location to receiving and prep flow to minimize cross-traffic during service.",
+      "relatedTerms": ["reach-in-refrigerator", "blast-chiller", "haccp"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners", "how-much-does-it-cost-to-open-a-restaurant-2026"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Reach-In Refrigerator",
+      "slug": "reach-in-refrigerator",
+      "shortDefinition": "An upright commercial refrigerator with doors for line or prep access.",
+      "longDefinition": "Reach-in refrigerators place cold storage at the line or prep station for shift-level inventory. One-, two-, and three-door models fit different footprints; pass-through units serve dual sides in tight kitchens.\n\nEnergy ratings, self-closing doors, and digital thermometers support health compliance. Placement affects mise flow: too far from the line increases steps and temperature abuse during service.\n\nBudget reach-ins alongside walk-ins as part of total refrigeration capacity, not as an afterthought.",
+      "relatedTerms": ["walk-in-cooler", "prep-table", "haccp"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Hood System",
+      "slug": "hood-system",
+      "shortDefinition": "Ventilation assembly that captures grease, smoke, and heat from commercial cooking equipment.",
+      "longDefinition": "Type I hoods serve grease-producing equipment such as fryers, griddles, and charbroilers with fire suppression interlocks. Type II hoods handle steam and odor from ovens and dish machines without grease capture requirements.\n\nHood design ties to equipment layout, ceiling height, makeup air, and local fire code. Reusing a second-generation hood requires verification that the capture volume and ducting match your proposed line.\n\nHood installation often sits on the critical path for permits and opening dates; delays here postpone entire projects.",
+      "relatedTerms": ["type-1-hood", "grease-trap", "fire-suppression"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide", "restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Type I Hood",
+      "slug": "type-1-hood",
+      "shortDefinition": "Grease-rated exhaust hood with fire suppression for high-grease cooking appliances.",
+      "longDefinition": "Type I hoods are mandatory over equipment that produces grease-laden vapors. They include baffle filters, ductwork to the roof or wall, and automatic fire suppression systems tied to fuel shutoffs.\n\nChanging from a low-grease to a high-grease menu may require hood upgrades and new suppression design. Inspectors review hood manufacturer specs against equipment lists on health and fire plans.\n\nNever operate grease-producing equipment without approved Type I coverage; violations can halt opening.",
+      "relatedTerms": ["hood-system", "type-2-hood", "charbroiler"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Type II Hood",
+      "slug": "type-2-hood",
+      "shortDefinition": "Condensate hood for steam, heat, and odor without grease capture requirements.",
+      "longDefinition": "Type II hoods vent steam from combi ovens, dish machines, and some steamers where grease is not the primary effluent. They still require proper exhaust and makeup air but avoid grease duct cleaning schedules of Type I systems.\n\nMisclassifying equipment under the wrong hood type fails inspection. Coordinate mechanical engineers early in design.\n\nSome jurisdictions treat hybrid equipment differently; submit cut sheets with permit packages.",
+      "relatedTerms": ["hood-system", "type-1-hood", "combi-oven"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Salamander",
+      "slug": "salamander",
+      "shortDefinition": "High-heat overhead broiler used to finish plates, melt cheese, and toast toppings.",
+      "longDefinition": "Salamanders provide intense top heat without occupying floor space like a full broiler station. They accelerate plating for burgers, gratins, and proteins that need color after primary cooking.\n\nVentilation and clearance requirements still apply because salamanders produce heat and smoke. Train staff on burn risk and fire extinguisher proximity.\n\nMenu items finished on salamanders should be designed into ticket flow to avoid expo bottlenecks.",
+      "relatedTerms": ["charbroiler", "combi-oven", "hood-system"],
+      "relatedBlogSlugs": ["commercial-kitchen-equipment-buying-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Blast Chiller",
+      "slug": "blast-chiller",
+      "shortDefinition": "Equipment that rapidly cools hot food through the danger zone for safe holding or storage.",
+      "longDefinition": "Blast chillers pull cooked food through the 135°F to 41°F danger zone quickly, supporting cook-chill operations and reducing waste on batch proteins. They help HACCP documentation for multi-day menus.\n\nCapital cost is justified when prep volume is high or when regulations require rapid cooling logs. Pair with proper labeling and FIFO storage.\n\nOperators without blast chillers must use smaller batches and ice baths, which limit menu complexity.",
+      "relatedTerms": ["haccp", "walk-in-cooler", "mise-en-place"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics", "commercial-kitchen-equipment-buying-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Ghost Kitchen",
+      "slug": "ghost-kitchen",
+      "shortDefinition": "A delivery-focused kitchen without guest dining room, often hosting one or more virtual brands.",
+      "longDefinition": "Ghost kitchens (also cloud or dark kitchens) produce food for delivery and sometimes takeout only. They trade lower front-of-house capital for aggregator commissions, packaging, and digital marketing costs.\n\nSuccess requires strong unit economics on delivery baskets and operational discipline on ticket times. Permits, hoods, and health requirements match traditional kitchens.\n\nSome operators use ghost kitchens to test concepts before committing to street-front leases.",
+      "relatedTerms": ["commissary", "delivery-aggregator", "boh"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
+      "category": "Operations"
+    },
+    {
+      "term": "Commissary",
+      "slug": "commissary",
+      "shortDefinition": "A licensed central kitchen that prepares or stores food for satellite locations or brands.",
+      "longDefinition": "Commissaries batch prep, bake, or portion for multiple outlets, reducing duplicate equipment at each site. Health departments require clear agreements on who holds the master permit and HACCP plans.\n\nCommissaries suit food trucks, ghost brands, and chains standardizing sauces and proteins. Transport time and temperature logs are inspection focus areas.\n\nRenting commissary space lowers entry cost but adds logistics and per-pound fees that must appear in food cost models.",
+      "relatedTerms": ["ghost-kitchen", "haccp", "food-cost-percentage"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant", "restaurant-permits-licenses-guide"],
+      "category": "Operations"
+    },
+    {
+      "term": "Grease Trap",
+      "slug": "grease-trap",
+      "shortDefinition": "Plumbing device that intercepts fats, oils, and grease before wastewater enters the sewer.",
+      "longDefinition": "Grease traps (interceptor tanks) are required for most commercial kitchens to protect municipal sewers. Sizing depends on fixture units and menu grease load; fry-heavy concepts need larger interceptors.\n\nMaintenance includes regular pumping and logs; neglect causes backups and fines. Second-generation spaces may have traps that require upgrade when menu grease increases.\n\nTrap location affects layout and concrete work during build-out; coordinate with plumbers early.",
+      "relatedTerms": ["hood-system", "deep-fryer", "grease-interceptor"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "HACCP",
+      "slug": "haccp",
+      "shortDefinition": "Hazard Analysis Critical Control Points; systematic food safety plan for risk control.",
+      "longDefinition": "HACCP identifies biological, chemical, and physical hazards in your process and sets critical control points with monitoring and corrective actions. Health inspectors expect temperature logs, receiving checks, and cooling procedures aligned with your plan.\n\nChains and commissaries often maintain formal HACCP binders; independents still follow the same principles operationally. Blast chilling, holding temperatures, and handwashing are common control points.\n\nTraining staff on HACCP is as important as buying correct refrigeration.",
+      "relatedTerms": ["fifo", "blast-chiller", "walk-in-cooler"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Operations"
+    },
+    {
+      "term": "FIFO",
+      "slug": "fifo",
+      "shortDefinition": "First In, First Out; inventory rotation so oldest product is used first.",
+      "longDefinition": "FIFO labeling and shelf organization reduce spoilage and support accurate food cost. Receiving should place new stock behind older stock on the same shelf.\n\nPOS waste tracking and daily inventory on high-value proteins catch drift before month-end surprises. FIFO pairs with par levels to set order quantities.\n\nFailure on FIFO shows up as rising food cost without menu changes.",
+      "relatedTerms": ["par-level", "food-cost-percentage", "mise-en-place"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners"],
+      "category": "Operations"
+    },
+    {
+      "term": "Par Level",
+      "slug": "par-level",
+      "shortDefinition": "Target on-hand quantity of an ingredient for a period, triggering reorders when reached.",
+      "longDefinition": "Par levels translate forecasted covers and menu mix into purchase orders. Setting pars too high ties cash in inventory and increases waste; too low causes 86s and emergency buys at premium cost.\n\nAdjust pars seasonally and for holidays; static pars fail within months of opening. Kitchen and bar should share one pars philosophy.\n\nInventory software integrated with POS improves par accuracy over time.",
+      "relatedTerms": ["fifo", "86", "mise-en-place"],
+      "relatedBlogSlugs": ["restaurant-concept-development-guide"],
+      "category": "Operations"
+    },
+    {
+      "term": "Yield",
+      "slug": "yield",
+      "shortDefinition": "Usable product weight or portion after trimming, cooking loss, or fabrication.",
+      "longDefinition": "Yield percent affects true recipe cost: a protein with 70% yield costs more per usable ounce than label price suggests. Standard recipes should use tested yields, not ideal textbook cuts.\n\nButcher and prep training directly move yield and food cost. Weekly spot checks on high-cost items catch drift.\n\nMenu pricing without yield math understates food cost and overstates margin.",
+      "relatedTerms": ["food-cost-percentage", "cogs", "portion-control"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "COGS",
+      "slug": "cogs",
+      "shortDefinition": "Cost of goods sold; direct cost of products sold during a period.",
+      "longDefinition": "In restaurants, COGS typically includes food, beverage, and packaging tied to sales. It excludes labor, rent, and marketing. COGS divided by sales equals food and beverage cost percentages when categorized correctly.\n\nAccurate COGS requires consistent category mapping in the POS and accounting system. Comps, employee meals, and waste should be tracked, not buried.\n\nCOGS is the first half of prime cost before labor is added.",
+      "relatedTerms": ["food-cost-percentage", "prime-cost", "yield"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "EBITDA",
+      "slug": "ebitda",
+      "shortDefinition": "Earnings before interest, taxes, depreciation, and amortization; a cash-flow proxy for operations.",
+      "longDefinition": "Restaurant investors use EBITDA to compare locations before capital structure differences. It adds back non-cash depreciation and financing costs to approximate operating cash generation.\n\nHeavy equipment depreciation from new builds affects net income more than EBITDA. Lease structures (operating vs. finance) also change comparability.\n\nEBITDA does not replace cash planning for debt service and working capital needs.",
+      "relatedTerms": ["prime-cost", "break-even-point", "unit-economics"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics", "how-to-write-restaurant-business-plan"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Seat Turn",
+      "slug": "seat-turn",
+      "shortDefinition": "Number of times each seat generates revenue during a service period.",
+      "longDefinition": "Seat turn equals covers divided by available seats in a period. High turns require fast ticket times, appropriate seat mix, and reservation discipline.\n\nFast casual may achieve multiple turns at lunch; fine dining may target one turn per night. Layout and kitchen capacity must support your turn target.\n\nOverestimating turns in pro formas is a common cause of missed sales forecasts.",
+      "relatedTerms": ["covers", "foh", "check-average"],
+      "relatedBlogSlugs": ["how-to-choose-restaurant-location"],
+      "category": "Operations"
+    },
+    {
+      "term": "Second-Generation Space",
+      "slug": "second-generation-space",
+      "shortDefinition": "A commercial space previously used as a restaurant or food service operation.",
+      "longDefinition": "Second-generation restaurant spaces often include hoods, grease traps, gas lines, and sometimes walk-ins that reduce build-out cost and timeline. Verify that remaining infrastructure matches your proposed menu and health plans.\n\nLandlords may price in prior TI; negotiate based on what truly works without replacement. Hidden issues include undersized electrical, exhausted suppression systems, or failed grease trap capacity.\n\nField verification with your mechanical engineer prevents six-figure surprises after lease signing.",
+      "relatedTerms": ["hood-system", "grease-trap", "ti-allowance"],
+      "relatedBlogSlugs": ["how-much-does-it-cost-to-open-a-restaurant-2026", "how-to-choose-restaurant-location"],
+      "category": "Site Selection"
+    },
+    {
+      "term": "TI Allowance",
+      "slug": "ti-allowance",
+      "shortDefinition": "Tenant improvement allowance; landlord contribution toward build-out costs.",
+      "longDefinition": "TI allowances are often quoted per square foot over a lease term and may require reimbursement with paid invoices and lien waivers. Unused allowance rarely converts to rent credit unless negotiated.\n\nCompare gross rent plus net TI out-of-pocket to alternatives; a high allowance with high base rent may cost more than a lower allowance deal.\n\nDocument deliverables, approval timelines, and who owns hood and walk-in equipment at lease end.",
+      "relatedTerms": ["second-generation-space", "break-even-point"],
+      "relatedBlogSlugs": ["how-much-does-it-cost-to-open-a-restaurant-2026"],
+      "category": "Site Selection"
+    },
+    {
+      "term": "Deep Fryer",
+      "slug": "deep-fryer",
+      "shortDefinition": "Commercial fryer for submerged-oil cooking of fries, proteins, and coated items.",
+      "longDefinition": "Fryers range from countertop to floor models with single or multiple vats. Oil management, filtration, and hood capture drive food quality and fire safety.\n\nFry-heavy menus increase grease trap pumping frequency and Type I hood load. Energy and oil costs belong in recipe costing.\n\nPlace fryers on the line with logical flow to reduce splash and cross-traffic hazards.",
+      "relatedTerms": ["hood-system", "grease-trap", "food-cost-percentage"],
+      "relatedBlogSlugs": ["commercial-kitchen-equipment-buying-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Charbroiler",
+      "slug": "charbroiler",
+      "shortDefinition": "Open-flame or radiant broiler for grilled marks and high-heat proteins.",
+      "longDefinition": "Charbroilers deliver signature flavor but add heat, smoke, and grease loading to the hood system. They require skilled line staffing and consistent portioning.\n\nVentilation and fire suppression must be sized for broiler BTU output. Some markets restrict solid fuel; confirm fuel type in permits.\n\nBalance broiler items with cooler stations to protect kitchen ergonomics in summer heat.",
+      "relatedTerms": ["salamander", "hood-system", "type-1-hood"],
+      "relatedBlogSlugs": ["commercial-kitchen-equipment-buying-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Convection Oven",
+      "slug": "convection-oven",
+      "shortDefinition": "Oven with fans that circulate hot air for even baking and roasting.",
+      "longDefinition": "Convection ovens excel at pastries, sheet pans, and batch roasting where steam is not required. They are often paired with combi ovens on diverse menus.\n\nPan sizing and rack spacing affect throughput. Standalone units may need Type II ventilation depending on menu and jurisdiction.\n\nEnergy-efficient models reduce utility cost on high-volume bake programs.",
+      "relatedTerms": ["combi-oven", "holding-cabinet"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Prep Table",
+      "slug": "prep-table",
+      "shortDefinition": "Stainless work surface, often refrigerated, for ingredient prep and line assembly.",
+      "longDefinition": "Prep tables combine workspace with under-counter refrigeration for mise. Mega-top models add ingredient rails for pizza and sandwich lines.\n\nSize prep tables to peak mise volume and aisle clearance for two-sided traffic. Poor placement increases steps and temperature abuse.\n\nSpec marine-grade tops and casters if deep cleaning requires movement.",
+      "relatedTerms": ["reach-in-refrigerator", "mise-en-place"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Three-Compartment Sink",
+      "slug": "three-compartment-sink",
+      "shortDefinition": "Health-code sink with wash, rinse, and sanitize bays for ware and tools.",
+      "longDefinition": "Most jurisdictions require a three-compartment sink even when a dishwasher is present, for oversized ware and backup. Correct sanitizer concentration and test strips are inspection staples.\n\nSink location should support BOH flow without crossing clean and dirty paths. Drain boards and shelving reduce clutter.\n\nOpening without an approved warewash plan fails health pre-opening.",
+      "relatedTerms": ["commercial-dishwasher", "haccp"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Commercial Dishwasher",
+      "slug": "commercial-dishwasher",
+      "shortDefinition": "High-temperature or chemical sanitizing machine for rapid ware cleaning.",
+      "longDefinition": "Door-type and conveyor dishwashers differ in throughput and footprint. High-temp machines use 180°F final rinse; low-temp rely on chemical sanitizer.\n\nWater hardness affects results; softeners may be required. Chemical and utility costs belong in operating budgets.\n\nUndersized dish pits create FOH delays when glassware backs up on busy nights.",
+      "relatedTerms": ["three-compartment-sink", "boh"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Holding Cabinet",
+      "slug": "holding-cabinet",
+      "shortDefinition": "Heated enclosure that keeps cooked food at safe serving temperature.",
+      "longDefinition": "Holding cabinets support high-volume QSR and catering with staged proteins and sides. Over-holding dries product and hurts quality; par cooking discipline matters.\n\nCabinet humidity options help different product types. Monitor internal temperatures on logs.\n\nMatch cabinet capacity to peak ticket counts, not average day sales.",
+      "relatedTerms": ["combi-oven", "haccp", "qsr"],
+      "relatedBlogSlugs": ["commercial-kitchen-equipment-buying-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Steam Table",
+      "slug": "steam-table",
+      "shortDefinition": "Hot well unit that holds pans of food at temperature for service lines.",
+      "longDefinition": "Steam tables appear in cafeterias, buffets, and some fast casual assembly lines. Water levels and thermostat calibration prevent drying or unsafe lows.\n\nMenu design for steam tables favors sauced items and batch proteins, not delicate seafood. Labor for pan rotation and labeling is ongoing.\n\nHealth codes limit time in wells without temperature monitoring.",
+      "relatedTerms": ["holding-cabinet", "mise-en-place"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Ice Machine",
+      "slug": "ice-machine",
+      "shortDefinition": "Equipment that produces ice for beverages, bar, and sometimes display.",
+      "longDefinition": "Ice machines need clean water filtration, ventilation, and drain lines. Production capacity is rated per 24 hours; undersizing causes bagged ice runs.\n\nCleaning scale and slime on schedule prevents health violations and off-taste. Remote condensing units reduce kitchen heat load.\n\nBudget ice as beverage cost and equipment maintenance together.",
+      "relatedTerms": ["reach-in-refrigerator", "bar-equipment"],
+      "relatedBlogSlugs": ["restaurant-equipment-checklist-new-owners"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Liquor License",
+      "slug": "liquor-license",
+      "shortDefinition": "Government authorization to sell alcoholic beverages on premises or for delivery.",
+      "longDefinition": "Liquor laws vary by state and municipality: quota systems, distance rules, and license types (beer-wine vs. full spirit) affect feasibility and timeline. Some licenses transfer with the site; others require new applications taking months.\n\nBeverage margin often supports rent; model alcohol separately in pro formas. Training and liability insurance are part of total cost.\n\nBegin liquor license research before lease signing in alcohol-dependent concepts.",
+      "relatedTerms": ["permits", "check-average"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Legal & Permits"
+    },
+    {
+      "term": "QSR",
+      "slug": "qsr",
+      "shortDefinition": "Quick-service restaurant; counter service with fast ticket times and limited table service.",
+      "longDefinition": "QSR formats prioritize throughput, standardized recipes, and lower check averages than full service. Drive-thru, digital boards, and assembly lines define operations.\n\nCapital focuses on kitchen automation, holding equipment, and POS speed. Labor models use fewer skill tiers per cover than fine dining.\n\nSite selection emphasizes visibility, access, and stack-out lanes for drive-thru.",
+      "relatedTerms": ["fast-casual", "holding-cabinet", "covers"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
+      "category": "Operations"
+    },
+    {
+      "term": "Fast Casual",
+      "slug": "fast-casual",
+      "shortDefinition": "Counter or limited service with higher quality perception and check than QSR.",
+      "longDefinition": "Fast casual blends customization (bowls, burritos, salads) with order-at-counter flow. Guests expect fresher ingredients and nicer dining rooms than traditional QSR.\n\nLabor sits between QSR and full service; prime cost targets often 55% to 60% when well run. Digital ordering and loyalty apps are common.\n\nReal estate competes with QSR on traffic but needs more seats and decor budget.",
+      "relatedTerms": ["qsr", "check-average", "prime-cost"],
+      "relatedBlogSlugs": ["restaurant-concept-development-guide"],
+      "category": "Operations"
+    },
+    {
+      "term": "Menu Engineering",
+      "slug": "menu-engineering",
+      "shortDefinition": "Analyzing item popularity and contribution margin to optimize menu design and pricing.",
+      "longDefinition": "Menu engineering classifies items as stars, plowhorses, puzzles, and dogs based on sales mix and contribution. Stars get prominence; dogs get redesigned or removed.\n\nPsychological pricing, anchor items, and bundle design influence check average without raising every price. LTOs test new items before permanent placement.\n\nEngineering fails without accurate recipe costing and POS category mapping.",
+      "relatedTerms": ["food-cost-percentage", "check-average", "yield"],
+      "relatedBlogSlugs": ["restaurant-concept-development-guide", "restaurant-profit-margins-unit-economics"],
+      "category": "Operations"
+    },
+    {
+      "term": "Unit Economics",
+      "slug": "unit-economics",
+      "shortDefinition": "Profit and loss mechanics of a single location, often per cover or per day.",
+      "longDefinition": "Unit economics translate revenue into variable contribution after food, labor, and paper, then subtract fixed costs for store-level profit. Investors compare units before corporate overhead.\n\nDelivery-only brands must include aggregator fees in unit economics, not headline menu price. Ghost kitchens still carry rent, labor, and packaging.\n\nStrong unit economics at one site do not guarantee chain success without replication discipline.",
+      "relatedTerms": ["ebitda", "break-even-point", "prime-cost"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Controllable Costs",
+      "slug": "controllable-costs",
+      "shortDefinition": "Expenses managers can influence in the short term, such as food, labor, and smallwares.",
+      "longDefinition": "Controllable costs exclude rent and insurance contracts fixed for the year. GMs are evaluated on controllable performance versus budget.\n\nWeekly reporting on food and labor variances enables coaching before month-end closes. Non-controllable spikes still require explanation to owners.\n\nTraining and systems expand what is truly controllable over time.",
+      "relatedTerms": ["prime-cost", "food-cost-percentage"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics"],
+      "category": "Finance & Metrics"
+    },
+    {
+      "term": "Occupancy Load",
+      "slug": "occupancy-load",
+      "shortDefinition": "Maximum number of occupants allowed in a space per fire code.",
+      "longDefinition": "Fire marshals calculate occupancy from seating layout, exits, and square footage. Exceeding posted occupancy risks fines and insurance issues.\n\nOutdoor seating and private events need separate counts. Build plans should show seating plans matching certificate requests.\n\nRevenue models must respect realistic occupancy, not theoretical maximums every night.",
+      "relatedTerms": ["foh", "permits"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Legal & Permits"
+    },
+    {
+      "term": "Portion Control",
+      "slug": "portion-control",
+      "shortDefinition": "Standardized serving sizes using scales, scoops, and training to protect margin.",
+      "longDefinition": "Portion control prevents guest-facing inconsistency and food cost drift. Specs should be photographed and weighed during training, not described vaguely.\n\nHigh-cost proteins and cheese are common drift items. Pre-portioning in prep reduces line variance during rush.\n\nGuests notice shrinking portions before they notice small price increases; balance carefully.",
+      "relatedTerms": ["yield", "food-cost-percentage", "mise-en-place"],
+      "relatedBlogSlugs": ["restaurant-profit-margins-unit-economics"],
+      "category": "Operations"
+    },
+    {
+      "term": "Undercounter Refrigeration",
+      "slug": "undercounter-refrigeration",
+      "shortDefinition": "Compact refrigerators and freezers installed beneath counters or bars.",
+      "longDefinition": "Undercounter units save line steps for beverages, garnishes, and backup proteins. Ventilation clearance and ambient kitchen heat affect performance.\n\nBar programs stack multiple undercounters for speed; plan electrical circuits accordingly. Drawer units improve access versus door models in tight lines.\n\nMatch capacity to shift pars, not full walk-in duplication.",
+      "relatedTerms": ["reach-in-refrigerator", "prep-table"],
+      "relatedBlogSlugs": ["commercial-kitchen-equipment-buying-guide"],
+      "category": "Equipment"
+    },
+    {
+      "term": "Fire Suppression",
+      "slug": "fire-suppression",
+      "shortDefinition": "Automatic system that extinguishes cooking fires in hoods and on appliances.",
+      "longDefinition": "ANSUL-style systems deploy on high heat or manual pull, shutting down fuel lines. Inspections and semi-annual service are legally required in most jurisdictions.\n\nMoving cooking equipment without rebalancing nozzles voids protection. Staff training covers pull stations and post-discharge cleanup protocols.\n\nInsurance carriers review suppression maintenance records after claims.",
+      "relatedTerms": ["hood-system", "type-1-hood"],
+      "relatedBlogSlugs": ["restaurant-permits-licenses-guide"],
+      "category": "Equipment"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+import { describe, expect, it } from "vitest";
+import { getAllBlogSlugs, loadAllBlogPosts, loadBlogPost } from "./blog";
+import { getAllGlossarySlugs, getAllGlossaryTerms, getGlossaryTerm } from "./glossary";
+import { renderBlogArticle, renderBlogListing, renderGlossaryIndex, renderGlossaryTerm } from "./ssr/pages";
+
+describe("content", () => {
+  it("loads 10 blog posts", () => {
+    expect(getAllBlogSlugs().length).toBe(10);
+    expect(loadAllBlogPosts().every(p => p.html.length > 500)).toBe(true);
+  });
+
+  it("loads 50 glossary terms", () => {
+    expect(getAllGlossarySlugs().length).toBe(50);
+    expect(getGlossaryTerm("prime-cost")?.term).toBe("Prime Cost");
+  });
+
+  it("renders SSR HTML with visible body content", () => {
+    const listing = renderBlogListing();
+    expect(listing).toContain("<h1>Restaurant Opening Guides</h1>");
+    expect(listing).toContain("BlogPosting");
+
+    const article = renderBlogArticle("how-to-choose-restaurant-location");
+    expect(article).toContain("tldr-box");
+    expect(article).toContain("BlogPosting");
+    expect(article).toContain("FAQPage");
+    expect(loadBlogPost("how-to-choose-restaurant-location")!.frontmatter.faq.length).toBeGreaterThanOrEqual(3);
+
+    const glossary = renderGlossaryIndex();
+    expect(glossary).toContain("DefinedTermSet");
+
+    const term = renderGlossaryTerm("prime-cost");
+    expect(term).toContain("Prime Cost");
+    expect(term).toContain("DefinedTerm");
+  });
+});
