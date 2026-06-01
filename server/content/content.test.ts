@@ -4,8 +4,8 @@ import { getAllGlossarySlugs, getAllGlossaryTerms, getGlossaryTerm } from "./glo
 import { renderBlogArticle, renderBlogListing, renderGlossaryIndex, renderGlossaryTerm } from "./ssr/pages";
 
 describe("content", () => {
-  it("loads 10 blog posts", () => {
-    expect(getAllBlogSlugs().length).toBe(10);
+  it("loads 11 blog posts", () => {
+    expect(getAllBlogSlugs().length).toBe(11);
     expect(loadAllBlogPosts().every(p => p.html.length > 500)).toBe(true);
   });
 
