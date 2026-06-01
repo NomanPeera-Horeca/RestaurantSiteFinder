@@ -185,7 +185,43 @@
       "slug": "ghost-kitchen",
       "shortDefinition": "A delivery-focused kitchen without guest dining room, often hosting one or more virtual brands.",
       "longDefinition": "Ghost kitchens (also cloud or dark kitchens) produce food for delivery and sometimes takeout only. They trade lower front-of-house capital for aggregator commissions, packaging, and digital marketing costs.\n\nSuccess requires strong unit economics on delivery baskets and operational discipline on ticket times. Permits, hoods, and health requirements match traditional kitchens.\n\nSome operators use ghost kitchens to test concepts before committing to street-front leases.",
-      "relatedTerms": ["commissary", "delivery-aggregator", "boh"],
+      "relatedTerms": ["commissary", "delivery-aggregator", "boh", "virtual-restaurant", "cloud-kitchen", "dark-kitchen", "delivery-kitchen"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
+      "category": "Operations"
+    },
+    {
+      "term": "Virtual Restaurant",
+      "slug": "virtual-restaurant",
+      "shortDefinition": "A restaurant brand that operates exclusively through online ordering, delivery, and takeout without a dedicated dine-in location.",
+      "longDefinition": "A virtual restaurant is a restaurant brand that operates exclusively through online ordering, delivery, and takeout services without a dedicated dine-in location. Customers place orders through delivery platforms such as DoorDash, Uber Eats, and Grubhub or directly through the restaurant's website.\n\nMany virtual restaurants operate from ghost kitchens, cloud kitchens, commissary kitchens, or existing restaurant facilities, allowing operators to launch new food concepts without the cost of opening a traditional brick-and-mortar restaurant.\n\nVirtual restaurants have become increasingly popular across the United States as restaurant owners seek cost-effective ways to expand their reach, test new menu offerings, and serve growing demand for food delivery.\n\nKey benefits include lower startup and operating costs, faster restaurant brand launches, no need for dining room space, the ability to test new menu concepts, and increased reach through delivery apps.\n\nFor example, a restaurant in Dallas may create an online-only chicken wings brand that operates from its existing kitchen and sells exclusively through DoorDash and Uber Eats. The parent kitchen already holds permits and equipment; the virtual brand adds packaging, digital menus, and marketing on aggregator platforms.\n\nVirtual restaurants are closely related to ghost kitchens, cloud kitchens, dark kitchens, and delivery-only restaurant models. Operators should model aggregator commissions, packaging, and dispatch labor in unit economics before launching a virtual brand.",
+      "relatedTerms": ["ghost-kitchen", "commissary", "boh", "cloud-kitchen", "dark-kitchen", "delivery-kitchen"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
+      "category": "Operations"
+    },
+    {
+      "term": "Cloud Kitchen",
+      "slug": "cloud-kitchen",
+      "shortDefinition": "A commercial food preparation facility designed specifically for delivery and takeout orders, without dine-in service.",
+      "longDefinition": "A cloud kitchen is a commercial food preparation facility designed specifically for delivery and takeout orders. Unlike traditional restaurants, cloud kitchens do not serve dine-in customers and focus entirely on fulfilling online orders.\n\nCloud kitchens are widely used throughout the United States by independent restaurant owners, franchise operators, and food entrepreneurs looking to reduce overhead costs while expanding delivery coverage.\n\nKey benefits include lower real estate expenses, delivery-focused operations, faster expansion into new markets, the ability to support multiple brands from one facility, and improved operational efficiency through shared infrastructure.\n\nFor example, a cloud kitchen facility in Houston may house several restaurant brands, including pizza, burgers, and Mexican food concepts, all operating from the same location. Each brand lists separately on delivery apps while sharing hoods, refrigeration, and prep space under one lease.\n\nCloud kitchens are closely related to ghost kitchens, virtual restaurants, dark kitchens, and delivery kitchen models. Operators should confirm health department rules for multi-brand facilities and model aggregator fees in unit economics before signing a lease.",
+      "relatedTerms": ["ghost-kitchen", "virtual-restaurant", "commissary", "boh", "dark-kitchen", "delivery-kitchen"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
+      "category": "Operations"
+    },
+    {
+      "term": "Dark Kitchen",
+      "slug": "dark-kitchen",
+      "shortDefinition": "A delivery-only commercial kitchen that prepares food exclusively for online orders, with no public dine-in access.",
+      "longDefinition": "A dark kitchen is a delivery-only commercial kitchen that prepares food exclusively for online orders. Customers cannot visit the location to dine, as the facility is not open to the public.\n\nThe term \"dark kitchen\" is commonly used to describe kitchens that support food delivery platforms and virtual restaurant brands throughout major U.S. markets.\n\nKey benefits include reduced operating costs, no front-of-house staffing requirements, faster delivery service, a scalable business model, and efficient kitchen utilization across multiple brands or dayparts.\n\nFor example, a food company in Los Angeles may operate a dark kitchen that prepares meals for several delivery-only brands serving customers across the city. Each brand appears separately on delivery apps while sharing the same BOH staff, equipment, and permits.\n\nDark kitchens are closely related to ghost kitchens, cloud kitchens, virtual restaurants, and delivery-only restaurant models. Operators should confirm signage, pickup, and health department rules for non-public facilities before signing a lease.",
+      "relatedTerms": ["ghost-kitchen", "cloud-kitchen", "virtual-restaurant", "boh", "delivery-kitchen"],
+      "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
+      "category": "Operations"
+    },
+    {
+      "term": "Delivery Kitchen",
+      "slug": "delivery-kitchen",
+      "shortDefinition": "A commercial kitchen dedicated to preparing food for delivery and takeout customers, optimized for speed and order accuracy rather than dine-in service.",
+      "longDefinition": "A delivery kitchen is a commercial kitchen dedicated to preparing food for delivery and takeout customers. These facilities are optimized for speed, order accuracy, and efficient delivery operations rather than dine-in service.\n\nDelivery kitchens have become an important part of the U.S. restaurant industry as more consumers order meals through online delivery platforms.\n\nKey benefits include faster order fulfillment, lower overhead costs, expanded delivery coverage into new neighborhoods, improved kitchen efficiency, and support for multiple food brands from a single facility.\n\nFor example, a restaurant group in Atlanta may open a delivery kitchen to serve customers in neighborhoods beyond the reach of its existing restaurant locations. The group extends its delivery radius without building a full dine-in restaurant in each area.\n\nDelivery kitchens are closely related to ghost kitchens, cloud kitchens, dark kitchens, virtual restaurants, and commissary kitchen models. Operators should plan dispatch workflows, packaging stations, and aggregator fee structures before launch.",
+      "relatedTerms": ["ghost-kitchen", "cloud-kitchen", "dark-kitchen", "virtual-restaurant", "commissary"],
       "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant"],
       "category": "Operations"
     },
@@ -194,7 +230,7 @@
       "slug": "commissary",
       "shortDefinition": "A licensed central kitchen that prepares or stores food for satellite locations or brands.",
       "longDefinition": "Commissaries batch prep, bake, or portion for multiple outlets, reducing duplicate equipment at each site. Health departments require clear agreements on who holds the master permit and HACCP plans.\n\nCommissaries suit food trucks, ghost brands, and chains standardizing sauces and proteins. Transport time and temperature logs are inspection focus areas.\n\nRenting commissary space lowers entry cost but adds logistics and per-pound fees that must appear in food cost models.",
-      "relatedTerms": ["ghost-kitchen", "haccp", "food-cost-percentage"],
+      "relatedTerms": ["ghost-kitchen", "cloud-kitchen", "dark-kitchen", "delivery-kitchen", "haccp", "food-cost-percentage"],
       "relatedBlogSlugs": ["ghost-kitchen-vs-traditional-restaurant", "restaurant-permits-licenses-guide"],
       "category": "Operations"
     },

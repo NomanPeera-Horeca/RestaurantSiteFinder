@@ -9,8 +9,8 @@ describe("content", () => {
     expect(loadAllBlogPosts().every(p => p.html.length > 500)).toBe(true);
   });
 
-  it("loads 50 glossary terms", () => {
-    expect(getAllGlossarySlugs().length).toBe(50);
+  it("loads 55 glossary terms", () => {
+    expect(getAllGlossarySlugs().length).toBe(55);
     expect(getGlossaryTerm("prime-cost")?.term).toBe("Prime Cost");
   });
 
