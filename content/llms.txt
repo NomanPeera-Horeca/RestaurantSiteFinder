@@ -1,6 +1,6 @@
 # Restaurant Site Finder
 # https://restaurantsitefinder.com/llms.txt
-# Last updated: 2026-06-01
+# Last updated: 2026-06-06
 
 > Restaurant Site Finder is a free AI-powered restaurant location analysis tool built by Horeca Store (https://www.thehorecastore.com). Enter any address worldwide to receive competitor mapping, market gap analysis, review sentiment, an opportunity score (1–10), GO/NO-GO guidance, three winning concept suggestions with menu-market fit analysis, and equipment checklists linking to commercial kitchen suppliers.
 
@@ -34,17 +34,22 @@ Phone: 866.446.7322
 
 ## Expert guides (blog)
 
-1. Restaurant Site Selection: Ultimate Checklist Guide — https://restaurantsitefinder.com/blog/restaurant-site-selection-checklist
-2. How to Choose the Perfect Restaurant Location — https://restaurantsitefinder.com/blog/how-to-choose-restaurant-location
-3. Restaurant Equipment Checklist for New Owners — https://restaurantsitefinder.com/blog/restaurant-equipment-checklist-new-owners
-4. How Much Does It Cost to Open a Restaurant in 2026 — https://restaurantsitefinder.com/blog/how-much-does-it-cost-to-open-a-restaurant-2026
-5. Restaurant Market Analysis: Step-by-Step — https://restaurantsitefinder.com/blog/restaurant-market-analysis-guide
-6. Restaurant Concept Development — https://restaurantsitefinder.com/blog/restaurant-concept-development-guide
-7. Commercial Kitchen Equipment Buying Guide — https://restaurantsitefinder.com/blog/commercial-kitchen-equipment-buying-guide
-8. How to Write a Restaurant Business Plan — https://restaurantsitefinder.com/blog/how-to-write-restaurant-business-plan
-9. Restaurant Profit Margins and Unit Economics — https://restaurantsitefinder.com/blog/restaurant-profit-margins-unit-economics
-10. Restaurant Permits and Licenses — https://restaurantsitefinder.com/blog/restaurant-permits-licenses-guide
-11. Ghost Kitchens vs Traditional Restaurants — https://restaurantsitefinder.com/blog/ghost-kitchen-vs-traditional-restaurant
+1. Go/No-Go Restaurant Location Decision — https://restaurantsitefinder.com/blog/go-no-go-restaurant-location-decision
+2. Should I Open a Restaurant Here? Location Strategy Guide — https://restaurantsitefinder.com/blog/restaurant-location-strategies-maximum-profit
+3. Restaurant Market Saturation: Key Analysis Tips — https://restaurantsitefinder.com/blog/restaurant-market-saturation-trends
+4. Trade Area Analysis for Restaurant Success — https://restaurantsitefinder.com/blog/trade-area-analysis-restaurants
+5. Mastering Restaurant Location Analysis — https://restaurantsitefinder.com/blog/choosing-perfect-spot-restaurants
+6. Restaurant Site Selection: Ultimate Checklist Guide — https://restaurantsitefinder.com/blog/restaurant-site-selection-checklist
+7. How to Choose the Perfect Restaurant Location — https://restaurantsitefinder.com/blog/how-to-choose-restaurant-location
+8. Restaurant Equipment Checklist for New Owners — https://restaurantsitefinder.com/blog/restaurant-equipment-checklist-new-owners
+9. How Much Does It Cost to Open a Restaurant in 2026 — https://restaurantsitefinder.com/blog/how-much-does-it-cost-to-open-a-restaurant-2026
+10. Restaurant Market Analysis: Step-by-Step — https://restaurantsitefinder.com/blog/restaurant-market-analysis-guide
+11. Restaurant Concept Development — https://restaurantsitefinder.com/blog/restaurant-concept-development-guide
+12. Commercial Kitchen Equipment Buying Guide — https://restaurantsitefinder.com/blog/commercial-kitchen-equipment-buying-guide
+13. How to Write a Restaurant Business Plan — https://restaurantsitefinder.com/blog/how-to-write-restaurant-business-plan
+14. Restaurant Profit Margins and Unit Economics — https://restaurantsitefinder.com/blog/restaurant-profit-margins-unit-economics
+15. Restaurant Permits and Licenses — https://restaurantsitefinder.com/blog/restaurant-permits-licenses-guide
+16. Ghost Kitchens vs Traditional Restaurants — https://restaurantsitefinder.com/blog/ghost-kitchen-vs-traditional-restaurant
 
 ## Glossary sample terms
 
