@@ -1,0 +1,821 @@
+{
+  "version": 1,
+  "cadence": "daily",
+  "posts": [
+    {
+      "slug": "restaurant-lease-red-flags-before-signing",
+      "title": "Restaurant Lease Red Flags Before You Sign",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant lease red flags",
+        "before signing restaurant lease",
+        "restaurant LOI checklist",
+        "tenant improvement allowance restaurant",
+        "free restaurant location analysis"
+      ],
+      "tags": ["restaurant lease", "site selection", "LOI", "tenant improvements"],
+      "excerptHint": "Walk-away list for operators reviewing a finalist lease before legal fees.",
+      "outline": [
+        "TI allowance caps and who pays for hood/grease trap",
+        "Exclusive use and co-tenancy clauses",
+        "CAM estimates and personal guarantee risk",
+        "Radius restrictions and assignment rights",
+        "Run free GO/NO-GO on the address before signing"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "restaurant-market-analysis-guide",
+        "how-much-does-it-cost-to-open-a-restaurant-2026"
+      ],
+      "glossaryLinks": ["break-even-point", "grease-trap"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "how-many-restaurant-competitors-is-too-many",
+      "title": "How Many Direct Restaurant Competitors Is Too Many?",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant competitor analysis",
+        "too many restaurants in area",
+        "direct competitors restaurant",
+        "market saturation restaurant",
+        "free restaurant location analysis"
+      ],
+      "tags": ["competitor analysis", "market saturation", "trade area"],
+      "excerptHint": "Interpret direct vs. all competitors within a multi-mile trade area.",
+      "outline": [
+        "All restaurants vs. direct competitors by cuisine",
+        "When zero competitors is a warning sign",
+        "Cluster effects for QSR and fast casual",
+        "5-mile trade area by service model",
+        "Step-by-step: run a concept-specific scan on Restaurant Site Finder"
+      ],
+      "relatedSlugs": [
+        "restaurant-market-analysis-guide",
+        "ghost-kitchen-vs-traditional-restaurant",
+        "how-to-choose-restaurant-location"
+      ],
+      "glossaryLinks": ["trade-area", "covers"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "qsr-fast-casual-full-service-location-rules",
+      "title": "QSR vs Fast Casual vs Full Service: Different Location Rules",
+      "category": "Site Selection",
+      "keywords": [
+        "QSR site selection",
+        "fast casual location analysis",
+        "full service restaurant location",
+        "drive-thru site selection",
+        "free restaurant location analysis"
+      ],
+      "tags": ["QSR", "fast casual", "full service", "drive-thru"],
+      "excerptHint": "Format-specific trade areas, rent targets, and competitor rules.",
+      "outline": [
+        "Trade area size by service model (3-8 miles)",
+        "Daypart traffic and drive-thru ingress",
+        "Rent-to-sales targets by format",
+        "Competitor clustering patterns",
+        "Equipment implications at Horeca Store"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "restaurant-concept-development-guide",
+        "commercial-kitchen-equipment-buying-guide"
+      ],
+      "glossaryLinks": ["foot-traffic", "prime-cost"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-cooking-equipment"
+    },
+    {
+      "slug": "second-generation-restaurant-space-location",
+      "title": "Second-Generation Restaurant Space: When the Location Wins",
+      "category": "Site Selection",
+      "keywords": [
+        "second generation restaurant space",
+        "restaurant lease take over",
+        "former restaurant space",
+        "restaurant buildout savings",
+        "free restaurant location analysis"
+      ],
+      "tags": ["second generation", "buildout", "restaurant shell"],
+      "excerptHint": "Evaluate hood reuse, health history, and why the last tenant failed.",
+      "outline": [
+        "Hood and grease trap reuse vs. replacement",
+        "Health department and permit history",
+        "Why the previous tenant closed",
+        "Rent vs. TI when infrastructure exists",
+        "Still run market analysis; refresh equipment at Horeca"
+      ],
+      "relatedSlugs": [
+        "how-much-does-it-cost-to-open-a-restaurant-2026",
+        "restaurant-equipment-checklist-new-owners",
+        "restaurant-permits-licenses-guide"
+      ],
+      "glossaryLinks": ["hood-system", "grease-trap"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-refrigeration-equipment"
+    },
+    {
+      "slug": "restaurant-location-go-no-go-explained",
+      "title": "GO vs NO-GO vs CAUTION: How to Read Your Location Report",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant GO NO GO",
+        "restaurant location report",
+        "opportunity score restaurant",
+        "concept fit score",
+        "free restaurant location analysis"
+      ],
+      "tags": ["GO NO GO", "location report", "opportunity score"],
+      "excerptHint": "Decode verdicts, concept fit, and competitor counts before unlocking the full report.",
+      "outline": [
+        "What GO, NO-GO, and CAUTION mean",
+        "Concept fit vs. market opportunity score",
+        "Direct competitors and alternatives section",
+        "When to re-run another address",
+        "Next step: equipment checklist from Horeca"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "restaurant-market-analysis-guide",
+        "restaurant-concept-development-guide"
+      ],
+      "glossaryLinks": ["trade-area", "break-even-point"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "burger-restaurant-location-checklist",
+      "title": "Opening a Burger Restaurant: Location Checklist",
+      "category": "Site Selection",
+      "keywords": [
+        "burger restaurant location analysis",
+        "burger joint site selection",
+        "fast casual burger location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["burger", "QSR", "fast casual", "location checklist"],
+      "excerptHint": "Concept-specific site criteria for burger and smash concepts.",
+      "outline": [
+        "Drive-thru vs. inline trade areas",
+        "Direct burger competitor density",
+        "Grease load and hood requirements",
+        "Daypart mix for lunch vs. late night",
+        "Run Burgers + Fast Casual on Restaurant Site Finder"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "qsr-fast-casual-full-service-location-rules",
+        "restaurant-equipment-checklist-new-owners"
+      ],
+      "glossaryLinks": ["type-1-hood", "covers"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-cooking-equipment"
+    },
+    {
+      "slug": "pizza-restaurant-site-selection",
+      "title": "Pizza Restaurant Site Selection Guide",
+      "category": "Site Selection",
+      "keywords": [
+        "pizza restaurant location",
+        "pizzeria site selection",
+        "delivery radius pizza restaurant",
+        "free restaurant location analysis"
+      ],
+      "tags": ["pizza", "delivery", "site selection"],
+      "excerptHint": "Delivery radius, oven infrastructure, and competitor mapping for pizzerias.",
+      "outline": [
+        "Delivery vs. dine-in trade area math",
+        "Gas line and oven stack requirements",
+        "Competing on price band and daypart",
+        "Ghost kitchen overlap",
+        "Concept-specific scan for pizza formats"
+      ],
+      "relatedSlugs": [
+        "ghost-kitchen-vs-traditional-restaurant",
+        "restaurant-market-analysis-guide",
+        "how-much-does-it-cost-to-open-a-restaurant-2026"
+      ],
+      "glossaryLinks": ["trade-area", "foot-traffic"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-cooking-equipment"
+    },
+    {
+      "slug": "food-hall-vs-standalone-restaurant-location",
+      "title": "Food Hall vs Standalone: Location Tradeoffs",
+      "category": "Site Selection",
+      "keywords": [
+        "food hall restaurant location",
+        "food hall vs standalone restaurant",
+        "restaurant stall location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["food hall", "standalone", "real estate"],
+      "excerptHint": "Compare captive audience, rent structure, and brand control.",
+      "outline": [
+        "Revenue share vs. fixed rent",
+        "Captive traffic vs. destination dining",
+        "Commissary and hood constraints",
+        "Exit clauses and hours control",
+        "Validate demand outside the hall with market analysis"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "restaurant-profit-margins-unit-economics",
+        "restaurant-concept-development-guide"
+      ],
+      "glossaryLinks": ["commissary", "prime-cost"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-rent-to-sales-ratio-guide",
+      "title": "Restaurant Rent Calculator: What Percent of Sales Is Safe?",
+      "category": "Finance",
+      "keywords": [
+        "restaurant rent to sales ratio",
+        "restaurant occupancy cost",
+        "how much rent can a restaurant afford",
+        "free restaurant location analysis"
+      ],
+      "tags": ["rent", "occupancy cost", "unit economics"],
+      "excerptHint": "Occupancy benchmarks by format and when to walk away.",
+      "outline": [
+        "Base rent plus CAM targets by format",
+        "Covers math from rent to required sales",
+        "Landlord TI and amortization",
+        "Red flags above 10% occupancy",
+        "Pair rent math with GO/NO-GO on the address"
+      ],
+      "relatedSlugs": [
+        "restaurant-profit-margins-unit-economics",
+        "how-to-choose-restaurant-location",
+        "restaurant-lease-red-flags-before-signing"
+      ],
+      "glossaryLinks": ["break-even-point", "prime-cost"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "compare-two-restaurant-locations",
+      "title": "How to Compare Two Finalist Restaurant Addresses",
+      "category": "Site Selection",
+      "keywords": [
+        "compare restaurant locations",
+        "restaurant site comparison",
+        "finalist restaurant address",
+        "free restaurant location analysis"
+      ],
+      "tags": ["site comparison", "finalist sites", "decision framework"],
+      "excerptHint": "Side-by-side framework for the last two addresses on your shortlist.",
+      "outline": [
+        "Scorecard: demand, rent, competition, access",
+        "Run the same concept on both addresses",
+        "Sensitivity on break-even sales",
+        "Lease terms as tiebreaker",
+        "Document the decision for lenders"
+      ],
+      "relatedSlugs": [
+        "restaurant-market-analysis-guide",
+        "how-to-choose-restaurant-location",
+        "restaurant-location-go-no-go-explained"
+      ],
+      "glossaryLinks": ["break-even-point", "trade-area"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "mexican-restaurant-location-guide",
+      "title": "Mexican Restaurant Location Guide: Trade Area and Competition",
+      "category": "Site Selection",
+      "keywords": [
+        "mexican restaurant location",
+        "taco shop site selection",
+        "fast casual mexican location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["mexican", "taco", "fast casual", "site selection"],
+      "excerptHint": "Demographic fit, competitor tiers, and equipment for Mexican formats.",
+      "outline": [
+        "Trade area demographics for Mexican concepts",
+        "Direct vs. Tex-Mex and fast-casual overlap",
+        "Kitchen ventilation for high-volume frying",
+        "Lunch vs. dinner dayparts",
+        "Run concept-specific scan before lease"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "restaurant-market-analysis-guide",
+        "commercial-kitchen-equipment-buying-guide"
+      ],
+      "glossaryLinks": ["type-1-hood", "food-cost-percentage"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-cooking-equipment"
+    },
+    {
+      "slug": "coffee-shop-cafe-location-analysis",
+      "title": "Coffee Shop and Cafe Location Analysis",
+      "category": "Site Selection",
+      "keywords": [
+        "coffee shop location analysis",
+        "cafe site selection",
+        "bakery cafe location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["cafe", "coffee", "bakery", "walkable"],
+      "excerptHint": "Tighter trade areas, morning dayparts, and competitor coffee density.",
+      "outline": [
+        "3-mile vs. 5-mile trade area for cafes",
+        "Morning commuter vs. weekend foot traffic",
+        "Competing with chains and independents",
+        "Small footprint equipment needs",
+        "Cafe format on Restaurant Site Finder"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "qsr-fast-casual-full-service-location-rules",
+        "restaurant-equipment-checklist-new-owners"
+      ],
+      "glossaryLinks": ["foot-traffic", "check-average"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-refrigeration-equipment"
+    },
+    {
+      "slug": "bar-grill-location-selection",
+      "title": "Bar and Grill Location Selection: Nightlife and Compliance",
+      "category": "Site Selection",
+      "keywords": [
+        "bar and grill location",
+        "restaurant bar site selection",
+        "liquor license location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["bar", "grill", "liquor", "nightlife"],
+      "excerptHint": "Liquor licensing, noise ordinances, and evening trade areas.",
+      "outline": [
+        "Liquor license moratoriums by address",
+        "Evening and weekend traffic patterns",
+        "Parking and rideshare pickup",
+        "Competitor bar density",
+        "Bar & Grill concept scan on the tool"
+      ],
+      "relatedSlugs": [
+        "restaurant-permits-licenses-guide",
+        "how-to-choose-restaurant-location",
+        "restaurant-concept-development-guide"
+      ],
+      "glossaryLinks": ["foot-traffic", "prime-cost"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "asian-restaurant-location-guide",
+      "title": "Asian Restaurant Location Guide: Ramen, Sushi, and Fast Casual",
+      "category": "Site Selection",
+      "keywords": [
+        "asian restaurant location",
+        "sushi restaurant site selection",
+        "ramen shop location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["asian", "sushi", "ramen", "site selection"],
+      "excerptHint": "Format-specific demand, raw fish logistics, and competitor mapping.",
+      "outline": [
+        "Sub-cuisine competitor mapping",
+        "Delivery-heavy vs. dine-in formats",
+        "Cold storage and hood requirements",
+        "Ethnic corridor vs. suburban strip",
+        "Run your cuisine on Restaurant Site Finder"
+      ],
+      "relatedSlugs": [
+        "restaurant-market-analysis-guide",
+        "how-to-choose-restaurant-location",
+        "ghost-kitchen-vs-traditional-restaurant"
+      ],
+      "glossaryLinks": ["walk-in-cooler", "trade-area"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-refrigeration-equipment"
+    },
+    {
+      "slug": "restaurant-drive-thru-site-requirements",
+      "title": "Restaurant Drive-Thru Site Requirements and Red Flags",
+      "category": "Site Selection",
+      "keywords": [
+        "drive-thru site selection",
+        "QSR drive thru requirements",
+        "drive thru stacking lane",
+        "free restaurant location analysis"
+      ],
+      "tags": ["drive-thru", "QSR", "stacking", "ingress"],
+      "excerptHint": "Stacking lanes, ingress/egress, and municipal drive-thru bans.",
+      "outline": [
+        "Minimum stacking and menu board visibility",
+        "Dual lane vs. single lane throughput",
+        "Municipal drive-thru restrictions",
+        "Competitor drive-thru clusters",
+        "QSR concept scan before land purchase"
+      ],
+      "relatedSlugs": [
+        "qsr-fast-casual-full-service-location-rules",
+        "burger-restaurant-location-checklist",
+        "how-to-choose-restaurant-location"
+      ],
+      "glossaryLinks": ["foot-traffic", "covers"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-cooking-equipment"
+    },
+    {
+      "slug": "restaurant-zoning-and-use-permit-location",
+      "title": "Restaurant Zoning and Use Permits: Location Due Diligence",
+      "category": "Compliance",
+      "keywords": [
+        "restaurant zoning requirements",
+        "restaurant use permit",
+        "conditional use restaurant",
+        "free restaurant location analysis"
+      ],
+      "tags": ["zoning", "permits", "conditional use"],
+      "excerptHint": "Verify permitted use before LOI—not after.",
+      "outline": [
+        "CUP vs. by-right restaurant use",
+        "Alcohol and outdoor seating overlays",
+        "Parking minimums and variances",
+        "Neighborhood opposition risk",
+        "Pair zoning check with market analysis"
+      ],
+      "relatedSlugs": [
+        "restaurant-permits-licenses-guide",
+        "restaurant-lease-red-flags-before-signing",
+        "how-to-choose-restaurant-location"
+      ],
+      "glossaryLinks": ["grease-trap", "hood-system"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-parking-and-access-location",
+      "title": "Restaurant Parking and Access: Hidden Location Killers",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant parking requirements",
+        "restaurant site access",
+        "curbside pickup restaurant",
+        "free restaurant location analysis"
+      ],
+      "tags": ["parking", "access", "curbside", "visibility"],
+      "excerptHint": "Parking ratios, one-way traps, and delivery loading.",
+      "outline": [
+        "Shared parking vs. dedicated stalls",
+        "Curbside and third-party delivery loading",
+        "Visibility and monument sign rights",
+        "Family dining vs. urban walk-in",
+        "Validate access during peak hours on site"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "qsr-fast-casual-full-service-location-rules",
+        "restaurant-drive-thru-site-requirements"
+      ],
+      "glossaryLinks": ["foot-traffic", "seat-turn"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-demographics-trade-area-guide",
+      "title": "Restaurant Demographics and Trade Area Data: What Actually Matters",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant demographics",
+        "trade area data restaurant",
+        "restaurant market demographics",
+        "free restaurant location analysis"
+      ],
+      "tags": ["demographics", "trade area", "data sources"],
+      "excerptHint": "Income, age bands, and daytime population—not vanity stats.",
+      "outline": [
+        "Household income vs. check average fit",
+        "Daytime worker population for lunch",
+        "Growth corridors vs. declining census tracts",
+        "Free vs. paid data sources",
+        "Cross-check demographics with GO/NO-GO tool"
+      ],
+      "relatedSlugs": [
+        "restaurant-market-analysis-guide",
+        "how-to-choose-restaurant-location",
+        "how-to-write-restaurant-business-plan"
+      ],
+      "glossaryLinks": ["trade-area", "check-average"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-anchor-tenant-co-tenancy",
+      "title": "Anchor Tenants and Co-Tenancy: Restaurant Location Strategy",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant anchor tenant",
+        "co-tenancy clause restaurant",
+        "shopping center restaurant location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["anchor tenant", "co-tenancy", "retail center"],
+      "excerptHint": "When anchors help traffic—and when co-tenancy protects you.",
+      "outline": [
+        "Grocery and big-box draw patterns",
+        "Co-tenancy triggers if anchor leaves",
+        "Inline vs. end-cap positioning",
+        "Rent premiums for anchor adjacency",
+        "Map competitors in the same center"
+      ],
+      "relatedSlugs": [
+        "restaurant-lease-red-flags-before-signing",
+        "how-to-choose-restaurant-location",
+        "restaurant-market-analysis-guide"
+      ],
+      "glossaryLinks": ["foot-traffic", "break-even-point"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-review-sentiment-location",
+      "title": "Using Competitor Review Sentiment in Restaurant Site Selection",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant competitor reviews",
+        "review sentiment restaurant location",
+        "google reviews restaurant competition",
+        "free restaurant location analysis"
+      ],
+      "tags": ["reviews", "sentiment", "competitors"],
+      "excerptHint": "Mine complaints and praise to find whitespace in the trade area.",
+      "outline": [
+        "Rating velocity vs. static stars",
+        "Complaint themes by category",
+        "Service gaps you can exploit",
+        "When high ratings mean entrenched competition",
+        "Review analysis in Restaurant Site Finder reports"
+      ],
+      "relatedSlugs": [
+        "restaurant-market-analysis-guide",
+        "how-many-restaurant-competitors-is-too-many",
+        "restaurant-location-go-no-go-explained"
+      ],
+      "glossaryLinks": ["covers", "check-average"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-sales-forecast-location",
+      "title": "Restaurant Sales Forecast by Location: Defensible Numbers",
+      "category": "Finance",
+      "keywords": [
+        "restaurant sales forecast location",
+        "restaurant revenue projection site",
+        "restaurant pro forma location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["sales forecast", "pro forma", "lenders"],
+      "excerptHint": "Build base, downside, and upside cases tied to trade-area share.",
+      "outline": [
+        "Covers x check x days open",
+        "Trade-area share caps",
+        "Ramp-up curves year one",
+        "What lenders discount",
+        "Anchor forecast to GO/NO-GO market signals"
+      ],
+      "relatedSlugs": [
+        "restaurant-profit-margins-unit-economics",
+        "restaurant-market-analysis-guide",
+        "how-to-write-restaurant-business-plan"
+      ],
+      "glossaryLinks": ["break-even-point", "covers"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-tenant-improvement-allowance-guide",
+      "title": "Restaurant Tenant Improvement Allowance: Negotiation Guide",
+      "category": "Finance",
+      "keywords": [
+        "tenant improvement allowance restaurant",
+        "restaurant TI allowance",
+        "restaurant buildout landlord contribution",
+        "free restaurant location analysis"
+      ],
+      "tags": ["TI allowance", "buildout", "lease negotiation"],
+      "excerptHint": "How much TI to ask for and what landlords actually fund.",
+      "outline": [
+        "TI vs. rent abatement tradeoffs",
+        "Hood, grease trap, and MEP caps",
+        "Clawback if you leave early",
+        "Second-gen vs. cold shell TI needs",
+        "Only negotiate TI after site passes GO/NO-GO"
+      ],
+      "relatedSlugs": [
+        "restaurant-lease-red-flags-before-signing",
+        "second-generation-restaurant-space-location",
+        "how-much-does-it-cost-to-open-a-restaurant-2026"
+      ],
+      "glossaryLinks": ["hood-system", "grease-trap"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-ghost-kitchen-location-guide",
+      "title": "Ghost Kitchen Location Guide: Delivery Trade Areas",
+      "category": "Site Selection",
+      "keywords": [
+        "ghost kitchen location",
+        "delivery kitchen site selection",
+        "virtual restaurant location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["ghost kitchen", "delivery", "virtual brand"],
+      "excerptHint": "Delivery radius economics without a dining room.",
+      "outline": [
+        "3-8 mile delivery trade area",
+        "Commissary vs. standalone ghost kitchen",
+        "Aggregator fee impact on site choice",
+        "Low rent, high throughput model",
+        "Ghost kitchen format on Restaurant Site Finder"
+      ],
+      "relatedSlugs": [
+        "ghost-kitchen-vs-traditional-restaurant",
+        "how-to-choose-restaurant-location",
+        "restaurant-profit-margins-unit-economics"
+      ],
+      "glossaryLinks": ["ghost-kitchen", "commissary"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-cooking-equipment"
+    },
+    {
+      "slug": "restaurant-break-even-location",
+      "title": "Restaurant Break-Even Analysis by Location",
+      "category": "Finance",
+      "keywords": [
+        "restaurant break even location",
+        "break even covers restaurant",
+        "restaurant fixed costs location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["break-even", "fixed costs", "covers"],
+      "excerptHint": "Translate rent and labor into required daily covers before you sign.",
+      "outline": [
+        "Fixed vs. variable cost split",
+        "Break-even covers at your check average",
+        "Sensitivity if sales miss by 15%",
+        "Location-driven fixed cost traps",
+        "Compare break-even across finalist addresses"
+      ],
+      "relatedSlugs": [
+        "restaurant-profit-margins-unit-economics",
+        "restaurant-rent-to-sales-ratio-guide",
+        "how-to-choose-restaurant-location"
+      ],
+      "glossaryLinks": ["break-even-point", "prime-cost"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-equipment-by-location-type",
+      "title": "Restaurant Equipment Needs by Location Type",
+      "category": "Operations",
+      "keywords": [
+        "restaurant equipment by location",
+        "inline vs end cap restaurant equipment",
+        "restaurant kitchen layout location",
+        "free restaurant location analysis"
+      ],
+      "tags": ["equipment", "layout", "real estate type"],
+      "excerptHint": "Match kitchen package to footprint, utilities, and format.",
+      "outline": [
+        "Inline strip vs. freestanding utilities",
+        "End-cap visibility vs. kitchen depth",
+        "Second-gen equipment reuse checklist",
+        "Concept-matched bundles from Horeca",
+        "Get equipment list from location report"
+      ],
+      "relatedSlugs": [
+        "restaurant-equipment-checklist-new-owners",
+        "commercial-kitchen-equipment-buying-guide",
+        "second-generation-restaurant-space-location"
+      ],
+      "glossaryLinks": ["combi-oven", "reach-in-refrigerator"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-loi-letter-of-intent-guide",
+      "title": "Restaurant LOI and Letter of Intent: Site Selection Stage",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant LOI",
+        "letter of intent restaurant lease",
+        "restaurant lease LOI checklist",
+        "free restaurant location analysis"
+      ],
+      "tags": ["LOI", "letter of intent", "lease"],
+      "excerptHint": "What to lock in the LOI before exclusivity and legal spend.",
+      "outline": [
+        "LOI vs. lease: what is binding",
+        "Exclusivity period and site access",
+        "TI, rent, and option terms in LOI",
+        "Contingencies on permits and zoning",
+        "Run GO/NO-GO before signing LOI"
+      ],
+      "relatedSlugs": [
+        "restaurant-lease-red-flags-before-signing",
+        "restaurant-tenant-improvement-allowance-guide",
+        "how-to-choose-restaurant-location"
+      ],
+      "glossaryLinks": ["break-even-point", "grease-trap"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-catering-kitchen-location",
+      "title": "Catering Kitchen and Commissary Location Guide",
+      "category": "Operations",
+      "keywords": [
+        "catering kitchen location",
+        "commissary kitchen site selection",
+        "restaurant catering facility",
+        "free restaurant location analysis"
+      ],
+      "tags": ["catering", "commissary", "production kitchen"],
+      "excerptHint": "Industrial zoning, loading docks, and delivery radius for catering.",
+      "outline": [
+        "Industrial vs. retail zoning",
+        "Loading and refrigeration capacity",
+        "Delivery fleet radius",
+        "Lower rent, higher throughput layout",
+        "Market analysis for catering demand"
+      ],
+      "relatedSlugs": [
+        "ghost-kitchen-vs-traditional-restaurant",
+        "restaurant-equipment-by-location-type",
+        "restaurant-permits-licenses-guide"
+      ],
+      "glossaryLinks": ["commissary", "blast-chiller"],
+      "horecaUrl": "https://www.thehorecastore.com/commercial-refrigeration-equipment"
+    },
+    {
+      "slug": "restaurant-seasonality-location",
+      "title": "Seasonality and Tourism: Restaurant Location Risk",
+      "category": "Site Selection",
+      "keywords": [
+        "restaurant seasonality location",
+        "tourist restaurant location",
+        "seasonal restaurant trade area",
+        "free restaurant location analysis"
+      ],
+      "tags": ["seasonality", "tourism", "resort", "risk"],
+      "excerptHint": "Model shoulder seasons and tourist vs. local mix.",
+      "outline": [
+        "Peak vs. off-season revenue split",
+        "Local regulars vs. visitor dependency",
+        "Staffing and inventory in slow months",
+        "Lease flexibility for seasonal concepts",
+        "Stress-test forecasts with downside case"
+      ],
+      "relatedSlugs": [
+        "restaurant-sales-forecast-location",
+        "restaurant-market-analysis-guide",
+        "restaurant-profit-margins-unit-economics"
+      ],
+      "glossaryLinks": ["break-even-point", "covers"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-health-department-location",
+      "title": "Health Department and Restaurant Location: Plan Review Early",
+      "category": "Compliance",
+      "keywords": [
+        "health department restaurant location",
+        "restaurant plan review location",
+        "health permit restaurant site",
+        "free restaurant location analysis"
+      ],
+      "tags": ["health department", "plan review", "permits"],
+      "excerptHint": "Catch layout failures before lease signing.",
+      "outline": [
+        "Preliminary plan review meetings",
+        "Grease interceptor sizing by menu",
+        "Handwash and flow requirements",
+        "Prior violation history at address",
+        "Permit timeline in opening budget"
+      ],
+      "relatedSlugs": [
+        "restaurant-permits-licenses-guide",
+        "second-generation-restaurant-space-location",
+        "restaurant-zoning-and-use-permit-location"
+      ],
+      "glossaryLinks": ["grease-trap", "haccp"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    },
+    {
+      "slug": "restaurant-franchise-location-approval",
+      "title": "Franchise Restaurant Location Approval Process",
+      "category": "Site Selection",
+      "keywords": [
+        "franchise restaurant location approval",
+        "franchise site selection process",
+        "franchise territory analysis",
+        "free restaurant location analysis"
+      ],
+      "tags": ["franchise", "territory", "approval"],
+      "excerptHint": "How franchisors score sites—and what you can validate independently.",
+      "outline": [
+        "Franchisor criteria vs. your pro forma",
+        "Protected territory maps",
+        "Co-tenancy and brand standards",
+        "Independent validation before franchise approval",
+        "Run parallel scan on Restaurant Site Finder"
+      ],
+      "relatedSlugs": [
+        "how-to-choose-restaurant-location",
+        "restaurant-market-analysis-guide",
+        "how-to-write-restaurant-business-plan"
+      ],
+      "glossaryLinks": ["trade-area", "break-even-point"],
+      "horecaUrl": "https://www.thehorecastore.com/restaurant-equipment"
+    }
+  ]
+}

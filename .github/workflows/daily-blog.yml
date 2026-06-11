@@ -1,0 +1,62 @@
+name: Daily blog publish
+
+on:
+  schedule:
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force publish even if one went out today"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      slug:
+        description: "Optional specific slug from queue.json"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify OpenAI secret is configured
+        run: |
+          if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+            echo "::error::OPENAI_API_KEY secret is missing."
+            exit 1
+          fi
+          echo "OPENAI_API_KEY is set."
+
+      - name: Publish next blog post
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            ARGS="$ARGS --force"
+          fi
+          if [ -n "${{ github.event.inputs.slug }}" ]; then
+            ARGS="$ARGS --slug=${{ github.event.inputs.slug }}"
+          fi
+          node scripts/publish-daily-blog.mjs $ARGS
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git add content/blog content/llms.txt content/calendar/state.json
+          git commit -m "chore(blog): publish daily guide from content calendar"
+          git push origin HEAD
