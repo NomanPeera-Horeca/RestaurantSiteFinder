@@ -30,7 +30,7 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
             </Badge>
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
               Location Snapshot
-            </h2>
+            </h3>
             <p className="text-muted-foreground">{data.address}</p>
             {data.conceptLabel && (
               <p className="text-sm text-primary font-medium mt-1">{data.conceptLabel}</p>
