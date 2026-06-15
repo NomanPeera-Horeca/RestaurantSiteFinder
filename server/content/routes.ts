@@ -2,6 +2,12 @@ import type { Express, Request, Response } from "express";
 import fs from "fs";
 import { LLMS_TXT_FILE } from "./paths";
 import {
+  renderAboutPage,
+  renderContactPage,
+  renderPrivacyPolicy,
+  renderTermsOfService,
+} from "./ssr/legal-pages";
+import {
   renderBlogArticle,
   renderBlogListing,
   renderGlossaryIndex,
@@ -9,6 +15,14 @@ import {
 } from "./ssr/pages";
 
 export function registerContentRoutes(app: Express): void {
+  /** Trailing-slash redirects to avoid duplicate URLs in sitemap/crawl */
+  app.get("/blog/", (_req: Request, res: Response) => {
+    res.redirect(301, "/blog");
+  });
+  app.get("/glossary/", (_req: Request, res: Response) => {
+    res.redirect(301, "/glossary");
+  });
+
   /** Bare /report has no content without query params; redirect to avoid Soft 404 */
   app.get("/report", (req: Request, res: Response, next) => {
     const hasParams =
@@ -49,6 +63,22 @@ export function registerContentRoutes(app: Express): void {
     res.type("html").send(html);
   });
 
+  app.get("/privacy", (_req: Request, res: Response) => {
+    res.type("html").send(renderPrivacyPolicy());
+  });
+
+  app.get("/terms", (_req: Request, res: Response) => {
+    res.type("html").send(renderTermsOfService());
+  });
+
+  app.get("/about", (_req: Request, res: Response) => {
+    res.type("html").send(renderAboutPage());
+  });
+
+  app.get("/contact", (_req: Request, res: Response) => {
+    res.type("html").send(renderContactPage());
+  });
+
   app.get("/llms.txt", (_req: Request, res: Response) => {
     if (fs.existsSync(LLMS_TXT_FILE)) {
       res.type("text/plain").send(fs.readFileSync(LLMS_TXT_FILE, "utf-8"));
@@ -69,6 +99,10 @@ export function isContentPath(pathname: string): boolean {
     pathname.startsWith("/blog/") ||
     pathname === "/glossary" ||
     pathname.startsWith("/glossary/") ||
+    pathname === "/privacy" ||
+    pathname === "/terms" ||
+    pathname === "/about" ||
+    pathname === "/contact" ||
     pathname === "/llms.txt"
   );
 }

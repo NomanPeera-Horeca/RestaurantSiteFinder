@@ -89,7 +89,22 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
           <ul>
             <li><a href="${SITE.url}/blog">Restaurant Guides</a></li>
             <li><a href="${SITE.url}/glossary">Industry Glossary</a></li>
-            <li><a href="${SITE.url}/report">Sample Report</a></li>
+            <li><a href="${SITE.url}/about">About</a></li>
+            <li><a href="${SITE.url}/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="${SITE.url}/privacy">Privacy Policy</a></li>
+            <li><a href="${SITE.url}/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Follow ${escapeHtml(HORECA.name)}</h3>
+          <ul>
+            <li><a href="${HORECA.social.facebook}" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="${HORECA.social.linkedin}" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
         <div>

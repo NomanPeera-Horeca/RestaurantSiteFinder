@@ -42,7 +42,7 @@ export function blogPostingJsonLd(
 ): object {
   return {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": ["BlogPosting", "Article"],
     headline: fm.title,
     description: fm.metaDescription,
     image: HORECA.logo,

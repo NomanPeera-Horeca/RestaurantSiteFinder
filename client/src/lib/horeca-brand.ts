@@ -14,6 +14,10 @@ export const HORECA = {
     categories: "https://www.thehorecastore.com/all-categories",
     searchOrder: "https://www.thehorecastore.com/order-tracking",
   },
+  social: {
+    facebook: "https://www.facebook.com/horecastoreamerica",
+    linkedin: "https://www.linkedin.com/company/horeca-store",
+  },
 };
 
 export default HORECA;

@@ -28,7 +28,7 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
               <TrendingUp className="h-3.5 w-3.5 mr-1.5" />
               Initial Scan Complete
             </Badge>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+            <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
               Location Snapshot
             </h2>
             <p className="text-muted-foreground">{data.address}</p>

@@ -17,6 +17,20 @@ import { breadcrumbHtml, renderPage, toolCtaBlock } from "./layout";
 
 const base = () => siteConfig.url.replace(/\/$/, "");
 
+function glossaryPageTitle(termName: string): string {
+  const needsArticle = /^[aeiouAEIOU]/.test(termName) ? "an" : "a";
+  const core = `What Is ${needsArticle} ${termName}? Definition & Guide`;
+  return `${core} | Restaurant Site Finder`;
+}
+
+function glossaryMetaDescription(term: GlossaryTerm): string {
+  const suffix = " Learn the definition and how it applies to restaurant operations.";
+  const desc = term.shortDefinition.trim();
+  if (desc.length + suffix.length <= 155) return desc + suffix;
+  if (desc.length <= 155) return desc;
+  return `${desc.slice(0, 152)}...`;
+}
+
 function faqSectionHtml(faq: BlogFaq[]): string {
   if (!faq.length) return "";
   const items = faq
@@ -100,9 +114,9 @@ export function renderBlogListing(): string {
 
   return renderPage(
     {
-      title: "Restaurant Guides | Restaurant Site Finder",
+      title: "Restaurant Opening Guides & Site Selection Tips | Restaurant Site Finder",
       description:
-        "Free expert guides on choosing a restaurant location, equipment checklists, opening costs, permits, and market analysis.",
+        "Free expert guides on choosing a restaurant location, site selection checklists, equipment, opening costs, permits, and market analysis.",
       canonical: url,
       jsonLdScripts: jsonLd,
     },
@@ -288,15 +302,10 @@ export function renderGlossaryTerm(slug: string): string | null {
       ${toolCtaBlock()}
     </article>`;
 
-  const title =
-    term.term.length > 45
-      ? `${term.term.slice(0, 42)}...`
-      : term.term;
-
   return renderPage(
     {
-      title: `What Is ${title}? | Glossary`,
-      description: term.shortDefinition.slice(0, 155),
+      title: glossaryPageTitle(term.term),
+      description: glossaryMetaDescription(term),
       canonical: url,
       jsonLdScripts: jsonLd,
     },

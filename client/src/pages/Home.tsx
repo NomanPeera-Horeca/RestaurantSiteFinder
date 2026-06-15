@@ -379,16 +379,17 @@ export default function Home() {
               That didn't sit right with us. So our team built Restaurant Site Finder. It uses AI to scan nearby competitors using
               Google Places data, extract review sentiment to identify what customers love and hate, detect saturated and underserved
               cuisine types, and generate three winning restaurant concepts tailored to the specific market gaps in your chosen area.
-              Each concept comes with specific menu ideas, a risk score, and a personalized{" "}
-              <a href={HORECA.links.equipment} target="_blank" rel="noopener" className="text-primary hover:underline">equipment checklist from Horeca Store</a>.
+              Each concept comes with specific menu ideas, a risk score, and a personalized equipment checklist. See our{" "}
+              <a href="/blog/how-to-choose-restaurant-location" className="text-primary hover:underline">site selection guide</a> and{" "}
+              <a href="/glossary/trade-area" className="text-primary hover:underline">trade area</a> glossary for the methodology behind the scores.
             </p>
             <p className="leading-relaxed mb-4">
               Whether you're a first-time restaurateur or an experienced operator scouting new locations,
-              you deserve the same quality analysis that big restaurant groups get. And when you're ready to move forward,{" "}
-              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">Horeca Store</a> has everything
-              you need, from <a href={HORECA.links.cooking} target="_blank" rel="noopener" className="text-primary hover:underline">commercial cooking equipment</a> to
-              refrigeration, food prep stations, and <a href={HORECA.links.categories} target="_blank" rel="noopener" className="text-primary hover:underline">all equipment categories</a> for
-              hotels, restaurants, and cafes. That's why we're here: to be your partner from site selection to grand opening.
+              you deserve the same quality analysis that big restaurant groups get. When you're ready to move forward,{" "}
+              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">Horeca Store</a> has the
+              commercial kitchen equipment to match your winning concept—from opening guides in our{" "}
+              <a href="/blog/restaurant-equipment-checklist-new-owners" className="text-primary hover:underline">equipment checklist</a> to{" "}
+              <a href="/glossary/ghost-kitchen" className="text-primary hover:underline">ghost kitchen</a> and traditional formats.
             </p>
           </article>
         </div>
@@ -466,33 +467,17 @@ export default function Home() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {blogArticles.length > 0
-              ? blogArticles.slice(0, 3).map(article => (
-                  <a
-                    key={article.slug}
-                    href={`/blog/${article.slug}`}
-                    className="block p-6 rounded-xl border border-border/50 bg-card hover:border-primary/30 transition-colors"
-                  >
-                    <p className="text-xs font-semibold text-primary uppercase mb-2">{article.category}</p>
-                    <h3 className="font-semibold text-card-foreground mb-2">{article.title}</h3>
-                    <p className="text-sm text-muted-foreground">{article.excerpt}</p>
-                  </a>
-                ))
-              : [
-                  { slug: "how-to-choose-restaurant-location", category: "Site Selection", title: "How to Choose the Perfect Restaurant Location", excerpt: "Pillar guide on trade area, rent, and break-even before you sign a lease." },
-                  { slug: "restaurant-equipment-checklist-new-owners", category: "Operations", title: "Restaurant Equipment Checklist for New Owners", excerpt: "Build your kitchen list from menu, volume, and code—not broker packages." },
-                  { slug: "how-much-does-it-cost-to-open-a-restaurant-2026", category: "Finance", title: "How Much Does It Cost to Open a Restaurant in 2026?", excerpt: "Realistic opening budgets from lean ghost kitchens to full-service builds." },
-                ].map(article => (
-                  <a
-                    key={article.slug}
-                    href={`/blog/${article.slug}`}
-                    className="block p-6 rounded-xl border border-border/50 bg-card hover:border-primary/30 transition-colors"
-                  >
-                    <p className="text-xs font-semibold text-primary uppercase mb-2">{article.category}</p>
-                    <h3 className="font-semibold text-card-foreground mb-2">{article.title}</h3>
-                    <p className="text-sm text-muted-foreground">{article.excerpt}</p>
-                  </a>
-                ))}
+            {blogArticles.slice(0, 6).map(article => (
+              <a
+                key={article.slug}
+                href={`/blog/${article.slug}`}
+                className="block p-6 rounded-xl border border-border/50 bg-card hover:border-primary/30 transition-colors"
+              >
+                <p className="text-xs font-semibold text-primary uppercase mb-2">{article.category}</p>
+                <h3 className="font-semibold text-card-foreground mb-2">{article.title}</h3>
+                <p className="text-sm text-muted-foreground">{article.excerpt}</p>
+              </a>
+            ))}
           </div>
           <div className="text-center mt-10">
             <a href="/blog">
@@ -501,6 +486,37 @@ export default function Home() {
                 View All Guides
               </Button>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Glossary quick links for internal SEO */}
+      <section className="py-16 bg-muted/20">
+        <div className="container max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold text-foreground mb-3">Restaurant Industry Glossary</h2>
+            <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+              Key terms for site selection, operations, and kitchen planning.{" "}
+              <a href="/glossary" className="text-primary hover:underline font-medium">Browse all 55+ definitions</a>
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { slug: "trade-area", label: "Trade Area" },
+              { slug: "foot-traffic", label: "Foot Traffic" },
+              { slug: "break-even-point", label: "Break-Even Point" },
+              { slug: "prime-cost", label: "Prime Cost" },
+              { slug: "ghost-kitchen", label: "Ghost Kitchen" },
+              { slug: "combi-oven", label: "Combi Oven" },
+            ].map(term => (
+              <a
+                key={term.slug}
+                href={`/glossary/${term.slug}`}
+                className="block p-4 rounded-lg border border-border/50 bg-card hover:border-primary/30 transition-colors text-sm font-medium text-foreground"
+              >
+                {term.label}
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -585,6 +601,46 @@ export default function Home() {
                       Industry Glossary
                     </a>
                   </li>
+                  <li>
+                    <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Legal & Social */}
+              <div>
+                <h3 className="font-semibold text-foreground mb-4">Legal</h3>
+                <ul className="space-y-2.5 text-sm mb-6">
+                  <li>
+                    <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors">
+                      Terms of Service
+                    </a>
+                  </li>
+                </ul>
+                <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
+                <ul className="space-y-2.5 text-sm">
+                  <li>
+                    <a href={HORECA.social.facebook} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a href={HORECA.social.linkedin} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
+                      LinkedIn
+                    </a>
+                  </li>
                 </ul>
               </div>
 
@@ -661,8 +717,11 @@ export default function Home() {
             <div className="flex flex-col items-center md:flex-row md:justify-between gap-3 text-xs text-muted-foreground text-center md:text-left">
               <p>
                 Restaurant Site Finder is a free tool provided by{" "}
-                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>{" "}
-                . {HORECA.tagline}.
+                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>.
+                {" "}
+                <a href="/privacy" className="hover:text-primary transition-colors">Privacy</a>
+                {" · "}
+                <a href="/terms" className="hover:text-primary transition-colors">Terms</a>
               </p>
               <p className="shrink-0">
                 &copy; {new Date().getFullYear()}{" "}

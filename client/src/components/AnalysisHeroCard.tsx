@@ -29,9 +29,9 @@ export function AnalysisHeroCard({
               <Sparkles className="h-5 w-5" />
             </div>
             <div>
-              <h2 className="text-lg font-semibold text-foreground sm:text-xl">
+              <p className="text-lg font-semibold text-foreground sm:text-xl">
                 Free concept + location analysis
-              </h2>
+              </p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Pick what you&apos;re opening, enter an address, and get a GO or NO-GO for that exact concept.
               </p>

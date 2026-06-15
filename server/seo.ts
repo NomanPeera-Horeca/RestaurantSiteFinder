@@ -66,6 +66,10 @@ Sitemap: ${base}/sitemap.xml
       urlEntry(`${base}/`, { lastmod: today, changefreq: "weekly", priority: "1.0" }),
       urlEntry(`${base}/blog`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/glossary`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
+      urlEntry(`${base}/about`, { lastmod: today, changefreq: "monthly", priority: "0.5" }),
+      urlEntry(`${base}/contact`, { lastmod: today, changefreq: "monthly", priority: "0.5" }),
+      urlEntry(`${base}/privacy`, { lastmod: today, changefreq: "yearly", priority: "0.3" }),
+      urlEntry(`${base}/terms`, { lastmod: today, changefreq: "yearly", priority: "0.3" }),
     ];
 
     try {
