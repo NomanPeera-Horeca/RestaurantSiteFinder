@@ -4,7 +4,7 @@ import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
-import { registerContentRoutes } from "../content/routes";
+import { registerContentRoutes, registerTrailingSlashRedirects } from "../content/routes";
 import { registerSeoRoutes } from "../seo";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
@@ -37,6 +37,8 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
+  // Strip trailing slashes before SSR routes (must run before registerContentRoutes)
+  registerTrailingSlashRedirects(app);
   // Server-rendered blog, glossary, llms.txt (before SPA)
   registerContentRoutes(app);
   // SEO routes (sitemap.xml, robots.txt)

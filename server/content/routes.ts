@@ -14,15 +14,20 @@ import {
   renderGlossaryTerm,
 } from "./ssr/pages";
 
-export function registerContentRoutes(app: Express): void {
-  /** Trailing-slash redirects to avoid duplicate URLs in sitemap/crawl */
-  app.get("/blog/", (_req: Request, res: Response) => {
-    res.redirect(301, "/blog");
+/** Redirect only paths that literally end with "/" (Express treats /blog and /blog/ as the same route otherwise). */
+export function registerTrailingSlashRedirects(app: Express): void {
+  app.use((req: Request, res: Response, next) => {
+    const pathname = req.path;
+    if (pathname.length > 1 && pathname.endsWith("/")) {
+      const query = req.url.slice(pathname.length);
+      res.redirect(301, pathname.slice(0, -1) + query);
+      return;
+    }
+    next();
   });
-  app.get("/glossary/", (_req: Request, res: Response) => {
-    res.redirect(301, "/glossary");
-  });
+}
 
+export function registerContentRoutes(app: Express): void {
   /** Bare /report has no content without query params; redirect to avoid Soft 404 */
   app.get("/report", (req: Request, res: Response, next) => {
     const hasParams =
