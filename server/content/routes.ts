@@ -14,19 +14,6 @@ import {
   renderGlossaryTerm,
 } from "./ssr/pages";
 
-/** Redirect only paths that literally end with "/" (Express treats /blog and /blog/ as the same route otherwise). */
-export function registerTrailingSlashRedirects(app: Express): void {
-  app.use((req: Request, res: Response, next) => {
-    const pathname = req.path;
-    if (pathname.length > 1 && pathname.endsWith("/")) {
-      const query = req.url.slice(pathname.length);
-      res.redirect(301, pathname.slice(0, -1) + query);
-      return;
-    }
-    next();
-  });
-}
-
 export function registerContentRoutes(app: Express): void {
   /** Bare /report has no content without query params; redirect to avoid Soft 404 */
   app.get("/report", (req: Request, res: Response, next) => {
@@ -42,7 +29,7 @@ export function registerContentRoutes(app: Express): void {
     next();
   });
 
-  app.get("/blog", (_req: Request, res: Response) => {
+  app.get(["/blog", "/blog/"], (_req: Request, res: Response) => {
     res.type("html").send(renderBlogListing());
   });
 
@@ -55,7 +42,7 @@ export function registerContentRoutes(app: Express): void {
     res.type("html").send(html);
   });
 
-  app.get("/glossary", (_req: Request, res: Response) => {
+  app.get(["/glossary", "/glossary/"], (_req: Request, res: Response) => {
     res.type("html").send(renderGlossaryIndex());
   });
 
