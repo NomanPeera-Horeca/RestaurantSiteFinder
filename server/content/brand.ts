@@ -17,7 +17,7 @@ export const HORECA = {
   },
   social: {
     facebook: "https://www.facebook.com/horecastoreamerica",
-    linkedin: "https://www.linkedin.com/company/horeca-store",
+    linkedin: "https://www.linkedin.com/company/horecastoreamerica",
   },
 } as const;
 
