@@ -5,6 +5,8 @@ export interface BlogFaq {
 
 export interface BlogFrontmatter {
   title: string;
+  /** Optional SEO title tag; defaults to `title` when omitted */
+  metaTitle?: string;
   slug: string;
   metaDescription: string;
   date: string;

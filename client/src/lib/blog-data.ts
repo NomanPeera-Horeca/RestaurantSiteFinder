@@ -19,7 +19,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "restaurant-location-strategies-maximum-profit",
-    title: "Should I Open a Restaurant Here? Location Strategy Guide",
+    title: "Restaurant Location Strategies for Maximum Profit",
     excerpt: "Balance urban versus suburban trade-offs, anchor tenants, rent versus visibility, and feasibility math to position your restaurant for maximum profit.",
     date: "2026-06-05",
     category: "Site Selection",

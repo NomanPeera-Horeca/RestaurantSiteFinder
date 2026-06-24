@@ -166,11 +166,12 @@ export function renderBlogArticle(slug: string): string | null {
       ${toolCtaBlock()}
     </article>`;
 
-  const title =
-    fm.title.length > 52 ? `${fm.title.slice(0, 49)}...` : fm.title;
+  const seoTitle = fm.metaTitle ?? fm.title;
+  const pageTitle =
+    seoTitle.length > 52 ? `${seoTitle.slice(0, 49)}...` : seoTitle;
   return renderPage(
     {
-      title: `${title} | Restaurant Site Finder`,
+      title: `${pageTitle} | Restaurant Site Finder`,
       description: fm.metaDescription,
       canonical: url,
       ogType: "article",

@@ -8,6 +8,7 @@ import { markdownToHtml, estimateReadTimeMinutes } from "./markdown";
 function parseFrontmatter(data: Record<string, unknown>): BlogFrontmatter {
   return {
     title: String(data.title ?? ""),
+    metaTitle: data.metaTitle ? String(data.metaTitle) : undefined,
     slug: String(data.slug ?? ""),
     metaDescription: String(data.metaDescription ?? ""),
     date: String(data.date ?? ""),
