@@ -1,9 +1,10 @@
 ---
-title: "Trade Area Analysis for Restaurant Success"
+title: "Understanding Trade Area Analysis for Restaurants"
+metaTitle: "Trade Area Analysis for Restaurant Success"
 slug: trade-area-analysis-restaurants
 metaDescription: "Master trade area analysis for restaurants to optimize site selection and attract the right customers. Discover key strategies for successful restaurant location planning and market research."
 date: "2026-06-03"
-lastModified: "2026-06-03"
+lastModified: "2026-06-24"
 author: "Horeca Store"
 category: "Site Selection"
 tags:

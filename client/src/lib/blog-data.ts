@@ -35,7 +35,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "trade-area-analysis-restaurants",
-    title: "Trade Area Analysis for Restaurant Success",
+    title: "Understanding Trade Area Analysis for Restaurants",
     excerpt: "Map your restaurant trade area with primary, secondary, and tertiary zones—and learn why circles lie but drive-time polygons tell the truth.",
     date: "2026-06-03",
     category: "Site Selection",
