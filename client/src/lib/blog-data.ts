@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-find-right-location-restaurant",
+    title: "How to Find the Right Location for Your Restaurant",
+    excerpt: "Learn how to find the right restaurant location with demographic research, trade area analysis, visibility checks, kitchen infrastructure review, and rent math before you sign a lease.",
+    date: "2026-06-25",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-site-finder-free-ai-location-tool",
     title: "Restaurant Site Finder: Free AI Restaurant Location Analysis Tool",
     excerpt: "Learn how free AI restaurant location analysis maps demographics, foot traffic, competition, and daypart demand so you can choose a profitable site before signing a lease.",
