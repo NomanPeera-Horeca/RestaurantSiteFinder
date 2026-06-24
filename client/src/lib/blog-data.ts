@@ -11,7 +11,7 @@ export interface BlogArticle {
 export const blogArticles: BlogArticle[] = [
   {
     slug: "go-no-go-restaurant-location-decision",
-    title: "Mastering Go/No-Go Restaurant Location Decision",
+    title: "Choosing the Perfect Go No Go Location",
     excerpt: "Use a formal Go/No-Go framework, site scoring matrix, and non-negotiable criteria to decide whether a location fits your concept before you sign.",
     date: "2026-06-06",
     category: "Site Selection",

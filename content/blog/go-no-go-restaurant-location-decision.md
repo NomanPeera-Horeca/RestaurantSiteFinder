@@ -1,9 +1,10 @@
 ---
-title: "Mastering Go/No-Go Restaurant Location Decision"
+title: "Choosing the Perfect Go No Go Location"
+metaTitle: "Mastering Go/No-Go Restaurant Location Decision"
 slug: go-no-go-restaurant-location-decision
 metaDescription: "Make informed Go/No-Go restaurant location decisions with our data-driven guide. Learn key factors, site analysis tips, and criteria for success."
 date: "2026-06-06"
-lastModified: "2026-06-06"
+lastModified: "2026-06-24"
 author: "Horeca Store"
 category: "Site Selection"
 tags:
