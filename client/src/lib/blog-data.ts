@@ -43,7 +43,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "choosing-perfect-spot-restaurants",
-    title: "Mastering Restaurant Location Analysis: Site Selection Insights",
+    title: "Choosing the Perfect Spot for Restaurants",
     excerpt: "Learn how to evaluate visibility, traffic quality, demographics, competition, and rent before signing a restaurant lease.",
     date: "2026-06-02",
     category: "Site Selection",

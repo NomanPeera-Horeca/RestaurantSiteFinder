@@ -1,9 +1,10 @@
 ---
-title: "Mastering Restaurant Location Analysis: Site Selection Insights"
+title: "Choosing the Perfect Spot for Restaurants"
+metaTitle: "Mastering Restaurant Location Analysis: Site Selection Insights"
 slug: choosing-perfect-spot-restaurants
 metaDescription: "Master the art of restaurant location analysis and market analysis to secure the perfect spot. Learn strategic site selection, geographic analysis, and more."
 date: "2026-06-02"
-lastModified: "2026-06-02"
+lastModified: "2026-06-24"
 author: "Horeca Store"
 category: "Site Selection"
 tags:
