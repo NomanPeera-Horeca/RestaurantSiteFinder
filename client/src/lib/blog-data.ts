@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "choosing-best-location-restaurants",
+    title: "Choosing the Best Location for Restaurants",
+    excerpt: "Learn how a restaurant location analysis tool uses demographics, foot traffic, competitor mapping, and catchment zones to help you choose the best site for your culinary venture.",
+    date: "2026-06-28",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-select-location-start-new-restaurant",
     title: "How to select a location if I want to start a new restaurant",
     excerpt: "Learn how to select a restaurant location when starting a new eatery—covering demographics, foot traffic, competition, infrastructure, and rent-to-revenue math before you sign a lease.",
