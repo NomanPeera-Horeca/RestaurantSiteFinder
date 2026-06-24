@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-finder-free-ai-location-tool",
+    title: "Restaurant Site Finder: Free AI Restaurant Location Analysis Tool",
+    excerpt: "Learn how free AI restaurant location analysis maps demographics, foot traffic, competition, and daypart demand so you can choose a profitable site before signing a lease.",
+    date: "2026-06-24",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "go-no-go-restaurant-location-decision",
     title: "Choosing the Perfect Go No Go Location",
     excerpt: "Use a formal Go/No-Go framework, site scoring matrix, and non-negotiable criteria to decide whether a location fits your concept before you sign.",
