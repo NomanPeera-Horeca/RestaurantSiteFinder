@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-select-location-start-new-restaurant",
+    title: "How to select a location if I want to start a new restaurant",
+    excerpt: "Learn how to select a restaurant location when starting a new eatery—covering demographics, foot traffic, competition, infrastructure, and rent-to-revenue math before you sign a lease.",
+    date: "2026-06-27",
+    category: "Site Selection",
+    readTime: "9 min",
+  },
+  {
     slug: "finding-perfect-spot-smart-restaurant-location-strategy",
     title: "Finding the perfect spot: a smart restaurant location strategy",
     excerpt: "A phased smart restaurant location strategy covering demographics, streetscape, competition, logistics, and rent math so you choose a site that matches your concept and budget.",
