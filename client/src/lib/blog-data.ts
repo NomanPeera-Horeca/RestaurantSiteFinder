@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "finding-perfect-spot-smart-restaurant-location-strategy",
+    title: "Finding the perfect spot: a smart restaurant location strategy",
+    excerpt: "A phased smart restaurant location strategy covering demographics, streetscape, competition, logistics, and rent math so you choose a site that matches your concept and budget.",
+    date: "2026-06-26",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "how-to-find-right-location-restaurant",
     title: "How to Find the Right Location for Your Restaurant",
     excerpt: "Learn how to find the right restaurant location with demographic research, trade area analysis, visibility checks, kitchen infrastructure review, and rent math before you sign a lease.",
