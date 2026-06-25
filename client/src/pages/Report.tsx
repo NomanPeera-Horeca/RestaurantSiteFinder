@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/table";
 import type { FullReport, Competitor, WinningConcept, EquipmentBundle, MenuMarketFit, ConceptFit } from "../../../shared/analysis-types";
 import { conceptFromSearchParams } from "@/lib/concept";
+import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
 import { SocialShare } from "@/components/SocialShare";
@@ -618,6 +619,7 @@ export default function Report() {
 
   const fullReport = trpc.analysis.fullReport.useMutation({
     onError: (err) => {
+      captureEvent("full_report_error", { error: err.message.slice(0, 120) });
       toast.error("Failed to generate report. Please try again.");
       console.error(err);
     },
@@ -639,6 +641,11 @@ export default function Report() {
   // Update lead score when report is ready
   useEffect(() => {
     if (fullReport.data && leadId) {
+      captureEvent("full_report_viewed", {
+        recommendation: fullReport.data.recommendation,
+        opportunity_score: fullReport.data.opportunityScore,
+        concept_fit_score: fullReport.data.conceptFit?.fitScore ?? 0,
+      });
       updateScore.mutate({
         leadId,
         opportunityScore: fullReport.data.opportunityScore,

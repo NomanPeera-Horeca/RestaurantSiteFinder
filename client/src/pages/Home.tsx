@@ -5,6 +5,7 @@ import { LeadCaptureModal } from "@/components/LeadCaptureModal";
 import { InitialScanPreview } from "@/components/InitialScanPreview";
 import { trpc } from "@/lib/trpc";
 import { appendConceptToSearchParams, defaultConceptInput, isConceptReady } from "@/lib/concept";
+import { captureEvent } from "@/lib/posthog";
 import type { ConceptInput } from "../../../shared/concept-options";
 import type { InitialScan } from "../../../shared/analysis-types";
 import { HORECA } from "@/lib/horeca-brand";
@@ -30,6 +31,19 @@ export default function Home() {
   const [scanData, setScanData] = useState<InitialScan | null>(null);
   const [concept, setConcept] = useState<ConceptInput>(defaultConceptInput);
   const [locationData, setLocationData] = useState<{ address: string; lat: number; lng: number } | null>(null);
+  const conceptTrackedRef = React.useRef<string>("");
+
+  React.useEffect(() => {
+    if (!isConceptReady(concept)) return;
+    const key = `${concept.serviceModel}:${concept.cuisineConcept}:${concept.priceTier ?? ""}`;
+    if (conceptTrackedRef.current === key) return;
+    conceptTrackedRef.current = key;
+    captureEvent("concept_selected", {
+      service_model: concept.serviceModel,
+      cuisine: concept.cuisineConcept ?? "",
+      price_tier: concept.priceTier ?? "",
+    });
+  }, [concept]);
 
   // Track page view (fire once on mount)
   const trackEvent = trpc.lead.trackEvent.useMutation();
@@ -44,8 +58,15 @@ export default function Home() {
   const initialScan = trpc.analysis.initialScan.useMutation({
     onSuccess: (data) => {
       setScanData(data);
+      captureEvent("initial_scan_completed", {
+        competitor_count: data.competitorCount,
+        direct_competitor_count: data.directCompetitorCount ?? 0,
+        service_model: concept.serviceModel,
+        cuisine: concept.cuisineConcept ?? "",
+      });
     },
     onError: (err) => {
+      captureEvent("initial_scan_failed", { error: err.message.slice(0, 120) });
       toast.error("Failed to scan location. Please try again.");
       console.error(err);
     },
@@ -56,11 +77,19 @@ export default function Home() {
       toast.error("Please select your restaurant concept before analyzing.");
       return;
     }
+    captureEvent("analyze_clicked", {
+      service_model: concept.serviceModel,
+      cuisine: concept.cuisineConcept ?? "",
+    });
     setLocationData({ address, lat, lng });
     initialScan.mutate({ address, lat, lng, concept });
   };
 
   const handleUnlockReport = () => {
+    captureEvent("unlock_report_clicked", {
+      competitor_count: scanData?.competitorCount ?? 0,
+      direct_competitor_count: scanData?.directCompetitorCount ?? 0,
+    });
     setShowLeadModal(true);
   };
 

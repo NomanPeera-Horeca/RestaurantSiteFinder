@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
+import { captureEvent } from "@/lib/posthog";
 import { HORECA } from "@/lib/horeca-brand";
 import { toast } from "sonner";
 import { X, Mail, Phone, Shield, Loader2 } from "lucide-react";
@@ -25,10 +26,12 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
 
   const captureLead = trpc.lead.capture.useMutation({
     onSuccess: (data) => {
+      captureEvent("lead_form_submitted");
       toast.success("Report unlocked! Generating your full analysis...");
       onCaptured(data.leadId);
     },
     onError: (err) => {
+      captureEvent("lead_capture_failed", { error: err.message.slice(0, 120) });
       const message = err.message.includes("Database")
         ? "We couldn't save your contact info, but you can still view your report. Please try again."
         : err.message || "Something went wrong. Please try again.";
