@@ -14,7 +14,16 @@ export function initPostHog(): void {
     capture_pageview: false,
     capture_pageleave: true,
     session_recording: {
-      maskAllInputs: true,
+      maskAllInputs: false,
+      maskInputFn: (text, element) => {
+        const input = element as HTMLInputElement | undefined;
+        const type = input?.type?.toLowerCase() ?? "";
+        const hint = `${input?.name ?? ""} ${input?.id ?? ""} ${input?.autocomplete ?? ""}`.toLowerCase();
+        if (type === "password" || hint.includes("password")) {
+          return "*".repeat(text.length);
+        }
+        return text;
+      },
     },
   });
   initialized = true;
@@ -41,4 +50,20 @@ export function captureEvent(
 export function capturePageview(path: string): void {
   if (!initialized) return;
   posthog.capture("$pageview", { $current_url: window.location.origin + path });
+}
+
+/** Tie anonymous session + events to a lead after they submit email. */
+export function identifyLead(
+  email: string,
+  properties?: { phone?: string; leadId?: number }
+): void {
+  if (!initialized) return;
+  const normalizedEmail = email.trim().toLowerCase();
+  if (!normalizedEmail) return;
+
+  const person: Record<string, string | number> = { email: normalizedEmail };
+  if (properties?.phone?.trim()) person.phone = properties.phone.trim();
+  if (properties?.leadId != null) person.lead_id = properties.leadId;
+
+  posthog.identify(normalizedEmail, person);
 }

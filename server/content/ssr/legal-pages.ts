@@ -50,7 +50,7 @@ export function renderPrivacyPolicy(): string {
     {
       heading: "Cookies & Analytics",
       paragraphs: [
-        "We use cookies and similar technologies for site functionality and analytics (including PostHog product analytics and session replay with input masking). You can control cookies through your browser settings.",
+        "We use cookies and similar technologies for site functionality and analytics (including PostHog product analytics and session replay). Password fields are masked in recordings; other form data such as email and phone may be visible in our analytics tools. You can control cookies through your browser settings.",
       ],
     },
     {

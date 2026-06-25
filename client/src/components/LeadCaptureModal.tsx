@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
-import { captureEvent } from "@/lib/posthog";
+import { captureEvent, identifyLead } from "@/lib/posthog";
 import { HORECA } from "@/lib/horeca-brand";
 import { toast } from "sonner";
 import { X, Mail, Phone, Shield, Loader2 } from "lucide-react";
@@ -26,7 +26,14 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
 
   const captureLead = trpc.lead.capture.useMutation({
     onSuccess: (data) => {
-      captureEvent("lead_form_submitted");
+      const normalizedEmail = email.trim().toLowerCase();
+      const normalizedPhone = phone.trim();
+      identifyLead(normalizedEmail, { phone: normalizedPhone, leadId: data.leadId });
+      captureEvent("lead_form_submitted", {
+        email: normalizedEmail,
+        phone: normalizedPhone,
+        lead_id: data.leadId,
+      });
       toast.success("Report unlocked! Generating your full analysis...");
       onCaptured(data.leadId);
     },
