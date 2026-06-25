@@ -1,5 +1,6 @@
 ---
 title: "How to Choose a Restaurant Location: A Data-Driven Site Selection Guide"
+metaTitle: "How to Choose a Restaurant Location: Site Selection Guide"
 slug: how-to-choose-restaurant-location
 metaDescription: "Learn how to choose a restaurant location using foot traffic, demographics, rent-to-sales ratios, and competition mapping before you sign a lease."
 date: "2026-05-01"
