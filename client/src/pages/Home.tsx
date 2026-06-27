@@ -150,7 +150,7 @@ export default function Home() {
             </p>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Most restaurant owners sign the lease, spend $200,000 on setup, then find out the location was wrong. Run the numbers before you risk everything.
+              Most restaurant owners sign the lease on gut feeling, spend $200,000 on setup, then find out the location was wrong.
             </p>
 
             <AnalysisHeroCard
