@@ -44,6 +44,33 @@ async function startServer() {
   registerContentRoutes(app);
   // SEO routes (sitemap.xml, robots.txt)
   registerSeoRoutes(app);
+
+  // One-time migration endpoint — creates feedback table in TiDB
+  app.get("/api/run-feedback-migration", async (_req, res) => {
+    try {
+      if (!process.env.DATABASE_URL) {
+        return res.json({ ok: false, error: "No DATABASE_URL" });
+      }
+      const mysql = await import("mysql2/promise");
+      const conn = await mysql.createConnection(process.env.DATABASE_URL);
+      await conn.execute(`
+        CREATE TABLE IF NOT EXISTS \`feedback\` (
+          \`id\` int AUTO_INCREMENT NOT NULL,
+          \`category\` enum('bug_report','feature_request','report_is_wrong','missing_my_city','other') NOT NULL,
+          \`message\` text NOT NULL,
+          \`email\` varchar(320),
+          \`page\` varchar(512),
+          \`createdAt\` timestamp NOT NULL DEFAULT (now()),
+          CONSTRAINT \`feedback_id\` PRIMARY KEY(\`id\`)
+        )
+      `);
+      await conn.end();
+      return res.json({ ok: true, message: "feedback table created or already exists" });
+    } catch (err: any) {
+      return res.json({ ok: false, error: err.message });
+    }
+  });
+
   // tRPC API
   app.use(
     "/api/trpc",
