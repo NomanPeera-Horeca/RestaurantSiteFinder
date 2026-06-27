@@ -1,10 +1,16 @@
 import { Link } from "wouter";
-import { MapPin } from "lucide-react";
+import { ChevronDown, MapPin } from "lucide-react";
 import { HORECA } from "@/lib/horeca-brand";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface SiteHeaderProps {
-  active?: "home" | "name-generator";
+  active?: "home" | "name-generator" | "failure-rate";
 }
 
 export function SiteHeader({ active }: SiteHeaderProps) {
@@ -31,21 +37,53 @@ export function SiteHeader({ active }: SiteHeaderProps) {
           <Link
             href="/restaurant-name-generator"
             className={cn(
-              "text-xs sm:text-sm font-medium transition-colors",
+              "text-xs sm:text-sm font-medium transition-colors hidden md:inline",
               active === "name-generator" ? "text-primary" : "text-muted-foreground hover:text-primary"
             )}
           >
             Name Generator
           </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "inline-flex items-center gap-1 text-xs sm:text-sm font-medium transition-colors outline-none",
+                active === "failure-rate" ? "text-primary" : "text-muted-foreground hover:text-primary"
+              )}
+            >
+              Resources
+              <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuItem asChild>
+                <Link
+                  href="/restaurant-failure-rate"
+                  className={cn(active === "failure-rate" && "text-primary font-medium")}
+                >
+                  Restaurant Failure Rate
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/restaurant-name-generator" className="md:hidden">
+                  Name Generator
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="/blog">Guides</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="/glossary">Glossary</a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <a
             href="/blog"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden sm:inline"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:inline"
           >
             Guides
           </a>
           <a
             href="/glossary"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden sm:inline"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:inline"
           >
             Glossary
           </a>

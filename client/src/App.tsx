@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Report from "./pages/Report";
 import NameGenerator from "./pages/NameGenerator";
 import PremiumSuccess from "./pages/PremiumSuccess";
+import RestaurantFailureRate from "./pages/RestaurantFailureRate";
 
 function PostHogPageView() {
   const [location] = useLocation();
@@ -26,6 +27,7 @@ function Router() {
       <Switch>
         <Route path={"/"} component={Home} />
         <Route path={"/restaurant-name-generator"} component={NameGenerator} />
+        <Route path={"/restaurant-failure-rate"} component={RestaurantFailureRate} />
         <Route path={"/premium/success"} component={PremiumSuccess} />
         <Route path={"/report"} component={Report} />
         <Route path={"/404"} component={NotFound} />

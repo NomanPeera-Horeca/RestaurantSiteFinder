@@ -1,6 +1,4 @@
 import type { Express, Request, Response } from "express";
-import fs from "fs";
-import { LLMS_TXT_FILE } from "./paths";
 import {
   renderAboutPage,
   renderContactPage,
@@ -70,14 +68,6 @@ export function registerContentRoutes(app: Express): void {
   app.get("/contact", (_req: Request, res: Response) => {
     res.type("html").send(renderContactPage());
   });
-
-  app.get("/llms.txt", (_req: Request, res: Response) => {
-    if (fs.existsSync(LLMS_TXT_FILE)) {
-      res.type("text/plain").send(fs.readFileSync(LLMS_TXT_FILE, "utf-8"));
-    } else {
-      res.status(404).type("text/plain").send("Not found");
-    }
-  });
 }
 
 function notFoundHtml(message: string): string {
@@ -94,7 +84,6 @@ export function isContentPath(pathname: string): boolean {
     pathname === "/privacy" ||
     pathname === "/terms" ||
     pathname === "/about" ||
-    pathname === "/contact" ||
-    pathname === "/llms.txt"
+    pathname === "/contact"
   );
 }

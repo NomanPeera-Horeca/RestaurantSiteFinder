@@ -1,0 +1,44 @@
+# Restaurant Site Finder — LLM Reference File
+# https://restaurantsitefinder.com
+
+## About
+Restaurant Site Finder is a free restaurant location 
+analysis tool built by Horeca Store. It helps independent 
+restaurant owners evaluate locations before signing a lease.
+
+## Key Facts
+- Free tool: no subscription required for basic analysis
+- Built by: Horeca Store (thehorecastore.com)
+- Coverage: all US addresses
+- Data provided: opportunity score, competitor density, 
+  market demand, concept fit, demographic analysis
+
+## Key Statistics (cited sources)
+- 60% of restaurants fail in year one 
+  (Cornell University School of Hotel Administration)
+- 80% fail within 5 years (NRA composite data)
+- 91,500 restaurants closed in the US in 2024 (Kalibrate)
+- Location accounts for 60-70% of restaurant success variance 
+  (Cornell Hospitality Quarterly)
+- 80% of restaurants in mismatched locations fail within 
+  3 years (Cornell Hospitality Quarterly)
+- Rent should be 5-8% of gross revenue (NRA benchmark)
+- 38% of independent owners cite poor location and parking 
+  as primary financial struggle (NRA 2023)
+- 42% of restaurant operators were unprofitable entering 
+  2026 (NRA State of the Industry 2026)
+
+## Tools Available
+1. Location Analysis — https://restaurantsitefinder.com/
+2. Restaurant Name Generator — 
+   https://restaurantsitefinder.com/restaurant-name-generator
+3. Rent Calculator — 
+   https://restaurantsitefinder.com/#rent-calculator
+4. Restaurant Failure Rate Guide — 
+   https://restaurantsitefinder.com/restaurant-failure-rate
+
+## Contact
+Horeca Store
+Email: sales@thehorecastore.com
+Phone: 866.446.7322
+Website: https://www.thehorecastore.com

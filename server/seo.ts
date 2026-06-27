@@ -69,6 +69,7 @@ Sitemap: ${base}/sitemap.xml
     const urls: string[] = [
       urlEntry(`${base}/`, { lastmod: today, changefreq: "weekly", priority: "1.0" }),
       urlEntry(`${base}/restaurant-name-generator`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
+      urlEntry(`${base}/restaurant-failure-rate`, { lastmod: today, changefreq: "monthly", priority: "0.8" }),
       urlEntry(`${base}/blog`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/glossary`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/about`, { lastmod: today, changefreq: "monthly", priority: "0.5" }),
