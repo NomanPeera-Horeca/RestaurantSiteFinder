@@ -10,6 +10,22 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-choose-a-restaurant-location",
+    title: "How to Choose a Restaurant Location",
+    excerpt: "A practical seven-step framework for how to choose a restaurant location—match your concept to trade-area demand, validate traffic and rent, and score sites before you sign a lease.",
+    date: "2026-06-29",
+    category: "Site Selection",
+    readTime: "8 min",
+  },
+  {
+    slug: "restaurant-failure-rate",
+    title: "Restaurant Failure Rate",
+    excerpt: "Explore restaurant failure rate statistics, the top reasons restaurants close, and how location analysis, rent discipline, and market validation improve your odds of success.",
+    date: "2026-06-29",
+    category: "Site Selection",
+    readTime: "8 min",
+  },
+  {
     slug: "choosing-best-location-restaurants",
     title: "Choosing the Best Location for Restaurants",
     excerpt: "Learn how a restaurant location analysis tool uses demographics, foot traffic, competitor mapping, and catchment zones to help you choose the best site for your culinary venture.",
