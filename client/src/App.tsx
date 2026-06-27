@@ -8,6 +8,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { capturePageview } from "./lib/posthog";
 import Home from "./pages/Home";
 import Report from "./pages/Report";
+import NameGenerator from "./pages/NameGenerator";
+import PremiumSuccess from "./pages/PremiumSuccess";
 
 function PostHogPageView() {
   const [location] = useLocation();
@@ -23,6 +25,8 @@ function Router() {
       <PostHogPageView />
       <Switch>
         <Route path={"/"} component={Home} />
+        <Route path={"/name-generator"} component={NameGenerator} />
+        <Route path={"/premium/success"} component={PremiumSuccess} />
         <Route path={"/report"} component={Report} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />

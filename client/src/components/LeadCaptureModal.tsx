@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
 import { captureEvent, identifyLead } from "@/lib/posthog";
+import { LEAD_EMAIL_KEY } from "@/hooks/usePremium";
 import { HORECA } from "@/lib/horeca-brand";
 import { toast } from "sonner";
 import { X, Mail, Phone, Shield, Loader2 } from "lucide-react";
@@ -28,6 +29,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
     onSuccess: (data) => {
       const normalizedEmail = email.trim().toLowerCase();
       const normalizedPhone = phone.trim();
+      localStorage.setItem(LEAD_EMAIL_KEY, normalizedEmail);
       identifyLead(normalizedEmail, { phone: normalizedPhone, leadId: data.leadId });
       captureEvent("lead_form_submitted", {
         email: normalizedEmail,

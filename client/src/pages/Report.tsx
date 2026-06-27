@@ -26,6 +26,12 @@ import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
 import { SocialShare } from "@/components/SocialShare";
+import {
+  PremiumFootTrafficSection,
+  PremiumLeaseRiskSection,
+  PremiumReportActions,
+} from "@/components/PremiumReportSections";
+import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
 
 function priceLevelLabel(level: number | null): string {
   if (level === null || level === undefined) return "N/A";
@@ -464,9 +470,7 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
             </div>
             <div>
               <CardTitle className="text-lg">
-                <a href={HORECA.website} target="_blank" rel="noopener" className="hover:text-primary transition-colors">
-                  Horeca Store
-                </a>{" "}Equipment Checklist
+                Your Equipment Checklist — Powered by Horeca Store
               </CardTitle>
               <p className="text-sm text-muted-foreground">Equipment matched to your winning concepts. Shop at{" "}
                 <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">www.thehorecastore.com</a>
@@ -528,6 +532,26 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
             </div>
           </div>
         ))}
+
+        <div className="rounded-xl border border-border/50 bg-card p-6 space-y-4">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Horeca Store supplies hood systems, fryers, refrigeration, and full kitchen packages. Financing from $99/month.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a href={`mailto:${HORECA.email}`} className="flex-1">
+              <Button className="w-full rounded-lg font-semibold">
+                Talk to an Equipment Specialist
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+            <a href={HORECA.website} target="_blank" rel="noopener" className="flex-1">
+              <Button variant="outline" className="w-full rounded-lg font-semibold">
+                Browse Equipment
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+          </div>
+        </div>
 
         {/* Horeca Store Mid-Report CTA */}
         <div className="rounded-xl border-2 border-primary/30 bg-primary/5 p-6">
@@ -804,7 +828,8 @@ export default function Report() {
                   {recommendationBadge(report.recommendation)}
                 </>
               )}
-{/* PDF Download button hidden - feature coming soon */}
+              <PremiumPdfDownloadButton report={report} />
+              <PremiumReportActions />
             </div>
           </div>
         </div>
@@ -836,6 +861,8 @@ export default function Report() {
           <CompetitorTable competitors={report.competitors} />
         )}
         <MarketLogicSection report={report} />
+        <PremiumFootTrafficSection />
+        <PremiumLeaseRiskSection />
         <ConceptsSection
           concepts={report.concepts}
           score={report.opportunityScore}
@@ -850,7 +877,7 @@ export default function Report() {
             <SocialShare
               url="https://restaurantsitefinder.com"
               title={`Restaurant Location Analysis for ${report.address}`}
-              text={`I just analyzed a restaurant location and got a ${report.opportunityScore}/10 opportunity score. Check out this free tool by Horeca Store!`}
+              description={`I just analyzed a restaurant location and got a ${report.opportunityScore}/10 opportunity score. Check out this free tool by Horeca Store!`}
             />
           </CardContent>
         </Card>

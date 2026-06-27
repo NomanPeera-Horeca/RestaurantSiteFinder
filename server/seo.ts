@@ -64,6 +64,7 @@ Sitemap: ${base}/sitemap.xml
     // Omit /report — it requires query params; bare /report duplicates home and triggers Soft 404 in GSC.
     const urls: string[] = [
       urlEntry(`${base}/`, { lastmod: today, changefreq: "weekly", priority: "1.0" }),
+      urlEntry(`${base}/name-generator`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/blog`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/glossary`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/about`, { lastmod: today, changefreq: "monthly", priority: "0.5" }),

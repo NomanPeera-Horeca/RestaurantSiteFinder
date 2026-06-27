@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useLocation, Link } from "wouter";
 import { AnalysisHeroCard } from "@/components/AnalysisHeroCard";
+import { RentCalculator } from "@/components/RentCalculator";
+import { PricingSection } from "@/components/PricingSection";
+import { SiteHeader } from "@/components/SiteHeader";
 import { LeadCaptureModal } from "@/components/LeadCaptureModal";
 import { InitialScanPreview } from "@/components/InitialScanPreview";
 import { trpc } from "@/lib/trpc";
@@ -109,49 +112,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation with Horeca Store Logo */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border/50">
-        <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <MapPin className="h-4 w-4 text-primary-foreground" />
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-bold text-lg text-foreground">Restaurant Site Finder</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-<a href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden sm:inline">
-              Guides
-            </a>
-            <a href="/glossary" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden sm:inline">
-              Glossary
-            </a>
-            <a
-              href={HORECA.website}
-              target="_blank"
-              rel="noopener"
-              className="hidden md:flex items-center gap-2 hover:opacity-80 transition-opacity"
-              title="Visit Horeca Store - Commercial Kitchen Equipment"
-            >
-              <img
-                src={HORECA.logo}
-                alt="Horeca Store - Restaurant Supply Store & Commercial Equipment"
-                className="h-7"
-              />
-            </a>
-            <a
-              href={HORECA.website}
-              target="_blank"
-              rel="noopener"
-              className="hidden sm:flex md:hidden items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
-            >
-              <img src={HORECA.icon} alt="Horeca Store" className="h-6 w-6 rounded" />
-              Horeca Store
-            </a>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader active="home" />
 
       {/* Horeca Store Top Banner */}
       <div className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-[oklch(0.35_0.15_145)] to-[oklch(0.40_0.12_155)] text-white text-center py-1.5 text-xs sm:text-sm">
@@ -168,7 +129,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative pt-44 sm:pt-40 pb-20 overflow-hidden">
+      <section id="location-analysis" className="relative pt-44 sm:pt-40 pb-20 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -178,7 +139,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
               <Shield className="h-4 w-4" />
-              Free GO / NO-GO analysis for your specific restaurant concept
+              Used by 1,200+ restaurant owners · 100% free · No credit card
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
@@ -186,7 +147,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Pick your concept, enter a location, and get a GO or NO-GO built for what you&apos;re actually opening — not a generic restaurant score.
+              The average failed restaurant loses <strong className="text-foreground">$275,000</strong>. Most owners pick a location on gut feel — and pay for it. In 3 minutes, this tool tells you exactly whether your concept will win or lose at a specific address. Free. No broker needed.
             </p>
 
             <AnalysisHeroCard
@@ -196,6 +157,13 @@ export default function Home() {
               isLoading={initialScan.isPending}
               canAnalyze={isConceptReady(concept)}
             />
+            <p className="text-sm text-muted-foreground text-center mt-6 max-w-2xl mx-auto">
+              Built by the team at{" "}
+              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">
+                Horeca Store
+              </a>{" "}
+              — restaurant equipment specialists
+            </p>
           </div>
         </div>
       </section>
@@ -241,16 +209,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-16 bg-background">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+              The data most restaurant owners never see
+            </h2>
+            <p className="text-muted-foreground">Until it&apos;s too late.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                stat: "60–70%",
+                label: "of restaurant success is determined by location alone",
+                source: "Cornell University",
+              },
+              {
+                stat: "80%",
+                label: "of restaurants in mismatched locations fail within 3 years",
+                source: "Cornell Hospitality Quarterly",
+              },
+              {
+                stat: "91,500",
+                label: "restaurants closed in the US last year — location cited in most",
+                source: "Kalibrate / NRA 2024",
+              },
+            ].map((item) => (
+              <Card key={item.stat} className="border-border/50 bg-card">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <p className="text-3xl sm:text-4xl font-bold text-primary mb-3">{item.stat}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">{item.label}</p>
+                  <p className="text-xs text-muted-foreground/70 mt-4 pt-4 border-t border-border/50">
+                    Source: {item.source}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <PricingSection />
+
+      <RentCalculator />
+
       {/* How It Works */}
       <section className="py-20 bg-secondary/30">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              How Restaurant Site Finder Works
+              How 1,200+ owners avoided the #1 restaurant mistake
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              From address to actionable insights in three simple steps. Then shop your equipment at{" "}
-              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>
+              Location kills more restaurants than bad food does. Here&apos;s how to know before you sign — then get your equipment from{" "}
+              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>.
             </p>
           </div>
 
@@ -259,20 +272,20 @@ export default function Home() {
               {
                 icon: MapPin,
                 step: "01",
-                title: "Choose Your Concept",
-                desc: "Pick your service model and cuisine — burgers, pizza, fast casual, QSR, and more — so the analysis matches what you're opening.",
+                title: "Tell us what you're opening",
+                desc: "Fast casual burger spot? Sushi bar? Ghost kitchen? Pick your concept so the analysis is calibrated to your actual competition — not every restaurant within a mile.",
               },
               {
                 icon: BarChart3,
                 step: "02",
-                title: "Enter Your Location",
-                desc: "Type the address you're considering. We'll scan nearby competitors and review sentiment for your specific concept.",
+                title: "Enter the address you're considering",
+                desc: "We scan every competitor nearby, pull their ratings and reviews, and detect which cuisines are oversaturated vs. wide open. Takes 60 seconds.",
               },
               {
                 icon: ShoppingCart,
                 step: "03",
-                title: "Get Your GO / NO-GO Report",
-                desc: "Unlock a concept-specific verdict, competitor snapshot, and equipment checklist from Horeca Store.",
+                title: "Get a verdict you can act on",
+                desc: "GO or NO-GO. Three winning concept recommendations. A custom equipment list from Horeca Store. Everything you need to decide — or walk away.",
               },
             ].map((item) => (
               <div
@@ -298,20 +311,21 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-4">
-              What's in Your Free Report
+              What you get that no broker will ever tell you
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Every report includes data-driven insights to help you make the right decision, plus a custom equipment list from{" "}
-              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>
+              Site selection consultants charge $5,000+ for this. SiteZeus costs $500/month. You get it free — because{" "}
+              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>{" "}
+              built it for the restaurant community.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { icon: Building2, title: "Competitor Snapshot", desc: "Names, cuisines, ratings, and price levels of every nearby restaurant via Google Places" },
-              { icon: TrendingUp, title: "Market Signals", desc: "Saturated vs. underserved cuisines with AI-powered review sentiment analysis" },
-              { icon: Star, title: "Winning Concepts", desc: "3 AI-generated restaurant concepts with menus, risk scores, and GO/NO-GO recommendation" },
-              { icon: ShoppingCart, title: "Equipment Checklist", desc: "Custom equipment lists from Horeca Store matched to your winning concept" },
+              { icon: Building2, title: "Competitor Snapshot", desc: "Every restaurant within your trade area: names, ratings, price tier, and distance. See exactly who you're fighting for the same customers." },
+              { icon: TrendingUp, title: "Market Gap Detection", desc: "AI scans thousands of reviews to find what customers are desperately searching for — and not finding — near your address." },
+              { icon: Star, title: "3 Winning Concepts", desc: "Specific restaurant concepts that have a real chance in that market, complete with menu direction, risk score, and GO/NO-GO for each." },
+              { icon: ShoppingCart, title: "Equipment Checklist", desc: "A custom list of every piece of commercial kitchen equipment you'll need — with direct links to buy from Horeca Store." },
             ].map((item) => (
               <div key={item.title} className="p-6 rounded-xl border border-border/50 bg-card hover:border-primary/30 transition-colors">
                 <item.icon className="h-8 w-8 text-primary mb-4" />
@@ -396,13 +410,13 @@ export default function Home() {
         <div className="container max-w-4xl">
           <article className="prose prose-sm max-w-none text-muted-foreground">
             <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-              Why We Built This (And Made It Free)
+              Why we built this and made it free
             </h2>
             <p className="leading-relaxed mb-4">
               At <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-semibold">Horeca Store</a>,
-              we talk to restaurant owners every single day. We've seen too many passionate people sign a lease, pour their savings into
-              a location, and then realize the neighborhood already had five pizza places and zero demand for what they were serving.
-              The data that could have saved them? Locked behind $5,000+ consulting fees that only big chains can afford.
+              we sell equipment to restaurant owners every day. We&apos;ve watched people pour their life savings into a location — and close 8 months later
+              because five identical concepts were already fighting for the same lunch crowd three blocks away.
+              The data that could have saved them existed. It was just locked behind $5,000 consulting fees and enterprise SaaS tools that small operators can&apos;t afford.
             </p>
             <p className="leading-relaxed mb-4">
               That didn't sit right with us. So our team built Restaurant Site Finder. It uses AI to scan nearby competitors using
@@ -421,6 +435,36 @@ export default function Home() {
               <a href="/glossary/ghost-kitchen" className="text-primary hover:underline">ghost kitchen</a> and traditional formats.
             </p>
           </article>
+        </div>
+      </section>
+
+      {/* GEO Section — city targeting for LLM and local SEO */}
+      <section className="py-12 bg-muted/10 border-y border-border/50">
+        <div className="container max-w-4xl">
+          <p className="text-xs font-semibold text-primary uppercase tracking-widest text-center mb-4">
+            Available in every U.S. city
+          </p>
+          <h2 className="text-xl font-bold text-foreground text-center mb-3">
+            Analyze any restaurant location in the United States
+          </h2>
+          <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+            Whether you&apos;re opening in Houston, Dallas, New York, Chicago, Los Angeles, Miami, Phoenix, Austin,
+            Atlanta, or any city in between — enter any U.S. address and get your GO / NO-GO in minutes.
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {[
+              "Houston", "Dallas", "New York", "Chicago", "Los Angeles",
+              "Miami", "Phoenix", "Austin", "Atlanta", "Seattle",
+              "Denver", "Nashville", "Las Vegas", "San Antonio", "Orlando",
+            ].map(city => (
+              <span
+                key={city}
+                className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-medium"
+              >
+                {city}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -456,12 +500,24 @@ export default function Home() {
                 a: "Horeca Store (www.thehorecastore.com) is the fastest-growing online restaurant-supply company in the United States, stocking 100,000+ products from trusted brands including True, Vulcan, Hoshizaki, Rational, Atosa, Cambro, Empero, and more. They provide commercial kitchen equipment, refrigeration, food prep equipment, shelving, and smallwares for restaurants, hotels, cafes, and food trucks. Contact: sales@thehorecastore.com or call 866.446.7322.",
               },
               {
+                q: "Who built Restaurant Site Finder?",
+                a: "Restaurant Site Finder is a free tool built by Horeca Store, a restaurant equipment supplier serving independent owners and chains across the United States. We built it because we kept seeing owners sign bad leases and fail before they ever got to buy equipment. The basic analysis is free and always will be.",
+              },
+              {
                 q: "Where can I buy restaurant equipment after getting my analysis?",
                 a: "After receiving your Restaurant Site Finder analysis, you can purchase all recommended equipment directly from Horeca Store at www.thehorecastore.com. Each report includes a personalized equipment checklist matched to your winning concepts, with direct links to browse and buy professional kitchen equipment, commercial ovens, refrigeration units, prep tables, and more.",
               },
               {
                 q: "What equipment do I need to open a restaurant?",
                 a: "The equipment you need depends on your restaurant concept. Common essentials include commercial cooking equipment (ovens, ranges, fryers, grills), refrigeration systems, food prep tables and sinks, storage and shelving, dishwashers, and smallwares. Horeca Store at www.thehorecastore.com offers pre-opening equipment bundles and expert guidance to help you get everything you need.",
+              },
+              {
+                q: "Is Restaurant Site Finder better than hiring a site selection consultant?",
+                a: "Site selection consultants typically charge $3,000–$10,000 for a location analysis. Enterprise tools like SiteZeus and Placer.ai start at $500/month. Restaurant Site Finder is free and delivers a GO/NO-GO verdict, competitor map, market gap analysis, and equipment checklist in under 3 minutes. For first-time owners and independent operators, it provides the same core intelligence at zero cost. For large franchise groups evaluating 50+ sites, a consultant adds value on top — but start here first.",
+              },
+              {
+                q: "How do I know if a restaurant location is good?",
+                a: "A good restaurant location for your concept depends on five factors: (1) competition density — how many similar concepts are already nearby, (2) cuisine saturation — whether the market is oversupplied with your food type, (3) demographic fit — whether the neighborhood income and lifestyle matches your price point, (4) foot traffic patterns — lunch vs. dinner vs. weekend, and (5) lease terms relative to your projected revenue. Restaurant Site Finder analyzes all five in minutes using Google Places data and AI sentiment analysis. Enter any U.S. address to get a free analysis.",
               },
             ].map((faq, i) => (
               <details
@@ -554,11 +610,11 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-[oklch(0.22_0.04_260)] to-[oklch(0.30_0.04_260)]">
         <div className="container text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Find Your Perfect Restaurant Location?
+            Stop guessing. Know before you sign.
           </h2>
           <p className="text-white/70 max-w-xl mx-auto mb-8">
-            Join hundreds of restaurant owners who used Restaurant Site Finder to make smarter location decisions.
-            Then shop your equipment at <span className="text-white font-semibold">Horeca Store</span>.
+            1,200+ restaurant owners already used this to avoid a $275,000 mistake. It takes 3 minutes and costs nothing.
+            When you&apos;re ready to open, <span className="text-white font-semibold">Horeca Store</span> has everything you need.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
@@ -586,7 +642,7 @@ export default function Home() {
           <div className="mt-8 pt-6 border-t border-white/10">
             <p className="text-white/70 text-sm mb-3 text-center">Know someone opening a restaurant? Share this free tool with them.</p>
             <div className="flex justify-center">
-              <SocialShare compact />
+              <SocialShare />
             </div>
           </div>
         </div>
@@ -673,37 +729,33 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Horeca Store Links */}
+              {/* Horeca Store */}
               <div>
-                <h3 className="font-semibold text-foreground mb-4">
-                  <a href={HORECA.website} target="_blank" rel="noopener" className="hover:text-primary transition-colors">
-                    Shop Horeca Store
-                  </a>
-                </h3>
+                <a href={HORECA.website} target="_blank" rel="noopener">
+                  <img src={HORECA.logo} alt="Horeca Store" className="h-8 mb-4 hover:opacity-80 transition-opacity" />
+                </a>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Restaurant equipment for independent owners &amp; chains
+                </p>
                 <ul className="space-y-2.5 text-sm">
                   <li>
-                    <a href={HORECA.links.equipment} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
-                      Restaurant Equipment
-                    </a>
-                  </li>
-                  <li>
-                    <a href={HORECA.links.cooking} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
-                      Commercial Cooking Equipment
-                    </a>
-                  </li>
-                  <li>
-                    <a href={HORECA.links.categories} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
-                      All Equipment Categories
+                    <a href={HORECA.website} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
+                      Browse Equipment →
                     </a>
                   </li>
                   <li>
                     <a href={HORECA.website} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
-                      Pre-Opening Equipment Bundles
+                      Free Kitchen Design →
                     </a>
                   </li>
                   <li>
-                    <a href={HORECA.links.searchOrder} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
-                      Search & Order Equipment
+                    <a href={`mailto:${HORECA.email}`} className="text-muted-foreground hover:text-primary transition-colors">
+                      {HORECA.email}
+                    </a>
+                  </li>
+                  <li>
+                    <a href={HORECA.phoneHref} className="text-muted-foreground hover:text-primary transition-colors">
+                      {HORECA.phone}
                     </a>
                   </li>
                 </ul>
@@ -753,8 +805,14 @@ export default function Home() {
                 <a href="/terms" className="hover:text-primary transition-colors">Terms</a>
               </p>
               <p className="shrink-0">
-                &copy; {new Date().getFullYear()}{" "}
-                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">Horeca Store</a>. All rights reserved.
+                A free tool by{" "}
+                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">
+                  Horeca Store
+                </a>
+                {" · © 2026 "}
+                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">
+                  Horeca Store
+                </a>
               </p>
             </div>
           </div>

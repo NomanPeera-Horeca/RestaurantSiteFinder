@@ -1,6 +1,16 @@
 import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, leads, reports, type InsertLead, type InsertReport } from "../drizzle/schema";
+import {
+  InsertUser,
+  users,
+  leads,
+  reports,
+  subscriptions,
+  type InsertLead,
+  type InsertReport,
+  type InsertSubscription,
+  type Subscription,
+} from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -150,4 +160,40 @@ export async function getReportByLeadId(leadId: number) {
   if (!db) throw new Error("Database not available");
   const result = await db.select().from(reports).where(eq(reports.leadId, leadId)).limit(1);
   return result[0] ?? null;
+}
+
+// ---- Subscription helpers ----
+
+export async function getSubscriptionByEmail(email: string): Promise<Subscription | null> {
+  const db = await getDb();
+  if (!db) return null;
+  const normalized = email.trim().toLowerCase();
+  const result = await db
+    .select()
+    .from(subscriptions)
+    .where(eq(subscriptions.email, normalized))
+    .orderBy(desc(subscriptions.updatedAt))
+    .limit(1);
+  return result[0] ?? null;
+}
+
+export async function upsertSubscription(data: InsertSubscription): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const normalized = data.email.trim().toLowerCase();
+  const existing = await getSubscriptionByEmail(normalized);
+  if (existing) {
+    await db
+      .update(subscriptions)
+      .set({
+        stripeCustomerId: data.stripeCustomerId ?? existing.stripeCustomerId,
+        stripeSubscriptionId: data.stripeSubscriptionId ?? existing.stripeSubscriptionId,
+        plan: data.plan ?? existing.plan,
+        status: data.status ?? existing.status,
+        currentPeriodEnd: data.currentPeriodEnd ?? existing.currentPeriodEnd,
+      })
+      .where(eq(subscriptions.id, existing.id));
+    return;
+  }
+  await db.insert(subscriptions).values({ ...data, email: normalized });
 }

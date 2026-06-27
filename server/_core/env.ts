@@ -9,4 +9,9 @@ export const ENV = {
   forgeApiKey: process.env.BUILT_IN_FORGE_API_KEY ?? "",
   googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY ?? "",
   openAiApiKey: process.env.OPENAI_API_KEY ?? "",
+  stripeSecretKey: process.env.STRIPE_SECRET_KEY ?? "",
+  stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET ?? "",
+  stripeMonthlyPriceId: process.env.STRIPE_MONTHLY_PRICE_ID ?? "",
+  stripeLifetimePriceId: process.env.STRIPE_LIFETIME_PRICE_ID ?? "",
+  appUrl: process.env.APP_URL ?? "https://restaurantsitefinder.com",
 };
