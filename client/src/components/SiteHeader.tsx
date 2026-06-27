@@ -29,7 +29,7 @@ export function SiteHeader({ active }: SiteHeaderProps) {
         </div>
         <div className="flex items-center gap-3 sm:gap-4">
           <Link
-            href="/name-generator"
+            href="/restaurant-name-generator"
             className={cn(
               "text-xs sm:text-sm font-medium transition-colors",
               active === "name-generator" ? "text-primary" : "text-muted-foreground hover:text-primary"

@@ -107,6 +107,15 @@ function usePageSeo(generatedCity: string, hasResults: boolean) {
     }
     meta.setAttribute("content", description);
 
+    let canonical = document.querySelector('link[rel="canonical"]');
+    const previousCanonical = canonical?.getAttribute("href") ?? "";
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://restaurantsitefinder.com/restaurant-name-generator");
+
     const appScript = document.createElement("script");
     appScript.type = "application/ld+json";
     appScript.setAttribute("data-seo", "name-generator-app");
@@ -118,7 +127,7 @@ function usePageSeo(generatedCity: string, hasResults: boolean) {
         "Free restaurant name generator with domain availability check and tagline suggestions",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      url: "https://restaurantsitefinder.com/name-generator",
+      url: "https://restaurantsitefinder.com/restaurant-name-generator",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     });
 
@@ -141,6 +150,10 @@ function usePageSeo(generatedCity: string, hasResults: boolean) {
     return () => {
       document.title = previousTitle;
       meta?.setAttribute("content", previousDescription);
+      if (canonical) {
+        if (previousCanonical) canonical.setAttribute("href", previousCanonical);
+        else canonical.remove();
+      }
       appScript.remove();
       faqScript.remove();
     };
@@ -565,15 +578,31 @@ export default function NameGenerator() {
                     </a>
                   </CardContent>
                 </Card>
-                <Card className="border-border/50">
+                <Card className="border-primary/30 bg-primary/5 relative overflow-hidden">
                   <CardContent className="p-6 flex flex-col h-full">
-                    <p className="text-sm font-semibold text-foreground mb-2">3. Plan your kitchen</p>
-                    <p className="text-sm text-muted-foreground mb-6 flex-1">
-                      Design your kitchen before you sign the lease
+                    <div className="flex items-center gap-2 mb-3">
+                      <img
+                        src="https://d2xsxph8kpxj0f.cloudfront.net/310519663403284701/HwLz9SBGbDEkubjg5ygWVH/favicon-192_49573d7a.png"
+                        alt="Horeca Store"
+                        className="h-5 w-5 rounded"
+                      />
+                      <span className="text-xs font-medium text-primary uppercase tracking-wide">
+                        Horeca Store
+                      </span>
+                    </div>
+
+                    <p className="text-sm font-semibold text-foreground mb-2">3. Design your kitchen</p>
+                    <p className="text-sm text-muted-foreground mb-2 flex-1">
+                      Free kitchen design service from the restaurant equipment specialists. Know your
+                      layout before you sign the lease.
                     </p>
+                    <p className="text-xs text-muted-foreground mb-6">
+                      Hood systems, fryers, refrigeration — financing from $99/mo
+                    </p>
+
                     <a href={HORECA.website} target="_blank" rel="noopener">
-                      <Button variant="outline" className="w-full rounded-xl">
-                        Free Kitchen Design
+                      <Button className="w-full rounded-xl bg-primary text-primary-foreground hover:bg-primary/90">
+                        Get Free Kitchen Design
                         <ExternalLink className="ml-2 h-4 w-4" />
                       </Button>
                     </a>

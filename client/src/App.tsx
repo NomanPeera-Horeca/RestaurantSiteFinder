@@ -25,7 +25,7 @@ function Router() {
       <PostHogPageView />
       <Switch>
         <Route path={"/"} component={Home} />
-        <Route path={"/name-generator"} component={NameGenerator} />
+        <Route path={"/restaurant-name-generator"} component={NameGenerator} />
         <Route path={"/premium/success"} component={PremiumSuccess} />
         <Route path={"/report"} component={Report} />
         <Route path={"/404"} component={NotFound} />

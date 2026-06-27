@@ -25,6 +25,10 @@ function urlEntry(
 export function registerSeoRoutes(app: Express): void {
   const today = new Date().toISOString().split("T")[0];
 
+  app.get("/name-generator", (_req: Request, res: Response) => {
+    res.redirect(301, "/restaurant-name-generator");
+  });
+
   app.get("/robots.txt", (_req: Request, res: Response) => {
     const base = getBaseUrl();
     res.type("text/plain").send(`User-agent: *
@@ -64,7 +68,7 @@ Sitemap: ${base}/sitemap.xml
     // Omit /report — it requires query params; bare /report duplicates home and triggers Soft 404 in GSC.
     const urls: string[] = [
       urlEntry(`${base}/`, { lastmod: today, changefreq: "weekly", priority: "1.0" }),
-      urlEntry(`${base}/name-generator`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
+      urlEntry(`${base}/restaurant-name-generator`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/blog`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/glossary`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/about`, { lastmod: today, changefreq: "monthly", priority: "0.5" }),
