@@ -147,7 +147,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Enter any US address, pick your concept, and get a full market verdict in 3 minutes. No broker. No gut feel. Just data.
+              Most restaurant owners sign the lease, spend $200,000 setting up, then find out the location was wrong. Enter your address and find out in 3 minutes — before you regret it.
             </p>
 
             <AnalysisHeroCard
