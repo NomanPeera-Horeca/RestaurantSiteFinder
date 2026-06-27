@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { FeedbackWidget } from "@/components/FeedbackWidget";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -58,6 +59,7 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
+          <FeedbackWidget />
           <Toaster richColors position="top-center" />
           <Router />
         </TooltipProvider>
