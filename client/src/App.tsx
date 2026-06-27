@@ -11,6 +11,13 @@ import Report from "./pages/Report";
 import NameGenerator from "./pages/NameGenerator";
 import PremiumSuccess from "./pages/PremiumSuccess";
 import RestaurantFailureRate from "./pages/RestaurantFailureRate";
+import RestaurantRentCalculator from "./pages/RestaurantRentCalculator";
+import RestaurantLocationAnalysis from "./pages/RestaurantLocationAnalysis";
+import HoustonRestaurantLocation from "./pages/cities/HoustonRestaurantLocation";
+import ChicagoRestaurantLocation from "./pages/cities/ChicagoRestaurantLocation";
+import NewYorkRestaurantLocation from "./pages/cities/NewYorkRestaurantLocation";
+import LosAngelesRestaurantLocation from "./pages/cities/LosAngelesRestaurantLocation";
+import DallasRestaurantLocation from "./pages/cities/DallasRestaurantLocation";
 
 function PostHogPageView() {
   const [location] = useLocation();
@@ -28,6 +35,13 @@ function Router() {
         <Route path={"/"} component={Home} />
         <Route path={"/restaurant-name-generator"} component={NameGenerator} />
         <Route path={"/restaurant-failure-rate"} component={RestaurantFailureRate} />
+        <Route path={"/restaurant-rent-calculator"} component={RestaurantRentCalculator} />
+        <Route path={"/restaurant-location-analysis"} component={RestaurantLocationAnalysis} />
+        <Route path={"/restaurant-location-analysis-houston"} component={HoustonRestaurantLocation} />
+        <Route path={"/restaurant-location-analysis-chicago"} component={ChicagoRestaurantLocation} />
+        <Route path={"/restaurant-location-analysis-new-york"} component={NewYorkRestaurantLocation} />
+        <Route path={"/restaurant-location-analysis-los-angeles"} component={LosAngelesRestaurantLocation} />
+        <Route path={"/restaurant-location-analysis-dallas"} component={DallasRestaurantLocation} />
         <Route path={"/premium/success"} component={PremiumSuccess} />
         <Route path={"/report"} component={Report} />
         <Route path={"/404"} component={NotFound} />

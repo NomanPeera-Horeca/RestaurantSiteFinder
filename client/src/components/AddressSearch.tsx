@@ -13,6 +13,8 @@ interface AddressSearchProps {
   isLoading?: boolean;
   canAnalyze?: boolean;
   buttonLabel?: string;
+  prefillAddress?: string;
+  prefillRevision?: number;
 }
 
 function formatAddressLines(description: string): { primary: string; secondary: string } {
@@ -26,7 +28,7 @@ function formatAddressLines(description: string): { primary: string; secondary: 
   };
 }
 
-export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonLabel = "Analyze My Concept" }: AddressSearchProps) {
+export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonLabel = "Analyze My Concept", prefillAddress, prefillRevision = 0 }: AddressSearchProps) {
   const [query, setQuery] = useState("");
   const [predictions, setPredictions] = useState<Prediction[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -70,6 +72,38 @@ export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonL
       console.error("Geocode error:", e);
     }
   }, [trpcUtils]);
+
+  useEffect(() => {
+    if (!prefillAddress) return;
+    let cancelled = false;
+
+    const prefill = async () => {
+      setQuery(prefillAddress);
+      setSelectedAddress("");
+      setSelectedLat(0);
+      setSelectedLng(0);
+      setPredictions([]);
+      setShowDropdown(false);
+
+      try {
+        const results = await trpcUtils.analysis.autocomplete.fetch({ input: prefillAddress });
+        if (cancelled || results.length === 0) return;
+        const result = await trpcUtils.analysis.geocode.fetch({ placeId: results[0].placeId });
+        if (cancelled || !result) return;
+        setSelectedAddress(result.address || results[0].description);
+        setSelectedLat(result.lat);
+        setSelectedLng(result.lng);
+        setQuery(result.address || results[0].description);
+      } catch (e) {
+        console.error("Prefill geocode error:", e);
+      }
+    };
+
+    void prefill();
+    return () => {
+      cancelled = true;
+    };
+  }, [prefillAddress, prefillRevision, trpcUtils]);
 
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
@@ -133,7 +167,7 @@ export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonL
             className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-72 overflow-y-auto rounded-xl border border-border bg-white shadow-2xl ring-1 ring-black/5"
           >
             <div className="border-b border-border/60 bg-muted/40 px-4 py-2 text-xs font-medium text-muted-foreground">
-              {predictions.length} address{predictions.length === 1 ? "" : "es"} found. Select oneselect one
+              {predictions.length} address{predictions.length === 1 ? "" : "es"} found. Select one
             </div>
             {predictions.map((p) => {
               const { primary, secondary } = formatAddressLines(p.description);

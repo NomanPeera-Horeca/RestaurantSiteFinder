@@ -10,6 +10,8 @@ interface AnalysisHeroCardProps {
   onAnalyze: (address: string, lat: number, lng: number) => void;
   isLoading?: boolean;
   canAnalyze?: boolean;
+  prefillAddress?: string;
+  prefillRevision?: number;
 }
 
 export function AnalysisHeroCard({
@@ -18,6 +20,8 @@ export function AnalysisHeroCard({
   onAnalyze,
   isLoading,
   canAnalyze = true,
+  prefillAddress,
+  prefillRevision,
 }: AnalysisHeroCardProps) {
   return (
     <div className="relative mx-auto w-full max-w-3xl text-left">
@@ -50,6 +54,8 @@ export function AnalysisHeroCard({
                 onAnalyze={onAnalyze}
                 isLoading={isLoading}
                 canAnalyze={canAnalyze}
+                prefillAddress={prefillAddress}
+                prefillRevision={prefillRevision}
               />
               <p
                 className={cn(

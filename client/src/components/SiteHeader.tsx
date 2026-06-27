@@ -9,8 +9,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import { ALL_CITY_CONFIGS } from "@/pages/cities/city-configs";
+
 interface SiteHeaderProps {
-  active?: "home" | "name-generator" | "failure-rate";
+  active?: "home" | "name-generator" | "failure-rate" | "rent-calculator" | "location-analysis";
 }
 
 export function SiteHeader({ active }: SiteHeaderProps) {
@@ -35,6 +37,15 @@ export function SiteHeader({ active }: SiteHeaderProps) {
         </div>
         <div className="flex items-center gap-3 sm:gap-4">
           <Link
+            href="/restaurant-location-analysis"
+            className={cn(
+              "text-xs sm:text-sm font-medium transition-colors hidden md:inline",
+              active === "location-analysis" ? "text-primary" : "text-muted-foreground hover:text-primary"
+            )}
+          >
+            Location Analysis
+          </Link>
+          <Link
             href="/restaurant-name-generator"
             className={cn(
               "text-xs sm:text-sm font-medium transition-colors hidden md:inline",
@@ -43,6 +54,58 @@ export function SiteHeader({ active }: SiteHeaderProps) {
           >
             Name Generator
           </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "inline-flex items-center gap-1 text-xs sm:text-sm font-medium transition-colors outline-none hidden md:inline-flex",
+                active === "location-analysis" ? "text-primary" : "text-muted-foreground hover:text-primary"
+              )}
+            >
+              Analyze by City
+              <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuItem asChild>
+                <Link href="/restaurant-location-analysis">All US Locations</Link>
+              </DropdownMenuItem>
+              {ALL_CITY_CONFIGS.map(city => (
+                <DropdownMenuItem key={city.slug} asChild>
+                  <Link href={city.route}>{city.posthogCity}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              className={cn(
+                "inline-flex items-center gap-1 text-xs sm:text-sm font-medium transition-colors outline-none",
+                active === "rent-calculator" ? "text-primary" : "text-muted-foreground hover:text-primary"
+              )}
+            >
+              Tools
+              <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuItem asChild>
+                <Link
+                  href="/restaurant-rent-calculator"
+                  className={cn(active === "rent-calculator" && "text-primary font-medium")}
+                >
+                  Rent Calculator
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/restaurant-location-analysis" className="md:hidden">
+                  Location Analysis
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/restaurant-name-generator" className="md:hidden">
+                  Name Generator
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(
