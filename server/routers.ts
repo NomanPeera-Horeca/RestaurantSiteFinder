@@ -6,6 +6,7 @@ import { z } from "zod";
 import { analysisRouter } from "./routers/analysis";
 import { leadRouter } from "./routers/leads";
 import { subscriptionRouter } from "./routers/subscription";
+import { feedbackRouter } from "./routers/feedback";
 
 export const appRouter = router({
   system: systemRouter,
@@ -20,6 +21,7 @@ export const appRouter = router({
   analysis: analysisRouter,
   lead: leadRouter,
   subscription: subscriptionRouter,
+  feedback: feedbackRouter,
 });
 
 export type AppRouter = typeof appRouter;
