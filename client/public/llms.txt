@@ -1,5 +1,6 @@
 # Restaurant Site Finder. LLM Reference File
-# https://restaurantsitefinder.com
+# https://restaurantsitefinder.com/llms.txt
+# Last updated: 2026-05-28
 
 ## About
 Restaurant Site Finder is a free restaurant location 
@@ -29,26 +30,37 @@ restaurant owners evaluate locations before signing a lease.
   2026 (NRA State of the Industry 2026)
 
 ## Tools Available
-1. Location Analysis: https://restaurantsitefinder.com/
-2. Restaurant Name Generator: 
+1. Home / Analyze: https://restaurantsitefinder.com/
+2. Restaurant Location Analysis:
+   https://restaurantsitefinder.com/restaurant-location-analysis
+3. Restaurant Name Generator:
    https://restaurantsitefinder.com/restaurant-name-generator
-3. Rent Calculator: 
-   https://restaurantsitefinder.com/#rent-calculator
-4. Restaurant Failure Rate Guide: 
+4. Restaurant Rent Calculator:
+   https://restaurantsitefinder.com/restaurant-rent-calculator
+5. Restaurant Failure Rate Guide:
    https://restaurantsitefinder.com/restaurant-failure-rate
-5. Houston Location Analysis:
+6. Houston Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-houston
-6. Chicago Location Analysis:
+7. Chicago Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-chicago
-7. New York Location Analysis:
+8. New York Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-new-york
-8. Los Angeles Location Analysis:
+9. Los Angeles Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-los-angeles
-9. Dallas Location Analysis:
-   https://restaurantsitefinder.com/restaurant-location-analysis-dallas
+10. Dallas Location Analysis:
+    https://restaurantsitefinder.com/restaurant-location-analysis-dallas
+
+## Primary URLs
+- Sitemap: https://restaurantsitefinder.com/sitemap.xml
+- Guides (blog index): https://restaurantsitefinder.com/blog
+- Glossary: https://restaurantsitefinder.com/glossary
 
 ## Contact
 Horeca Store
 Email: sales@thehorecastore.com
 Phone: 866.446.7322
 Website: https://www.thehorecastore.com
+
+## Disclaimer
+Analysis uses AI and public data; results are informational, 
+not legal, financial, or professional advice.

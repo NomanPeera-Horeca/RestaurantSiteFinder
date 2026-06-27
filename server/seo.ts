@@ -1,6 +1,14 @@
 import type { Express, Request, Response } from "express";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 import { getAllBlogSlugs } from "./content/blog";
 import { getAllGlossarySlugs } from "./content/glossary";
+
+const LLMS_TXT_PATH = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../../client/public/llms.txt"
+);
 
 function getBaseUrl(): string {
   return (process.env.PUBLIC_URL || "https://restaurantsitefinder.com").replace(/\/$/, "");
@@ -27,6 +35,15 @@ export function registerSeoRoutes(app: Express): void {
 
   app.get("/name-generator", (_req: Request, res: Response) => {
     res.redirect(301, "/restaurant-name-generator");
+  });
+
+  app.get("/llms.txt", (_req: Request, res: Response) => {
+    try {
+      res.type("text/plain").send(fs.readFileSync(LLMS_TXT_PATH, "utf8"));
+    } catch (err) {
+      console.error("[llms.txt] Failed to read file:", err);
+      res.status(404).type("text/plain").send("llms.txt not found");
+    }
   });
 
   app.get("/robots.txt", (_req: Request, res: Response) => {
