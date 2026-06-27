@@ -37,7 +37,7 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
               Scan Complete
             </Badge>
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-              Here's What We Found at This Address
+              Here Is What This Location Looks Like for Your Restaurant
             </h3>
             <p className="text-muted-foreground">{data.address}</p>
             {data.conceptLabel && (
@@ -160,13 +160,13 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
                   <Lock className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  Your Full Report Is Ready
+                  Your Location Has Been Analyzed.
                 </h3>
                 <p className="text-muted-foreground text-sm mb-2 max-w-md">
-                  Your GO/NO-GO verdict, opportunity score, winning concepts, and equipment checklist are inside.
+                  Find out if you will make money at this location.
                 </p>
                 <p className="text-muted-foreground text-sm mb-6 max-w-md">
-                  The same intelligence chains pay $200,000 for. Enter your email to see it.
+                  The same intelligence restaurant chains pay $200,000 for. Now available before you sign anything.
                 </p>
                 <Button
                   size="lg"
