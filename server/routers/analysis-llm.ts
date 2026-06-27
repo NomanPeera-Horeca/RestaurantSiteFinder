@@ -162,11 +162,37 @@ ${reviewSample || "No reviews available"}
 
 RULES:
 - For each winning concept, include menuMarketFit with demographic demand analysis.
-- Underserved cuisine does NOT equal demand.
-${specific ? `- conceptFit is REQUIRED: score the USER'S specific concept first. opportunityScore/recommendation should reflect overall location; conceptFit.fitScore/recommendation is for THEIR concept only.
-- If conceptFit is NO-GO or CAUTION, alternativeConcepts must suggest 2 concepts that fit THIS location better, and alternativeLocationGuidance explains where THEIR original concept might work instead.` : "- Provide exactly 3 winning concepts tailored to market gaps."}
+- Underserved cuisine does NOT equal demand. An underserved cuisine is only an opportunity if there are positive demand signals (search volume proxies, population demographics, or complementary businesses nearby).
 
-Be specific, data-driven, and actionable.`;
+COMPETITOR MATCHING RULES (critical):
+- Direct competitors must match the user's SERVICE MODEL and CONCEPT TYPE exactly.
+  - Wings QSR is NOT a direct competitor to a Chicken Fine Dining concept.
+  - Seafood casual is NOT a direct competitor to a Chicken QSR concept.
+  - Match on: (1) primary protein/cuisine, (2) service model (QSR vs casual vs fine dining), (3) price tier.
+  - If no true direct competitors exist, return directCompetitors as an empty list rather than approximate matches.
+
+REVIEW SENTIMENT RULES (critical):
+- topComplaints and topPraises must ONLY reflect patterns present in the SAMPLE REVIEWS provided above.
+- Do NOT generate generic complaints like "high competition from existing restaurants" or "cultural diversity in cuisine preferences". Those are not review sentiments; they are market observations and belong in marketAnalysis, not review sentiment.
+- If the review sample is thin or absent, return topComplaints and topPraises as short lists with a note that "review data is limited for this area".
+- sentimentPatterns must be patterns observable in actual review text (e.g. "Customers praise fast service and mention lunch crowds" or "Multiple reviews note parking difficulty").
+
+ALTERNATIVE CONCEPT RULES (critical):
+- In conceptFit.alternativeConcepts, the whyBetter field must cite a specific data point from the inputs above.
+  - GOOD: "Only 1 Vietnamese restaurant within 5 miles, and 3 existing Thai restaurants show 4.4+ ratings suggesting appetite for Asian cuisine at this location."
+  - BAD: "Growing demand for Vietnamese food" or "Trending cuisine type."
+- Never use phrases like "growing trends", "increasing popularity", or "untapped market" without a specific data reference.
+
+DEMOGRAPHICS AND FOOT TRAFFIC RULES:
+- The demographics and footTraffic fields are AI estimates inferred from competitor mix, price levels, and area type. They are NOT census data or real foot traffic counts.
+- Begin the demographics field with: "AI estimate based on competitor mix: "
+- Begin the footTraffic field with: "AI estimate based on area and competitor activity: "
+
+${specific ? `- conceptFit is REQUIRED: score the USER'S specific concept first. opportunityScore/recommendation should reflect overall location; conceptFit.fitScore/recommendation is for THEIR concept only.
+- If conceptFit is NO-GO or CAUTION, alternativeConcepts must suggest 2 concepts that fit THIS location better, with whyBetter citing specific competitor count or gap data from the inputs above.
+- alternativeLocationGuidance must describe area TYPE or trade area characteristics where this concept would perform better (e.g. "dense office corridors, suburban family neighborhoods") rather than vague advice.` : "- Provide exactly 3 winning concepts tailored to market gaps, each with a specific data-backed reason from the competitor or review inputs."}
+
+Be specific and cite data from the inputs above. Avoid generic conclusions that could apply to any location.`;
 
   const response = await invokeLLM({
     messages: [

@@ -15,7 +15,7 @@ import {
   ExternalLink, Utensils, Target, BarChart3,
   ThumbsUp, ThumbsDown, MessageSquare, Gauge,
   Package, ArrowRight, Download, FileText,
-  Users, TrendingDown, Search, ShieldCheck, RefreshCw
+  Users, TrendingDown, Search, ShieldCheck, RefreshCw, Lock
 } from "lucide-react";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow
@@ -26,11 +26,7 @@ import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
 import { SocialShare } from "@/components/SocialShare";
-import {
-  PremiumFootTrafficSection,
-  PremiumLeaseRiskSection,
-  PremiumReportActions,
-} from "@/components/PremiumReportSections";
+import { PremiumReportActions } from "@/components/PremiumReportSections";
 import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
 
 function priceLevelLabel(level: number | null): string {
@@ -57,7 +53,10 @@ function recommendationBadge(rec: string) {
 
 // ---- Sub-components ----
 
-function CompetitorTable({ competitors, title, subtitle }: { competitors: Competitor[]; title?: string; subtitle?: string }) {
+function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { competitors: Competitor[]; title?: string; subtitle?: string; sortByDistance?: boolean }) {
+  const sorted = sortByDistance
+    ? [...competitors].sort((a, b) => (a.distanceMiles ?? 99) - (b.distanceMiles ?? 99))
+    : competitors;
   return (
     <Card className="border-border/50">
       <CardHeader className="pb-4">
@@ -83,10 +82,11 @@ function CompetitorTable({ competitors, title, subtitle }: { competitors: Compet
                 <TableHead className="font-semibold text-center">Rating</TableHead>
                 <TableHead className="font-semibold text-center">Reviews</TableHead>
                 <TableHead className="font-semibold text-center">Price</TableHead>
+                <TableHead className="font-semibold text-center">Distance</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {competitors.slice(0, 15).map((c) => (
+              {sorted.slice(0, 15).map((c) => (
                 <TableRow key={c.placeId} className="hover:bg-muted/30">
                   <TableCell className="font-medium text-foreground">{c.name}</TableCell>
                   <TableCell>
@@ -100,10 +100,60 @@ function CompetitorTable({ competitors, title, subtitle }: { competitors: Compet
                   </TableCell>
                   <TableCell className="text-center text-muted-foreground">{c.userRatingsTotal}</TableCell>
                   <TableCell className="text-center">{priceLevelLabel(c.priceLevel)}</TableCell>
+                  <TableCell className="text-center text-muted-foreground text-xs">
+                    {c.distanceMiles != null ? `${c.distanceMiles.toFixed(1)} mi` : ""}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function PremiumInsightsSection() {
+  return (
+    <Card className="border-primary/20">
+      <CardHeader className="pb-3">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Lock className="h-5 w-5 text-primary" />
+          </div>
+          <div>
+            <CardTitle className="text-lg">Premium Insights</CardTitle>
+            <p className="text-sm text-muted-foreground">Unlock deeper data to make a confident decision before signing</p>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-5 flex flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <TrendingUp className="h-5 w-5 text-primary" />
+              <p className="font-semibold text-foreground text-sm">Foot Traffic Estimate</p>
+              <Badge variant="secondary" className="text-xs ml-auto">Premium</Badge>
+            </div>
+            <p className="text-sm text-muted-foreground">Peak hours, daily volume estimate, and seasonal patterns for this address based on competitor activity and area type.</p>
+            <div className="h-16 rounded-lg bg-muted/40 flex items-center justify-center">
+              <Lock className="h-4 w-4 text-muted-foreground" />
+            </div>
+          </div>
+          <div className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-5 flex flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <FileText className="h-5 w-5 text-primary" />
+              <p className="font-semibold text-foreground text-sm">Lease Risk Assessment</p>
+              <Badge variant="secondary" className="text-xs ml-auto">Premium</Badge>
+            </div>
+            <p className="text-sm text-muted-foreground">Rent-to-revenue stress test, break-even timeline, and red flags to negotiate before you sign the lease.</p>
+            <div className="h-16 rounded-lg bg-muted/40 flex items-center justify-center">
+              <Lock className="h-4 w-4 text-muted-foreground" />
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 text-center">
+          <p className="text-xs text-muted-foreground">Available with RSF Premium</p>
         </div>
       </CardContent>
     </Card>
@@ -312,12 +362,20 @@ function MarketLogicSection({ report }: { report: FullReport }) {
         {/* Demographics & Foot Traffic */}
         <div className="grid md:grid-cols-2 gap-4">
           <div className="p-4 rounded-lg border border-border/50">
-            <p className="font-medium text-foreground text-sm mb-1">Demographics</p>
+            <div className="flex items-center justify-between mb-1">
+              <p className="font-medium text-foreground text-sm">Demographics</p>
+              <Badge variant="outline" className="text-xs text-muted-foreground border-muted-foreground/30">AI Estimate</Badge>
+            </div>
             <p className="text-sm text-muted-foreground">{marketAnalysis.demographics}</p>
+            <p className="text-xs text-muted-foreground/60 mt-2 italic">Inferred from competitor mix. Not census data.</p>
           </div>
           <div className="p-4 rounded-lg border border-border/50">
-            <p className="font-medium text-foreground text-sm mb-1">Foot Traffic</p>
+            <div className="flex items-center justify-between mb-1">
+              <p className="font-medium text-foreground text-sm">Foot Traffic</p>
+              <Badge variant="outline" className="text-xs text-muted-foreground border-muted-foreground/30">AI Estimate</Badge>
+            </div>
             <p className="text-sm text-muted-foreground">{marketAnalysis.footTraffic}</p>
+            <p className="text-xs text-muted-foreground/60 mt-2 italic">Inferred from area type and competitor activity. Not measured data.</p>
           </div>
         </div>
       </CardContent>
@@ -459,7 +517,7 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
   );
 }
 
-function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
+function EquipmentSection({ bundles, recommendation }: { bundles: EquipmentBundle[]; recommendation?: string }) {
   return (
     <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-background">
       <CardHeader className="pb-4">
@@ -470,7 +528,7 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
             </div>
             <div>
               <CardTitle className="text-lg">
-                Your Equipment Checklist: Powered Powered by Horeca Store
+                Your Equipment Checklist: Powered by Horeca Store
               </CardTitle>
               <p className="text-sm text-muted-foreground">Equipment matched to your winning concepts. Shop at{" "}
                 <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">www.thehorecastore.com</a>
@@ -589,11 +647,14 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
             <img src={HORECA.logo} alt="Horeca Store" className="h-8 mx-auto mb-4 brightness-0 invert opacity-80" />
           </a>
           <h3 className="text-xl font-bold text-white mb-2">
-            Ready to Start Your Restaurant?
+            {recommendation === "NO-GO" || recommendation === "CAUTION"
+              ? "Talk to a Specialist Before You Commit"
+              : "Ready to Set Up Your Kitchen?"}
           </h3>
           <p className="text-white/70 text-sm mb-6 max-w-md mx-auto">
-            Get everything you need from professional kitchen equipment to expert guidance.{" "}
-            <span className="text-white font-semibold">Horeca Store</span> is your partner from site selection to grand opening.
+            {recommendation === "NO-GO" || recommendation === "CAUTION"
+              ? "This location has risks worth understanding before signing. Horeca Store's team works with new restaurant owners on concept fit, equipment planning, and lease strategy."
+              : "Get professional kitchen equipment matched to your concept. Horeca Store is your partner from site selection to grand opening."}
           </p>
           <a
             href={HORECA.links.equipment}
@@ -795,7 +856,9 @@ export default function Report() {
                 {report.conceptFit ? "Concept Fit Report" : "Full Opportunity Report"}
               </Badge>
               <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
-                {report.conceptFit ? "Concept Location Analysis" : "Location Analysis"}
+                {report.conceptFit
+                  ? `${report.conceptFit.recommendation === "GO" ? "This Location Works for Your Concept" : report.conceptFit.recommendation === "NO-GO" ? "This Location Does Not Fit Your Concept" : "Proceed With Caution at This Location"}`
+                  : "Location Opportunity Report"}
               </h1>
               <p className="text-muted-foreground flex items-start gap-1.5 text-sm">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
@@ -805,19 +868,21 @@ export default function Report() {
             <div className="flex flex-wrap items-center gap-3">
               {report.conceptFit ? (
                 <>
-                  <div className="text-left">
-                    <p className="text-xs text-muted-foreground">Your concept</p>
+                  <div className="text-left" title="How well your specific concept fits this location based on direct competition, service model, and market demand">
+                    <p className="text-xs text-muted-foreground">Your concept score</p>
                     <p className={`text-3xl font-bold ${scoreColor(report.conceptFit.fitScore)}`}>
                       {report.conceptFit.fitScore}/10
                     </p>
+                    <p className="text-xs text-muted-foreground italic">concept fit</p>
                   </div>
                   {recommendationBadge(report.conceptFit.recommendation)}
                   <div className="hidden sm:block h-10 w-px bg-border" />
-                  <div className="text-left">
+                  <div className="text-left" title="Overall opportunity score for this location regardless of concept, based on competition density, market gaps, and review signals">
                     <p className="text-xs text-muted-foreground">Location overall</p>
                     <p className={`text-xl font-bold ${scoreColor(report.opportunityScore)}`}>
                       {report.opportunityScore}/10
                     </p>
+                    <p className="text-xs text-muted-foreground italic">location score</p>
                   </div>
                 </>
               ) : (
@@ -831,6 +896,13 @@ export default function Report() {
                   {recommendationBadge(report.recommendation)}
                 </>
               )}
+              <button
+                onClick={() => navigate("/")}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5 border border-border/50 rounded-lg px-3 py-1.5"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                Run Another Analysis
+              </button>
               <PremiumPdfDownloadButton report={report} />
               <PremiumReportActions />
             </div>
@@ -841,6 +913,27 @@ export default function Report() {
       {/* Report Sections */}
       <div className="container max-w-5xl py-8 space-y-8">
         {report.conceptFit && <ConceptFitSection conceptFit={report.conceptFit} />}
+
+        {/* Opportunity Score Summary */}
+        <Card className="border-border/50">
+          <CardContent className="p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="flex items-center gap-3">
+                <Gauge className="h-6 w-6 text-primary shrink-0" />
+                <div>
+                  <p className="font-semibold text-foreground">Location Opportunity Score</p>
+                  <p className="text-xs text-muted-foreground">Based on competition density, market gaps, and demand signals from {report.competitors.length} nearby restaurants</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 sm:ml-auto shrink-0">
+                <span className={`text-4xl font-bold ${scoreColor(report.opportunityScore)}`}>{report.opportunityScore}/10</span>
+                {recommendationBadge(report.recommendation)}
+              </div>
+            </div>
+            <Progress value={report.opportunityScore * 10} className="h-3 mt-4" />
+          </CardContent>
+        </Card>
+
         {report.directCompetitors && report.directCompetitors.length > 0 ? (
           <>
             <CompetitorTable
@@ -850,6 +943,7 @@ export default function Report() {
                 report.directCompetitors.length,
                 report.conceptInput?.serviceModel
               )}
+              sortByDistance
             />
             <CompetitorTable
               competitors={report.competitors}
@@ -858,21 +952,21 @@ export default function Report() {
                 report.competitors.length,
                 report.conceptInput?.serviceModel
               )}
+              sortByDistance
             />
           </>
         ) : (
           <CompetitorTable competitors={report.competitors} />
         )}
         <MarketLogicSection report={report} />
-        <PremiumFootTrafficSection />
-        <PremiumLeaseRiskSection />
+        <PremiumInsightsSection />
         <ConceptsSection
           concepts={report.concepts}
           score={report.opportunityScore}
           recommendation={report.recommendation}
           title={report.conceptFit ? "Additional Winning Concepts for This Market" : undefined}
         />
-        <EquipmentSection bundles={report.equipmentBundles} />
+        <EquipmentSection bundles={report.equipmentBundles} recommendation={report.conceptFit?.recommendation ?? report.recommendation} />
 
         {/* Social Sharing */}
         <Card className="border-primary/20 bg-gradient-to-r from-primary/5 to-background">
@@ -880,7 +974,7 @@ export default function Report() {
             <SocialShare
               url="https://restaurantsitefinder.com"
               title={`Restaurant Location Analysis for ${report.address}`}
-              description={`I just analyzed a restaurant location and got a ${report.opportunityScore}/10 opportunity score. Check out this free tool by Horeca Store!`}
+              description={`I just analyzed a restaurant location and got a ${report.opportunityScore}/10 opportunity score. Restaurant Site Finder by Horeca Store gives you real market data before you sign a lease.`}
             />
           </CardContent>
         </Card>
@@ -925,7 +1019,7 @@ export default function Report() {
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-xs text-muted-foreground text-center md:text-left">
-                Restaurant Site Finder is a free tool provided by{" "}
+                Restaurant Site Finder is provided by{" "}
                 <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>{" "}
                 . {HORECA.tagline}.
               </p>

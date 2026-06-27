@@ -11,6 +11,7 @@ export interface Competitor {
   address: string;
   lat: number;
   lng: number;
+  distanceMiles?: number;
 }
 
 /** Market analysis data */
