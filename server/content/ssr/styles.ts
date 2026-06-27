@@ -156,8 +156,9 @@ main { padding: 2rem 0 4rem; min-height: 60vh; }
 
 /* Footer */
 .site-footer { background: var(--card); border-top: 1px solid var(--border); padding: 3rem 0 2rem; margin-top: 2rem; }
-.footer-grid { display: grid; gap: 2rem; }
-@media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+.footer-grid { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
 .site-footer h3 { font-size: 0.9375rem; margin: 0 0 1rem; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin-bottom: 0.5rem; }

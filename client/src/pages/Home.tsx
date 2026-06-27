@@ -653,9 +653,9 @@ export default function Home() {
         <div className="container">
           <div className="max-w-6xl mx-auto">
             {/* Top section */}
-            <div className="grid md:grid-cols-3 gap-10 mb-10">
-              {/* Brand column */}
-              <div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+              {/* Brand */}
+              <div className="sm:col-span-2 lg:col-span-1">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
                     <MapPin className="h-3.5 w-3.5 text-primary-foreground" />
@@ -663,9 +663,11 @@ export default function Home() {
                   <span className="font-bold text-foreground">Restaurant Site Finder</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  Restaurant Site Finder is a free AI-powered restaurant location analysis tool provided by{" "}
-                  <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">The Horeca Store</a>.
-                  Analyze any location, get competitor insights, and plan your restaurant opening with confidence.
+                  Free AI-powered restaurant location analysis by{" "}
+                  <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">
+                    Horeca Store
+                  </a>
+                  . Analyze any location, get competitor insights, and plan your opening with confidence.
                 </p>
                 <a href={HORECA.website} target="_blank" rel="noopener">
                   <img src={HORECA.logo} alt="Horeca Store" className="h-8 hover:opacity-80 transition-opacity" />
@@ -687,6 +689,11 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
+                    <a href="/how-to-choose-restaurant-location" className="text-muted-foreground hover:text-primary transition-colors">
+                      How to Choose a Location
+                    </a>
+                  </li>
+                  <li>
                     <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                       About
                     </a>
@@ -697,6 +704,40 @@ export default function Home() {
                     </a>
                   </li>
                 </ul>
+              </div>
+
+              {/* Horeca Store */}
+              <div>
+                <h3 className="font-semibold text-foreground mb-4">Horeca Store</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Restaurant equipment for independent owners and chains
+                </p>
+                <ul className="space-y-2.5 text-sm mb-4">
+                  <li>
+                    <a href={HORECA.website} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
+                      Browse Equipment
+                    </a>
+                  </li>
+                  <li>
+                    <a href={HORECA.website} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
+                      Free Kitchen Design
+                    </a>
+                  </li>
+                </ul>
+                <div className="space-y-2.5 text-sm">
+                  <a href={`mailto:${HORECA.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <Mail className="h-4 w-4 shrink-0" />
+                    {HORECA.email}
+                  </a>
+                  <a href={HORECA.phoneHref} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <Phone className="h-4 w-4 shrink-0" />
+                    {HORECA.phone}
+                  </a>
+                  <a href={HORECA.website} target="_blank" rel="noopener" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                    <ExternalLink className="h-4 w-4 shrink-0" />
+                    www.thehorecastore.com
+                  </a>
+                </div>
               </div>
 
               {/* Legal & Social */}
@@ -728,63 +769,6 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
-              {/* Horeca Store */}
-              <div>
-                <a href={HORECA.website} target="_blank" rel="noopener">
-                  <img src={HORECA.logo} alt="Horeca Store" className="h-8 mb-4 hover:opacity-80 transition-opacity" />
-                </a>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                  Restaurant equipment for independent owners &amp; chains
-                </p>
-                <ul className="space-y-2.5 text-sm">
-                  <li>
-                    <a href={HORECA.website} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
-                      Browse Equipment →
-                    </a>
-                  </li>
-                  <li>
-                    <a href={HORECA.website} target="_blank" rel="noopener" className="text-muted-foreground hover:text-primary transition-colors">
-                      Free Kitchen Design →
-                    </a>
-                  </li>
-                  <li>
-                    <a href={`mailto:${HORECA.email}`} className="text-muted-foreground hover:text-primary transition-colors">
-                      {HORECA.email}
-                    </a>
-                  </li>
-                  <li>
-                    <a href={HORECA.phoneHref} className="text-muted-foreground hover:text-primary transition-colors">
-                      {HORECA.phone}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Contact */}
-              <div>
-                <h3 className="font-semibold text-foreground mb-4">Contact Horeca Store</h3>
-                <div className="space-y-3 text-sm">
-                  <a href={`mailto:${HORECA.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                    <Mail className="h-4 w-4" />
-                    {HORECA.email}
-                  </a>
-                  <a href={HORECA.phoneHref} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                    <Phone className="h-4 w-4" />
-                    {HORECA.phone}
-                  </a>
-                  <a href={HORECA.website} target="_blank" rel="noopener" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                    <ExternalLink className="h-4 w-4" />
-                    www.thehorecastore.com
-                  </a>
-                </div>
-                <Separator className="my-4" />
-                <p className="text-xs text-muted-foreground">
-                  Need help choosing equipment?<br />
-                  Call <a href={HORECA.phoneHref} className="text-primary hover:underline font-medium">{HORECA.phone}</a> or email{" "}
-                  <a href={`mailto:${HORECA.email}`} className="text-primary hover:underline font-medium">{HORECA.email}</a>
-                </p>
-              </div>
             </div>
 
             <Separator className="mb-6" />
@@ -797,22 +781,16 @@ export default function Home() {
             {/* Bottom bar */}
             <div className="flex flex-col items-center md:flex-row md:justify-between gap-3 text-xs text-muted-foreground text-center md:text-left">
               <p>
-                Restaurant Site Finder is a free tool provided by{" "}
-                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>.
-                {" "}
+                &copy; 2026{" "}
+                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">
+                  Horeca Store
+                </a>
+                . Restaurant Site Finder is a free tool for restaurant owners.
+              </p>
+              <p className="shrink-0">
                 <a href="/privacy" className="hover:text-primary transition-colors">Privacy</a>
                 {" · "}
                 <a href="/terms" className="hover:text-primary transition-colors">Terms</a>
-              </p>
-              <p className="shrink-0">
-                A free tool by{" "}
-                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">
-                  Horeca Store
-                </a>
-                {" · © 2026 "}
-                <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">
-                  Horeca Store
-                </a>
               </p>
             </div>
           </div>
