@@ -142,9 +142,12 @@ export default function Home() {
               According to Cornell University
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
-              The #1 Reason Restaurants Fail Is Location. Run the Numbers Before You Risk Everything.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-2">
+              The #1 Reason Restaurants Fail Is Location.
             </h1>
+            <p className="text-2xl sm:text-3xl font-semibold text-muted-foreground mb-6">
+              Run the numbers before you risk everything.
+            </p>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
               Most restaurant owners sign the lease, spend $200,000 on setup, then find out the location was wrong. Check yours before that happens.
