@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { Lightbulb } from "lucide-react";
 import {
   CUISINE_PRESETS,
   PRICE_TIERS,
@@ -49,11 +48,10 @@ function Chip({
 }
 
 export function ConceptSelector({ value, onChange, compact }: ConceptSelectorProps) {
-  const isExplore = value.serviceModel === "explore";
-  const showCustomInput = !isExplore && (!value.cuisineConcept || !isPresetCuisine(value.cuisineConcept));
+  const showCustomInput = !value.cuisineConcept || !isPresetCuisine(value.cuisineConcept);
   const presetCuisines = CUISINE_PRESETS.filter(c => c !== "Other");
   const serviceModels = SERVICE_MODELS.filter(m => m.value !== "explore");
-  const showSummary = !compact && !isExplore && value.cuisineConcept.trim();
+  const showSummary = !compact && value.cuisineConcept.trim();
 
   return (
     <div className="space-y-5">
@@ -84,92 +82,60 @@ export function ConceptSelector({ value, onChange, compact }: ConceptSelectorPro
             </Chip>
           ))}
         </div>
-        <Chip
-          selected={isExplore}
-          onClick={() =>
-            onChange({
-              ...value,
-              serviceModel: "explore",
-              mode: "explore",
-              cuisineConcept: "",
-            })
-          }
-          className={cn(
-            "w-full sm:w-auto",
-            isExplore
-              ? "border-dashed"
-              : "border-dashed border-muted-foreground/30 text-muted-foreground hover:text-foreground"
-          )}
-        >
-          Not sure yet: suggest conceptssuggest concepts for me
-        </Chip>
       </div>
 
-      {isExplore ? (
-        <div className="flex gap-3 rounded-xl border border-border/60 bg-muted/40 p-4">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-            <Lightbulb className="h-4 w-4 text-primary" />
-          </div>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            We&apos;ll scan the trade area and suggest three winning concepts tailored to local gaps: no concept required.
-          </p>
+      <div className="space-y-2.5">
+        <p className="text-sm font-semibold text-foreground">Cuisine / concept</p>
+        <div className="flex flex-wrap gap-2">
+          {presetCuisines.map(c => (
+            <Chip
+              key={c}
+              selected={value.cuisineConcept === c}
+              onClick={() => onChange({ ...value, mode: "specific", cuisineConcept: c })}
+            >
+              {c}
+            </Chip>
+          ))}
+          <Chip
+            selected={showCustomInput}
+            onClick={() => onChange({ ...value, mode: "specific", cuisineConcept: "" })}
+          >
+            Other
+          </Chip>
         </div>
-      ) : (
-        <>
-          <div className="space-y-2.5">
-            <p className="text-sm font-semibold text-foreground">Cuisine / concept</p>
-            <div className="flex flex-wrap gap-2">
-              {presetCuisines.map(c => (
-                <Chip
-                  key={c}
-                  selected={value.cuisineConcept === c}
-                  onClick={() => onChange({ ...value, mode: "specific", cuisineConcept: c })}
-                >
-                  {c}
-                </Chip>
-              ))}
-              <Chip
-                selected={showCustomInput}
-                onClick={() => onChange({ ...value, mode: "specific", cuisineConcept: "" })}
-              >
-                Other
-              </Chip>
-            </div>
-            {showCustomInput && (
-              <Input
-                id="custom-concept"
-                placeholder="Describe your concept, e.g.e.g. Smash burgers & shakes, $12–15 check"
-                value={value.cuisineConcept}
-                onChange={e => onChange({ ...value, mode: "specific", cuisineConcept: e.target.value })}
-                className="h-11 rounded-xl border-border/80 bg-white"
-              />
-            )}
-          </div>
+        {showCustomInput && (
+          <Input
+            id="custom-concept"
+            placeholder="e.g. Smash burgers, Korean BBQ, wine bar"
+            value={value.cuisineConcept}
+            onChange={e => onChange({ ...value, mode: "specific", cuisineConcept: e.target.value })}
+            className="h-11 rounded-xl border-border/80 bg-white"
+          />
+        )}
+      </div>
 
-          <div className="space-y-2.5">
-            <p className="text-sm font-semibold text-foreground">
-              Price tier <span className="font-normal text-muted-foreground">(optional)</span>
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <Chip
-                selected={!value.priceTier}
-                onClick={() => onChange({ ...value, priceTier: undefined })}
-              >
-                Skip
-              </Chip>
-              {PRICE_TIERS.map(p => (
-                <Chip
-                  key={p.value}
-                  selected={value.priceTier === p.value}
-                  onClick={() => onChange({ ...value, priceTier: p.value })}
-                >
-                  {p.label}
-                </Chip>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
+      <div className="space-y-2.5">
+        <p className="text-sm font-semibold text-foreground">
+          Price tier <span className="font-normal text-muted-foreground">(optional)</span>
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <Chip
+            selected={!value.priceTier}
+            onClick={() => onChange({ ...value, priceTier: undefined })}
+          >
+            Skip
+          </Chip>
+          {PRICE_TIERS.map(p => (
+            <Chip
+              key={p.value}
+              selected={value.priceTier === p.value}
+              onClick={() => onChange({ ...value, priceTier: p.value })}
+            >
+              {p.label}
+            </Chip>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

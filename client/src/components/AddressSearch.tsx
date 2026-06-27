@@ -28,7 +28,7 @@ function formatAddressLines(description: string): { primary: string; secondary: 
   };
 }
 
-export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonLabel = "Analyze My Concept", prefillAddress, prefillRevision = 0 }: AddressSearchProps) {
+export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonLabel = "Show Me If This Location Wins", prefillAddress, prefillRevision = 0 }: AddressSearchProps) {
   const [query, setQuery] = useState("");
   const [predictions, setPredictions] = useState<Prediction[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -202,7 +202,7 @@ export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonL
         {isLoading ? (
           <>
             <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            Scanning location...
+            Analyzing your location...
           </>
         ) : (
           <>

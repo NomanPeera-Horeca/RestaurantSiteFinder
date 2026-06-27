@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,13 @@ interface InitialScanPreviewProps {
 }
 
 export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) {
+  useEffect(() => {
+    const el = document.getElementById("scan-results");
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
+    }
+  }, []);
+
   return (
     <section className="py-16 bg-background" id="scan-results">
       <div className="container max-w-4xl">
@@ -26,10 +34,10 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
           <div className="text-center mb-10">
             <Badge variant="secondary" className="mb-4 text-sm px-4 py-1.5">
               <TrendingUp className="h-3.5 w-3.5 mr-1.5" />
-              Initial Scan Complete
+              Scan Complete
             </Badge>
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-              Location Snapshot
+              Here's What We Found at This Address
             </h3>
             <p className="text-muted-foreground">{data.address}</p>
             {data.conceptLabel && (
@@ -52,10 +60,8 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-card-foreground">{data.competitorCount}</p>
-                    <p className="text-xs text-muted-foreground">Competitors Nearby</p>
-                    {data.searchRadiusMiles && (
-                      <p className="text-[10px] text-muted-foreground/80">within {data.searchRadiusMiles} mi</p>
-                    )}
+                    <p className="text-xs text-muted-foreground font-medium">Restaurants Nearby</p>
+                    <p className="text-[10px] text-muted-foreground/80">all cuisines, within {data.searchRadiusMiles ?? 5} mi</p>
                   </div>
                 </div>
               </CardContent>
@@ -69,7 +75,8 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-card-foreground">{data.averageRating}</p>
-                    <p className="text-xs text-muted-foreground">Avg. Rating</p>
+                    <p className="text-xs text-muted-foreground font-medium">Avg. Competitor Rating</p>
+                    <p className="text-[10px] text-muted-foreground/80">quality bar in this market</p>
                   </div>
                 </div>
               </CardContent>
@@ -85,10 +92,8 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
                     <p className="text-2xl font-bold text-card-foreground">
                       {data.directCompetitorCount ?? "N/A"}
                     </p>
-                    <p className="text-xs text-muted-foreground">Direct Competitors</p>
-                    {data.searchRadiusMiles && (
-                      <p className="text-[10px] text-muted-foreground/80">within {data.searchRadiusMiles} mi</p>
-                    )}
+                    <p className="text-xs text-muted-foreground font-medium">Same-Concept Rivals</p>
+                    <p className="text-[10px] text-muted-foreground/80">matching your cuisine type</p>
                   </div>
                 </div>
               </CardContent>
@@ -102,7 +107,8 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-card-foreground">{data.topCuisines.length}</p>
-                    <p className="text-xs text-muted-foreground">Cuisine Types</p>
+                    <p className="text-xs text-muted-foreground font-medium">Cuisine Types</p>
+                    <p className="text-[10px] text-muted-foreground/80">competing for same customers</p>
                   </div>
                 </div>
               </CardContent>
@@ -124,10 +130,10 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
           </Card>
 
           {/* Preview Insight */}
-          <Card className="mb-8 border-primary/20 bg-primary/5">
+          <Card className="mb-8 border-primary/30 bg-primary/5">
             <CardContent className="p-6">
-              <p className="text-sm font-medium text-primary mb-1">Quick Insight</p>
-              <p className="text-card-foreground leading-relaxed">{data.previewInsight}</p>
+              <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-2">Your Market Signal</p>
+              <p className="text-lg font-semibold text-card-foreground leading-relaxed">{data.previewInsight}</p>
             </CardContent>
           </Card>
 
@@ -154,23 +160,24 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
                   <Lock className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  Unlock Your Full Opportunity Report
+                  Your Full Report Is Ready
                 </h3>
+                <p className="text-muted-foreground text-sm mb-2 max-w-md">
+                  Your GO/NO-GO verdict, opportunity score, winning concepts, and equipment checklist are inside.
+                </p>
                 <p className="text-muted-foreground text-sm mb-6 max-w-md">
-                  Get the complete competitor analysis, market signals, winning concepts, risk scores, and your personalized{" "}
-                  <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>{" "}
-                  equipment checklist.
+                  The same intelligence chains pay $200,000 for. Enter your email to see it.
                 </p>
                 <Button
                   size="lg"
                   onClick={onUnlock}
                   className="h-12 px-8 rounded-xl text-base font-semibold shadow-lg shadow-primary/25"
                 >
-                  Get My Free Report
+                  See My Results
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
                 <p className="text-xs text-muted-foreground mt-3">
-                  Free forever. powered by{" "}
+                  Powered by{" "}
                   <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">Horeca Store</a>.
                 </p>
               </div>

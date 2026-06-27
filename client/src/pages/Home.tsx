@@ -123,7 +123,7 @@ export default function Home() {
           className="inline-flex items-center gap-2 hover:underline px-4"
         >
           <Package className="h-3.5 w-3.5 shrink-0 hidden sm:block" />
-          <span>A free tool by <strong>Horeca Store</strong>. Browse 100,000+ restaurant equipment products</span>
+          <span>Powered by <strong>Horeca Store</strong>. Browse 100,000+ restaurant equipment products</span>
           <ArrowRight className="h-3.5 w-3.5 shrink-0 hidden sm:block" />
         </a>
       </div>
@@ -137,17 +137,17 @@ export default function Home() {
 
         <div className="relative container">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Shield className="h-4 w-4" />
-              Used by 1,200+ restaurant owners · 100% free · No credit card
+              According to Cornell University, location drives 60-70% of a restaurant's success or failure
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
-              Don't sign that lease until you run the numbers.
+              The #1 Reason Restaurants Fail Is Location. Know Before You Sign.
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              The average failed restaurant loses <strong className="text-foreground">$275,000</strong>. Most owners pick a location on gut feel and pay for it. In 3 minutes, this tool tells you exactly whether your concept will win or lose at a specific address. Free. No broker needed.
+              The average failed restaurant loses <strong className="text-foreground">$275,000</strong>. Most owners pick a location on gut feel and pay for it. In 3 minutes, get the same location intelligence that chains pay $200,000 for: any US address. No broker needed.
             </p>
 
             <AnalysisHeroCard

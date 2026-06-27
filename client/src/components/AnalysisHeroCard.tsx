@@ -34,10 +34,10 @@ export function AnalysisHeroCard({
             </div>
             <div>
               <p className="text-lg font-semibold text-foreground sm:text-xl">
-                Free concept + location analysis
+                Is This Location Right for Your Restaurant?
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Pick what you&apos;re opening, enter an address, and get a GO or NO-GO for that exact concept.
+                Select your concept, enter an address, and get a data-backed verdict for that exact location.
               </p>
             </div>
           </div>
