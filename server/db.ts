@@ -6,9 +6,11 @@ import {
   leads,
   reports,
   subscriptions,
+  feedback,
   type InsertLead,
   type InsertReport,
   type InsertSubscription,
+  type InsertFeedback,
   type Subscription,
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -175,6 +177,21 @@ export async function getSubscriptionByEmail(email: string): Promise<Subscriptio
     .orderBy(desc(subscriptions.updatedAt))
     .limit(1);
   return result[0] ?? null;
+}
+
+// ---- Feedback helpers ----
+
+export async function createFeedback(data: InsertFeedback): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.insert(feedback).values(data);
+}
+
+export async function getRecentFeedback(sinceDate: Date) {
+  const db = await getDb();
+  if (!db) return [];
+  const { gte } = await import("drizzle-orm");
+  return db.select().from(feedback).where(gte(feedback.createdAt, sinceDate)).orderBy(desc(feedback.createdAt));
 }
 
 export async function upsertSubscription(data: InsertSubscription): Promise<void> {
