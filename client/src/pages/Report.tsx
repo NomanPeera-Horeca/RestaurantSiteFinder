@@ -695,7 +695,10 @@ export default function Report() {
             Our AI is analyzing competitors, reviews, and market fit for{" "}
             <span className="font-medium text-foreground">{address}</span>
             {concept && concept.serviceModel !== "explore" && (
-              >: <span className="font-medium text-foreground">{concept.cuisineConcept}</span></>
+              <>
+                {", "}
+                <span className="font-medium text-foreground">{concept.cuisineConcept}</span>
+              </>
             )}
           </p>
           <div className="space-y-3">
