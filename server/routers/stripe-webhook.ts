@@ -2,7 +2,7 @@ import type { Express, Request, Response } from "express";
 import express from "express";
 import { ENV } from "../_core/env";
 import {
-  stripe,
+  getStripe,
   handleCheckoutSessionCompleted,
   handleInvoicePaymentFailed,
   handleSubscriptionDeleted,
@@ -22,7 +22,7 @@ export function registerStripeWebhook(app: Express): void {
 
       let event;
       try {
-        event = stripe.webhooks.constructEvent(req.body, signature, ENV.stripeWebhookSecret);
+        event = getStripe().webhooks.constructEvent(req.body, signature, ENV.stripeWebhookSecret);
       } catch (err) {
         console.error("[Stripe] Webhook signature verification failed:", err);
         res.status(400).send("Invalid signature");

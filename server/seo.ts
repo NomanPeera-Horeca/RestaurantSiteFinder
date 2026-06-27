@@ -5,10 +5,19 @@ import { fileURLToPath } from "url";
 import { getAllBlogSlugs } from "./content/blog";
 import { getAllGlossarySlugs } from "./content/glossary";
 
-const LLMS_TXT_PATH = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../../client/public/llms.txt"
-);
+const LLMS_TXT_PATHS = [
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), "public/llms.txt"),
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../client/public/llms.txt"),
+];
+
+function readLlmsTxt(): string {
+  for (const candidate of LLMS_TXT_PATHS) {
+    if (fs.existsSync(candidate)) {
+      return fs.readFileSync(candidate, "utf8");
+    }
+  }
+  throw new Error("llms.txt not found");
+}
 
 function getBaseUrl(): string {
   return (process.env.PUBLIC_URL || "https://restaurantsitefinder.com").replace(/\/$/, "");
@@ -39,7 +48,7 @@ export function registerSeoRoutes(app: Express): void {
 
   app.get("/llms.txt", (_req: Request, res: Response) => {
     try {
-      res.type("text/plain").send(fs.readFileSync(LLMS_TXT_PATH, "utf8"));
+      res.type("text/plain").send(readLlmsTxt());
     } catch (err) {
       console.error("[llms.txt] Failed to read file:", err);
       res.status(404).type("text/plain").send("llms.txt not found");

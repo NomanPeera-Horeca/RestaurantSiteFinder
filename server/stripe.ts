@@ -3,9 +3,19 @@ import { ENV } from "./_core/env";
 import { getSubscriptionByEmail, upsertSubscription } from "./db";
 import type { Subscription } from "../drizzle/schema";
 
-export const stripe = new Stripe(ENV.stripeSecretKey, {
-  apiVersion: "2026-06-24.dahlia",
-});
+let stripeClient: Stripe | null = null;
+
+export function getStripe(): Stripe {
+  if (!ENV.stripeSecretKey) {
+    throw new Error("STRIPE_SECRET_KEY is not configured");
+  }
+  if (!stripeClient) {
+    stripeClient = new Stripe(ENV.stripeSecretKey, {
+      apiVersion: "2026-06-24.dahlia",
+    });
+  }
+  return stripeClient;
+}
 
 function getSubscriptionPeriodEnd(subscription: Stripe.Subscription): Date | null {
   const periodEnd = subscription.items?.data?.[0]?.current_period_end;
@@ -33,7 +43,7 @@ export async function createCheckoutSession({
   successUrl: string;
   cancelUrl: string;
 }) {
-  return stripe.checkout.sessions.create({
+  return getStripe().checkout.sessions.create({
     customer_email: email.trim().toLowerCase(),
     payment_method_types: ["card"],
     line_items: [{ price: priceId, quantity: 1 }],
@@ -70,7 +80,7 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
     return;
   }
 
-  const lineItems = await stripe.checkout.sessions.listLineItems(session.id, { limit: 1 });
+  const lineItems = await getStripe().checkout.sessions.listLineItems(session.id, { limit: 1 });
   const priceId = lineItems.data[0]?.price?.id ?? "";
   const plan = planFromPriceId(priceId) ?? (session.mode === "payment" ? "premium_lifetime" : "premium_monthly");
 
@@ -81,7 +91,7 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
     typeof session.subscription === "string" ? session.subscription : session.subscription?.id ?? null;
 
   if (stripeSubscriptionId) {
-    const subscription = await stripe.subscriptions.retrieve(stripeSubscriptionId);
+    const subscription = await getStripe().subscriptions.retrieve(stripeSubscriptionId);
     currentPeriodEnd = getSubscriptionPeriodEnd(subscription);
   } else if (session.mode === "payment") {
     currentPeriodEnd = null;
@@ -99,7 +109,7 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
 
 export async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   const customerId = typeof subscription.customer === "string" ? subscription.customer : subscription.customer.id;
-  const customer = await stripe.customers.retrieve(customerId);
+  const customer = await getStripe().customers.retrieve(customerId);
   const email =
     !("deleted" in customer && customer.deleted) && "email" in customer && customer.email
       ? customer.email
@@ -121,7 +131,7 @@ export async function handleSubscriptionUpdated(subscription: Stripe.Subscriptio
 
 export async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   const customerId = typeof subscription.customer === "string" ? subscription.customer : subscription.customer.id;
-  const customer = await stripe.customers.retrieve(customerId);
+  const customer = await getStripe().customers.retrieve(customerId);
   const email =
     !("deleted" in customer && customer.deleted) && "email" in customer && customer.email
       ? customer.email
@@ -142,6 +152,6 @@ export async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
   const subscriptionId = getInvoiceSubscriptionId(invoice);
   if (!subscriptionId) return;
 
-  const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+  const subscription = await getStripe().subscriptions.retrieve(subscriptionId);
   await handleSubscriptionUpdated({ ...subscription, status: "past_due" });
 }

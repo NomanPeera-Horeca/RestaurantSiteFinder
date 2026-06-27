@@ -6,7 +6,7 @@ import {
   createCheckoutSession,
   getSubscriptionByEmail,
   isPremiumSubscription,
-  stripe,
+  getStripe,
 } from "../stripe";
 
 export const subscriptionRouter = router({
@@ -63,7 +63,7 @@ export const subscriptionRouter = router({
       if (!sub?.stripeSubscriptionId) {
         throw new TRPCError({ code: "NOT_FOUND", message: "No subscription found" });
       }
-      await stripe.subscriptions.update(sub.stripeSubscriptionId, {
+      await getStripe().subscriptions.update(sub.stripeSubscriptionId, {
         cancel_at_period_end: true,
       });
       return { success: true as const };
