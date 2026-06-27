@@ -39,18 +39,21 @@ restaurant owners evaluate locations before signing a lease.
    https://restaurantsitefinder.com/restaurant-rent-calculator
 5. Restaurant Failure Rate Guide:
    https://restaurantsitefinder.com/restaurant-failure-rate
-6. Houston Location Analysis:
+6. How to Choose a Restaurant Location:
+   https://restaurantsitefinder.com/how-to-choose-restaurant-location
+7. Houston Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-houston
-7. Chicago Location Analysis:
+8. Chicago Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-chicago
-8. New York Location Analysis:
+9. New York Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-new-york
-9. Los Angeles Location Analysis:
+10. Los Angeles Location Analysis:
    https://restaurantsitefinder.com/restaurant-location-analysis-los-angeles
-10. Dallas Location Analysis:
+11. Dallas Location Analysis:
     https://restaurantsitefinder.com/restaurant-location-analysis-dallas
 
 ## Primary URLs
+- How to Choose a Restaurant Location: https://restaurantsitefinder.com/how-to-choose-restaurant-location
 - Sitemap: https://restaurantsitefinder.com/sitemap.xml
 - Guides (blog index): https://restaurantsitefinder.com/blog
 - Glossary: https://restaurantsitefinder.com/glossary

@@ -126,6 +126,11 @@ export function SiteHeader({ active }: SiteHeaderProps) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
+                <Link href="/how-to-choose-restaurant-location">
+                  How to Choose a Location
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
                 <Link href="/restaurant-name-generator" className="md:hidden">
                   Name Generator
                 </Link>

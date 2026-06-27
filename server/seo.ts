@@ -96,6 +96,7 @@ Sitemap: ${base}/sitemap.xml
       urlEntry(`${base}/`, { lastmod: today, changefreq: "weekly", priority: "1.0" }),
       urlEntry(`${base}/restaurant-name-generator`, { lastmod: today, changefreq: "weekly", priority: "0.9" }),
       urlEntry(`${base}/restaurant-failure-rate`, { lastmod: today, changefreq: "monthly", priority: "0.8" }),
+      urlEntry(`${base}/how-to-choose-restaurant-location`, { lastmod: today, changefreq: "monthly", priority: "0.85" }),
       urlEntry(`${base}/restaurant-rent-calculator`, { lastmod: today, changefreq: "monthly", priority: "0.85" }),
       urlEntry(`${base}/restaurant-location-analysis`, { lastmod: today, changefreq: "weekly", priority: "0.95" }),
       urlEntry(`${base}/restaurant-location-analysis-houston`, { lastmod: today, changefreq: "monthly", priority: "0.8" }),

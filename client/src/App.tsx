@@ -11,6 +11,7 @@ import Report from "./pages/Report";
 import NameGenerator from "./pages/NameGenerator";
 import PremiumSuccess from "./pages/PremiumSuccess";
 import RestaurantFailureRate from "./pages/RestaurantFailureRate";
+import HowToChooseRestaurantLocation from "./pages/HowToChooseRestaurantLocation";
 import RestaurantRentCalculator from "./pages/RestaurantRentCalculator";
 import RestaurantLocationAnalysis from "./pages/RestaurantLocationAnalysis";
 import HoustonRestaurantLocation from "./pages/cities/HoustonRestaurantLocation";
@@ -35,6 +36,7 @@ function Router() {
         <Route path={"/"} component={Home} />
         <Route path={"/restaurant-name-generator"} component={NameGenerator} />
         <Route path={"/restaurant-failure-rate"} component={RestaurantFailureRate} />
+        <Route path={"/how-to-choose-restaurant-location"} component={HowToChooseRestaurantLocation} />
         <Route path={"/restaurant-rent-calculator"} component={RestaurantRentCalculator} />
         <Route path={"/restaurant-location-analysis"} component={RestaurantLocationAnalysis} />
         <Route path={"/restaurant-location-analysis-houston"} component={HoustonRestaurantLocation} />
