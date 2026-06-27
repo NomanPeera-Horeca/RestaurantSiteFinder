@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import { getDb } from "../db";
 import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
@@ -74,6 +75,27 @@ async function startServer() {
   server.listen(port, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${port}/`);
   });
+
+  // One-time migration: create feedback table if it does not exist
+  try {
+    const db = await getDb();
+    if (db) {
+      await db.execute(`
+        CREATE TABLE IF NOT EXISTS \`feedback\` (
+          \`id\` int AUTO_INCREMENT NOT NULL,
+          \`category\` enum('bug_report','feature_request','report_is_wrong','missing_my_city','other') NOT NULL,
+          \`message\` text NOT NULL,
+          \`email\` varchar(320),
+          \`page\` varchar(512),
+          \`createdAt\` timestamp NOT NULL DEFAULT (now()),
+          CONSTRAINT \`feedback_id\` PRIMARY KEY(\`id\`)
+        )
+      `);
+      console.log("[Migration] feedback table ready");
+    }
+  } catch (err) {
+    console.warn("[Migration] feedback table migration failed:", err);
+  }
 }
 
 startServer().catch(console.error);
