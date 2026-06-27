@@ -234,10 +234,10 @@ export const analysisRouter = router({
         previewInsight: concept
           ? buildInitialScanInsight(competitors.length, directCompetitors.length, concept)
           : competitors.length > 15
-          ? "High-density restaurant area. Competition is fierce but foot traffic is likely strong."
+          ? "This is a high-density restaurant area. A lot of competition, but that also means real foot traffic. Your full report will show whether there is room for you to win here."
           : competitors.length > 8
-          ? "Moderate restaurant density. There are clear opportunities for differentiation."
-          : "Low restaurant density. This could be an underserved market with first-mover advantage.",
+          ? "Moderate restaurant activity at this location. There may be room to succeed here depending on your concept. Your full report will tell you exactly where the opportunity is."
+          : "Low restaurant activity near this address. That could mean a wide open opportunity or a sign that demand is not there. Your full report will tell you which.",
         conceptLabel: concept ? formatConceptLabel(concept) : undefined,
         searchRadiusMiles: getTradeAreaRadiusMiles(concept?.serviceModel),
       };
