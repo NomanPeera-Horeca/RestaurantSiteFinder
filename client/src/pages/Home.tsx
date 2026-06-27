@@ -139,15 +139,15 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Shield className="h-4 w-4" />
-              According to Cornell University, location drives 60-70% of a restaurant's success or failure
+              According to Cornell University
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
-              The #1 Reason Restaurants Fail Is Location. Know Before You Sign.
+              The #1 Reason Restaurants Fail Is Location. Run the Numbers Before You Risk Everything.
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              The average failed restaurant loses <strong className="text-foreground">$275,000</strong>. Most owners pick a location on gut feel and pay for it. In 3 minutes, get the same location intelligence that chains pay $200,000 for: any US address. No broker needed.
+              Enter any US address, pick your concept, and get a full market verdict in 3 minutes. No broker. No gut feel. Just data.
             </p>
 
             <AnalysisHeroCard
