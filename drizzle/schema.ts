@@ -73,3 +73,16 @@ export const subscriptions = mysqlTable("subscriptions", {
 
 export type Subscription = typeof subscriptions.$inferSelect;
 export type InsertSubscription = typeof subscriptions.$inferInsert;
+
+/** User feedback submitted via the feedback widget */
+export const feedback = mysqlTable("feedback", {
+  id: int("id").autoincrement().primaryKey(),
+  category: mysqlEnum("category", ["bug_report", "feature_request", "report_is_wrong", "missing_my_city", "other"]).notNull(),
+  message: text("message").notNull(),
+  email: varchar("email", { length: 320 }),
+  page: varchar("page", { length: 512 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Feedback = typeof feedback.$inferSelect;
+export type InsertFeedback = typeof feedback.$inferInsert;
