@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, Link } from "wouter";
 import { AnalysisHeroCard } from "@/components/AnalysisHeroCard";
+import { SiteHeader } from "@/components/SiteHeader";
 import { LeadCaptureModal } from "@/components/LeadCaptureModal";
 import { InitialScanPreview } from "@/components/InitialScanPreview";
 import { trpc } from "@/lib/trpc";
@@ -80,49 +81,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation with Horeca Store Logo */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border/50">
-        <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <MapPin className="h-4 w-4 text-primary-foreground" />
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="font-bold text-lg text-foreground">Restaurant Site Finder</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-<a href="/blog" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden sm:inline">
-              Guides
-            </a>
-            <a href="/glossary" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden sm:inline">
-              Glossary
-            </a>
-            <a
-              href={HORECA.website}
-              target="_blank"
-              rel="noopener"
-              className="hidden md:flex items-center gap-2 hover:opacity-80 transition-opacity"
-              title="Visit Horeca Store - Commercial Kitchen Equipment"
-            >
-              <img
-                src={HORECA.logo}
-                alt="Horeca Store - Restaurant Supply Store & Commercial Equipment"
-                className="h-7"
-              />
-            </a>
-            <a
-              href={HORECA.website}
-              target="_blank"
-              rel="noopener"
-              className="hidden sm:flex md:hidden items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
-            >
-              <img src={HORECA.icon} alt="Horeca Store" className="h-6 w-6 rounded" />
-              Horeca Store
-            </a>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader active="home" />
 
       {/* Horeca Store Top Banner */}
       <div className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-[oklch(0.35_0.15_145)] to-[oklch(0.40_0.12_155)] text-white text-center py-1.5 text-xs sm:text-sm">
