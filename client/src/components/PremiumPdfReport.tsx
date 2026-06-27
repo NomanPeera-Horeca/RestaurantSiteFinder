@@ -141,7 +141,7 @@ function executiveSummary(report: FullReport): string {
     return `This location scores ${score}/10 with an AVOID recommendation. With ${count} nearby restaurants and notable cuisine saturation, the trade area presents significant headwinds for a new entrant at this address. Proceed only with a differentiated concept and favorable lease terms.`;
   }
   if (rec === "CAUTION") {
-    return `This location scores ${score}/10 with a CAUTION recommendation. The market shows mixed signals — some opportunity exists, but competition and saturation factors require careful validation before signing a lease.`;
+    return `This location scores ${score}/10 with a CAUTION recommendation. The market shows mixed signals: some opportunity exists, but competition and saturation factors require careful validation before signing a lease.`;
   }
   if (rec === "STRONG") {
     return `This location scores ${score}/10 with a STRONG recommendation. Market gaps, demand signals, and competitive positioning align well for a new restaurant concept at this address.`;
@@ -166,18 +166,18 @@ function competitionFinding(report: FullReport): string {
   const count = report.competitors.length;
   const direct = report.directCompetitors?.length ?? report.conceptFit?.directCompetitorCount;
   if (direct !== undefined && direct > 0) {
-    return `${direct} direct competitor(s) and ${count} total restaurants nearby — review concept differentiation carefully.`;
+    return `${direct} direct competitor(s) and ${count} total restaurants nearby. Review concept differentiation carefully.`;
   }
-  if (count >= 20) return `${count} restaurants in the trade area — high density; differentiation is critical.`;
-  if (count >= 10) return `${count} restaurants nearby — moderate competition with room for a distinct concept.`;
-  return `Only ${count} restaurants in the immediate area — lower competition density.`;
+  if (count >= 20) return `${count} restaurants in the trade area. High density; differentiation is critical.`;
+  if (count >= 10) return `${count} restaurants nearby. Moderate competition with room for a distinct concept.`;
+  return `Only ${count} restaurants in the immediate area. Lower competition density.`;
 }
 
 function conceptFitFinding(report: FullReport): string {
   if (report.conceptFit) {
-    return `Concept fit ${report.conceptFit.fitScore}/10 — ${report.conceptFit.recommendation}: ${report.conceptFit.summary}`;
+    return `Concept fit ${report.conceptFit.fitScore}/10: ${report.conceptFit.recommendation}. ${report.conceptFit.summary}`;
   }
-  return `Location opportunity ${report.opportunityScore}/10 — ${report.recommendation}. See winning concept suggestions in this report.`;
+  return `Location opportunity ${report.opportunityScore}/10: ${report.recommendation}. See winning concept suggestions in this report.`;
 }
 
 function marketGapParagraph(report: FullReport): string {
@@ -580,7 +580,7 @@ function pageNextSteps(w: PdfWriter) {
     {
       title: "Verify foot traffic in person",
       detail:
-        "Visit the location on your busiest projected daypart — lunch, dinner, or weekend — and count actual pedestrian and vehicle traffic for one hour.",
+        "Visit the location on your busiest projected daypart (lunch, dinner, or weekend) and count actual pedestrian and vehicle traffic for one hour.",
     },
     {
       title: "Get a lease review",

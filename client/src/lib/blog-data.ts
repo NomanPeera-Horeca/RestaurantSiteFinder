@@ -20,7 +20,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "how-to-select-location-start-new-restaurant",
     title: "How to select a location if I want to start a new restaurant",
-    excerpt: "Learn how to select a restaurant location when starting a new eatery—covering demographics, foot traffic, competition, infrastructure, and rent-to-revenue math before you sign a lease.",
+    excerpt: "Learn how to select a restaurant location when starting a new eatery, covering demographics, foot traffic, competition, infrastructure, and rent-to-revenue math before you sign a lease.",
     date: "2026-06-27",
     category: "Site Selection",
     readTime: "9 min",
@@ -76,7 +76,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "trade-area-analysis-restaurants",
     title: "Understanding Trade Area Analysis for Restaurants",
-    excerpt: "Map your restaurant trade area with primary, secondary, and tertiary zones—and learn why circles lie but drive-time polygons tell the truth.",
+    excerpt: "Map your restaurant trade area with primary, secondary, and tertiary zones, and learn why circles lie but drive-time polygons tell the truth.",
     date: "2026-06-03",
     category: "Site Selection",
     readTime: "7 min",

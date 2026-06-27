@@ -21,40 +21,40 @@ import { ArrowRight, MapPin } from "lucide-react";
 
 const PAGE_TITLE = "Restaurant Failure Rate: The Real Statistics (2024–2025)";
 const PAGE_DESCRIPTION =
-  "The real restaurant failure rate data — 60% fail in year 1, 80% within 5 years. See what actually causes restaurants to close and how to avoid the #1 mistake.";
+  "The real restaurant failure rate data: about 60% fail in year 1, 80% within 5 years. See what actually causes restaurants to close and how to avoid the #1 mistake.";
 const CANONICAL_URL = "https://restaurantsitefinder.com/restaurant-failure-rate";
 
 const FAQ_ITEMS = [
   {
     q: "What percentage of restaurants fail in the first year?",
-    a: "Approximately 60% of restaurants fail in their first year, according to Cornell University research. The commonly cited '90% fail in year one' figure is a myth that has been debunked by multiple academic studies. The real failure rate is serious enough without exaggeration — roughly 3 in 5 new restaurants don't survive year one.",
+    a: "Approximately 60% of restaurants fail in their first year, according to Cornell University research. The commonly cited '90% fail in year one' figure is a myth that has been debunked by multiple academic studies. The real failure rate is serious enough without exaggeration. Roughly 3 in 5 new restaurants don't survive year one.",
   },
   {
     q: "What is the #1 reason restaurants fail?",
-    a: "The #1 reason restaurants fail is location, which accounts for 60-70% of a restaurant's performance variance according to Cornell University's School of Hotel Administration. A wrong location — mismatched demographics, excessive competition, or rent too high relative to realistic revenue — almost always leads to closure regardless of food quality.",
+    a: "The #1 reason restaurants fail is location, which accounts for 60-70% of a restaurant's performance variance according to Cornell University's School of Hotel Administration. A wrong location (mismatched demographics, excessive competition, or rent too high relative to realistic revenue) almost always leads to closure regardless of food quality.",
   },
   {
     q: "How do you calculate if a restaurant location is viable?",
-    a: "To calculate restaurant location viability, check four metrics: (1) rent as a percentage of projected gross revenue — must be under 8% to be sustainable, (2) competition density — direct competitors within your trade area, (3) demographic match — neighborhood income and daytime population relative to your concept, (4) foot traffic quality at your peak hours. Restaurant Site Finder calculates all four automatically for any US address, free.",
+    a: "To calculate restaurant location viability, check four metrics: (1) rent as a percentage of projected gross revenue: must be under 8% to be sustainable, (2) competition density: direct competitors within your trade area, (3) demographic match: neighborhood income and daytime population relative to your concept, (4) foot traffic quality at your peak hours. Restaurant Site Finder calculates all four automatically for any US address, free.",
   },
   {
     q: "Do restaurants in good locations still fail?",
-    a: "Yes, restaurants in good locations still fail — but significantly less often than those in poor locations. A good location reduces the required execution quality to survive. A bad location requires near-perfect execution just to break even. Most restaurant owners don't have the capital runway to execute perfectly for 18+ months while waiting for a bad location to improve.",
+    a: "Yes, restaurants in good locations still fail, but significantly less often than those in poor locations. A good location reduces the required execution quality to survive. A bad location requires near-perfect execution just to break even. Most restaurant owners don't have the capital runway to execute perfectly for 18+ months while waiting for a bad location to improve.",
   },
   {
     q: "How much does restaurant site selection research cost?",
-    a: "Professional restaurant site selection research costs $50,000–$200,000 per location for enterprise chains. Tools like SiteZeus and Placer.ai charge $500–$2,000/month for software access. Restaurant Site Finder provides the core location analysis — competitor mapping, market demand, concept fit, opportunity score — for free.",
+    a: "Professional restaurant site selection research costs $50,000–$200,000 per location for enterprise chains. Tools like SiteZeus and Placer.ai charge $500–$2,000/month for software access. Restaurant Site Finder provides the core location analysis (competitor mapping, market demand, concept fit, opportunity score) for free.",
   },
   {
     q: "What is a good opportunity score for a restaurant location?",
-    a: "A good restaurant location opportunity score is 7 or above on Restaurant Site Finder's 1–10 scale. Scores of 5–6 indicate a viable but competitive market that requires the right concept fit. Scores below 5 indicate significant headwinds — either too much competition, insufficient market demand, or poor concept-market fit for the analyzed area.",
+    a: "A good restaurant location opportunity score is 7 or above on Restaurant Site Finder's 1–10 scale. Scores of 5–6 indicate a viable but competitive market that requires the right concept fit. Scores below 5 indicate significant headwinds: either too much competition, insufficient market demand, or poor concept-market fit for the analyzed area.",
   },
 ] as const;
 
 const FAILURE_CAUSES = [
   {
     title: "Wrong Location",
-    body: "Location accounts for 60–70% of a restaurant's success variance according to Cornell University research. A great concept in the wrong location almost always fails. The inverse — a mediocre concept in a high-traffic, well-matched location — often survives. 80% of restaurants in mismatched locations fail within 3 years regardless of food quality.",
+    body: "Location accounts for 60–70% of a restaurant's success variance according to Cornell University research. A great concept in the wrong location almost always fails. The inverse is also true: a mediocre concept in a high-traffic, well-matched location often survives. 80% of restaurants in mismatched locations fail within 3 years regardless of food quality.",
   },
   {
     title: "Rent Too High Relative to Revenue",
@@ -66,11 +66,11 @@ const FAILURE_CAUSES = [
   },
   {
     title: "Concept-Market Mismatch",
-    body: "Opening a fine dining concept in a neighborhood with median household income under $50,000, or a fast casual in an area with no lunch traffic — these are survivable mistakes only if the owner has enough capital to wait. Most don't.",
+    body: "Opening a fine dining concept in a neighborhood with median household income under $50,000, or a fast casual in an area with no lunch traffic: these are survivable mistakes only if the owner has enough capital to wait. Most don't.",
   },
   {
     title: "Ignoring Competition Density",
-    body: "Areas with more than 20 restaurants per square mile have a 25% higher failure rate for new entrants. Market saturation is measurable before you sign — most owners never check.",
+    body: "Areas with more than 20 restaurants per square mile have a 25% higher failure rate for new entrants. Market saturation is measurable before you sign. Most owners never check.",
   },
   {
     title: "No Parking or Poor Visibility",
@@ -212,7 +212,7 @@ export default function RestaurantFailureRate() {
               Restaurant Failure Rate: The Real Statistics
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              What the data actually says — and the #1 factor most owners never check before signing a
+              What the data actually says, and the #1 factor most owners never check before signing a
               lease.
             </p>
           </header>
@@ -237,7 +237,7 @@ export default function RestaurantFailureRate() {
           </p>
 
           <div className="quick-facts border rounded-lg p-6 bg-muted/30 my-8">
-            <h2 className="text-lg font-semibold mb-4">Restaurant Failure Rate — Quick Facts</h2>
+            <h2 className="text-lg font-semibold mb-4">Restaurant Failure Rate: Quick Facts</h2>
             <ul className="space-y-2 text-sm">
               <li>
                 <strong>Year 1 failure rate:</strong> ~60% (Cornell University)
@@ -267,7 +267,7 @@ export default function RestaurantFailureRate() {
           <section className="mb-12 space-y-4">
             <h2 className="text-2xl font-bold text-foreground">What Is the Real Restaurant Failure Rate?</h2>
             <p className="direct-answer text-muted-foreground leading-relaxed">
-              Approximately 60% of restaurants fail in their first year — not 90%, as commonly cited. The 90%
+              Approximately 60% of restaurants fail in their first year, not 90%, as commonly cited. The 90%
               figure has been debunked by Cornell University researchers.
             </p>
             <p className="text-muted-foreground leading-relaxed">
@@ -281,7 +281,7 @@ export default function RestaurantFailureRate() {
             </ul>
             <p className="text-muted-foreground leading-relaxed">
               These numbers have remained consistent for decades. The restaurant business is genuinely
-              difficult — but the reasons restaurants fail are more predictable than most people realize.
+              difficult, but the reasons restaurants fail are more predictable than most people realize.
             </p>
           </section>
 
@@ -289,7 +289,7 @@ export default function RestaurantFailureRate() {
           <section className="mb-12 space-y-6">
             <h2 className="text-2xl font-bold text-foreground">Why Do Restaurants Fail? The Real Causes</h2>
             <p className="direct-answer text-muted-foreground leading-relaxed">
-              The #1 reason restaurants fail is location — accounting for 60-70% of performance variance
+              The #1 reason restaurants fail is location, accounting for 60-70% of performance variance
               according to Cornell University&apos;s School of Hotel Administration.
             </p>
             <ol className="space-y-6">
@@ -333,7 +333,7 @@ export default function RestaurantFailureRate() {
               Cornell University School of Hotel Administration / NRA composite data
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              The steepest drop happens in year one — which is why the decisions made before opening
+              The steepest drop happens in year one, which is why the decisions made before opening
               (location, lease terms, concept fit) matter more than anything that happens after. By the
               time a location problem becomes obvious, the owner is already locked into a multi-year lease.
             </p>
@@ -374,13 +374,13 @@ export default function RestaurantFailureRate() {
               restaurant owners typically spend $0.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Tools like SiteZeus and Placer.ai provide this data — but at $500–$2,000 per month,
+              Tools like SiteZeus and Placer.ai provide this data, but at $500–$2,000 per month,
               they&apos;re designed for chains running 20+ location evaluations per year, not an owner
               opening their first restaurant.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Restaurant Site Finder was built to close that gap. The same location analysis that enterprise
-              chains run — competitor density, market demand, concept fit, opportunity scoring — available
+              chains run (competitor density, market demand, concept fit, opportunity scoring) available
               free for any restaurant owner, for any address in the US.
             </p>
 

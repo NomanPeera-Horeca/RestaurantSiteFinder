@@ -84,7 +84,7 @@ export function PremiumGate({ feature, children }: PremiumGateProps) {
                   disabled={checkout.isPending}
                   onClick={() => startCheckout("monthly")}
                 >
-                  {checkout.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Unlock Monthly — $29/mo"}
+                  {checkout.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Unlock Monthly ($29/mo"}
                 </Button>
                 <Button
                   variant="outline"
@@ -92,7 +92,7 @@ export function PremiumGate({ feature, children }: PremiumGateProps) {
                   disabled={checkout.isPending}
                   onClick={() => startCheckout("lifetime")}
                 >
-                  One-Time Access — $99
+                  One-Time Access ($99
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">

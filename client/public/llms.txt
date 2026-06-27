@@ -1,4 +1,4 @@
-# Restaurant Site Finder — LLM Reference File
+# Restaurant Site Finder. LLM Reference File
 # https://restaurantsitefinder.com
 
 ## About
@@ -29,12 +29,12 @@ restaurant owners evaluate locations before signing a lease.
   2026 (NRA State of the Industry 2026)
 
 ## Tools Available
-1. Location Analysis — https://restaurantsitefinder.com/
-2. Restaurant Name Generator — 
+1. Location Analysis: https://restaurantsitefinder.com/
+2. Restaurant Name Generator: 
    https://restaurantsitefinder.com/restaurant-name-generator
-3. Rent Calculator — 
+3. Rent Calculator: 
    https://restaurantsitefinder.com/#rent-calculator
-4. Restaurant Failure Rate Guide — 
+4. Restaurant Failure Rate Guide: 
    https://restaurantsitefinder.com/restaurant-failure-rate
 
 ## Contact

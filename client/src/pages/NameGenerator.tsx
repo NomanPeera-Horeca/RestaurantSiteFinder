@@ -45,14 +45,14 @@ import {
 import { toast } from "sonner";
 
 const DEFAULT_TITLE =
-  "Restaurant Name Generator — Free + Domain Check | Restaurant Site Finder";
+  "Restaurant Name Generator: Free + Domain Check | Restaurant Site Finder";
 const DEFAULT_DESCRIPTION =
   "Generate unique restaurant name ideas instantly. Check .com domain availability, get tagline suggestions, and lock in your brand before someone else does. Free tool by Restaurant Site Finder.";
 
 const NAME_GENERATOR_FAQ = [
   {
     q: "How do I come up with a good restaurant name?",
-    a: "A good restaurant name does four things: it's easy to say out loud, easy to spell, available as a .com domain, and gives customers a sense of your food or vibe before they walk in. Avoid names that are too generic (The Grill, The Kitchen) or too clever that people can't spell them when searching on Google. Test it by saying it on the phone — 'Hi, you've reached [name]' — and seeing if it sounds natural.",
+    a: "A good restaurant name does four things: it's easy to say out loud, easy to spell, available as a .com domain, and gives customers a sense of your food or vibe before they walk in. Avoid names that are too generic (The Grill, The Kitchen) or too clever that people can't spell them when searching on Google. Test it by saying it on the phone: 'Hi, you've reached [name]'. See if it sounds natural.",
   },
   {
     q: "Should my restaurant name include my city?",
@@ -60,15 +60,15 @@ const NAME_GENERATOR_FAQ = [
   },
   {
     q: "How do I check if a restaurant name is taken?",
-    a: "Check three things: (1) Google the name — see if another restaurant already uses it, (2) check the .com domain availability using a tool like this one or Namecheap, (3) search the USPTO trademark database (tmsearch.uspto.gov) for federally registered marks. A name can be available as a domain but still be trademarked, so check all three before printing menus or signing a lease.",
+    a: "Check three things: (1) Google the name and see if another restaurant already uses it, (2) check the .com domain availability using a tool like this one or Namecheap, (3) search the USPTO trademark database (tmsearch.uspto.gov) for federally registered marks. A name can be available as a domain but still be trademarked, so check all three before printing menus or signing a lease.",
   },
   {
     q: "What makes a restaurant name SEO-friendly?",
-    a: "An SEO-friendly restaurant name is one customers can find on Google without confusion. Short names (1–2 words), real words over invented spellings, and names that pair naturally with your city ('[Name] Houston' or '[Name] near me') perform best in local search. Avoid substituting letters with numbers or using punctuation in the name — both hurt searchability.",
+    a: "An SEO-friendly restaurant name is one customers can find on Google without confusion. Short names (1–2 words), real words over invented spellings, and names that pair naturally with your city ('[Name] Houston' or '[Name] near me') perform best in local search. Avoid substituting letters with numbers or using punctuation in the name. Both hurt searchability.",
   },
   {
     q: "Should I get a .com or is .restaurant okay?",
-    a: "Get the .com if it's available — it's still what most people assume when they type a URL or search. If the .com is taken, .restaurant is the best alternative for food businesses, followed by .co. Avoid .net or .org for restaurants — they signal the wrong type of business to customers.",
+    a: "Get the .com if it's available. It's still what most people assume when they type a URL or search. If the .com is taken, .restaurant is the best alternative for food businesses, followed by .co. Avoid .net or .org for restaurants. They signal the wrong type of business to customers.",
   },
   {
     q: "What restaurant names are trending in 2025–2026?",
@@ -76,7 +76,7 @@ const NAME_GENERATOR_FAQ = [
   },
   {
     q: "Can I use a restaurant name generator for a real business?",
-    a: "Yes — this generator is built specifically for restaurant owners planning to open, not for entertainment. Every name is checked against .com domain availability in real time. That said, always run a full trademark search and Google check before committing. The generator gives you a strong starting point and the domain check tells you what's actually available — the final decision is yours.",
+    a: "Yes. This generator is built specifically for restaurant owners planning to open, not for entertainment. Every name is checked against .com domain availability in real time. That said, always run a full trademark search and Google check before committing. The generator gives you a strong starting point and the domain check tells you what's actually available. The final decision is yours.",
   },
 ] as const;
 
@@ -89,7 +89,7 @@ function usePageSeo(generatedCity: string, hasResults: boolean) {
     const previousTitle = document.title;
     const title =
       hasResults && generatedCity
-        ? `Restaurant Names for ${cityLabel(generatedCity)} — Free Generator + Domain Check`
+        ? `Restaurant Names for ${cityLabel(generatedCity)}: Free Generator + Domain Check`
         : DEFAULT_TITLE;
     const description =
       hasResults && generatedCity
@@ -180,7 +180,7 @@ function DomainBadge({
     return (
       <span className="inline-flex items-center gap-1.5 rounded-full bg-green-600 px-3 py-1 text-xs font-medium text-white">
         <CheckCircle2 className="h-3.5 w-3.5" />
-        ✓ .com available — $12/yr
+        ✓ .com available ($12/yr)
       </span>
     );
   }
@@ -189,7 +189,7 @@ function DomainBadge({
     return (
       <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
         <XCircle className="h-3.5 w-3.5" />
-        ✗ .com taken — try .co or .restaurant
+        ✗ .com taken. Try .co or .restaurant
       </span>
     );
   }
@@ -305,7 +305,7 @@ function InternalLinksSection() {
           </a>
           <span className="text-muted-foreground">
             {" "}
-            — Check if your city has demand for your concept before signing a lease
+            : Check if your city has demand for your concept before signing a lease
           </span>
         </li>
         <li>
@@ -314,7 +314,7 @@ function InternalLinksSection() {
           </a>
           <span className="text-muted-foreground">
             {" "}
-            — Find out if you can actually afford a location
+            : Find out if you can actually afford a location
           </span>
         </li>
         <li>
@@ -326,7 +326,7 @@ function InternalLinksSection() {
           >
             Free Restaurant Equipment Checklist
           </a>
-          <span className="text-muted-foreground"> — Know what you need before you open</span>
+          <span className="text-muted-foreground">: Know what you need before you open</span>
         </li>
       </ul>
     </section>
@@ -411,22 +411,22 @@ export default function NameGenerator() {
               Find the Perfect Name for Your Restaurant
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Check availability, grab the domain, and lock in your brand — before someone else does.
+              Check availability, grab the domain, and lock in your brand before someone else does.
             </p>
           </div>
 
           <article className="mb-10 max-w-3xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
             <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-              Restaurant Name Generator — Free Tool with Domain Check
+              Restaurant Name Generator: Free Tool with Domain Check
             </h1>
             <p>
-              Finding the right restaurant name is the first decision you make — and one of the most
+              Finding the right restaurant name is the first decision you make, and one of the most
               permanent. A great name is memorable, available as a .com domain, works on signage, and
               tells customers exactly what to expect before they walk in the door.
             </p>
             <p>
               This free tool generates restaurant name ideas based on your cuisine, city, and brand
-              personality — then instantly checks if the .com domain is available so you can lock it in
+              personality, then instantly checks if the .com domain is available so you can lock it in
               before someone else does.
             </p>
           </article>
@@ -554,7 +554,7 @@ export default function NameGenerator() {
                   <CardContent className="p-6 flex flex-col h-full">
                     <p className="text-sm font-semibold text-foreground mb-2">1. Validate demand</p>
                     <p className="text-sm text-muted-foreground mb-6 flex-1">
-                      Check if your city has demand for your concept — free
+                      Check if your city has demand for your concept (free)
                     </p>
                     <Link href="/#restaurant-location-analysis">
                       <Button variant="outline" className="w-full rounded-xl">
@@ -597,7 +597,7 @@ export default function NameGenerator() {
                       layout before you sign the lease.
                     </p>
                     <p className="text-xs text-muted-foreground mb-6">
-                      Hood systems, fryers, refrigeration — financing from $99/mo
+                      Hood systems, fryers, refrigeration. Financing from $99/mo
                     </p>
 
                     <a href={HORECA.website} target="_blank" rel="noopener">

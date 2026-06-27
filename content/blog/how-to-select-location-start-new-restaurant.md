@@ -14,7 +14,7 @@ tags:
   - new restaurant
   - demographics
   - lease negotiation
-excerpt: "Learn how to select a restaurant location when starting a new eatery—covering demographics, foot traffic, competition, infrastructure, and rent-to-revenue math before you sign a lease."
+excerpt: "Learn how to select a restaurant location when starting a new eatery, covering demographics, foot traffic, competition, infrastructure, and rent-to-revenue math before you sign a lease."
 keywords:
   - how to select a location for a new restaurant
   - restaurant location selection criteria
@@ -34,12 +34,12 @@ faq:
   - question: "Should I choose a high-traffic spot or a destination location?"
     answer: "Fast-casual and coffee concepts need high foot traffic near offices or retail corridors. Experiential or fine-dining concepts can succeed as destinations if marketing budget and parking support the draw."
   - question: "Is a second-generation restaurant space worth it?"
-    answer: "Usually yes. A former restaurant already has hood, grease trap, gas, and drains—retrofitting a retail space into a commercial kitchen can cost tens of thousands of dollars before you open."
+    answer: "Usually yes. A former restaurant already has hood, grease trap, gas, and drains, retrofitting a retail space into a commercial kitchen can cost tens of thousands of dollars before you open."
   - question: "What rent percentage should a new restaurant pay?"
     answer: "Keep total occupancy cost (rent, taxes, insurance, and CAM) between 6% and 10% of projected gross sales. If rent alone pushes you toward 15% or higher, profitability becomes very difficult even on busy nights."
 ---
 
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Define your concept and target psychographics before touring vacant spaces—demographics alone are not enough.</li><li>Separate visibility from accessibility; count qualified foot traffic and verify parking at peak hours.</li><li>Audit zoning, utilities, and kitchen infrastructure—second-generation spaces save major build-out costs.</li><li>Keep occupancy under 6–10% of projected sales and use our <a href="/blog/restaurant-site-selection-checklist">checklist</a> plus <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> before you sign.</li></ul></div>
+<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Define your concept and target psychographics before touring vacant spaces, demographics alone are not enough.</li><li>Separate visibility from accessibility; count qualified foot traffic and verify parking at peak hours.</li><li>Audit zoning, utilities, and kitchen infrastructure, second-generation spaces save major build-out costs.</li><li>Keep occupancy under 6–10% of projected sales and use our <a href="/blog/restaurant-site-selection-checklist">checklist</a> plus <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> before you sign.</li></ul></div>
 
 Opening a restaurant is a thrilling venture, but even the most innovative menu and brilliant chef cannot save a business that is set up in the wrong place. If you find yourself wondering, "How to select a location if I want to start a new restaurant?" you are already asking the most critical question in the hospitality industry. The physical spot you choose will dictate your foot traffic, influence your marketing budget, and ultimately determine your long-term profitability.
 
@@ -57,7 +57,7 @@ Before you start touring vacant commercial spaces, you must have a crystal-clear
 
 When analyzing neighborhood demographics for food business viability, most people stop at age, average income, and household size. While these are crucial site selection criteria, you must dig deeper.
 
-Success heavily relies on identifying target market psychographics—the values, habits, interests, and lifestyles of the people in the area. For example, an organic, plant-based cafe will thrive in a neighborhood where residents value sustainability and wellness, even if their income levels match a neighboring town that prefers traditional fast food.
+Success heavily relies on identifying target market psychographics, the values, habits, interests, and lifestyles of the people in the area. For example, an organic, plant-based cafe will thrive in a neighborhood where residents value sustainability and wellness, even if their income levels match a neighboring town that prefers traditional fast food.
 
 ### Future-Proofing Your Location
 
@@ -73,7 +73,7 @@ Evaluating pedestrian foot traffic patterns is mandatory for concepts like quick
 
 ### High-Traffic Retail Spots vs. Destination Dining
 
-You will inevitably have to choose between high-traffic retail spots vs destination dining locations. High-traffic retail spots (like malls or busy downtown corners) come with built-in customer bases but carry premium rent prices. Destination dining locations (tucked away in quieter neighborhoods or rural areas) offer cheaper rent, but you will have to spend significantly more on marketing to draw people in. Your choice depends entirely on your concept—a fast-casual lunch spot needs high foot traffic, while a Michelin-star-style experiential dinner concept can thrive as a destination.
+You will inevitably have to choose between high-traffic retail spots vs destination dining locations. High-traffic retail spots (like malls or busy downtown corners) come with built-in customer bases but carry premium rent prices. Destination dining locations (tucked away in quieter neighborhoods or rural areas) offer cheaper rent, but you will have to spend significantly more on marketing to draw people in. Your choice depends entirely on your concept, a fast-casual lunch spot needs high foot traffic, while a Michelin-star-style experiential dinner concept can thrive as a destination.
 
 ### Visibility vs. Accessibility
 
@@ -105,7 +105,7 @@ Falling in love with the aesthetics of a building is easy, but the physical shel
 
 ### Zoning and Permits
 
-Before you even look at the plumbing, you must investigate the legalities of the space. Navigating restaurant zoning laws and building permits can be a nightmare if you aren't prepared. Is the building zoned for commercial food service? If it was previously a retail clothing store, obtaining a "change of use" permit can take months and thousands of dollars. Furthermore, if your concept relies heavily on alcohol sales, you must verify that the local zoning allows for a liquor license at that specific address—some areas restrict alcohol sales within a certain radius of schools or churches.
+Before you even look at the plumbing, you must investigate the legalities of the space. Navigating restaurant zoning laws and building permits can be a nightmare if you aren't prepared. Is the building zoned for commercial food service? If it was previously a retail clothing store, obtaining a "change of use" permit can take months and thousands of dollars. Furthermore, if your concept relies heavily on alcohol sales, you must verify that the local zoning allows for a liquor license at that specific address, some areas restrict alcohol sales within a certain radius of schools or churches.
 
 ### Utility Infrastructure
 
@@ -113,7 +113,7 @@ Restaurants are heavy industrial operations masquerading as hospitable dining ro
 
 ### The Cost of Conversions
 
-If you choose a space that has never been a restaurant, beware of the hidden costs of renovating commercial kitchen space. Installing a commercial kitchen ventilation hood (with a make-up air unit) and a fire suppression system can easily cost tens of thousands of dollars. You must also consider the installation of in-ground grease traps, ADA-compliant restrooms, and reinforced flooring. Often, taking over a "second-generation" restaurant space—one that recently closed but already has the kitchen infrastructure built in—is the most financially sound decision for a new operator.
+If you choose a space that has never been a restaurant, beware of the hidden costs of renovating commercial kitchen space. Installing a commercial kitchen ventilation hood (with a make-up air unit) and a fire suppression system can easily cost tens of thousands of dollars. You must also consider the installation of in-ground grease traps, ADA-compliant restrooms, and reinforced flooring. Often, taking over a "second-generation" restaurant space, one that recently closed but already has the kitchen infrastructure built in, is the most financially sound decision for a new operator.
 
 ![Commercial kitchen infrastructure and zoning requirements for new restaurant location selection](/blog/how-to-select-location-start-new-restaurant/image3.png)
 

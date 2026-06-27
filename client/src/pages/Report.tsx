@@ -470,7 +470,7 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
             </div>
             <div>
               <CardTitle className="text-lg">
-                Your Equipment Checklist — Powered by Horeca Store
+                Your Equipment Checklist: Powered Powered by Horeca Store
               </CardTitle>
               <p className="text-sm text-muted-foreground">Equipment matched to your winning concepts. Shop at{" "}
                 <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">www.thehorecastore.com</a>
@@ -695,7 +695,7 @@ export default function Report() {
             Our AI is analyzing competitors, reviews, and market fit for{" "}
             <span className="font-medium text-foreground">{address}</span>
             {concept && concept.serviceModel !== "explore" && (
-              <> — <span className="font-medium text-foreground">{concept.cuisineConcept}</span></>
+              >: <span className="font-medium text-foreground">{concept.cuisineConcept}</span></>
             )}
           </p>
           <div className="space-y-3">

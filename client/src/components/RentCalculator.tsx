@@ -213,7 +213,7 @@ export function RentCalculator() {
                 Revenue You Need
               </p>
               <p className="text-2xl font-bold text-primary mb-2">
-                {results ? `${formatCurrency(results.monthlyRevenueNeeded)}/month minimum` : "—"}
+                {results ? `${formatCurrency(results.monthlyRevenueNeeded)}/month minimum` : "N/A"}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 To keep rent under 8% of revenue (industry benchmark)
@@ -227,7 +227,7 @@ export function RentCalculator() {
                 Covers Per Day Required
               </p>
               <p className="text-2xl font-bold text-primary mb-2">
-                {results ? `${Math.ceil(results.dailyCovers)} covers/day` : "—"}
+                {results ? `${Math.ceil(results.dailyCovers)} covers/day` : "N/A"}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 At your price point to break even on rent alone
@@ -246,7 +246,7 @@ export function RentCalculator() {
                   results ? getTurnoverColor(results.seatTurnover) : "text-primary"
                 )}
               >
-                {results ? `${results.seatTurnover.toFixed(1)} turns/day` : "—"}
+                {results ? `${results.seatTurnover.toFixed(1)} turns/day` : "N/A"}
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Table turns needed per day
@@ -274,7 +274,7 @@ export function RentCalculator() {
                   </p>
                 </>
               ) : (
-                <p className="text-2xl font-bold text-primary mb-2">—</p>
+                <p className="text-2xl font-bold text-primary mb-2">N/A</p>
               )}
             </CardContent>
           </Card>
@@ -299,7 +299,7 @@ export function RentCalculator() {
           </Button>
           <p className="text-xs text-muted-foreground max-w-lg mx-auto mt-4 leading-relaxed">
             Rent math is just one factor. See competitor density, demographics, and opportunity score
-            for this exact address — free.
+            for this exact address: free.
           </p>
           <p className="text-xs text-muted-foreground/70 mt-6">
             Benchmark: rent should be 5–8% of revenue. Source: National Restaurant Association / Paytronix

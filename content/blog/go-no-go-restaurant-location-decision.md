@@ -26,7 +26,7 @@ relatedSlugs:
   - restaurant-location-strategies-maximum-profit
 faq:
   - question: "What is a Go/No-Go restaurant location decision?"
-    answer: "A formal checkpoint where hard data and non-negotiable criteria determine whether a site is viable for your specific concept—not whether the building is generically good or bad."
+    answer: "A formal checkpoint where hard data and non-negotiable criteria determine whether a site is viable for your specific concept, not whether the building is generically good or bad."
   - question: "When should you walk away from a restaurant lease?"
     answer: "When break-even requires 95% capacity daily, zoning blocks your use, CAM charges are uncapped, demolition clauses exist, or the corridor shows multiple vacant storefronts."
   - question: "What is a site scoring matrix?"
@@ -37,7 +37,7 @@ faq:
     answer: "Divide fixed costs (rent, insurance, management salary) by contribution margin percentage to find the monthly sales required to cover all expenses."
 ---
 
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Go/No-Go decisions are concept-specific—a speakeasy alley can be a Go while a fast-casual spot there is a No-Go.</li><li>Use weighted scorecards on visibility, traffic, infrastructure, rent ratio, and saturation.</li><li>Walk away from uncapped CAM, demolition clauses, and corridors with heavy vacancy.</li><li>Validate finalists with <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> before signing.</li></ul></div>
+<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Go/No-Go decisions are concept-specific, a speakeasy alley can be a Go while a fast-casual spot there is a No-Go.</li><li>Use weighted scorecards on visibility, traffic, infrastructure, rent ratio, and saturation.</li><li>Walk away from uncapped CAM, demolition clauses, and corridors with heavy vacancy.</li><li>Validate finalists with <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> before signing.</li></ul></div>
 
 Pair this guide with our [restaurant site selection checklist](/blog/restaurant-site-selection-checklist) and [how to choose a restaurant location](/blog/how-to-choose-restaurant-location). For free AI-powered scoring, run your address through [Restaurant Site Finder](https://restaurantsitefinder.com/).
 
@@ -53,7 +53,7 @@ Choosing where to open your doors is arguably the most critical choice you will 
 
 In project management, a "go/no-go" decision is a formal checkpoint where you decide whether a project should proceed or be abandoned. When applied to hospitality, a Go/No-Go restaurant location decision involves weighing hard data against your specific business model to decide if a piece of real estate is viable.
 
-Finding a go no go restaurant location is not about finding a "good" or "bad" building; it is about finding the right building for your specific concept. A quiet, secluded alleyway might be a "go" for an exclusive speakeasy, but a massive "no-go" for a fast-casual lunch spot reliant on volume. To make this decision objectively, you must establish strict go no go criteria—a set of non-negotiable standards a site must meet before you even consider negotiating a lease.
+Finding a go no go restaurant location is not about finding a "good" or "bad" building; it is about finding the right building for your specific concept. A quiet, secluded alleyway might be a "go" for an exclusive speakeasy, but a massive "no-go" for a fast-casual lunch spot reliant on volume. To make this decision objectively, you must establish strict go no go criteria, a set of non-negotiable standards a site must meet before you even consider negotiating a lease.
 
 
 ## Core Location Decision Factors
@@ -99,7 +99,7 @@ One of the most common debates is choosing between standalone building vs shoppi
 
 Standalone Buildings: These offer ultimate control. You dictate the branding, the exterior signage, and the hours of operation. You don't have to share parking with a gym or a grocery store. However, standalone buildings require you to be a destination. You must spend more on marketing because you will not benefit from incidental foot traffic.
 
-Shopping Centers / Strip Malls: These locations offer built-in foot traffic. When evaluating a multi-tenant space, heavily scrutinize the impact of anchor tenants on restaurant traffic. An anchor tenant (like a popular grocery store, a major gym, or a large retailer) draws consistent daily crowds. If your restaurant complements that anchor—for instance, a healthy smoothie bar next to a high-end fitness center—you can capture significant spillover business.
+Shopping Centers / Strip Malls: These locations offer built-in foot traffic. When evaluating a multi-tenant space, heavily scrutinize the impact of anchor tenants on restaurant traffic. An anchor tenant (like a popular grocery store, a major gym, or a large retailer) draws consistent daily crowds. If your restaurant complements that anchor, for instance, a healthy smoothie bar next to a high-end fitness center, you can capture significant spillover business.
 
 
 ## The Financial Reality Check
@@ -190,13 +190,13 @@ The Go/No-Go restaurant location decision is rarely a matter of finding a flawle
 
 By taking the time to implement modern pedestrian foot traffic analysis methods, strictly assessing commercial lease red flags for small businesses, and relying on a rigid site scoring matrix for hospitality entrepreneurs, you are setting a foundation for longevity.
 
-Remember, opening a restaurant is a massive investment of your time, money, and passion. Do not rush the process. Let the data guide you, trust your rigorously researched go no go checklist, and have the courage to walk away from a "pretty good" space so you can say "Go!" to the perfect one. Your future self—and your future profit margins—will thank you.
+Remember, opening a restaurant is a massive investment of your time, money, and passion. Do not rush the process. Let the data guide you, trust your rigorously researched go no go checklist, and have the courage to walk away from a "pretty good" space so you can say "Go!" to the perfect one. Your future self, and your future profit margins, will thank you.
 
 ## Frequently Asked Questions
 
 ### What is a Go/No-Go restaurant location decision?
 
-A formal checkpoint where hard data and non-negotiable criteria determine whether a site is viable for your specific concept—not whether the building is generically good or bad.
+A formal checkpoint where hard data and non-negotiable criteria determine whether a site is viable for your specific concept, not whether the building is generically good or bad.
 
 ### When should you walk away from a restaurant lease?
 

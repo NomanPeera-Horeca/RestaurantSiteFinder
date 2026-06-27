@@ -36,7 +36,7 @@ faq:
     answer: "Stop when break-even sales exceed plausible trade-area share, when competitor entrenchment blocks your occasion, when rent consumes margin before operations start, or when demographic trends contradict your menu price."
 ---
 
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Market analysis answers one question: can this trade area yield enough profitable <a href="/glossary/covers">covers</a> at your check average?</li><li>Combine desk research with field counts—<a href="/glossary/foot-traffic">foot traffic</a> without qualification misleads.</li><li>Map competitors by occasion and price band, not pins on a map.</li><li>Use <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> for rapid scoring, then document assumptions in your <a href="/blog/how-to-write-restaurant-business-plan">business plan</a>.</li></ul></div>
+<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Market analysis answers one question: can this trade area yield enough profitable <a href="/glossary/covers">covers</a> at your check average?</li><li>Combine desk research with field counts. <a href="/glossary/foot-traffic">Foot traffic</a> without qualification misleads.</li><li>Map competitors by occasion and price band, not pins on a map.</li><li>Use <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> for rapid scoring, then document assumptions in your <a href="/blog/how-to-write-restaurant-business-plan">business plan</a>.</li></ul></div>
 
 Signing a lease without market analysis is betting on hope. Banks, landlords, and experienced partners increasingly expect a defensible story: who lives and works here, what they already spend on restaurants like yours, and what share you can capture without fantasy pricing. This guide walks through the worksheets and judgment calls that separate feasibility from wishful thinking.
 
@@ -46,13 +46,13 @@ Connect findings to [how to choose a restaurant location](/blog/how-to-choose-re
 
 Market analysis reduces uncertainty before capital is committed. Outputs should include:
 
-1. **Trade-area definition** — Geographic polygon and rationale.
-2. **Demand profile** — Who eats out here, when, and at what price.
-3. **Competitive landscape** — Who wins today and why.
-4. **Sales forecast** — Base, downside, upside with assumptions stated.
-5. **Go / no-go recommendation** — Tied to [break-even point](/glossary/break-even-point) and rent.
+1. **Trade-area definition**: Geographic polygon and rationale.
+2. **Demand profile**: Who eats out here, when, and at what price.
+3. **Competitive landscape**: Who wins today and why.
+4. **Sales forecast**: Base, downside, upside with assumptions stated.
+5. **Go / no-go recommendation**: Tied to [break-even point](/glossary/break-even-point) and rent.
 
-If the document cannot explain why year-one sales are X, it is not analysis—it is decoration.
+If the document cannot explain why year-one sales are X, it is not analysis, it is decoration.
 
 ## How Do You Define the Trade Area Correctly?
 
@@ -71,12 +71,12 @@ Draw primary and secondary polygons. Size demand on the primary; treat secondary
 
 Raw population is insufficient. Weight variables against your concept:
 
-- **Household income distribution** — Supports check average?
-- **Age cohorts** — Families vs. young professionals vs. retirees.
-- **Household size** — Drives party size and sharing menus.
-- **Daytime population** — Workers for lunch; residents for dinner.
-- **Housing starts and occupancy** — Growth or stagnation signals.
-- **Tourism indices** — If applicable; seasonality swings forecasts.
+- **Household income distribution**: Supports check average?
+- **Age cohorts**: Families vs. young professionals vs. retirees.
+- **Household size**: Drives party size and sharing menus.
+- **Daytime population**: Workers for lunch; residents for dinner.
+- **Housing starts and occupancy**: Growth or stagnation signals.
+- **Tourism indices**: If applicable; seasonality swings forecasts.
 
 Cross-check income with willingness to pay. A high median income area that dines at $12 lunch counters may not support your $28 bowls without repositioning.
 
@@ -103,7 +103,7 @@ Build a competitor matrix, not a dot map.
 
 Proxies include review velocity, delivery app “busy” flags, parking lot fill rates, and public sales data where disclosed. Secret-shop peak periods: time from order to food, portion size, service friction.
 
-Whitespace is not “no competitors”—it is an underserved occasion or price band. Saturated pizza corridors still support a differentiated Neapolitan slice shop if the trade area is large enough and rent works.
+Whitespace is not "no competitors". It is an underserved occasion or price band. Saturated pizza corridors still support a differentiated Neapolitan slice shop if the trade area is large enough and rent works.
 
 ## What Demand Drivers Should You Document?
 
@@ -134,9 +134,9 @@ Start bottom-up from [covers](/glossary/covers) and check average, not top-down 
 
 Repeat by daypart and day of week; sum to weekly, apply seasonality, annualize. Compare to:
 
-- **Comps** — Similar concepts in similar trade areas.
-- **Capture rate** — Your share of qualified demand; show math.
-- **Capacity ceiling** — Kitchen and seat throughput max.
+- **Comps**: Similar concepts in similar trade areas.
+- **Capture rate**: Your share of qualified demand; show math.
+- **Capacity ceiling**: Kitchen and seat throughput max.
 
 Present three cases:
 
@@ -152,12 +152,12 @@ Lenders often underwrite closer to downside than upside.
 
 Sales without margin discipline fail. Link forecast to:
 
-- **[Food cost percentage](/glossary/food-cost-percentage)** — Menu-level targets.
-- **[Prime cost](/glossary/prime-cost)** — COGS + labor; typical full-service band 60–65%.
-- **Occupancy** — Rent + CAM as % of sales.
-- **[Break-even point](/glossary/break-even-point)** — Monthly sales to cover fixed costs.
+- **[Food cost percentage](/glossary/food-cost-percentage)**: Menu-level targets.
+- **[Prime cost](/glossary/prime-cost)**: COGS + labor; typical full-service band 60–65%.
+- **Occupancy**: Rent + CAM as % of sales.
+- **[Break-even point](/glossary/break-even-point)**: Monthly sales to cover fixed costs.
 
-If base-case sales are $95,000/month and break-even is $88,000, margin for error is thin—acceptable only with strong working capital and operational experience.
+If base-case sales are $95,000/month and break-even is $88,000, margin for error is thin, acceptable only with strong working capital and operational experience.
 
 ## What Role Does Concept-Market Fit Play?
 
@@ -169,7 +169,7 @@ A market can be “good” and still wrong for you. Fit checklist:
 - Does the labor pool support your service model?
 - Can the building support your kitchen ([hood system](/glossary/hood-system), [walk-in cooler](/glossary/walk-in-cooler)) without blowing [opening budget](/blog/how-much-does-it-cost-to-open-a-restaurant-2026)?
 
-Revise concept before forcing a site—see [restaurant concept development guide](/blog/restaurant-concept-development-guide).
+Revise concept before forcing a site, see [restaurant concept development guide](/blog/restaurant-concept-development-guide).
 
 ## How Do Delivery and Ghost Competitors Affect the Analysis?
 
@@ -202,10 +202,10 @@ Attach equipment and build quotes from vendors such as [Horeca Store](https://ww
 
 ## How Often Should You Refresh Market Analysis?
 
-- **Initial site selection** — Full study per finalist.
-- **Renewal option** — Refresh if rent reset or new competition.
-- **Second unit** — New polygon; do not clone unit one assumptions.
-- **Sales decline** — Re-run capture rate; problem may be operations or market shift.
+- **Initial site selection**: Full study per finalist.
+- **Renewal option**: Refresh if rent reset or new competition.
+- **Second unit**: New polygon; do not clone unit one assumptions.
+- **Sales decline**: Re-run capture rate; problem may be operations or market shift.
 
 ## Frequently Asked Questions
 

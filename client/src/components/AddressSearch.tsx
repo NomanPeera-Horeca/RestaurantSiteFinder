@@ -133,7 +133,7 @@ export function AddressSearch({ onAnalyze, isLoading, canAnalyze = true, buttonL
             className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-72 overflow-y-auto rounded-xl border border-border bg-white shadow-2xl ring-1 ring-black/5"
           >
             <div className="border-b border-border/60 bg-muted/40 px-4 py-2 text-xs font-medium text-muted-foreground">
-              {predictions.length} address{predictions.length === 1 ? "" : "es"} found — select one
+              {predictions.length} address{predictions.length === 1 ? "" : "es"} found. Select oneselect one
             </div>
             {predictions.map((p) => {
               const { primary, secondary } = formatAddressLines(p.description);

@@ -28,7 +28,7 @@ faq:
   - question: "Should I open a restaurant in an urban or suburban location?"
     answer: "Urban sites offer density and transit but higher rent and parking friction. Suburban sites offer lower rent and parking but rely on car traffic and predictable evening/weekend peaks."
   - question: "Is high rent worth high foot traffic?"
-    answer: "Often yes—prime visibility acts as free marketing. Low-rent hidden locations require heavy advertising to overcome obscurity."
+    answer: "Often yes, prime visibility acts as free marketing. Low-rent hidden locations require heavy advertising to overcome obscurity."
   - question: "What is an anchor tenant and why does it matter?"
     answer: "A high-traffic neighbor like a grocery store, cinema, or office tower that draws crowds your restaurant can capture through complementary positioning."
   - question: "How do you calculate if foot traffic supports a lease?"
@@ -37,7 +37,7 @@ faq:
     answer: "Visibility, accessibility, parking, demographic match, competition density, infrastructure, zoning, anchor tenants, and lease terms."
 ---
 
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Ask "Should I open here?" only after a feasibility study—not after falling in love with exposed brick.</li><li>Balance urban density versus suburban parking; align psychographics with your menu, not just income.</li><li>High rent on a visible corner often beats cheap rent in a hidden alley.</li><li>Score every finalist with <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> and a written checklist.</li></ul></div>
+<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Ask "Should I open here?" only after a feasibility study, not after falling in love with exposed brick.</li><li>Balance urban density versus suburban parking; align psychographics with your menu, not just income.</li><li>High rent on a visible corner often beats cheap rent in a hidden alley.</li><li>Score every finalist with <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> and a written checklist.</li></ul></div>
 
 Pair this guide with our [restaurant site selection checklist](/blog/restaurant-site-selection-checklist) and [how to choose a restaurant location](/blog/how-to-choose-restaurant-location). For free AI-powered scoring, run your address through [Restaurant Site Finder](https://restaurantsitefinder.com/).
 
@@ -115,7 +115,7 @@ Your restaurant does not exist in a vacuum. The businesses and macroeconomic tre
 
 ### Impact of Anchor Tenants on Restaurant Success
 
-An "anchor tenant" is a major retail draw—like a large grocery store, a popular movie theater, or a massive corporate office building—that brings consistent, daily traffic to a retail center. The impact of anchor tenants on restaurant success cannot be overstated. Being located next to a busy cinema can guarantee a steady stream of pre- and post-movie diners. However, make sure the anchor's clientele matches your target audience.
+An "anchor tenant" is a major retail draw, like a large grocery store, a popular movie theater, or a massive corporate office building, that brings consistent, daily traffic to a retail center. The impact of anchor tenants on restaurant success cannot be overstated. Being located next to a busy cinema can guarantee a steady stream of pre- and post-movie diners. However, make sure the anchor's clientele matches your target audience.
 
 ### Neighborhood Gentrification Impact on Long-Term Restaurant Viability
 
@@ -176,7 +176,7 @@ Let us pull it all together with a brief restaurant location analysis example. I
 
 ## Conclusion
 
-Choosing the right spot for your dining establishment is a complex, multi-layered puzzle. It requires a delicate balance of art and science—merging your creative culinary vision with hard data, demographic realities, and physical logistics.
+Choosing the right spot for your dining establishment is a complex, multi-layered puzzle. It requires a delicate balance of art and science, merging your creative culinary vision with hard data, demographic realities, and physical logistics.
 
 By conducting a thorough location feasibility study, utilizing modern site analysis tools, and strictly adhering to your restaurant site selection criteria checklist, you can eliminate much of the risk associated with opening a new venue. Remember, your location is your first impression, your best marketing asset, and the foundation of your long-term viability. Take your time, analyze the data, and choose a space that sets your restaurant up for maximum, sustained profit.
 
@@ -188,7 +188,7 @@ Urban sites offer density and transit but higher rent and parking friction. Subu
 
 ### Is high rent worth high foot traffic?
 
-Often yes—prime visibility acts as free marketing. Low-rent hidden locations require heavy advertising to overcome obscurity.
+Often yes, prime visibility acts as free marketing. Low-rent hidden locations require heavy advertising to overcome obscurity.
 
 ### What is an anchor tenant and why does it matter?
 

@@ -147,7 +147,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              The average failed restaurant loses <strong className="text-foreground">$275,000</strong>. Most owners pick a location on gut feel — and pay for it. In 3 minutes, this tool tells you exactly whether your concept will win or lose at a specific address. Free. No broker needed.
+              The average failed restaurant loses <strong className="text-foreground">$275,000</strong>. Most owners pick a location on gut feel and pay for it. In 3 minutes, this tool tells you exactly whether your concept will win or lose at a specific address. Free. No broker needed.
             </p>
 
             <AnalysisHeroCard
@@ -162,7 +162,7 @@ export default function Home() {
               <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">
                 Horeca Store
               </a>{" "}
-              — restaurant equipment specialists
+              , restaurant equipment specialists
             </p>
           </div>
         </div>
@@ -232,7 +232,7 @@ export default function Home() {
               },
               {
                 stat: "91,500",
-                label: "restaurants closed in the US last year — location cited in most",
+                label: "restaurants closed in the US last year (location cited in most)",
                 source: "Kalibrate / NRA 2024",
               },
             ].map((item) => (
@@ -262,7 +262,7 @@ export default function Home() {
               How 1,200+ owners avoided the #1 restaurant mistake
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Location kills more restaurants than bad food does. Here&apos;s how to know before you sign — then get your equipment from{" "}
+              Location kills more restaurants than bad food does. Here&apos;s how to know before you sign, then get your equipment from{" "}
               <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>.
             </p>
           </div>
@@ -273,7 +273,7 @@ export default function Home() {
                 icon: MapPin,
                 step: "01",
                 title: "Tell us what you're opening",
-                desc: "Fast casual burger spot? Sushi bar? Ghost kitchen? Pick your concept so the analysis is calibrated to your actual competition — not every restaurant within a mile.",
+                desc: "Fast casual burger spot? Sushi bar? Ghost kitchen? Pick your concept so the analysis is calibrated to your actual competition, not every restaurant within a mile.",
               },
               {
                 icon: BarChart3,
@@ -285,7 +285,7 @@ export default function Home() {
                 icon: ShoppingCart,
                 step: "03",
                 title: "Get a verdict you can act on",
-                desc: "GO or NO-GO. Three winning concept recommendations. A custom equipment list from Horeca Store. Everything you need to decide — or walk away.",
+                desc: "GO or NO-GO. Three winning concept recommendations. A custom equipment list from Horeca Store. Everything you need to decide, or walk away.",
               },
             ].map((item) => (
               <div
@@ -314,7 +314,7 @@ export default function Home() {
               What you get that no broker will ever tell you
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Site selection consultants charge $5,000+ for this. SiteZeus costs $500/month. You get it free — because{" "}
+              Site selection consultants charge $5,000+ for this. SiteZeus costs $500/month. You get it free because{" "}
               <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>{" "}
               built it for the restaurant community.
             </p>
@@ -323,9 +323,9 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
               { icon: Building2, title: "Competitor Snapshot", desc: "Every restaurant within your trade area: names, ratings, price tier, and distance. See exactly who you're fighting for the same customers." },
-              { icon: TrendingUp, title: "Market Gap Detection", desc: "AI scans thousands of reviews to find what customers are desperately searching for — and not finding — near your address." },
+              { icon: TrendingUp, title: "Market Gap Detection", desc: "AI scans thousands of reviews to find what customers are desperately searching for and not finding near your address." },
               { icon: Star, title: "3 Winning Concepts", desc: "Specific restaurant concepts that have a real chance in that market, complete with menu direction, risk score, and GO/NO-GO for each." },
-              { icon: ShoppingCart, title: "Equipment Checklist", desc: "A custom list of every piece of commercial kitchen equipment you'll need — with direct links to buy from Horeca Store." },
+              { icon: ShoppingCart, title: "Equipment Checklist", desc: "A custom list of every piece of commercial kitchen equipment you'll need, with direct links to buy from Horeca Store." },
             ].map((item) => (
               <div key={item.title} className="p-6 rounded-xl border border-border/50 bg-card hover:border-primary/30 transition-colors">
                 <item.icon className="h-8 w-8 text-primary mb-4" />
@@ -414,7 +414,7 @@ export default function Home() {
             </h2>
             <p className="leading-relaxed mb-4">
               At <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-semibold">Horeca Store</a>,
-              we sell equipment to restaurant owners every day. We&apos;ve watched people pour their life savings into a location — and close 8 months later
+              we sell equipment to restaurant owners every day. We&apos;ve watched people pour their life savings into a location and close 8 months later
               because five identical concepts were already fighting for the same lunch crowd three blocks away.
               The data that could have saved them existed. It was just locked behind $5,000 consulting fees and enterprise SaaS tools that small operators can&apos;t afford.
             </p>
@@ -430,7 +430,7 @@ export default function Home() {
               Whether you're a first-time restaurateur or an experienced operator scouting new locations,
               you deserve the same quality analysis that big restaurant groups get. When you're ready to move forward,{" "}
               <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">Horeca Store</a> has the
-              commercial kitchen equipment to match your winning concept—from opening guides in our{" "}
+              commercial kitchen equipment to match your winning concept, from opening guides in our{" "}
               <a href="/blog/restaurant-equipment-checklist-new-owners" className="text-primary hover:underline">equipment checklist</a> to{" "}
               <a href="/glossary/ghost-kitchen" className="text-primary hover:underline">ghost kitchen</a> and traditional formats.
             </p>
@@ -438,7 +438,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GEO Section — city targeting for LLM and local SEO */}
+      {/* GEO Section: city targeting for LLM and local SEO */}
       <section className="py-12 bg-muted/10 border-y border-border/50">
         <div className="container max-w-4xl">
           <p className="text-xs font-semibold text-primary uppercase tracking-widest text-center mb-4">
@@ -449,7 +449,7 @@ export default function Home() {
           </h2>
           <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-6">
             Whether you&apos;re opening in Houston, Dallas, New York, Chicago, Los Angeles, Miami, Phoenix, Austin,
-            Atlanta, or any city in between — enter any U.S. address and get your GO / NO-GO in minutes.
+            Atlanta, or any city in between. Enter any U.S. address and get your GO / NO-GO in minutes.
           </p>
           <div className="flex flex-wrap justify-center gap-2">
             {[
@@ -513,11 +513,11 @@ export default function Home() {
               },
               {
                 q: "Is Restaurant Site Finder better than hiring a site selection consultant?",
-                a: "Site selection consultants typically charge $3,000–$10,000 for a location analysis. Enterprise tools like SiteZeus and Placer.ai start at $500/month. Restaurant Site Finder is free and delivers a GO/NO-GO verdict, competitor map, market gap analysis, and equipment checklist in under 3 minutes. For first-time owners and independent operators, it provides the same core intelligence at zero cost. For large franchise groups evaluating 50+ sites, a consultant adds value on top — but start here first.",
+                a: "Site selection consultants typically charge $3,000–$10,000 for a location analysis. Enterprise tools like SiteZeus and Placer.ai start at $500/month. Restaurant Site Finder is free and delivers a GO/NO-GO verdict, competitor map, market gap analysis, and equipment checklist in under 3 minutes. For first-time owners and independent operators, it provides the same core intelligence at zero cost. For large franchise groups evaluating 50+ sites, a consultant adds value on top, but start here first.",
               },
               {
                 q: "How do I know if a restaurant location is good?",
-                a: "A good restaurant location for your concept depends on five factors: (1) competition density — how many similar concepts are already nearby, (2) cuisine saturation — whether the market is oversupplied with your food type, (3) demographic fit — whether the neighborhood income and lifestyle matches your price point, (4) foot traffic patterns — lunch vs. dinner vs. weekend, and (5) lease terms relative to your projected revenue. Restaurant Site Finder analyzes all five in minutes using Google Places data and AI sentiment analysis. Enter any U.S. address to get a free analysis.",
+                a: "A good restaurant location for your concept depends on five factors: (1) competition density: how many similar concepts are already nearby, (2) cuisine saturation: whether the market is oversupplied with your food type, (3) demographic fit: whether the neighborhood income and lifestyle matches your price point, (4) foot traffic patterns: lunch vs. dinner vs. weekend, and (5) lease terms relative to your projected revenue. Restaurant Site Finder analyzes all five in minutes using Google Places data and AI sentiment analysis. Enter any U.S. address to get a free analysis.",
               },
             ].map((faq, i) => (
               <details

@@ -83,7 +83,7 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-card-foreground">
-                      {data.directCompetitorCount ?? "—"}
+                      {data.directCompetitorCount ?? "N/A"}
                     </p>
                     <p className="text-xs text-muted-foreground">Direct Competitors</p>
                     {data.searchRadiusMiles && (

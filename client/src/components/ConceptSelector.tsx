@@ -101,7 +101,7 @@ export function ConceptSelector({ value, onChange, compact }: ConceptSelectorPro
               : "border-dashed border-muted-foreground/30 text-muted-foreground hover:text-foreground"
           )}
         >
-          Not sure yet — suggest concepts for me
+          Not sure yet: suggest conceptssuggest concepts for me
         </Chip>
       </div>
 
@@ -111,7 +111,7 @@ export function ConceptSelector({ value, onChange, compact }: ConceptSelectorPro
             <Lightbulb className="h-4 w-4 text-primary" />
           </div>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            We&apos;ll scan the trade area and suggest three winning concepts tailored to local gaps — no concept required.
+            We&apos;ll scan the trade area and suggest three winning concepts tailored to local gaps: no concept required.
           </p>
         </div>
       ) : (
@@ -138,7 +138,7 @@ export function ConceptSelector({ value, onChange, compact }: ConceptSelectorPro
             {showCustomInput && (
               <Input
                 id="custom-concept"
-                placeholder="Describe your concept — e.g. Smash burgers & shakes, $12–15 check"
+                placeholder="Describe your concept, e.g.e.g. Smash burgers & shakes, $12–15 check"
                 value={value.cuisineConcept}
                 onChange={e => onChange({ ...value, mode: "specific", cuisineConcept: e.target.value })}
                 className="h-11 rounded-xl border-border/80 bg-white"

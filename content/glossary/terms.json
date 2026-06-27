@@ -40,7 +40,7 @@
       "term": "Covers",
       "slug": "covers",
       "shortDefinition": "One guest served one meal; used to forecast volume, labor, and inventory.",
-      "longDefinition": "A cover is a single diner meal occasion in planning parlance, whether dine-in, takeout, or delivery counted as one transaction guest. Operators translate covers into seat turns, kitchen throughput, and purchasing pars.\n\nMiscounting covers—especially blending lunch and dinner or ignoring seasonality—causes chronic over- or under-ordering. POS reports should segment covers by daypart for scheduling.\n\nWhen underwriting a lease, divide required monthly sales by realistic average check to estimate minimum covers per day. Compare that to observed foot traffic and competitor volumes in the trade area.",
+      "longDefinition": "A cover is a single diner meal occasion in planning parlance, whether dine-in, takeout, or delivery counted as one transaction guest. Operators translate covers into seat turns, kitchen throughput, and purchasing pars.\n\nMiscounting covers, especially blending lunch and dinner or ignoring seasonality, causes chronic over- or under-ordering. POS reports should segment covers by daypart for scheduling.\n\nWhen underwriting a lease, divide required monthly sales by realistic average check to estimate minimum covers per day. Compare that to observed foot traffic and competitor volumes in the trade area.",
       "relatedTerms": ["check-average", "seat-turn", "foot-traffic"],
       "relatedBlogSlugs": ["restaurant-market-analysis-guide", "how-to-choose-restaurant-location"],
       "category": "Operations"
@@ -67,7 +67,7 @@
       "term": "Trade Area",
       "slug": "trade-area",
       "shortDefinition": "The geographic zone from which a restaurant draws the majority of its customers.",
-      "longDefinition": "Trade area analysis defines who lives, works, and visits within a reasonable travel time of your site—often 5, 10, or 15 minutes by car or a tight radius for urban walkable locations. Demographics, income, daytime population, and competitive density shape concept fit.\n\nUrban sites may draw from multiple micro-neighborhoods; suburban sites often depend on parking and arterial visibility. Delivery extends the trade area but adds fee and packaging economics.\n\nMatch cuisine and price point to trade area demand. Underserved cuisine type alone does not prove demand if demographics do not align.",
+      "longDefinition": "Trade area analysis defines who lives, works, and visits within a reasonable travel time of your site, often 5, 10, or 15 minutes by car or a tight radius for urban walkable locations. Demographics, income, daytime population, and competitive density shape concept fit.\n\nUrban sites may draw from multiple micro-neighborhoods; suburban sites often depend on parking and arterial visibility. Delivery extends the trade area but adds fee and packaging economics.\n\nMatch cuisine and price point to trade area demand. Underserved cuisine type alone does not prove demand if demographics do not align.",
       "relatedTerms": ["foot-traffic", "market-analysis", "second-generation-space"],
       "relatedBlogSlugs": ["restaurant-market-analysis-guide", "how-to-choose-restaurant-location"],
       "category": "Site Selection"

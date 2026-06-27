@@ -1,0 +1,6 @@
+---
+description: Never use em dashes in generated content or copy
+alwaysApply: true
+---
+
+Never use em dashes (—) in any generated content, copy, or code comments. Use periods, colons, commas, or parentheses instead. Em dashes signal AI-generated content.
