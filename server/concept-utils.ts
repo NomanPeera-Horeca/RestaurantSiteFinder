@@ -83,24 +83,24 @@ export function buildInitialScanInsight(
 ): string {
   if (concept.mode === "explore" || concept.serviceModel === "explore") {
     if (competitorCount > 15) {
-      return "High-density restaurant area. Competition is fierce but foot traffic is likely strong.";
+      return "This is a high-density restaurant area. A lot of competition, but that also means real foot traffic. Your full report will show whether there is room for you to win here.";
     }
     if (competitorCount > 8) {
-      return "Moderate restaurant density. There are clear opportunities for differentiation.";
+      return "Moderate restaurant activity at this location. There may be room to succeed here depending on your concept. Your full report will tell you exactly where the opportunity is.";
     }
-    return "Low restaurant density. This could be an underserved market with first-mover advantage.";
+    return "Low restaurant activity near this address. That could mean a wide open opportunity or a sign that demand is not there. Your full report will tell you which.";
   }
 
   const conceptName = concept.cuisineConcept || "your concept";
   const miles = getTradeAreaRadiusMiles(concept.serviceModel);
   if (directCount >= 8) {
-    return `Crowded ${conceptName} market: ${directCount} direct competitors within ${miles} miles. Differentiation or a NO-GO verdict is likely unless you have a clear edge.`;
+    return `${directCount} restaurants already doing what you want to do within ${miles} miles. This is a crowded market. Your full report will show whether you can still make money here or if there is a better location.`;
   }
   if (directCount >= 4) {
-    return `Moderate ${conceptName} competition (${directCount} direct competitors within ${miles} miles). Viability depends on service model fit and check average.`;
+    return `${directCount} direct ${conceptName} competitors within ${miles} miles. Not impossible, but you will need a clear edge to make money here. Your full report breaks down exactly what you are up against.`;
   }
   if (directCount > 0) {
-    return `Only ${directCount} direct ${conceptName} competitor(s) within ${miles} miles. Potential opening if local demand matches your service model.`;
+    return `Only ${directCount} direct ${conceptName} competitor(s) within ${miles} miles. That could be good news for you. Your full report will tell you if this location can make your restaurant successful.`;
   }
-  return `No direct ${conceptName} competitors within ${miles} miles. Validate demand before assuming first-mover advantage.`;
+  return `No direct ${conceptName} competitors within ${miles} miles. That could mean big opportunity or no demand. Your full report will tell you which.`;
 }
