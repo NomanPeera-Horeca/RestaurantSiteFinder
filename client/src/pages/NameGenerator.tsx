@@ -521,7 +521,7 @@ export default function NameGenerator() {
           {showSavedBanner && savedName && (
             <div className="mb-8 rounded-xl border border-green-200 bg-green-50 px-5 py-4 text-sm text-green-900">
               Name saved! Next:{" "}
-              <Link href="/#location-analysis" className="font-semibold underline hover:no-underline">
+              <Link href="/#restaurant-location-analysis" className="font-semibold underline hover:no-underline">
                 find your location →
               </Link>
             </div>
@@ -556,7 +556,7 @@ export default function NameGenerator() {
                     <p className="text-sm text-muted-foreground mb-6 flex-1">
                       Check if your city has demand for your concept — free
                     </p>
-                    <Link href="/#location-analysis">
+                    <Link href="/#restaurant-location-analysis">
                       <Button variant="outline" className="w-full rounded-xl">
                         Run Location Analysis
                         <ArrowRight className="ml-2 h-4 w-4" />

@@ -127,7 +127,7 @@ export function RentCalculator() {
   }, [monthlyRent, pricePoint, results]);
 
   const scrollToAnalysis = () => {
-    document.getElementById("location-analysis")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("restaurant-location-analysis")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

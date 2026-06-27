@@ -129,7 +129,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section id="location-analysis" className="relative pt-44 sm:pt-40 pb-20 overflow-hidden">
+      <section id="restaurant-location-analysis" className="relative pt-44 sm:pt-40 pb-20 overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background" />
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function PricingSection() {
   const scrollToAnalyze = () => {
-    document.getElementById("location-analysis")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("restaurant-location-analysis")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

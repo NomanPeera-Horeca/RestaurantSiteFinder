@@ -23,7 +23,7 @@ export function PremiumGate({ feature, children }: PremiumGateProps) {
 
   const startCheckout = async (plan: "monthly" | "lifetime") => {
     if (!email) {
-      document.getElementById("location-analysis")?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById("restaurant-location-analysis")?.scrollIntoView({ behavior: "smooth" });
       return;
     }
     captureEvent("upgrade_cta_clicked", { plan, feature });
@@ -70,7 +70,7 @@ export function PremiumGate({ feature, children }: PremiumGateProps) {
               <Button
                 className="rounded-xl"
                 onClick={() =>
-                  document.getElementById("location-analysis")?.scrollIntoView({ behavior: "smooth" })
+                  document.getElementById("restaurant-location-analysis")?.scrollIntoView({ behavior: "smooth" })
                 }
               >
                 Start Free Analysis →
