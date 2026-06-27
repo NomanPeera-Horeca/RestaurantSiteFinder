@@ -1,6 +1,5 @@
 import "dotenv/config";
 import express from "express";
-import { getDb } from "../db";
 import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
@@ -78,9 +77,10 @@ async function startServer() {
 
   // One-time migration: create feedback table if it does not exist
   try {
-    const db = await getDb();
-    if (db) {
-      await db.execute(`
+    if (process.env.DATABASE_URL) {
+      const mysql = await import("mysql2/promise");
+      const conn = await mysql.createConnection(process.env.DATABASE_URL);
+      await conn.execute(`
         CREATE TABLE IF NOT EXISTS \`feedback\` (
           \`id\` int AUTO_INCREMENT NOT NULL,
           \`category\` enum('bug_report','feature_request','report_is_wrong','missing_my_city','other') NOT NULL,
@@ -91,6 +91,7 @@ async function startServer() {
           CONSTRAINT \`feedback_id\` PRIMARY KEY(\`id\`)
         )
       `);
+      await conn.end();
       console.log("[Migration] feedback table ready");
     }
   } catch (err) {
