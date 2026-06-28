@@ -69,6 +69,15 @@ function priceSuffix(level: number | null | undefined): string {
   return label ? ` (${label})` : "";
 }
 
+function buildConceptLabel(serviceModel: string, cuisine: string, price: string): string {
+  const sm = serviceModel.trim();
+  const cu = cuisine.trim();
+  if (!cu || cu === sm || sm.toLowerCase() === cu.toLowerCase()) {
+    return `${sm}${price}`;
+  }
+  return `${sm} · ${cu}${price}`;
+}
+
 export function extractCuisineFromPlace(types: string[], name: string): string {
   for (const type of types) {
     if (TYPE_CUISINE[type]) return TYPE_CUISINE[type];
@@ -142,7 +151,7 @@ export function classifyCompetitor(input: CompetitorClassificationInput): Compet
   return {
     cuisine,
     serviceModel,
-    conceptLabel: `${serviceModel} · ${cuisine}${price}`,
+    conceptLabel: buildConceptLabel(serviceModel, cuisine, price),
   };
 }
 
@@ -153,13 +162,14 @@ export function getCompetitorConceptLabel(competitor: {
   priceLevel?: number | null;
   serviceModel?: string;
   conceptLabel?: string;
+  types?: string[];
 }): string {
-  if (competitor.conceptLabel) return competitor.conceptLabel;
   return classifyCompetitor({
     name: competitor.name,
     cuisine: competitor.cuisine,
     priceLevel: competitor.priceLevel,
     serviceModel: competitor.serviceModel,
+    types: competitor.types,
   }).conceptLabel;
 }
 

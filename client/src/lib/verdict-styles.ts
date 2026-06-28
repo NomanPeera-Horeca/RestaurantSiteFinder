@@ -33,4 +33,4 @@ export function closureTitle(rec: Verdict): string {
 }
 
 export const MMF_TOOLTIP =
-  "Menu-Market Fit scores how well this concept's menu matches local demand based on competitor reviews, cuisine gaps, and dining patterns in your trade area.";
+  "Menu-Market Fit scores how well this concept's menu matches local demand based on competitor reviews, cuisine gaps, and dining patterns near this address.";

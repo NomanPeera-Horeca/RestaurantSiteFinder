@@ -19,3 +19,15 @@ export function distanceMilesBetween(
 export function roundDistanceMiles(miles: number): number {
   return Math.round(miles * 10) / 10;
 }
+
+/** Rough drive-time estimate from straight-line miles (avg ~25 mph mixed urban/suburban). */
+export function estimateDriveTimeMinutes(distanceMiles: number): number {
+  if (distanceMiles <= 0.15) return 1;
+  return Math.max(2, Math.round((distanceMiles / 25) * 60));
+}
+
+export function formatDriveTime(distanceMiles: number | null | undefined): string {
+  if (distanceMiles == null) return "N/A";
+  const minutes = estimateDriveTimeMinutes(distanceMiles);
+  return minutes <= 1 ? "~1 min" : `~${minutes} min`;
+}

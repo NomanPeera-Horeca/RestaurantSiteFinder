@@ -31,12 +31,27 @@ export function formatTradeAreaLabel(serviceModel?: ServiceModelValue): string {
   return `${miles}-mile trade area`;
 }
 
-export function formatCompetitorAreaSubtitle(count: number, serviceModel?: ServiceModelValue): string {
-  const miles = getTradeAreaRadiusMiles(serviceModel);
-  return `${count} restaurant${count === 1 ? "" : "s"} within ${miles} miles`;
+export function formatMappedCount(count: number, capped?: boolean): string {
+  if (capped && count >= 60) return `${count}+`;
+  return String(count);
 }
 
-export function formatDirectCompetitorAreaSubtitle(count: number, serviceModel?: ServiceModelValue): string {
+export function formatCompetitorAreaSubtitle(
+  count: number,
+  serviceModel?: ServiceModelValue,
+  capped?: boolean
+): string {
   const miles = getTradeAreaRadiusMiles(serviceModel);
-  return `${count} similar concept${count === 1 ? "" : "s"} within ${miles} miles`;
+  const label = formatMappedCount(count, capped);
+  return `${label} restaurant${count === 1 && !capped ? "" : "s"} mapped within ${miles} miles of this address`;
+}
+
+export function formatDirectCompetitorAreaSubtitle(
+  count: number,
+  serviceModel?: ServiceModelValue,
+  capped?: boolean
+): string {
+  const miles = getTradeAreaRadiusMiles(serviceModel);
+  const label = formatMappedCount(count, capped);
+  return `${label} similar concept${count === 1 && !capped ? "" : "s"} within ${miles} miles of this address`;
 }

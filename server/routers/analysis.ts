@@ -310,6 +310,7 @@ export const analysisRouter = router({
         conceptInput: concept,
         conceptFit: analysis.conceptFit,
         searchRadiusMiles: getTradeAreaRadiusMiles(concept?.serviceModel),
+        competitorsCapped: competitors.length >= 60,
       };
 
       // Save report to database

@@ -108,6 +108,8 @@ export interface FullReport {
   conceptInput?: ConceptInput;
   conceptFit?: ConceptFit;
   searchRadiusMiles?: number;
+  /** True when Google Places results hit the 60-restaurant display cap. */
+  competitorsCapped?: boolean;
 }
 
 /** Initial scan result (before lead wall) */
