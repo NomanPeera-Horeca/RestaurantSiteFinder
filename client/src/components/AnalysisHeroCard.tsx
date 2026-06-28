@@ -10,6 +10,8 @@ interface AnalysisHeroCardProps {
   onAnalyze: (address: string, lat: number, lng: number) => void;
   isLoading?: boolean;
   canAnalyze?: boolean;
+  prefillAddress?: string;
+  prefillRevision?: number;
 }
 
 export function AnalysisHeroCard({
@@ -18,6 +20,8 @@ export function AnalysisHeroCard({
   onAnalyze,
   isLoading,
   canAnalyze = true,
+  prefillAddress,
+  prefillRevision,
 }: AnalysisHeroCardProps) {
   return (
     <div className="relative mx-auto w-full max-w-3xl text-left">
@@ -30,10 +34,10 @@ export function AnalysisHeroCard({
             </div>
             <div>
               <p className="text-lg font-semibold text-foreground sm:text-xl">
-                Free concept + location analysis
+                Is This Location Right for Your Restaurant?
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Pick what you&apos;re opening, enter an address, and get a GO or NO-GO for that exact concept.
+                Select your concept, enter an address, and get a data-backed verdict for that exact location.
               </p>
             </div>
           </div>
@@ -50,6 +54,8 @@ export function AnalysisHeroCard({
                 onAnalyze={onAnalyze}
                 isLoading={isLoading}
                 canAnalyze={canAnalyze}
+                prefillAddress={prefillAddress}
+                prefillRevision={prefillRevision}
               />
               <p
                 className={cn(
