@@ -543,26 +543,32 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {concept.menuMarketFit.demandExplanation}
                     </p>
-                    <div className="grid grid-cols-1 gap-3 pt-1">
-                      <div className="flex gap-2">
-                        <Users className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <div className="grid grid-cols-1 gap-2 pt-1">
+                      <div className="rounded-lg border border-border/50 bg-background p-3 flex gap-3">
+                        <div className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                          <Users className="h-4 w-4 text-primary" />
+                        </div>
                         <div>
-                          <p className="text-xs font-medium text-foreground">Population Match</p>
-                          <p className="text-xs text-muted-foreground">{concept.menuMarketFit.populationMatch}</p>
+                          <p className="text-xs font-semibold text-foreground mb-0.5">Population Match</p>
+                          <p className="text-sm text-muted-foreground leading-snug">{concept.menuMarketFit.populationMatch}</p>
                         </div>
                       </div>
-                      <div className="flex gap-2">
-                        <Search className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                      <div className="rounded-lg border border-border/50 bg-background p-3 flex gap-3">
+                        <div className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                          <Search className="h-4 w-4 text-primary" />
+                        </div>
                         <div>
-                          <p className="text-xs font-medium text-foreground">Demand Signals</p>
-                          <p className="text-xs text-muted-foreground">{concept.menuMarketFit.searchDemandSignals}</p>
+                          <p className="text-xs font-semibold text-foreground mb-0.5">Demand Signals</p>
+                          <p className="text-sm text-muted-foreground leading-snug">{concept.menuMarketFit.searchDemandSignals}</p>
                         </div>
                       </div>
-                      <div className="flex gap-2">
-                        <ShieldCheck className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                      <div className="rounded-lg border border-border/50 bg-background p-3 flex gap-3">
+                        <div className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                          <ShieldCheck className="h-4 w-4 text-primary" />
+                        </div>
                         <div>
-                          <p className="text-xs font-medium text-foreground">Competitive Advantage</p>
-                          <p className="text-xs text-muted-foreground">{concept.menuMarketFit.competitiveAdvantage}</p>
+                          <p className="text-xs font-semibold text-foreground mb-0.5">Competitive Advantage</p>
+                          <p className="text-sm text-muted-foreground leading-snug">{concept.menuMarketFit.competitiveAdvantage}</p>
                         </div>
                       </div>
                     </div>
