@@ -1,14 +1,14 @@
 import React, { useState } from "react";
+import { useLocation } from "wouter";
 import { AnalysisHeroCard } from "@/components/AnalysisHeroCard";
 import { RentCalculator } from "@/components/RentCalculator";
 import { PricingSection } from "@/components/PricingSection";
 import { SiteHeader } from "@/components/SiteHeader";
-import { AnalysisFlow } from "@/components/analysis/AnalysisFlow";
 import { trpc } from "@/lib/trpc";
 import { defaultConceptInput, isConceptReady } from "@/lib/concept";
 import { captureEvent } from "@/lib/posthog";
 import type { ConceptInput } from "../../../shared/concept-options";
-import type { InitialScan } from "../../../shared/analysis-types";
+import { buildAnalyzeUrl } from "@/pages/Analyze";
 import { HORECA } from "@/lib/horeca-brand";
 import { toast } from "sonner";
 import { PromoBannerStrip } from "@/components/PromoBanners";
@@ -27,9 +27,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
-  const [scanData, setScanData] = useState<InitialScan | null>(null);
+  const [, navigate] = useLocation();
   const [concept, setConcept] = useState<ConceptInput>(defaultConceptInput);
-  const [locationData, setLocationData] = useState<{ address: string; lat: number; lng: number } | null>(null);
   const conceptTrackedRef = React.useRef<string>("");
 
   React.useEffect(() => {
@@ -54,22 +53,6 @@ export default function Home() {
     }
   });
 
-  const initialScan = trpc.analysis.initialScan.useMutation({
-    onSuccess: (data) => {
-      setScanData(data);
-      captureEvent("initial_scan_completed", {
-        competitor_count: data.competitorCount,
-        direct_competitor_count: data.directCompetitorCount ?? 0,
-        service_model: concept.serviceModel,
-        cuisine: concept.cuisineConcept ?? "",
-      });
-    },
-    onError: (err) => {
-      captureEvent("initial_scan_failed", { error: err.message.slice(0, 120) });
-      toast.error("Failed to scan location. Please try again.");
-      console.error(err);
-    },
-  });
 
   const handleAnalyze = (address: string, lat: number, lng: number) => {
     if (!isConceptReady(concept)) {
@@ -80,23 +63,7 @@ export default function Home() {
       service_model: concept.serviceModel,
       cuisine: concept.cuisineConcept ?? "",
     });
-    setScanData(null);
-    setLocationData({ address, lat, lng });
-    initialScan.mutate({ address, lat, lng, concept });
-  };
-
-  const handleScanComplete = (data: InitialScan) => {
-    const conceptLabel = concept.cuisineConcept?.toLowerCase() ?? "restaurant";
-    toast.success("Heavy lifting done", {
-      description: `We mapped ${data.competitorCount} restaurants in your trade area, matched ${data.directCompetitorCount ?? 0} direct ${conceptLabel} rivals, and flagged the review patterns brokers never share. Scroll down to see what we found.`,
-      duration: 6000,
-    });
-  };
-
-  const handleAnalyzeAnother = () => {
-    setScanData(null);
-    setLocationData(null);
-    document.getElementById("restaurant-location-analysis")?.scrollIntoView({ behavior: "smooth" });
+    navigate(buildAnalyzeUrl(address, lat, lng, concept));
   };
 
   return (
@@ -146,7 +113,7 @@ export default function Home() {
               concept={concept}
               onConceptChange={setConcept}
               onAnalyze={handleAnalyze}
-              isLoading={initialScan.isPending}
+              isLoading={false}
               canAnalyze={isConceptReady(concept)}
             />
             <p className="text-sm text-muted-foreground text-center mt-6 max-w-2xl mx-auto">
@@ -159,20 +126,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Inline analysis flow */}
-      {locationData && (
-        <AnalysisFlow
-          scanData={scanData}
-          concept={concept}
-          address={locationData.address}
-          lat={locationData.lat}
-          lng={locationData.lng}
-          isInitialScanPending={initialScan.isPending}
-          onAnalyzeAnother={handleAnalyzeAnother}
-          onScanComplete={handleScanComplete}
-        />
-      )}
 
       {/* Horeca Store Trust Badges */}
       <section className="py-8 border-y border-border/50 bg-muted/30">

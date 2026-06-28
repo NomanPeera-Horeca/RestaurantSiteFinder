@@ -49,8 +49,8 @@ const conceptFitSchema = {
     userConceptSummary: { type: "string", description: "One-line summary of the user's proposed concept" },
     fitScore: { type: "number", description: "1-10 score for THIS specific concept at THIS location" },
     recommendation: { type: "string", enum: ["GO", "NO-GO", "CAUTION"] },
-    summary: { type: "string", description: "2-3 sentence verdict for the user's concept" },
-    competitiveVerdict: { type: "string", description: "Assessment of direct competition for this concept type" },
+    summary: { type: "string", description: "2-3 sentence location intelligence analysis for the user's concept" },
+    competitiveVerdict: { type: "string", description: "Competitive landscape analysis for this concept type based on direct rivals nearby" },
     whyItWorksOrFails: { type: "string", description: "Detailed reasoning tied to service model and trade area" },
     alternativeConcepts: {
       type: "array",

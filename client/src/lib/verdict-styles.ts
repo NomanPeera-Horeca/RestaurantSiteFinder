@@ -1,4 +1,4 @@
-/** Score and badge styling tied to GO / CAUTION / NO-GO, not raw numeric score. */
+/** Score and badge styling tied to GO / CAUTION / NO-GO recommendation, not raw numeric score. */
 
 export type Verdict = "GO" | "CAUTION" | "NO-GO" | string;
 
@@ -21,9 +21,9 @@ export function verdictBadgeClass(rec: Verdict): string {
 }
 
 export function verdictMomentTitle(rec: Verdict): string {
-  if (rec === "GO") return "Our model predicts GO for this address.";
-  if (rec === "CAUTION") return "Our model predicts proceed with caution.";
-  return "Our model predicts this is a tough fit.";
+  if (rec === "GO") return "Location intelligence analysis supports GO at this address.";
+  if (rec === "CAUTION") return "Location intelligence analysis suggests proceed with caution.";
+  return "Location intelligence analysis flags significant headwinds.";
 }
 
 export function closureTitle(rec: Verdict): string {

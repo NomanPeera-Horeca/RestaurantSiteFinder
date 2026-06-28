@@ -23,7 +23,7 @@ export function ReportClosureSection({ report, onPreviewPdf, onEmailReport }: Re
           </span>
           <h3 className="text-xl font-bold mb-2">{closureTitle(rec)}</h3>
           <p className="text-sm text-white/85 mb-4 leading-relaxed">
-            Verdict {rec} at {score}/10 for {report.address.split(",")[0]}. The PDF packages everything below into one document they can forward.
+            Recommendation {rec} at {score}/10 for {report.address.split(",")[0]}. The PDF packages everything below into one document they can forward.
           </p>
           <div className="bg-white/10 border border-white/10 rounded-lg px-3 py-2.5 mb-4 text-sm leading-relaxed">
             Site selection consultants charge <strong className="text-amber-200">$2,500+</strong> for this. Your full PDF is{" "}
@@ -31,7 +31,7 @@ export function ReportClosureSection({ report, onPreviewPdf, onEmailReport }: Re
           </div>
           <div className="flex flex-wrap gap-2 mb-4">
             {[
-              { v: rec, k: "Verdict" },
+              { v: rec, k: "Recommendation" },
               { v: `${score}/10`, k: "Score" },
               { v: String(direct), k: "Rivals" },
             ].map((s) => (

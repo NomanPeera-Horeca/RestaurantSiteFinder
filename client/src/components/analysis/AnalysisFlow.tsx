@@ -29,6 +29,7 @@ interface AnalysisFlowProps {
   isInitialScanPending: boolean;
   onAnalyzeAnother: () => void;
   onScanComplete?: (scan: InitialScan) => void;
+  fullPage?: boolean;
 }
 
 export function AnalysisFlow({
@@ -40,6 +41,7 @@ export function AnalysisFlow({
   isInitialScanPending,
   onAnalyzeAnother,
   onScanComplete,
+  fullPage = false,
 }: AnalysisFlowProps) {
   const [leadId, setLeadId] = useState<number | null>(null);
   const [phase, setPhase] = useState<FlowPhase>("scanning");
@@ -151,8 +153,8 @@ export function AnalysisFlow({
       },
       {
         id: "model",
-        label: "Running location prediction model",
-        sublabel: gateReached ? "Forecasting fit for your concept at this address..." : undefined,
+        label: "Scoring opportunity fit",
+        sublabel: gateReached ? "Matching your concept to local demand patterns..." : undefined,
         status: gateReached ? "done" : "pending",
       },
     ];
@@ -164,20 +166,26 @@ export function AnalysisFlow({
       : phase === "generating"
         ? "Unlocking report"
         : phase === "gate"
-          ? "Signal detected"
+          ? "Scan complete"
           : isInitialScanPending
-            ? "Predicting..."
+            ? "Scanning..."
             : "Scanning...";
 
   const agentTitle =
     phase === "gate" || phase === "generating" || phase === "report"
-      ? "Prediction model finished"
-      : isInitialScanPending
-        ? "Predicting your market fit..."
-        : "Predicting your market fit...";
+      ? "Scan complete"
+      : "Analyzing your trade area...";
 
   return (
-    <section ref={sectionRef} id="analysis-flow" className="py-12 bg-background border-t border-border/50">
+    <section
+      ref={sectionRef}
+      id="analysis-flow"
+      className={
+        fullPage
+          ? "flex-1 py-8 bg-background"
+          : "py-12 bg-background border-t border-border/50"
+      }
+    >
       <AnalysisContextBar address={address} concept={concept} phaseLabel={phaseLabel} />
 
       <div className={`container pt-8 space-y-8 ${phase === "report" ? "max-w-5xl" : "max-w-3xl"}`}>

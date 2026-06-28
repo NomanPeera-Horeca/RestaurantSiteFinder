@@ -113,7 +113,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
               Your Report Is Ready
             </h2>
             <p className="text-sm text-muted-foreground">
-              Your GO/NO-GO verdict is built. Enter your email and we'll show you the full analysis right now.
+              Your location analysis is ready. Enter your email and we will show you the full report right now.
             </p>
           </div>
 

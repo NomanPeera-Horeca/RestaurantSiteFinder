@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { InitialScan } from "../../../../shared/analysis-types";
 import type { ConceptInput } from "../../../../shared/concept-options";
 import { formatConceptLabel } from "../../../../shared/concept-options";
+import { buildScanMomentCopy } from "@/lib/scan-moment-copy";
 import { LeadCaptureGate } from "./LeadCaptureGate";
 import { ConfettiOverlay } from "./ConfettiOverlay";
 
@@ -28,8 +29,7 @@ export function ScanMomentCard({
   lng,
   onCaptured,
 }: ScanMomentCardProps) {
-  const radius = scanData.searchRadiusMiles ?? 5;
-  const cuisine = concept.cuisineConcept ?? "restaurant";
+  const copy = buildScanMomentCopy(scanData, concept);
 
   return (
     <>
@@ -39,15 +39,11 @@ export function ScanMomentCard({
 
         <div className="relative text-center">
           <span className="inline-block text-[10px] font-extrabold tracking-[0.14em] uppercase bg-white/15 border border-white/25 px-3 py-1 rounded-full mb-3">
-            Market signal detected
+            {copy.badge}
           </span>
-          <h2 className="text-xl sm:text-2xl font-bold mb-2">We think this location has an opening.</h2>
-          <p className="text-sm text-white/90 max-w-md mx-auto mb-1">
-            After mapping {scanData.competitorCount} restaurants, our model flagged a pattern in your {radius}-mile trade area.
-          </p>
-          <p className="text-xs text-white/65 max-w-sm mx-auto mb-5">
-            Only a handful of direct {cuisine.toLowerCase()} rivals nearby. Avg competitor rating below the 4.0 bar. Unlock below to see the full prediction.
-          </p>
+          <h2 className="text-xl sm:text-2xl font-bold mb-2">{copy.headline}</h2>
+          <p className="text-sm text-white/90 max-w-md mx-auto mb-1">{copy.subtext}</p>
+          <p className="text-xs text-white/65 max-w-sm mx-auto mb-5">{copy.detail}</p>
 
           <div className="flex flex-wrap justify-center gap-5 mb-5">
             <div>
@@ -66,9 +62,9 @@ export function ScanMomentCard({
 
           <div className="bg-black/20 border border-white/10 rounded-xl px-4 text-left mb-5">
             {[
-              "Your GO / NO-GO prediction",
-              "Top weakness you can exploit",
-              "#1 cuisine gap",
+              "Your GO / NO-GO recommendation",
+              "Top weakness in competitor reviews",
+              "#1 cuisine gap in the trade area",
             ].map((label) => (
               <div
                 key={label}
@@ -85,7 +81,7 @@ export function ScanMomentCard({
 
         <div className="relative bg-white text-foreground rounded-xl p-5 text-left">
           <p className="text-sm font-semibold text-center mb-4">
-            Enter your details to unlock the full prediction
+            Enter your details to see your full report
           </p>
           <LeadCaptureGate
             embedded

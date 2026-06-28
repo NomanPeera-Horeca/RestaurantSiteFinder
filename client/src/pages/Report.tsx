@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useSearch } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { HORECA } from "@/lib/horeca-brand";
@@ -25,6 +25,7 @@ import { conceptFromSearchParams } from "@/lib/concept";
 import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
+import { distanceMilesBetween, roundDistanceMiles } from "../../../shared/geo";
 import { MMF_TOOLTIP, verdictScoreClass } from "@/lib/verdict-styles";
 import { PremiumReportActions } from "@/components/PremiumReportSections";
 import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
@@ -62,10 +63,43 @@ function recommendationBadge(rec: string) {
 
 // ---- Sub-components ----
 
-function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { competitors: Competitor[]; title?: string; subtitle?: string; sortByDistance?: boolean }) {
-  const sorted = sortByDistance
-    ? [...competitors].sort((a, b) => (a.distanceMiles ?? 99) - (b.distanceMiles ?? 99))
-    : competitors;
+function competitorDistanceMiles(
+  c: Competitor,
+  originLat?: number,
+  originLng?: number
+): number | null {
+  if (c.distanceMiles != null) return c.distanceMiles;
+  if (originLat == null || originLng == null || !c.lat || !c.lng) return null;
+  return roundDistanceMiles(distanceMilesBetween(originLat, originLng, c.lat, c.lng));
+}
+
+const COMPETITOR_TABLE_INITIAL = 25;
+
+function CompetitorTable({
+  competitors,
+  title,
+  subtitle,
+  originLat,
+  originLng,
+}: {
+  competitors: Competitor[];
+  title?: string;
+  subtitle?: string;
+  originLat?: number;
+  originLng?: number;
+}) {
+  const [showAll, setShowAll] = useState(false);
+
+  const sorted = useMemo(() => {
+    const withDistance = competitors.map((c) => ({
+      ...c,
+      distanceMiles: competitorDistanceMiles(c, originLat, originLng) ?? c.distanceMiles,
+    }));
+    return [...withDistance].sort((a, b) => (a.distanceMiles ?? 99) - (b.distanceMiles ?? 99));
+  }, [competitors, originLat, originLng]);
+
+  const visible = showAll ? sorted : sorted.slice(0, COMPETITOR_TABLE_INITIAL);
+  const hasMore = sorted.length > COMPETITOR_TABLE_INITIAL;
   const ratedCompetitors = competitors.filter(c => c.rating > 0);
   const avgRating = ratedCompetitors.length > 0
     ? ratedCompetitors.reduce((sum, c) => sum + c.rating, 0) / ratedCompetitors.length
@@ -82,6 +116,9 @@ function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { com
             <CardTitle className="text-lg">{title ?? "Competitor Snapshot"}</CardTitle>
             <p className="text-sm text-muted-foreground">
               {subtitle ?? formatCompetitorAreaSubtitle(competitors.length)}
+              {sorted.length > 0 && (
+                <span className="block text-xs mt-0.5">Sorted nearest first. Closest rivals matter most.</span>
+              )}
             </p>
           </div>
         </div>
@@ -112,15 +149,15 @@ function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { com
             <TableHeader>
               <TableRow className="bg-muted/50">
                 <TableHead className="font-semibold">Name</TableHead>
+                <TableHead className="font-semibold text-center">Distance</TableHead>
                 <TableHead className="font-semibold">Cuisine</TableHead>
                 <TableHead className="font-semibold text-center">Rating</TableHead>
                 <TableHead className="font-semibold text-center">Reviews</TableHead>
                 <TableHead className="font-semibold text-center">Price</TableHead>
-                <TableHead className="font-semibold text-center">Distance</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {sorted.slice(0, 15).map((c) => (
+              {visible.map((c) => (
                 <TableRow key={c.placeId} className="hover:bg-muted/30">
                   <TableCell className="font-medium text-foreground">
                     <div className="flex items-center gap-2 flex-wrap">
@@ -137,6 +174,9 @@ function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { com
                       )}
                     </div>
                   </TableCell>
+                  <TableCell className="text-center text-muted-foreground text-xs font-medium whitespace-nowrap">
+                    {c.distanceMiles != null ? `${c.distanceMiles.toFixed(1)} mi` : "—"}
+                  </TableCell>
                   <TableCell>
                     <Badge variant="outline" className="text-xs">{c.cuisine}</Badge>
                   </TableCell>
@@ -148,14 +188,27 @@ function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { com
                   </TableCell>
                   <TableCell className="text-center text-muted-foreground">{c.userRatingsTotal}</TableCell>
                   <TableCell className="text-center">{priceLevelLabel(c.priceLevel)}</TableCell>
-                  <TableCell className="text-center text-muted-foreground text-xs">
-                    {c.distanceMiles != null ? `${c.distanceMiles.toFixed(1)} mi` : ""}
-                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </div>
+        {hasMore && (
+          <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <p className="text-xs text-muted-foreground">
+              Showing {visible.length} of {sorted.length} restaurants · nearest listed first
+            </p>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="shrink-0"
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll ? "Show fewer" : `Show all ${sorted.length} restaurants`}
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
@@ -218,7 +271,7 @@ function ConceptFitSection({ conceptFit }: { conceptFit: ConceptFit }) {
               <Target className="h-5 w-5 text-primary-foreground" />
             </div>
             <div>
-              <CardTitle className="text-lg">Your Concept Verdict</CardTitle>
+              <CardTitle className="text-lg">Your Concept Fit Analysis</CardTitle>
               <p className="text-sm font-medium text-foreground mt-1">{conceptFit.userConceptSummary}</p>
               <p className="text-sm text-muted-foreground mt-2">{conceptFit.summary}</p>
             </div>
@@ -898,7 +951,8 @@ export function ReportBody({ report }: { report: FullReport }) {
               report.directCompetitors.length,
               report.conceptInput?.serviceModel
             )}
-            sortByDistance
+            originLat={report.lat}
+            originLng={report.lng}
           />
           <CompetitorTable
             competitors={report.competitors}
@@ -907,11 +961,16 @@ export function ReportBody({ report }: { report: FullReport }) {
               report.competitors.length,
               report.conceptInput?.serviceModel
             )}
-            sortByDistance
+            originLat={report.lat}
+            originLng={report.lng}
           />
         </>
       ) : (
-        <CompetitorTable competitors={report.competitors} />
+        <CompetitorTable
+          competitors={report.competitors}
+          originLat={report.lat}
+          originLng={report.lng}
+        />
       )}
       <MarketLogicSection report={report} />
       <ConceptsSection

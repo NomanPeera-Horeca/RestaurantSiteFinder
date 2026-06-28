@@ -8,6 +8,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { capturePageview } from "./lib/posthog";
 import Home from "./pages/Home";
+import Analyze from "./pages/Analyze";
 import Report from "./pages/Report";
 import NameGenerator from "./pages/NameGenerator";
 import PremiumSuccess from "./pages/PremiumSuccess";
@@ -35,6 +36,7 @@ function Router() {
       <PostHogPageView />
       <Switch>
         <Route path={"/"} component={Home} />
+        <Route path={"/analyze"} component={Analyze} />
         <Route path={"/restaurant-name-generator"} component={NameGenerator} />
         <Route path={"/restaurant-failure-rate"} component={RestaurantFailureRate} />
         <Route path={"/how-to-choose-restaurant-location"} component={HowToChooseRestaurantLocation} />

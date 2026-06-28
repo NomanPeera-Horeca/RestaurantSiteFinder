@@ -90,7 +90,7 @@ function PdfDocumentPreview({ report }: { report: FullReport }) {
             <strong>Competition:</strong> {directCount} direct rivals. Average rating {avgRating}. Weakness: {weakness}.
           </li>
           <li>
-            <strong>Concept Fit:</strong> {report.conceptFit?.fitScore ?? score}/10 for {serviceLabel.toLowerCase()} {cuisine.toLowerCase()}. Verdict: {rec}.
+            <strong>Concept Fit:</strong> {report.conceptFit?.fitScore ?? score}/10 for {serviceLabel.toLowerCase()} {cuisine.toLowerCase()}. Recommendation: {rec}.
           </li>
         </ul>
       </section>

@@ -2,6 +2,7 @@ import { makeRequest, type PlacesSearchResult } from "./_core/map";
 import type { Competitor } from "../shared/analysis-types";
 import type { ConceptInput } from "../shared/concept-options";
 import { getTradeAreaRadiusMeters } from "../shared/search-config";
+import { distanceMilesBetween, roundDistanceMiles } from "../shared/geo";
 import { getCuisineSearchKeyword } from "./concept-utils";
 
 type NearbySearchResponse = PlacesSearchResult & { next_page_token?: string };
@@ -51,7 +52,13 @@ function extractCuisine(types: string[], name: string): string {
   return "Restaurant";
 }
 
-function mapPlace(place: PlacesSearchResult["results"][number]): Competitor {
+function mapPlace(
+  place: PlacesSearchResult["results"][number],
+  originLat: number,
+  originLng: number
+): Competitor {
+  const lat = place.geometry.location.lat;
+  const lng = place.geometry.location.lng;
   return {
     placeId: place.place_id,
     name: place.name,
@@ -60,8 +67,9 @@ function mapPlace(place: PlacesSearchResult["results"][number]): Competitor {
     userRatingsTotal: place.user_ratings_total ?? 0,
     priceLevel: (place as { price_level?: number | null }).price_level ?? null,
     address: place.formatted_address,
-    lat: place.geometry.location.lat,
-    lng: place.geometry.location.lng,
+    lat,
+    lng,
+    distanceMiles: roundDistanceMiles(distanceMilesBetween(originLat, originLng, lat, lng)),
   };
 }
 
@@ -90,7 +98,7 @@ async function fetchNearbySearchPage(
   }
 
   return {
-    places: (result.results ?? []).map(mapPlace),
+    places: (result.results ?? []).map((place) => mapPlace(place, lat, lng)),
     nextPageToken: result.next_page_token,
   };
 }

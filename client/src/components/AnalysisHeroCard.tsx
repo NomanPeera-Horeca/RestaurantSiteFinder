@@ -37,7 +37,7 @@ export function AnalysisHeroCard({
                 Is This Location Right for Your Restaurant?
               </p>
               <p className="mt-1 text-sm text-muted-foreground">
-                Select your concept, enter an address, and get a data-backed verdict for that exact location.
+                Select your concept, enter an address, and get data-backed location intelligence for that exact spot.
               </p>
             </div>
           </div>
