@@ -25,15 +25,25 @@ import { conceptFromSearchParams } from "@/lib/concept";
 import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
+import { MMF_TOOLTIP, verdictScoreClass } from "@/lib/verdict-styles";
 import { PremiumReportActions } from "@/components/PremiumReportSections";
 import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { HelpCircle } from "lucide-react";
 
 function priceLevelLabel(level: number | null): string {
   if (level === null || level === undefined) return "N/A";
   return ["Free", "$", "$$", "$$$", "$$$$"][level] ?? "N/A";
 }
 
-function scoreColor(score: number): string {
+function scoreColor(score: number, recommendation?: string): string {
+  if (recommendation === "GO") return "text-green-700";
+  if (recommendation === "NO-GO") return "text-red-700";
+  if (recommendation === "CAUTION") return "text-amber-700";
   if (score >= 7) return "text-green-600";
   if (score >= 4) return "text-yellow-600";
   return "text-red-600";
@@ -216,7 +226,7 @@ function ConceptFitSection({ conceptFit }: { conceptFit: ConceptFit }) {
           <div className="flex items-center gap-3 shrink-0">
             <div className="text-right">
               <p className="text-xs text-muted-foreground">Concept fit</p>
-              <p className={`text-3xl font-bold ${scoreColor(conceptFit.fitScore)}`}>{conceptFit.fitScore}/10</p>
+              <p className={`text-3xl font-bold ${verdictScoreClass(conceptFit.recommendation)}`}>{conceptFit.fitScore}/10</p>
             </div>
             {recommendationBadge(conceptFit.recommendation)}
           </div>
@@ -452,8 +462,8 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
               <Lightbulb className="h-5 w-5 text-chart-4" />
             </div>
             <div>
-              <CardTitle className="text-lg">{title ?? "Opportunity & Winning Concepts"}</CardTitle>
-              <p className="text-sm text-muted-foreground">AI-generated concepts tailored to this market</p>
+              <CardTitle className="text-lg">{title ?? "Winning Concepts"}</CardTitle>
+              <p className="text-sm text-muted-foreground">Ranked by fit for this trade area. #1 is our top pick.</p>
             </div>
           </div>
         </div>
@@ -470,7 +480,7 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
               </div>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <span className={`text-4xl font-bold ${scoreColor(score)}`}>{score}/10</span>
+              <span className={`text-4xl font-bold ${scoreColor(score, recommendation)}`}>{score}/10</span>
               {recommendationBadge(recommendation)}
             </div>
           </div>
@@ -480,7 +490,10 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
         {/* Concepts */}
         <div className="space-y-4">
           {concepts.map((concept, i) => (
-            <div key={i} className="rounded-xl border border-border/50 overflow-hidden">
+            <div
+              key={i}
+              className={`rounded-xl border overflow-hidden ${i === 0 ? "border-primary border-2 shadow-md" : "border-border/50"}`}
+            >
               <div className="bg-gradient-to-r from-primary/5 to-transparent p-4 sm:p-5 border-b border-border/50">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-0">
                   <div className="flex items-center gap-3">
@@ -488,7 +501,14 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
                       {i + 1}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground">{concept.name}</h4>
+                      <h4 className="font-semibold text-foreground flex items-center gap-2 flex-wrap">
+                        {concept.name}
+                        {i === 0 && (
+                          <Badge className="bg-primary text-primary-foreground text-[10px] uppercase tracking-wide">
+                            Top pick
+                          </Badge>
+                        )}
+                      </h4>
                       <p className="text-xs text-muted-foreground">{concept.cuisineType}</p>
                     </div>
                   </div>
@@ -530,6 +550,16 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
                       <p className="font-medium text-foreground text-sm flex items-center gap-1.5">
                         <Users className="h-3.5 w-3.5 text-primary" />
                         Menu-Market Fit
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <button type="button" className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-muted text-muted-foreground hover:text-foreground">
+                              <HelpCircle className="h-3.5 w-3.5" />
+                            </button>
+                          </TooltipTrigger>
+                          <TooltipContent side="top" className="max-w-xs text-left">
+                            {MMF_TOOLTIP}
+                          </TooltipContent>
+                        </Tooltip>
                       </p>
                       <div className="flex items-center gap-2 ml-5 sm:ml-0">
                         <span className="text-xs text-muted-foreground">Demand:</span>
@@ -754,6 +784,147 @@ function EquipmentSection({ bundles, recommendation }: { bundles: EquipmentBundl
   );
 }
 
+export function ReportScoreHeader({
+  report,
+  showActions = true,
+  onRunAnother,
+}: {
+  report: FullReport;
+  showActions?: boolean;
+  onRunAnother?: () => void;
+}) {
+  return (
+    <div className="bg-gradient-to-br from-primary/5 via-background to-background py-8 rounded-2xl border border-border/50">
+      <div className="px-6">
+        <div className="flex flex-col gap-4">
+          <div>
+            <Badge variant="secondary" className="mb-2 text-xs">
+              <Target className="h-3 w-3 mr-1" />
+              {report.conceptFit ? "Concept Fit Report" : "Full Opportunity Report"}
+            </Badge>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
+              {report.conceptFit
+                ? `${report.conceptFit.recommendation === "GO" ? "This Location Works for Your Concept" : report.conceptFit.recommendation === "NO-GO" ? "This Location Does Not Fit Your Concept" : "Proceed With Caution at This Location"}`
+                : "Location Opportunity Report"}
+            </h2>
+            <p className="text-muted-foreground flex items-start gap-1.5 text-sm">
+              <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+              <span className="break-words">{report.address}</span>
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            {report.conceptFit ? (
+              <>
+                <div className="text-left" title="How well your specific concept fits this location based on direct competition, service model, and market demand">
+                  <p className="text-xs text-muted-foreground">Your concept score</p>
+                  <p className={`text-3xl font-bold ${verdictScoreClass(report.conceptFit.recommendation)}`}>
+                    {report.conceptFit.fitScore}/10
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">concept fit</p>
+                </div>
+                {recommendationBadge(report.conceptFit.recommendation)}
+                <div className="hidden sm:block h-10 w-px bg-border" />
+                <div className="text-left" title="Overall opportunity score for this location regardless of concept, based on competition density, market gaps, and review signals">
+                  <p className="text-xs text-muted-foreground">Location overall</p>
+                  <p className={`text-xl font-bold ${scoreColor(report.opportunityScore, report.recommendation)}`}>
+                    {report.opportunityScore}/10
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">location score</p>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="text-left sm:text-right">
+                  <p className="text-xs text-muted-foreground">Score</p>
+                  <p className={`text-3xl font-bold ${scoreColor(report.opportunityScore, report.recommendation)}`}>
+                    {report.opportunityScore}/10
+                  </p>
+                </div>
+                {recommendationBadge(report.recommendation)}
+              </>
+            )}
+            {showActions && onRunAnother && (
+              <button
+                onClick={onRunAnother}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5 border border-border/50 rounded-lg px-3 py-1.5"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                Run Another Analysis
+              </button>
+            )}
+            {showActions && (
+              <>
+                <PremiumPdfDownloadButton report={report} />
+                <PremiumReportActions />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ReportBody({ report }: { report: FullReport }) {
+  return (
+    <div className="space-y-8">
+      {report.conceptFit && <ConceptFitSection conceptFit={report.conceptFit} />}
+
+      <Card className="border-border/50">
+        <CardContent className="p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="flex items-center gap-3">
+              <Gauge className="h-6 w-6 text-primary shrink-0" />
+              <div>
+                <p className="font-semibold text-foreground">Location Opportunity Score</p>
+                <p className="text-xs text-muted-foreground">Based on competition density, market gaps, and demand signals from {report.competitors.length} nearby restaurants</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 sm:ml-auto shrink-0">
+              <span className={`text-4xl font-bold ${scoreColor(report.opportunityScore, report.recommendation)}`}>{report.opportunityScore}/10</span>
+              {recommendationBadge(report.recommendation)}
+            </div>
+          </div>
+          <Progress value={report.opportunityScore * 10} className="h-3 mt-4" />
+        </CardContent>
+      </Card>
+
+      {report.directCompetitors && report.directCompetitors.length > 0 ? (
+        <>
+          <CompetitorTable
+            competitors={report.directCompetitors}
+            title="Direct Competitors for Your Concept"
+            subtitle={formatDirectCompetitorAreaSubtitle(
+              report.directCompetitors.length,
+              report.conceptInput?.serviceModel
+            )}
+            sortByDistance
+          />
+          <CompetitorTable
+            competitors={report.competitors}
+            title="All Nearby Restaurants"
+            subtitle={formatCompetitorAreaSubtitle(
+              report.competitors.length,
+              report.conceptInput?.serviceModel
+            )}
+            sortByDistance
+          />
+        </>
+      ) : (
+        <CompetitorTable competitors={report.competitors} />
+      )}
+      <MarketLogicSection report={report} />
+      <ConceptsSection
+        concepts={report.concepts}
+        score={report.opportunityScore}
+        recommendation={report.recommendation}
+        title={report.conceptFit ? "Additional Winning Concepts for This Market" : undefined}
+      />
+      <EquipmentSection bundles={report.equipmentBundles} recommendation={report.conceptFit?.recommendation ?? report.recommendation} />
+    </div>
+  );
+}
+
 // ---- Main Report Page ----
 
 export default function Report() {
@@ -874,7 +1045,6 @@ export default function Report() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header with Horeca Store branding */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border/50">
         <div className="container flex items-center justify-between h-14">
           <button
@@ -912,126 +1082,13 @@ export default function Report() {
       </div>
 
       {/* Report Header */}
-      <div className="bg-gradient-to-br from-primary/5 via-background to-background py-10">
-        <div className="container max-w-5xl">
-          <div className="flex flex-col gap-4">
-            <div>
-              <Badge variant="secondary" className="mb-2 text-xs">
-                <Target className="h-3 w-3 mr-1" />
-                {report.conceptFit ? "Concept Fit Report" : "Full Opportunity Report"}
-              </Badge>
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
-                {report.conceptFit
-                  ? `${report.conceptFit.recommendation === "GO" ? "This Location Works for Your Concept" : report.conceptFit.recommendation === "NO-GO" ? "This Location Does Not Fit Your Concept" : "Proceed With Caution at This Location"}`
-                  : "Location Opportunity Report"}
-              </h1>
-              <p className="text-muted-foreground flex items-start gap-1.5 text-sm">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span className="break-words">{report.address}</span>
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              {report.conceptFit ? (
-                <>
-                  <div className="text-left" title="How well your specific concept fits this location based on direct competition, service model, and market demand">
-                    <p className="text-xs text-muted-foreground">Your concept score</p>
-                    <p className={`text-3xl font-bold ${scoreColor(report.conceptFit.fitScore)}`}>
-                      {report.conceptFit.fitScore}/10
-                    </p>
-                    <p className="text-xs text-muted-foreground italic">concept fit</p>
-                  </div>
-                  {recommendationBadge(report.conceptFit.recommendation)}
-                  <div className="hidden sm:block h-10 w-px bg-border" />
-                  <div className="text-left" title="Overall opportunity score for this location regardless of concept, based on competition density, market gaps, and review signals">
-                    <p className="text-xs text-muted-foreground">Location overall</p>
-                    <p className={`text-xl font-bold ${scoreColor(report.opportunityScore)}`}>
-                      {report.opportunityScore}/10
-                    </p>
-                    <p className="text-xs text-muted-foreground italic">location score</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="text-left sm:text-right">
-                    <p className="text-xs text-muted-foreground">Score</p>
-                    <p className={`text-3xl font-bold ${scoreColor(report.opportunityScore)}`}>
-                      {report.opportunityScore}/10
-                    </p>
-                  </div>
-                  {recommendationBadge(report.recommendation)}
-                </>
-              )}
-              <button
-                onClick={() => navigate("/")}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5 border border-border/50 rounded-lg px-3 py-1.5"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" />
-                Run Another Analysis
-              </button>
-              <PremiumPdfDownloadButton report={report} />
-              <PremiumReportActions />
-            </div>
-          </div>
-        </div>
+      <div className="container max-w-5xl py-10">
+        <ReportScoreHeader report={report} showActions onRunAnother={() => navigate("/")} />
       </div>
 
       {/* Report Sections */}
-      <div className="container max-w-5xl py-8 space-y-8">
-        {report.conceptFit && <ConceptFitSection conceptFit={report.conceptFit} />}
-
-        {/* Opportunity Score Summary */}
-        <Card className="border-border/50">
-          <CardContent className="p-6">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="flex items-center gap-3">
-                <Gauge className="h-6 w-6 text-primary shrink-0" />
-                <div>
-                  <p className="font-semibold text-foreground">Location Opportunity Score</p>
-                  <p className="text-xs text-muted-foreground">Based on competition density, market gaps, and demand signals from {report.competitors.length} nearby restaurants</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 sm:ml-auto shrink-0">
-                <span className={`text-4xl font-bold ${scoreColor(report.opportunityScore)}`}>{report.opportunityScore}/10</span>
-                {recommendationBadge(report.recommendation)}
-              </div>
-            </div>
-            <Progress value={report.opportunityScore * 10} className="h-3 mt-4" />
-          </CardContent>
-        </Card>
-
-        {report.directCompetitors && report.directCompetitors.length > 0 ? (
-          <>
-            <CompetitorTable
-              competitors={report.directCompetitors}
-              title="Direct Competitors for Your Concept"
-              subtitle={formatDirectCompetitorAreaSubtitle(
-                report.directCompetitors.length,
-                report.conceptInput?.serviceModel
-              )}
-              sortByDistance
-            />
-            <CompetitorTable
-              competitors={report.competitors}
-              title="All Nearby Restaurants"
-              subtitle={formatCompetitorAreaSubtitle(
-                report.competitors.length,
-                report.conceptInput?.serviceModel
-              )}
-              sortByDistance
-            />
-          </>
-        ) : (
-          <CompetitorTable competitors={report.competitors} />
-        )}
-        <MarketLogicSection report={report} />
-        <PremiumInsightsSection />
-        <ConceptsSection
-          concepts={report.concepts}
-          score={report.opportunityScore}
-          recommendation={report.recommendation}
-          title={report.conceptFit ? "Additional Winning Concepts for This Market" : undefined}
-        />
-        <EquipmentSection bundles={report.equipmentBundles} recommendation={report.conceptFit?.recommendation ?? report.recommendation} />
+      <div className="container max-w-5xl py-8">
+        <ReportBody report={report} />
       </div>
 
       {/* Footer with Horeca Store branding */}

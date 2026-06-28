@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { useLocation, Link } from "wouter";
 import { AnalysisHeroCard } from "@/components/AnalysisHeroCard";
 import { RentCalculator } from "@/components/RentCalculator";
 import { PricingSection } from "@/components/PricingSection";
 import { SiteHeader } from "@/components/SiteHeader";
-import { LeadCaptureModal } from "@/components/LeadCaptureModal";
-import { InitialScanPreview } from "@/components/InitialScanPreview";
+import { AnalysisFlow } from "@/components/analysis/AnalysisFlow";
 import { trpc } from "@/lib/trpc";
-import { appendConceptToSearchParams, defaultConceptInput, isConceptReady } from "@/lib/concept";
+import { defaultConceptInput, isConceptReady } from "@/lib/concept";
 import { captureEvent } from "@/lib/posthog";
 import type { ConceptInput } from "../../../shared/concept-options";
 import type { InitialScan } from "../../../shared/analysis-types";
@@ -29,8 +27,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
-  const [, navigate] = useLocation();
-  const [showLeadModal, setShowLeadModal] = useState(false);
   const [scanData, setScanData] = useState<InitialScan | null>(null);
   const [concept, setConcept] = useState<ConceptInput>(defaultConceptInput);
   const [locationData, setLocationData] = useState<{ address: string; lat: number; lng: number } | null>(null);
@@ -84,30 +80,23 @@ export default function Home() {
       service_model: concept.serviceModel,
       cuisine: concept.cuisineConcept ?? "",
     });
+    setScanData(null);
     setLocationData({ address, lat, lng });
     initialScan.mutate({ address, lat, lng, concept });
   };
 
-  const handleUnlockReport = () => {
-    captureEvent("unlock_report_clicked", {
-      competitor_count: scanData?.competitorCount ?? 0,
-      direct_competitor_count: scanData?.directCompetitorCount ?? 0,
+  const handleScanComplete = (data: InitialScan) => {
+    const conceptLabel = concept.cuisineConcept?.toLowerCase() ?? "restaurant";
+    toast.success("Heavy lifting done", {
+      description: `We mapped ${data.competitorCount} restaurants in your trade area, matched ${data.directCompetitorCount ?? 0} direct ${conceptLabel} rivals, and flagged the review patterns brokers never share. Scroll down to see what we found.`,
+      duration: 6000,
     });
-    setShowLeadModal(true);
   };
 
-  const handleLeadCaptured = (leadId: number) => {
-    setShowLeadModal(false);
-    if (locationData) {
-      const params = new URLSearchParams({
-        address: locationData.address,
-        lat: String(locationData.lat),
-        lng: String(locationData.lng),
-        leadId: String(leadId),
-      });
-      appendConceptToSearchParams(params, concept);
-      navigate(`/report?${params.toString()}`);
-    }
+  const handleAnalyzeAnother = () => {
+    setScanData(null);
+    setLocationData(null);
+    document.getElementById("restaurant-location-analysis")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -171,11 +160,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Initial Scan Preview */}
-      {scanData && (
-        <InitialScanPreview
-          data={scanData}
-          onUnlock={handleUnlockReport}
+      {/* Inline analysis flow */}
+      {locationData && (
+        <AnalysisFlow
+          scanData={scanData}
+          concept={concept}
+          address={locationData.address}
+          lat={locationData.lat}
+          lng={locationData.lng}
+          isInitialScanPending={initialScan.isPending}
+          onAnalyzeAnother={handleAnalyzeAnother}
+          onScanComplete={handleScanComplete}
         />
       )}
 
@@ -799,18 +794,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Lead Capture Modal */}
-      {showLeadModal && locationData && (
-        <LeadCaptureModal
-          address={locationData.address}
-          lat={locationData.lat}
-          lng={locationData.lng}
-          concept={concept}
-          onClose={() => setShowLeadModal(false)}
-          onCaptured={handleLeadCaptured}
-        />
-      )}
     </div>
   );
 }

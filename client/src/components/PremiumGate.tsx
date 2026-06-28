@@ -21,15 +21,15 @@ export function PremiumGate({ feature, children }: PremiumGateProps) {
     }
   }, [feature, isPremium, isLoading]);
 
-  const startCheckout = async (plan: "monthly" | "lifetime") => {
+  const startCheckout = async () => {
     if (!email) {
       document.getElementById("restaurant-location-analysis")?.scrollIntoView({ behavior: "smooth" });
       return;
     }
-    captureEvent("upgrade_cta_clicked", { plan, feature });
+    captureEvent("upgrade_cta_clicked", { plan: "lifetime", feature });
     try {
-      const result = await checkout.mutateAsync({ email, plan });
-      captureEvent("checkout_session_created", { plan });
+      const result = await checkout.mutateAsync({ email, plan: "lifetime" });
+      captureEvent("checkout_session_created", { plan: "lifetime" });
       window.location.href = result.url;
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Could not start checkout");
@@ -78,25 +78,19 @@ export function PremiumGate({ feature, children }: PremiumGateProps) {
             </>
           ) : (
             <>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button
-                  className="rounded-xl"
-                  disabled={checkout.isPending}
-                  onClick={() => startCheckout("monthly")}
-                >
-                  {checkout.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Unlock Monthly ($29/mo"}
-                </Button>
-                <Button
-                  variant="outline"
-                  className="rounded-xl"
-                  disabled={checkout.isPending}
-                  onClick={() => startCheckout("lifetime")}
-                >
-                  One-Time Access ($99
-                </Button>
-              </div>
+              <Button
+                className="rounded-xl w-full sm:w-auto"
+                disabled={checkout.isPending}
+                onClick={startCheckout}
+              >
+                {checkout.isPending ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  "Unlock for $49 (lifetime)"
+                )}
+              </Button>
               <p className="text-xs text-muted-foreground">
-                Cancel anytime. Your analyses are saved for life.
+                One-time payment. PDF download, saved reports, and up to 3 location analyses.
               </p>
               <p className="text-xs text-muted-foreground">
                 Already paid?{" "}
