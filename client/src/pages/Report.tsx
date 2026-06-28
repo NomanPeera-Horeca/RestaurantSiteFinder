@@ -57,6 +57,11 @@ function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { com
   const sorted = sortByDistance
     ? [...competitors].sort((a, b) => (a.distanceMiles ?? 99) - (b.distanceMiles ?? 99))
     : competitors;
+  const ratedCompetitors = competitors.filter(c => c.rating > 0);
+  const avgRating = ratedCompetitors.length > 0
+    ? ratedCompetitors.reduce((sum, c) => sum + c.rating, 0) / ratedCompetitors.length
+    : 0;
+  const showRatingCallout = competitors.length > 0 && ratedCompetitors.length > 0;
   return (
     <Card className="border-border/50">
       <CardHeader className="pb-4">
@@ -73,6 +78,26 @@ function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { com
         </div>
       </CardHeader>
       <CardContent>
+        {showRatingCallout && (
+          <div
+            className={`rounded-lg p-3 mb-4 flex items-center gap-3 text-sm font-medium ${
+              avgRating < 4.0
+                ? "bg-green-50 border border-green-200 text-green-800"
+                : "bg-muted/50 border border-border text-muted-foreground"
+            }`}
+          >
+            <Star className={`h-4 w-4 shrink-0 ${avgRating < 4.0 ? "text-green-600" : "text-muted-foreground"}`} />
+            {avgRating < 4.0 ? (
+              <span>
+                Average competitor rating is {avgRating.toFixed(1)}: below the 4.0 quality threshold. Low-quality competition means room for you to stand out.
+              </span>
+            ) : (
+              <span>
+                Average competitor rating is {avgRating.toFixed(1)}: this market has strong existing players. Quality will matter.
+              </span>
+            )}
+          </div>
+        )}
         <div className="rounded-lg border border-border overflow-x-auto">
           <Table className="min-w-[500px]">
             <TableHeader>
@@ -88,7 +113,21 @@ function CompetitorTable({ competitors, title, subtitle, sortByDistance }: { com
             <TableBody>
               {sorted.slice(0, 15).map((c) => (
                 <TableRow key={c.placeId} className="hover:bg-muted/30">
-                  <TableCell className="font-medium text-foreground">{c.name}</TableCell>
+                  <TableCell className="font-medium text-foreground">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span>{c.name}</span>
+                      {c.userRatingsTotal >= 1000 && (
+                        <Badge className="text-xs bg-red-100 text-red-700 border border-red-200 hover:bg-red-100">
+                          Dominant
+                        </Badge>
+                      )}
+                      {c.userRatingsTotal > 0 && c.userRatingsTotal < 20 && (
+                        <Badge variant="outline" className="text-xs text-muted-foreground border-muted-foreground/30">
+                          New
+                        </Badge>
+                      )}
+                    </div>
+                  </TableCell>
                   <TableCell>
                     <Badge variant="outline" className="text-xs">{c.cuisine}</Badge>
                   </TableCell>
@@ -343,12 +382,18 @@ function MarketLogicSection({ report }: { report: FullReport }) {
 
           {/* Patterns */}
           {marketAnalysis.reviewSentiment.patterns.length > 0 && (
-            <div className="bg-muted/50 rounded-lg p-4">
-              <p className="font-medium text-foreground text-sm mb-2">Key Market Patterns</p>
-              <ul className="space-y-1">
+            <div className="rounded-lg border border-amber-200 bg-amber-50/60 p-4">
+              <p className="font-semibold text-amber-900 text-sm mb-3 flex items-center gap-2">
+                <Lightbulb className="h-4 w-4 text-amber-600" />
+                Your Competitive Opening
+              </p>
+              <p className="text-xs text-amber-700 mb-3">
+                These are the patterns we found in nearby competitor reviews. Each one is a gap you can fill.
+              </p>
+              <ul className="space-y-2">
                 {marketAnalysis.reviewSentiment.patterns.map((pattern, i) => (
-                  <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                    <TrendingUp className="h-3.5 w-3.5 mt-0.5 text-primary shrink-0" />
+                  <li key={i} className="flex items-start gap-2 text-sm text-amber-800">
+                    <ArrowRight className="h-3.5 w-3.5 mt-0.5 text-amber-500 shrink-0" />
                     {pattern}
                   </li>
                 ))}
@@ -361,21 +406,36 @@ function MarketLogicSection({ report }: { report: FullReport }) {
 
         {/* Demographics & Foot Traffic */}
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="p-4 rounded-lg border border-border/50">
-            <div className="flex items-center justify-between mb-1">
-              <p className="font-medium text-foreground text-sm">Demographics</p>
+          <div className="p-4 rounded-lg border border-border/50 space-y-3">
+            <div className="flex items-center justify-between">
+              <p className="font-medium text-foreground text-sm flex items-center gap-2">
+                <Users className="h-4 w-4 text-primary" />
+                Area Demographics
+              </p>
               <Badge variant="outline" className="text-xs text-muted-foreground border-muted-foreground/30">AI Estimate</Badge>
             </div>
-            <p className="text-sm text-muted-foreground">{marketAnalysis.demographics}</p>
-            <p className="text-xs text-muted-foreground/60 mt-2 italic">Inferred from competitor mix. Not census data.</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{marketAnalysis.demographics}</p>
+            <p className="text-xs text-muted-foreground/50 italic">Inferred from competitor mix. Not census data.</p>
           </div>
-          <div className="p-4 rounded-lg border border-border/50">
-            <div className="flex items-center justify-between mb-1">
-              <p className="font-medium text-foreground text-sm">Foot Traffic</p>
-              <Badge variant="outline" className="text-xs text-muted-foreground border-muted-foreground/30">AI Estimate</Badge>
-            </div>
-            <p className="text-sm text-muted-foreground">{marketAnalysis.footTraffic}</p>
-            <p className="text-xs text-muted-foreground/60 mt-2 italic">Inferred from area type and competitor activity. Not measured data.</p>
+          <div className="p-4 rounded-lg border border-border/50 space-y-3">
+            <p className="font-medium text-foreground text-sm flex items-center gap-2">
+              <TrendingUp className="h-4 w-4 text-primary" />
+              Foot Traffic Signal
+            </p>
+            {(() => {
+              const ft = marketAnalysis.footTraffic.toLowerCase();
+              const isHigh = ft.includes("high") || ft.includes("busy") || ft.includes("heavy");
+              const isLow = ft.includes("low") || ft.includes("quiet") || ft.includes("light");
+              const level = isHigh ? "HIGH" : isLow ? "LOW" : "MEDIUM";
+              const color = isHigh ? "text-green-600 bg-green-50 border-green-200" : isLow ? "text-red-600 bg-red-50 border-red-200" : "text-yellow-600 bg-yellow-50 border-yellow-200";
+              return (
+                <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-bold ${color}`}>
+                  <Gauge className="h-3.5 w-3.5" />
+                  {level}
+                </div>
+              );
+            })()}
+            <p className="text-sm text-muted-foreground leading-relaxed">{marketAnalysis.footTraffic}</p>
           </div>
         </div>
       </CardContent>
