@@ -26,7 +26,7 @@ import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
 import { formatDriveTime } from "../../../shared/geo";
 import { getCompetitorConceptLabel, proximityLabel } from "../../../shared/competitor-classifier";
-import { MMF_TOOLTIP, verdictScoreClass } from "@/lib/verdict-styles";
+import { verdictScoreClass } from "@/lib/verdict-styles";
 import {
   CONCEPT_FIT_TOOLTIP,
   countCuisines,
@@ -35,6 +35,7 @@ import {
   totalReviewCount,
   patternsToDifferentiationActions,
   ensureMenuMarketFit,
+  buildUserConceptMenuMarketFit,
   recommendationHeadline,
   recommendationSummary,
   cuisineCoverageSummary,
@@ -45,6 +46,7 @@ import {
   mappedRestaurantLabel,
 } from "@/lib/report-helpers";
 import { RecommendationProgress } from "@/components/analysis/RecommendationProgress";
+import { MenuMarketFitCard } from "@/components/analysis/MenuMarketFitCard";
 import { PremiumReportActions } from "@/components/PremiumReportSections";
 import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
 import {
@@ -298,8 +300,9 @@ function PremiumInsightsSection() {
   );
 }
 
-function ConceptFitSection({ conceptFit }: { conceptFit: ConceptFit }) {
+function ConceptFitSection({ conceptFit, report }: { conceptFit: ConceptFit; report: FullReport }) {
   const rec = conceptFit.recommendation;
+  const userMmf = buildUserConceptMenuMarketFit(report);
   const recBg =
     rec === "GO"
       ? "bg-green-50 border-green-200 text-green-900"
@@ -384,6 +387,13 @@ function ConceptFitSection({ conceptFit }: { conceptFit: ConceptFit }) {
             </CardContent>
           </Card>
         </div>
+
+        {userMmf && (
+          <MenuMarketFitCard
+            mmf={userMmf}
+            label={report.conceptInput?.cuisineConcept}
+          />
+        )}
 
         {(rec === "NO-GO" || rec === "CAUTION") && conceptFit.alternativeConcepts.length > 0 && (
           <div className="space-y-3">
@@ -655,6 +665,8 @@ function MarketLogicSection({ report }: { report: FullReport }) {
 }
 
 function ConceptsSection({ concepts, score, recommendation, title, report }: { concepts: WinningConcept[]; score: number; recommendation: string; title?: string; report: FullReport }) {
+  const fallbackMmf = concepts.length === 0 ? buildUserConceptMenuMarketFit(report) : null;
+
   return (
     <Card className="border-border/50">
       <CardHeader className="pb-4">
@@ -689,7 +701,17 @@ function ConceptsSection({ concepts, score, recommendation, title, report }: { c
           <RecommendationProgress value={score * 10} recommendation={recommendation} className="h-3" />
         </div>
 
-        {/* Concepts */}
+        {fallbackMmf && (
+          <MenuMarketFitCard mmf={fallbackMmf} label={report.conceptInput?.cuisineConcept} />
+        )}
+
+        {concepts.length === 0 && !fallbackMmf && (
+          <p className="text-sm text-muted-foreground rounded-lg border border-border/50 bg-muted/30 p-4">
+            No alternative winning concepts were generated for this run. Check your concept fit analysis above for menu demand signals.
+          </p>
+        )}
+
+        {/* Winning concept cards — matches interactive prototype layout */}
         <div className="space-y-4">
           {concepts.map((concept, i) => {
             const mmf = ensureMenuMarketFit(concept, report);
@@ -724,62 +746,26 @@ function ConceptsSection({ concepts, score, recommendation, title, report }: { c
                   </div>
                 </div>
               </div>
-              <div className="p-5 space-y-4">
+              <div className="p-5 space-y-3">
+                <div className="rounded-lg border border-amber-200 bg-amber-50/80 px-3 py-2.5">
+                  <p className="text-[11px] font-bold uppercase tracking-wide text-amber-800 mb-1">Why choose this</p>
+                  <p className="text-xs text-amber-900 leading-relaxed">{concept.reasoning}</p>
+                </div>
+
                 <p className="text-sm text-muted-foreground leading-relaxed">{concept.description}</p>
 
                 <div>
-                  <p className="font-medium text-foreground text-sm mb-2 flex items-center gap-1.5">
-                    <Utensils className="h-3.5 w-3.5 text-primary" />
-                    Suggested Menu Items
-                  </p>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-xs font-semibold text-foreground mb-2">Suggested menu items</p>
+                  <div className="flex flex-wrap gap-1.5">
                     {concept.menuIdeas.map((item, j) => (
-                      <Badge key={j} variant="secondary" className="text-xs">{item}</Badge>
+                      <Badge key={j} variant="secondary" className="text-[11px] font-normal px-2 py-0.5">
+                        {item}
+                      </Badge>
                     ))}
                   </div>
                 </div>
 
-                <div>
-                  <p className="font-medium text-foreground text-sm mb-1 flex items-center gap-1.5">
-                    <Target className="h-3.5 w-3.5 text-primary" />
-                    Why This Works Here
-                  </p>
-                  <p className="text-sm text-muted-foreground">{concept.reasoning}</p>
-                </div>
-
-                {/* Menu-Market Fit */}
-                <div className="rounded-lg border border-primary/25 bg-primary/5 p-4 space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <p className="font-semibold text-foreground text-sm flex items-center gap-1.5">
-                      <Users className="h-4 w-4 text-primary" />
-                      Menu-Market Fit
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <button type="button" className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-muted text-muted-foreground hover:text-foreground">
-                            <HelpCircle className="h-3.5 w-3.5" />
-                          </button>
-                        </TooltipTrigger>
-                        <TooltipContent side="top" className="max-w-xs text-left">
-                          {MMF_TOOLTIP}
-                        </TooltipContent>
-                      </Tooltip>
-                    </p>
-                    <div className="flex items-center gap-2 ml-5 sm:ml-0">
-                      <span className="text-sm text-muted-foreground">Demand:</span>
-                      <span className={`font-bold text-base ${scoreColor(mmf.demandScore)}`}>
-                        {mmf.demandScore}/10
-                      </span>
-                    </div>
-                  </div>
-                  <RecommendationProgress
-                    value={mmf.demandScore * 10}
-                    recommendation={mmf.demandScore >= 7 ? "GO" : mmf.demandScore >= 4 ? "CAUTION" : "NO-GO"}
-                    className="h-2.5"
-                  />
-                  <p className="text-sm text-foreground leading-relaxed">
-                    {mmf.demandExplanation}
-                  </p>
-                </div>
+                <MenuMarketFitCard mmf={mmf} variant="embedded" />
               </div>
             </div>
           );})}
@@ -1045,7 +1031,7 @@ export function ReportScoreHeader({
 export function ReportBody({ report }: { report: FullReport }) {
   return (
     <div className="space-y-8">
-      {report.conceptFit && <ConceptFitSection conceptFit={report.conceptFit} />}
+      {report.conceptFit && <ConceptFitSection conceptFit={report.conceptFit} report={report} />}
 
       <Card className="border-border/50">
         <CardContent className="p-6 space-y-4">

@@ -234,6 +234,42 @@ export function parseFootTrafficScan(text: string): {
   return { level, summary: cleaned, peakTimes: peakTimes.slice(0, 3), drivers: drivers.slice(0, 3) };
 }
 
+export function buildUserConceptMenuMarketFit(report: FullReport): MenuMarketFit | null {
+  if (!report.conceptInput || report.conceptInput.mode !== "specific" || report.conceptInput.serviceModel === "explore") {
+    return null;
+  }
+
+  const label = report.conceptInput.cuisineConcept;
+  const matchingConcept = report.concepts.find(
+    (c) =>
+      c.cuisineType.toLowerCase().includes(label.toLowerCase()) ||
+      c.name.toLowerCase().includes(label.toLowerCase()) ||
+      label.toLowerCase().includes(c.cuisineType.toLowerCase())
+  );
+  if (matchingConcept) {
+    return ensureMenuMarketFit(matchingConcept, report);
+  }
+
+  const demandScore = report.conceptFit?.fitScore ?? report.opportunityScore;
+  const demographics = parseDemographicsScan(report.marketAnalysis.demographics);
+  const topPraise = report.marketAnalysis.reviewSentiment.topPraises[0];
+  const topComplaint = report.marketAnalysis.reviewSentiment.topComplaints[0];
+
+  return {
+    demandScore,
+    demandExplanation:
+      report.conceptFit?.whyItWorksOrFails?.slice(0, 280) ||
+      `Local reviews and nearby restaurants suggest ${label} has ${demandScore >= 7 ? "strong" : demandScore >= 4 ? "moderate" : "limited"} menu demand at this address.`,
+    populationMatch: demographics.find((d) => d.label === "Who eats here")?.value || demographics[0]?.value || "Based on nearby dining patterns.",
+    searchDemandSignals:
+      topPraise?.replace(/^Customers?\s+/i, "") ||
+      "Review themes from restaurants surrounding this address.",
+    competitiveAdvantage: topComplaint
+      ? `Win where rivals slip: ${topComplaint.replace(/^Customers?\s+/i, "").replace(/\.$/, "")}.`
+      : "Lead with a focused menu that beats nearby options on quality and consistency.",
+  };
+}
+
 export function ensureMenuMarketFit(concept: WinningConcept, report: FullReport): MenuMarketFit {
   const existing = concept.menuMarketFit;
   if (existing?.demandExplanation && existing.demandScore > 0) return existing;
