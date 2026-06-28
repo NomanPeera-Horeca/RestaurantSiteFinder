@@ -51,12 +51,15 @@ export function ReportClosureSection({ report, onPreviewPdf, onEmailReport }: Re
           </ul>
           <div className="flex flex-col gap-2">
             {isPremium ? (
-              <PremiumPdfDownloadButton
-                report={report}
-                unlocked
-                size="lg"
-                className="w-full h-12 rounded-xl bg-white text-[#0f172a] font-bold text-sm border-0 hover:bg-white/95"
-              />
+              <>
+                <p className="text-xs text-emerald-300 font-semibold">Lifetime access active · no payment needed</p>
+                <PremiumPdfDownloadButton
+                  report={report}
+                  unlocked
+                  size="lg"
+                  className="w-full h-12 rounded-xl bg-white text-[#0f172a] font-bold text-sm border-0 hover:bg-white/95"
+                />
+              </>
             ) : (
               <button
                 type="button"

@@ -167,8 +167,18 @@ function PaywallCard({ report }: { report: FullReport }) {
         <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3 text-primary text-2xl font-bold">
           ✓
         </div>
+        <p className="text-xs font-semibold uppercase tracking-wide text-green-700 mb-2">
+          {isPremium ? "Lifetime access active" : "Unlocked"}
+        </p>
         <h4 className="text-lg font-bold mb-2">Your PDF is ready</h4>
-        <p className="text-sm text-muted-foreground mb-4">Download now and share with your investor, partner, or bank.</p>
+        <p className="text-sm text-muted-foreground mb-4">
+          {isPremium
+            ? "You already paid — no checkout needed."
+            : "Download now and share with your investor, partner, or bank."}
+        </p>
+        {isPremium && email ? (
+          <p className="text-[11px] text-muted-foreground -mt-2 mb-4">{email}</p>
+        ) : null}
         <PremiumPdfDownloadButton report={report} unlocked={isPremium || paid} size="lg" className="w-full h-11 font-semibold" />
         {partnerEmail.includes("@") && (
           <p className="text-xs text-muted-foreground mt-3">

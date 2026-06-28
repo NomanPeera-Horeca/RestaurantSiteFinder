@@ -21,7 +21,7 @@ function buildExecutiveSummary(report: FullReport): string {
       ? report.competitors.reduce((s, c) => s + c.rating, 0) / report.competitors.length
       : 0;
 
-  return `Recommendation: ${rec} for this address. Opportunity score ${score}/10. ${direct} direct competitor(s) nearby with an average market rating of ${avg.toFixed(1)}. Primary gaps and risk factors are detailed in the full PDF, formatted for partners, landlords, and lenders.`;
+  return `Recommendation: ${rec} for this address. Opportunity score ${score}/10. ${direct} direct competitor(s) nearby with an average market rating of ${avg.toFixed(1)}. Primary gaps and risk factors are detailed in the full due diligence PDF.`;
 }
 
 export function PdfPaywallSection({ report }: PdfPaywallSectionProps) {
@@ -49,11 +49,12 @@ export function PdfPaywallSection({ report }: PdfPaywallSectionProps) {
     return (
       <div className="rounded-2xl border border-primary/30 overflow-hidden">
         <div className="bg-[oklch(0.22_0.04_260)] text-white px-6 py-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300 mb-1">Lifetime access active</p>
           <h3 className="text-lg font-bold flex items-center gap-2">
             <FileText className="h-5 w-5" />
             Your PDF is unlocked
           </h3>
-          <p className="text-sm text-white/75 mt-1">Download and share with partners or your bank.</p>
+          <p className="text-sm text-white/75 mt-1">You already paid — download and share with partners or your bank.</p>
         </div>
         <div className="p-6 bg-card flex justify-center">
           <PremiumPdfDownloadButton report={report} />
