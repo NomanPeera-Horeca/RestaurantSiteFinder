@@ -75,37 +75,15 @@ export function SiteHeader({ active }: SiteHeaderProps) {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              className={cn(
-                "inline-flex items-center gap-1 text-xs sm:text-sm font-medium transition-colors outline-none",
-                active === "rent-calculator" ? "text-primary" : "text-muted-foreground hover:text-primary"
-              )}
-            >
-              Tools
-              <ChevronDown className="h-3.5 w-3.5 opacity-70" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuItem asChild>
-                <Link
-                  href="/restaurant-rent-calculator"
-                  className={cn(active === "rent-calculator" && "text-primary font-medium")}
-                >
-                  Rent Calculator
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/restaurant-location-analysis" className="md:hidden">
-                  Location Analysis
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/restaurant-name-generator" className="md:hidden">
-                  Name Generator
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Link
+            href="/restaurant-rent-calculator"
+            className={cn(
+              "text-xs sm:text-sm font-medium transition-colors",
+              active === "rent-calculator" ? "text-primary" : "text-muted-foreground hover:text-primary"
+            )}
+          >
+            Rent Calculator
+          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(
@@ -128,6 +106,11 @@ export function SiteHeader({ active }: SiteHeaderProps) {
               <DropdownMenuItem asChild>
                 <Link href="/how-to-choose-restaurant-location">
                   How to Choose a Location
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/restaurant-location-analysis" className="md:hidden">
+                  Location Analysis
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
