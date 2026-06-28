@@ -94,6 +94,35 @@ export function isPremiumSubscription(sub: Subscription | null): boolean {
   );
 }
 
+/** Verify Stripe Checkout session and activate premium (works even if webhook is delayed). */
+export async function verifyAndFulfillCheckoutSession(sessionId: string): Promise<{
+  fulfilled: boolean;
+  email: string;
+  plan: "premium_lifetime" | "premium_monthly" | "free";
+}> {
+  const session = await getStripe().checkout.sessions.retrieve(sessionId);
+  const paid = session.payment_status === "paid" || session.status === "complete";
+  if (!paid) {
+    return { fulfilled: false, email: "", plan: "free" };
+  }
+
+  await handleCheckoutSessionCompleted(session);
+
+  const email = (
+    session.metadata?.email ??
+    session.customer_email ??
+    session.customer_details?.email ??
+    ""
+  )
+    .trim()
+    .toLowerCase();
+
+  const plan: "premium_lifetime" | "premium_monthly" =
+    session.mode === "payment" ? "premium_lifetime" : "premium_monthly";
+
+  return { fulfilled: true, email, plan };
+}
+
 export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) {
   const email =
     session.metadata?.email ??

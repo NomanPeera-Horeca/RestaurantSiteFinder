@@ -672,27 +672,40 @@ export async function generatePdfReport(report: FullReport): Promise<jsPDF> {
   return w.doc;
 }
 
-interface PremiumPdfDownloadButtonProps {
-  report: FullReport;
+export async function downloadPdfReport(report: FullReport, plan?: string): Promise<void> {
+  const pdf = await generatePdfReport(report);
+  const filename = `RSF-Report-${addressSlug(report.address)}-${formatFileDate()}.pdf`;
+  pdf.save(filename);
+  captureEvent("pdf_report_downloaded", {
+    address: report.address,
+    score: report.opportunityScore,
+    plan: plan ?? "premium",
+  });
 }
 
-export function PremiumPdfDownloadButton({ report }: PremiumPdfDownloadButtonProps) {
+interface PremiumPdfDownloadButtonProps {
+  report: FullReport;
+  /** Skip premium check (e.g. immediately after confirmed checkout). */
+  unlocked?: boolean;
+  size?: "default" | "sm" | "lg";
+  className?: string;
+}
+
+export function PremiumPdfDownloadButton({
+  report,
+  unlocked = false,
+  size = "sm",
+  className,
+}: PremiumPdfDownloadButtonProps) {
   const { isPremium, isLoading, plan } = usePremium();
   const [generating, setGenerating] = useState(false);
 
-  if (isLoading || !isPremium) return null;
+  if (!unlocked && (isLoading || !isPremium)) return null;
 
   const handleDownload = async () => {
     setGenerating(true);
     try {
-      const pdf = await generatePdfReport(report);
-      const filename = `RSF-Report-${addressSlug(report.address)}-${formatFileDate()}.pdf`;
-      pdf.save(filename);
-      captureEvent("pdf_report_downloaded", {
-        address: report.address,
-        score: report.opportunityScore,
-        plan: plan ?? "premium",
-      });
+      await downloadPdfReport(report, plan ?? "premium");
     } catch (err) {
       console.error("[PDF] Generation failed:", err);
       toast.error("Could not generate PDF. Please try again.");
@@ -704,8 +717,8 @@ export function PremiumPdfDownloadButton({ report }: PremiumPdfDownloadButtonPro
   return (
     <Button
       variant="outline"
-      size="sm"
-      className="rounded-lg"
+      size={size}
+      className={className ?? "rounded-lg"}
       disabled={generating}
       onClick={handleDownload}
     >

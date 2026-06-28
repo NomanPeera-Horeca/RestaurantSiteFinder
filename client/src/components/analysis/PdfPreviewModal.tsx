@@ -13,6 +13,7 @@ import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
 import { Loader2, X } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { savePendingReport } from "@/lib/pending-report-storage";
 
 interface PdfPreviewModalProps {
   report: FullReport | null;
@@ -151,6 +152,7 @@ function PaywallCard({ report }: { report: FullReport }) {
     }
     captureEvent("upgrade_cta_clicked", { plan: "lifetime", feature: "pdf_preview_modal" });
     try {
+      savePendingReport(report);
       const result = await checkout.mutateAsync({ email: checkoutEmail, plan: "lifetime" });
       captureEvent("checkout_session_created", { plan: "lifetime" });
       window.location.href = result.url;
@@ -167,7 +169,7 @@ function PaywallCard({ report }: { report: FullReport }) {
         </div>
         <h4 className="text-lg font-bold mb-2">Your PDF is ready</h4>
         <p className="text-sm text-muted-foreground mb-4">Download now and share with your investor, partner, or bank.</p>
-        <PremiumPdfDownloadButton report={report} />
+        <PremiumPdfDownloadButton report={report} unlocked={isPremium || paid} size="lg" className="w-full h-11 font-semibold" />
         {partnerEmail.includes("@") && (
           <p className="text-xs text-muted-foreground mt-3">
             A copy was also sent to {partnerEmail}. They can run their own analysis on our site.

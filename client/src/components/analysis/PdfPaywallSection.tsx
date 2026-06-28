@@ -5,6 +5,7 @@ import { usePremium, LEAD_EMAIL_KEY } from "@/hooks/usePremium";
 import type { FullReport } from "../../../../shared/analysis-types";
 import { Loader2, FileText } from "lucide-react";
 import { toast } from "sonner";
+import { savePendingReport } from "@/lib/pending-report-storage";
 import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
 
 interface PdfPaywallSectionProps {
@@ -35,6 +36,7 @@ export function PdfPaywallSection({ report }: PdfPaywallSectionProps) {
     }
     captureEvent("upgrade_cta_clicked", { plan: "lifetime", feature: "pdf_download" });
     try {
+      savePendingReport(report);
       const result = await checkout.mutateAsync({ email: checkoutEmail, plan: "lifetime" });
       captureEvent("checkout_session_created", { plan: "lifetime" });
       window.location.href = result.url;

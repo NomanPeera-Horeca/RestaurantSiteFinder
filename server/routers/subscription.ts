@@ -7,6 +7,7 @@ import {
   getSubscriptionByEmail,
   isPremiumSubscription,
   getStripe,
+  verifyAndFulfillCheckoutSession,
 } from "../stripe";
 
 export const subscriptionRouter = router({
@@ -64,6 +65,30 @@ export const subscriptionRouter = router({
               "Payment setup error. Check that STRIPE_LIFETIME_PRICE_ID in Render is a price_ ID (not prod_).",
           });
         }
+        throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message });
+      }
+    }),
+
+  /** Called from /premium/success after Stripe redirect — activates premium without waiting for webhook. */
+  confirmCheckout: publicProcedure
+    .input(z.object({ sessionId: z.string().min(1) }))
+    .mutation(async ({ input }) => {
+      if (!ENV.stripeSecretKey) {
+        throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Stripe is not configured" });
+      }
+      try {
+        const result = await verifyAndFulfillCheckoutSession(input.sessionId);
+        if (!result.fulfilled) {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "Payment not completed yet. Try again in a moment." });
+        }
+        return {
+          isPremium: true,
+          plan: result.plan,
+          email: result.email,
+        };
+      } catch (err) {
+        if (err instanceof TRPCError) throw err;
+        const message = err instanceof Error ? err.message : "Could not verify payment";
         throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message });
       }
     }),

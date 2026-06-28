@@ -1,5 +1,7 @@
 import type { FullReport } from "../../../../shared/analysis-types";
 import { closureTitle } from "@/lib/verdict-styles";
+import { usePremium } from "@/hooks/usePremium";
+import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
 
 interface ReportClosureSectionProps {
   report: FullReport;
@@ -8,6 +10,7 @@ interface ReportClosureSectionProps {
 }
 
 export function ReportClosureSection({ report, onPreviewPdf, onEmailReport }: ReportClosureSectionProps) {
+  const { isPremium } = usePremium();
   const rec = report.conceptFit?.recommendation ?? report.recommendation;
   const score = report.conceptFit?.fitScore ?? report.opportunityScore;
   const direct = report.directCompetitors?.length ?? report.conceptFit?.directCompetitorCount ?? 0;
@@ -47,14 +50,23 @@ export function ReportClosureSection({ report, onPreviewPdf, onEmailReport }: Re
             <li>🔒 Rent stress test and break-even estimate</li>
           </ul>
           <div className="flex flex-col gap-2">
-            <button
-              type="button"
-              onClick={onPreviewPdf}
-              className="w-full h-12 rounded-xl bg-white text-[#0f172a] font-bold text-sm hover:bg-white/95 transition-colors"
-            >
-              See what your PDF looks like
-              <span className="block text-[11px] font-medium opacity-75 mt-0.5">Preview free, then unlock to download</span>
-            </button>
+            {isPremium ? (
+              <PremiumPdfDownloadButton
+                report={report}
+                unlocked
+                size="lg"
+                className="w-full h-12 rounded-xl bg-white text-[#0f172a] font-bold text-sm border-0 hover:bg-white/95"
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={onPreviewPdf}
+                className="w-full h-12 rounded-xl bg-white text-[#0f172a] font-bold text-sm hover:bg-white/95 transition-colors"
+              >
+                See what your PDF looks like
+                <span className="block text-[11px] font-medium opacity-75 mt-0.5">Preview free, then unlock to download</span>
+              </button>
+            )}
             <button
               type="button"
               onClick={onEmailReport}
