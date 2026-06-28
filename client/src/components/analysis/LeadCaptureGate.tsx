@@ -45,7 +45,7 @@ export function LeadCaptureGate({
         lead_id: data.leadId,
       });
       if (!embedded) {
-        toast.success("Report unlocked. Generating your full analysis...");
+        toast.success("Generating your full location analysis...");
       }
       onCaptured(data.leadId, normalizedEmail);
     },

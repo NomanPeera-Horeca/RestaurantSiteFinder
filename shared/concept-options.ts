@@ -6,7 +6,7 @@ export const SERVICE_MODELS = [
   { value: "ghost_kitchen", label: "Ghost Kitchen / Delivery" },
   { value: "cafe", label: "Cafe / Bakery" },
   { value: "bar_grill", label: "Bar & Grill" },
-  { value: "explore", label: "Not sure yet — suggest concepts for me" },
+  { value: "explore", label: "Not sure yet · suggest concepts for me" },
 ] as const;
 
 export const CUISINE_PRESETS = [
@@ -43,7 +43,7 @@ export function formatConceptLabel(concept: ConceptInput): string {
   if (concept.mode === "explore") return "Open concept exploration";
   const model = SERVICE_MODELS.find(m => m.value === concept.serviceModel)?.label ?? concept.serviceModel;
   const price = concept.priceTier ? ` (${concept.priceTier})` : "";
-  return `${concept.cuisineConcept} — ${model}${price}`;
+  return `${concept.cuisineConcept} · ${model}${price}`;
 }
 
 export function serviceModelLabel(value: string): string {

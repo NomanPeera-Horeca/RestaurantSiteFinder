@@ -12,6 +12,10 @@ export interface Competitor {
   lat: number;
   lng: number;
   distanceMiles?: number;
+  /** Inferred service model label, e.g. Full Service, QSR / Drive-thru */
+  serviceModel?: string;
+  /** Display label: Service Model · Cuisine ($$) */
+  conceptLabel?: string;
 }
 
 /** Market analysis data */

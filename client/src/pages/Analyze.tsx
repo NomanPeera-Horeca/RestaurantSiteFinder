@@ -7,7 +7,6 @@ import { appendConceptToSearchParams, conceptFromSearchParams, defaultConceptInp
 import { captureEvent } from "@/lib/posthog";
 import type { InitialScan } from "../../../shared/analysis-types";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
 
 export default function Analyze() {
   const [, navigate] = useLocation();
@@ -50,14 +49,6 @@ export default function Analyze() {
     initialScan.mutate({ address, lat, lng, concept });
   }, [address, lat, lng, concept, navigate]);
 
-  const handleScanComplete = (data: InitialScan) => {
-    const conceptLabel = concept.cuisineConcept?.toLowerCase() ?? "restaurant";
-    toast.success("Heavy lifting done", {
-      description: `We mapped ${data.competitorCount} restaurants in your trade area, matched ${data.directCompetitorCount ?? 0} direct ${conceptLabel} rivals, and flagged the review patterns brokers never share. Scroll down to see what we found.`,
-      duration: 6000,
-    });
-  };
-
   const handleAnalyzeAnother = () => {
     navigate("/");
   };
@@ -69,25 +60,16 @@ export default function Analyze() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <SiteHeader active="home" />
-      {initialScan.isPending && !scanData ? (
-        <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
-          <Loader2 className="h-10 w-10 animate-spin text-primary mb-4" />
-          <h1 className="text-xl font-bold text-foreground mb-2">Analyzing your trade area</h1>
-          <p className="text-sm text-muted-foreground max-w-md">{address}</p>
-        </div>
-      ) : (
-        <AnalysisFlow
-          scanData={scanData}
-          concept={concept}
-          address={address}
-          lat={lat}
-          lng={lng}
-          isInitialScanPending={initialScan.isPending}
-          onAnalyzeAnother={handleAnalyzeAnother}
-          onScanComplete={handleScanComplete}
-          fullPage
-        />
-      )}
+      <AnalysisFlow
+        scanData={scanData}
+        concept={concept}
+        address={address}
+        lat={lat}
+        lng={lng}
+        isInitialScanPending={initialScan.isPending}
+        onAnalyzeAnother={handleAnalyzeAnother}
+        fullPage
+      />
     </div>
   );
 }

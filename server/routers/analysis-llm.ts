@@ -186,6 +186,7 @@ ALTERNATIVE CONCEPT RULES (critical):
 DEMOGRAPHICS AND FOOT TRAFFIC RULES:
 - The demographics and footTraffic fields are AI estimates inferred from competitor mix, price levels, and area type. They are NOT census data or real foot traffic counts.
 - Begin the demographics field with: "AI estimate based on competitor mix: "
+- Demographics must include estimated household income band, whether the area skews office workers vs families vs mixed, typical dining-out spend level, and whether delivery or dine-in appears stronger based on service models nearby.
 - Begin the footTraffic field with: "AI estimate based on area and competitor activity: "
 
 ${specific ? `- conceptFit is REQUIRED: score the USER'S specific concept first. opportunityScore/recommendation should reflect overall location; conceptFit.fitScore/recommendation is for THEIR concept only.

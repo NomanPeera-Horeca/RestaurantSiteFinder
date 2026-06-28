@@ -17,6 +17,7 @@ import { AnalysisCreditsBanner } from "./AnalysisCreditsBanner";
 import { RentStressTease } from "./RentStressTease";
 import { ReportBody } from "@/pages/Report";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLiveAgentSteps, stepStatusForIndex } from "@/hooks/useLiveAgentSteps";
 
 type FlowPhase = "scanning" | "gate" | "generating" | "report" | "no_credits";
 
@@ -28,7 +29,6 @@ interface AnalysisFlowProps {
   lng: number;
   isInitialScanPending: boolean;
   onAnalyzeAnother: () => void;
-  onScanComplete?: (scan: InitialScan) => void;
   fullPage?: boolean;
 }
 
@@ -40,7 +40,6 @@ export function AnalysisFlow({
   lng,
   isInitialScanPending,
   onAnalyzeAnother,
-  onScanComplete,
   fullPage = false,
 }: AnalysisFlowProps) {
   const [leadId, setLeadId] = useState<number | null>(null);
@@ -48,8 +47,10 @@ export function AnalysisFlow({
   const [pdfModalOpen, setPdfModalOpen] = useState(false);
   const [showReportConfetti, setShowReportConfetti] = useState(false);
   const reportTriggered = useRef(false);
-  const scanToastShown = useRef(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const scanFinished = !isInitialScanPending && !!scanData;
+  const liveScanIndex = useLiveAgentSteps(isInitialScanPending, 5, 1200);
 
   const fullReport = trpc.analysis.fullReport.useMutation({
     onError: (err) => {
@@ -69,7 +70,6 @@ export function AnalysisFlow({
   useEffect(() => {
     if (isInitialScanPending) {
       setPhase("scanning");
-      scanToastShown.current = false;
       reportTriggered.current = false;
     }
   }, [isInitialScanPending, address]);
@@ -77,11 +77,7 @@ export function AnalysisFlow({
   useEffect(() => {
     if (!scanData || isInitialScanPending) return;
     setPhase("gate");
-    if (!scanToastShown.current) {
-      scanToastShown.current = true;
-      onScanComplete?.(scanData);
-    }
-  }, [scanData, isInitialScanPending, onScanComplete]);
+  }, [scanData, isInitialScanPending]);
 
   useEffect(() => {
     if (phase !== "generating" || !leadId || reportTriggered.current) return;
@@ -120,61 +116,82 @@ export function AnalysisFlow({
 
   const scanSteps: AgentStep[] = useMemo(() => {
     const radius = scanData?.searchRadiusMiles ?? 5;
-    const gateReached = phase !== "scanning";
+    const conceptLabel = formatConceptLabel(concept).toLowerCase();
 
-    return [
+    const defs = [
       {
         id: "loc",
         label: "Found location on map",
-        sublabel: scanData?.address ?? address,
-        status: isInitialScanPending ? "pending" : "done",
+        pendingSub: "Pinning your address on the trade area map...",
+        activeSub: address,
+        doneSub: scanData?.address ?? address,
       },
       {
         id: "area",
         label: `Scanning ${radius}-mile trade area`,
-        sublabel: isInitialScanPending
-          ? "Querying Google Places..."
-          : `${scanData?.competitorCount ?? 0} restaurants found nearby`,
-        status: isInitialScanPending ? "active" : "done",
+        pendingSub: "Querying Google Places for every restaurant nearby...",
+        activeSub: "Counting restaurants in your trade area...",
+        doneSub: `${scanData?.competitorCount ?? 0} restaurants found nearby`,
       },
       {
         id: "direct",
         label: "Matching direct competitors",
-        sublabel: gateReached
-          ? `${scanData?.directCompetitorCount ?? 0} ${formatConceptLabel(concept).toLowerCase()} concepts within range`
-          : undefined,
-        status: isInitialScanPending ? "pending" : gateReached ? "done" : "active",
+        pendingSub: `Filtering rivals that match ${conceptLabel}...`,
+        activeSub: "Comparing service model, cuisine, and price tier...",
+        doneSub: `${scanData?.directCompetitorCount ?? 0} ${conceptLabel} concepts within range`,
       },
       {
         id: "cuisine",
         label: "Mapping cuisine saturation",
-        sublabel: gateReached ? `${scanData?.topCuisines.length ?? 0} cuisine types identified` : undefined,
-        status: gateReached ? "done" : isInitialScanPending ? "pending" : "pending",
+        pendingSub: "Grouping competitors by cuisine type...",
+        activeSub: "Identifying oversaturated and open categories...",
+        doneSub: `${scanData?.topCuisines.length ?? 0} cuisine types identified`,
       },
       {
         id: "model",
         label: "Scoring opportunity fit",
-        sublabel: gateReached ? "Matching your concept to local demand patterns..." : undefined,
-        status: gateReached ? "done" : "pending",
+        pendingSub: "Checking review patterns brokers never share...",
+        activeSub: "Matching your concept to local demand patterns...",
+        doneSub: "Initial scan complete. See what we found below.",
       },
     ];
-  }, [scanData, concept, address, isInitialScanPending, phase]);
+
+    return defs.map((def, index) => {
+      const status = scanFinished
+        ? "done"
+        : stepStatusForIndex(index, liveScanIndex, false);
+      const sublabel =
+        status === "done"
+          ? def.doneSub
+          : status === "active"
+            ? def.activeSub
+            : def.pendingSub;
+      return {
+        id: def.id,
+        label: def.label,
+        sublabel,
+        status,
+      };
+    });
+  }, [scanData, concept, address, isInitialScanPending, scanFinished, liveScanIndex]);
 
   const phaseLabel =
     phase === "report"
       ? "Report ready"
       : phase === "generating"
-        ? "Unlocking report"
+        ? "Compiling report"
         : phase === "gate"
           ? "Scan complete"
-          : isInitialScanPending
-            ? "Scanning..."
-            : "Scanning...";
+          : "Analyzing trade area...";
 
   const agentTitle =
-    phase === "gate" || phase === "generating" || phase === "report"
-      ? "Scan complete"
-      : "Analyzing your trade area...";
+    phase === "gate"
+      ? "Trade area scan complete"
+      : phase === "generating"
+        ? "Compiling your location intelligence report..."
+        : scanFinished
+          ? "Trade area scan complete"
+          : "Analyzing your trade area...";
 
   return (
     <section
@@ -189,12 +206,11 @@ export function AnalysisFlow({
       <AnalysisContextBar address={address} concept={concept} phaseLabel={phaseLabel} />
 
       <div className={`container pt-8 space-y-8 ${phase === "report" ? "max-w-5xl" : "max-w-3xl"}`}>
-        {phase !== "report" && (
+        {phase !== "report" && phase !== "generating" && (
           <AnalysisAgentProgress
             title={agentTitle}
             steps={scanSteps}
             isActive={isInitialScanPending}
-            dimmed={phase === "gate" || phase === "generating"}
           />
         )}
 
