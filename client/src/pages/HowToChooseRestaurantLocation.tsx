@@ -386,7 +386,7 @@ export default function HowToChooseRestaurantLocation() {
 
           <section className="border-t border-border/50 pt-12">
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              Free Tools for Restaurant Owners
+              Guides for Restaurant Owners
             </h2>
             <div className="grid sm:grid-cols-3 gap-4">
               <a

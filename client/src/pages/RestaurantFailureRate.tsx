@@ -420,7 +420,7 @@ export default function RestaurantFailureRate() {
           {/* Internal links */}
           <section className="border-t border-border/50 pt-12">
             <h2 className="text-2xl font-bold text-foreground mb-6">
-              More Free Tools for Restaurant Owners
+              More Guides for Restaurant Owners
             </h2>
             <div className="grid sm:grid-cols-3 gap-4">
               <a

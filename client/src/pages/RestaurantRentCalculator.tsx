@@ -98,7 +98,7 @@ function InternalLinksSection() {
   return (
     <section className="py-16 border-t border-border/50">
       <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
-        More Free Tools for Restaurant Owners
+        More Guides for Restaurant Owners
       </h2>
       <ul className="space-y-4 max-w-3xl mx-auto">
         <li>
