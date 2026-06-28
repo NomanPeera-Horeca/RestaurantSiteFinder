@@ -17,6 +17,8 @@ import { AnalysisCreditsBanner } from "./AnalysisCreditsBanner";
 import { RentStressTease } from "./RentStressTease";
 import { ReportBody } from "@/pages/Report";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { UpgradeLifetimeButton } from "./UpgradeLifetimeButton";
 import { useLiveAgentSteps, stepStatusForIndex } from "@/hooks/useLiveAgentSteps";
 
 type FlowPhase = "scanning" | "gate" | "generating" | "report" | "no_credits";
@@ -103,13 +105,13 @@ export function AnalysisFlow({
     });
   }, [fullReport.data, leadId]);
 
-  const handleLeadCaptured = (id: number) => {
-    if (!hasReportCredits()) {
+  const handleLeadCaptured = (id: number, email?: string) => {
+    if (!hasReportCredits(email)) {
       setPhase("no_credits");
       toast.error("You have used all 3 reports. Upgrade to generate more.");
       return;
     }
-    consumeReportCredit();
+    consumeReportCredit(email);
     setLeadId(id);
     setPhase("generating");
   };
@@ -229,11 +231,24 @@ export function AnalysisFlow({
 
         {phase === "no_credits" && (
           <Card className="border-amber-200 bg-amber-50/50">
-            <CardContent className="p-6 text-center">
-              <p className="font-semibold text-foreground mb-2">All 3 reports used</p>
-              <p className="text-sm text-muted-foreground mb-4">
-                Upgrade for $49 to download PDFs and save reports to your account.
+            <CardContent className="p-6 text-center space-y-4">
+              <div>
+                <p className="font-semibold text-foreground mb-2">All 3 reports used</p>
+                <p className="text-sm text-muted-foreground">
+                  Upgrade for $49 to download PDFs, save reports to your account, and keep analyzing new locations.
+                </p>
+              </div>
+              <UpgradeLifetimeButton
+                feature="no_credits_gate"
+                size="lg"
+                className="w-full sm:w-auto h-12 rounded-xl font-semibold px-8"
+              />
+              <p className="text-xs text-muted-foreground">
+                One-time payment · lifetime access · secure Stripe checkout
               </p>
+              <Button type="button" variant="outline" className="rounded-xl" onClick={onAnalyzeAnother}>
+                Back to home
+              </Button>
             </CardContent>
           </Card>
         )}

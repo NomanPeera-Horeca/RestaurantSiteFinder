@@ -1,5 +1,5 @@
 import { formatConceptLabel, type ConceptInput } from "../../../../shared/concept-options";
-import { getReportsRemaining } from "@/lib/report-credits";
+import { getReportsRemaining, isReportAdmin } from "@/lib/report-credits";
 
 interface AnalysisContextBarProps {
   address: string;
@@ -8,6 +8,7 @@ interface AnalysisContextBarProps {
 }
 
 export function AnalysisContextBar({ address, concept, phaseLabel }: AnalysisContextBarProps) {
+  const admin = isReportAdmin();
   const remaining = getReportsRemaining();
   return (
     <div className="sticky top-16 z-30 border-b border-border/50 bg-background/95 backdrop-blur-md">
@@ -22,7 +23,7 @@ export function AnalysisContextBar({ address, concept, phaseLabel }: AnalysisCon
           </p>
         </div>
         <span className="text-xs font-semibold rounded-full bg-primary/10 text-primary px-3 py-1 shrink-0">
-          {remaining} of 3 reports left
+          {admin ? "Unlimited reports (admin)" : `${remaining} of 3 reports left`}
         </span>
       </div>
     </div>
