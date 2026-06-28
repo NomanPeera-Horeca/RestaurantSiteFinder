@@ -30,6 +30,30 @@ function getInvoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
 
 export { getSubscriptionByEmail };
 
+/** Checkout line_items require a Price ID (price_...), not a Product ID (prod_...). */
+export async function resolveStripePriceId(priceOrProductId: string): Promise<string> {
+  const id = priceOrProductId.trim();
+  if (id.startsWith("price_")) return id;
+
+  if (id.startsWith("prod_")) {
+    const product = await getStripe().products.retrieve(id, { expand: ["default_price"] });
+    const defaultPrice = product.default_price;
+    if (typeof defaultPrice === "string") return defaultPrice;
+    if (defaultPrice && typeof defaultPrice === "object" && !("deleted" in defaultPrice)) {
+      return defaultPrice.id;
+    }
+    const prices = await getStripe().prices.list({ product: id, active: true, limit: 1 });
+    if (prices.data[0]?.id) return prices.data[0].id;
+    throw new Error(
+      `Stripe product ${id} has no default price. Set STRIPE_LIFETIME_PRICE_ID to a price_ ID in Render.`
+    );
+  }
+
+  throw new Error(
+    `Invalid Stripe price config "${id}". Use a Price ID starting with price_ (not prod_).`
+  );
+}
+
 export async function createCheckoutSession({
   email,
   priceId,
@@ -43,10 +67,11 @@ export async function createCheckoutSession({
   successUrl: string;
   cancelUrl: string;
 }) {
+  const resolvedPriceId = await resolveStripePriceId(priceId);
   return getStripe().checkout.sessions.create({
     customer_email: email.trim().toLowerCase(),
     payment_method_types: ["card"],
-    line_items: [{ price: priceId, quantity: 1 }],
+    line_items: [{ price: resolvedPriceId, quantity: 1 }],
     mode,
     success_url: successUrl,
     cancel_url: cancelUrl,

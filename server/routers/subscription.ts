@@ -41,19 +41,31 @@ export const subscriptionRouter = router({
       }
 
       const mode = input.plan === "monthly" ? "subscription" : "payment";
-      const session = await createCheckoutSession({
-        email: input.email,
-        priceId,
-        mode,
-        successUrl: `${ENV.appUrl}/premium/success?session={CHECKOUT_SESSION_ID}&plan=${input.plan}`,
-        cancelUrl: `${ENV.appUrl}/?upgrade=canceled`,
-      });
+      try {
+        const session = await createCheckoutSession({
+          email: input.email,
+          priceId,
+          mode,
+          successUrl: `${ENV.appUrl}/premium/success?session={CHECKOUT_SESSION_ID}&plan=${input.plan}`,
+          cancelUrl: `${ENV.appUrl}/?upgrade=canceled`,
+        });
 
-      if (!session.url) {
-        throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Failed to create checkout session" });
+        if (!session.url) {
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Failed to create checkout session" });
+        }
+
+        return { url: session.url };
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Could not start checkout";
+        if (/price|prod_|Stripe/i.test(message)) {
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message:
+              "Payment setup error. Check that STRIPE_LIFETIME_PRICE_ID in Render is a price_ ID (not prod_).",
+          });
+        }
+        throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message });
       }
-
-      return { url: session.url };
     }),
 
   cancel: publicProcedure

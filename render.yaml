@@ -18,6 +18,7 @@ services:
         sync: false
       - key: STRIPE_WEBHOOK_SECRET
         sync: false
+      # Stripe Price IDs must start with price_ (not prod_). Copy from Product → Pricing in Stripe Dashboard.
       - key: STRIPE_MONTHLY_PRICE_ID
         sync: false
       - key: STRIPE_LIFETIME_PRICE_ID
