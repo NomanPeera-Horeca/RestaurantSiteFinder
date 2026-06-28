@@ -139,8 +139,8 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
 
           {/* Blurred Preview / Lead Wall CTA */}
           <div className="relative rounded-2xl overflow-hidden border border-border/50">
-            {/* Blurred fake content */}
-            <div className="p-8 filter blur-sm opacity-50 pointer-events-none select-none">
+            {/* Blurred fake content (background only; does not set height) */}
+            <div className="absolute inset-0 p-8 filter blur-sm opacity-50 pointer-events-none select-none">
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <div className="h-24 bg-muted rounded-lg" />
                 <div className="h-24 bg-muted rounded-lg" />
@@ -154,8 +154,8 @@ export function InitialScanPreview({ data, onUnlock }: InitialScanPreviewProps) 
             </div>
 
             {/* Overlay CTA */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-background via-background/95 to-background/80">
-              <div className="text-center px-6">
+            <div className="relative flex items-center justify-center py-10 sm:py-12 px-6 bg-gradient-to-t from-background via-background/95 to-background/80">
+              <div className="text-center px-2 sm:px-6">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Lock className="h-7 w-7 text-primary" />
                 </div>

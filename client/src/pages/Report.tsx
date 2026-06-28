@@ -25,7 +25,6 @@ import { conceptFromSearchParams } from "@/lib/concept";
 import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
-import { SocialShare } from "@/components/SocialShare";
 import { PremiumReportActions } from "@/components/PremiumReportSections";
 import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
 
@@ -1033,17 +1032,6 @@ export default function Report() {
           title={report.conceptFit ? "Additional Winning Concepts for This Market" : undefined}
         />
         <EquipmentSection bundles={report.equipmentBundles} recommendation={report.conceptFit?.recommendation ?? report.recommendation} />
-
-        {/* Social Sharing */}
-        <Card className="border-primary/20 bg-gradient-to-r from-primary/5 to-background">
-          <CardContent className="p-6">
-            <SocialShare
-              url="https://restaurantsitefinder.com"
-              title={`Restaurant Location Analysis for ${report.address}`}
-              description={`I just analyzed a restaurant location and got a ${report.opportunityScore}/10 opportunity score. Restaurant Site Finder by Horeca Store gives you real market data before you sign a lease.`}
-            />
-          </CardContent>
-        </Card>
       </div>
 
       {/* Footer with Horeca Store branding */}
