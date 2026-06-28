@@ -15,24 +15,31 @@ const CREATE_TABLE_SQL = `
 `;
 
 let tableEnsured = false;
+let lastEnsureError: string | null = null;
 
-async function ensureTable() {
+async function ensureTable(): Promise<void> {
   if (tableEnsured) return;
+  if (!process.env.DATABASE_URL) {
+    lastEnsureError = "DATABASE_URL not set";
+    throw new Error(lastEnsureError);
+  }
   try {
-    if (!process.env.DATABASE_URL) return;
     const mysql = await import("mysql2/promise");
     const conn = await mysql.createConnection(process.env.DATABASE_URL);
     await conn.execute(CREATE_TABLE_SQL);
     await conn.end();
     tableEnsured = true;
+    lastEnsureError = null;
     console.log("[feedback] table ready");
-  } catch (err) {
-    console.warn("[feedback] table ensure failed:", err);
+  } catch (err: any) {
+    lastEnsureError = String(err?.message ?? err);
+    console.error("[feedback] table ensure failed:", lastEnsureError);
+    throw new Error("Feedback table setup failed: " + lastEnsureError);
   }
 }
 
-// Ensure table on module load
-ensureTable();
+// Attempt table creation on module load (best-effort, won't throw)
+ensureTable().catch(() => {});
 
 export const feedbackRouter = router({
   submit: publicProcedure
@@ -62,4 +69,23 @@ export const feedbackRouter = router({
       const since = new Date(Date.now() - input.sinceDays * 24 * 60 * 60 * 1000);
       return getRecentFeedback(since);
     }),
+
+  /** Debug endpoint — returns table status and last error */
+  status: publicProcedure.query(async () => {
+    const dbUrl = process.env.DATABASE_URL;
+    if (!dbUrl) return { ok: false, error: "DATABASE_URL not set", tableEnsured };
+    try {
+      const mysql = await import("mysql2/promise");
+      const conn = await mysql.createConnection(dbUrl);
+      await conn.execute(CREATE_TABLE_SQL);
+      await conn.end();
+      tableEnsured = true;
+      lastEnsureError = null;
+      return { ok: true, tableEnsured: true, error: null };
+    } catch (err: any) {
+      const msg = String(err?.message ?? err);
+      lastEnsureError = msg;
+      return { ok: false, error: msg, tableEnsured };
+    }
+  }),
 });
