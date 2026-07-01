@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useSearch } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { HORECA } from "@/lib/horeca-brand";
@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Progress } from "@/components/ui/progress";
 import {
   MapPin, Building2, Star, TrendingUp, AlertTriangle,
   CheckCircle2, XCircle, Lightbulb, ShoppingCart,
@@ -15,23 +14,57 @@ import {
   ExternalLink, Utensils, Target, BarChart3,
   ThumbsUp, ThumbsDown, MessageSquare, Gauge,
   Package, ArrowRight, Download, FileText,
-  Users, TrendingDown, Search, ShieldCheck, RefreshCw
+  Users, TrendingDown, RefreshCw, Lock
 } from "lucide-react";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow
 } from "@/components/ui/table";
-import type { FullReport, Competitor, WinningConcept, EquipmentBundle, MenuMarketFit, ConceptFit } from "../../../shared/analysis-types";
+import type { FullReport, Competitor, WinningConcept, EquipmentBundle, ConceptFit } from "../../../shared/analysis-types";
 import { conceptFromSearchParams } from "@/lib/concept";
+import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
-import { SocialShare } from "@/components/SocialShare";
+import { formatDriveTime } from "../../../shared/geo";
+import { getCompetitorConceptLabel, proximityLabel } from "../../../shared/competitor-classifier";
+import { verdictScoreClass } from "@/lib/verdict-styles";
+import {
+  CONCEPT_FIT_TOOLTIP,
+  countCuisines,
+  formatCuisineBreakdown,
+  formatReviewVolume,
+  totalReviewCount,
+  patternsToDifferentiationActions,
+  ensureMenuMarketFit,
+  buildUserConceptMenuMarketFit,
+  recommendationHeadline,
+  recommendationSummary,
+  cuisineCoverageSummary,
+  parseDemographicsScan,
+  parseFootTrafficScan,
+  countWithinMiles,
+  competitorDistanceMiles,
+  mappedRestaurantLabel,
+} from "@/lib/report-helpers";
+import { RecommendationProgress } from "@/components/analysis/RecommendationProgress";
+import { MenuMarketFitCard } from "@/components/analysis/MenuMarketFitCard";
+import { PremiumReportActions } from "@/components/PremiumReportSections";
+import { PremiumPdfDownloadButton } from "@/components/PremiumPdfReport";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { HelpCircle } from "lucide-react";
 
 function priceLevelLabel(level: number | null): string {
   if (level === null || level === undefined) return "N/A";
   return ["Free", "$", "$$", "$$$", "$$$$"][level] ?? "N/A";
 }
 
-function scoreColor(score: number): string {
+function scoreColor(score: number, recommendation?: string): string {
+  if (recommendation === "GO") return "text-green-700";
+  if (recommendation === "NO-GO") return "text-red-700";
+  if (recommendation === "CAUTION") return "text-amber-700";
   if (score >= 7) return "text-green-600";
   if (score >= 4) return "text-yellow-600";
   return "text-red-600";
@@ -50,7 +83,84 @@ function recommendationBadge(rec: string) {
 
 // ---- Sub-components ----
 
-function CompetitorTable({ competitors, title, subtitle }: { competitors: Competitor[]; title?: string; subtitle?: string }) {
+const COMPETITOR_TABLE_INITIAL = 25;
+
+const MOBILE_WRAP_BUTTON =
+  "w-full max-w-full h-auto min-h-11 whitespace-normal text-center leading-snug py-2.5 px-3 flex items-center justify-center gap-2";
+
+function CompetitorBadges({
+  c,
+  index,
+  distanceMiles,
+  markDirectRivals,
+}: {
+  c: Competitor;
+  index: number;
+  distanceMiles?: number;
+  markDirectRivals: boolean;
+}) {
+  const proximity = proximityLabel(index, distanceMiles);
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {proximity && (
+        <Badge className="text-[10px] bg-primary/10 text-primary border border-primary/25 hover:bg-primary/10">
+          {proximity}
+        </Badge>
+      )}
+      {markDirectRivals && (
+        <Badge variant="outline" className="text-[10px] text-primary border-primary/30">
+          Direct rival
+        </Badge>
+      )}
+      {c.userRatingsTotal >= 1000 && (
+        <Badge className="text-[10px] bg-red-100 text-red-700 border border-red-200 hover:bg-red-100">
+          Dominant
+        </Badge>
+      )}
+      {c.userRatingsTotal > 0 && c.userRatingsTotal < 20 && (
+        <Badge variant="outline" className="text-[10px] text-muted-foreground border-muted-foreground/30">
+          New
+        </Badge>
+      )}
+    </div>
+  );
+}
+
+function CompetitorTable({
+  competitors,
+  title,
+  subtitle,
+  originLat,
+  originLng,
+  markDirectRivals = false,
+  competitorsCapped = false,
+}: {
+  competitors: Competitor[];
+  title?: string;
+  subtitle?: string;
+  originLat?: number;
+  originLng?: number;
+  markDirectRivals?: boolean;
+  competitorsCapped?: boolean;
+}) {
+  const [showAll, setShowAll] = useState(false);
+
+  const sorted = useMemo(() => {
+    const withDistance = competitors.map((c) => ({
+      ...c,
+      distanceMiles: competitorDistanceMiles(c, originLat, originLng) ?? c.distanceMiles,
+    }));
+    return [...withDistance].sort((a, b) => (a.distanceMiles ?? 99) - (b.distanceMiles ?? 99));
+  }, [competitors, originLat, originLng]);
+
+  const visible = showAll ? sorted : sorted.slice(0, COMPETITOR_TABLE_INITIAL);
+  const hasMore = sorted.length > COMPETITOR_TABLE_INITIAL;
+  const withinOneMile = countWithinMiles(competitors, 1, originLat, originLng);
+  const ratedCompetitors = competitors.filter(c => c.rating > 0);
+  const avgRating = ratedCompetitors.length > 0
+    ? ratedCompetitors.reduce((sum, c) => sum + c.rating, 0) / ratedCompetitors.length
+    : 0;
+  const showRatingCallout = competitors.length > 0 && ratedCompetitors.length > 0;
   return (
     <Card className="border-border/50">
       <CardHeader className="pb-4">
@@ -61,122 +171,335 @@ function CompetitorTable({ competitors, title, subtitle }: { competitors: Compet
           <div>
             <CardTitle className="text-lg">{title ?? "Competitor Snapshot"}</CardTitle>
             <p className="text-sm text-muted-foreground">
-              {subtitle ?? formatCompetitorAreaSubtitle(competitors.length)}
+              {subtitle ?? formatCompetitorAreaSubtitle(competitors.length, undefined, competitorsCapped)}
+              {sorted.length > 0 && (
+                <span className="block text-xs mt-0.5">Sorted by drive time, nearest first. Closest rivals matter most.</span>
+              )}
             </p>
           </div>
         </div>
       </CardHeader>
       <CardContent>
-        <div className="rounded-lg border border-border overflow-x-auto">
-          <Table className="min-w-[500px]">
+        {withinOneMile > 0 && (
+          <div className="rounded-lg border border-primary/25 bg-primary/5 p-3 mb-4">
+            <p className="text-sm font-semibold text-foreground">
+              {withinOneMile} competitor{withinOneMile === 1 ? "" : "s"} within 1 mile
+            </p>
+            <p className="text-sm text-muted-foreground mt-0.5">
+              These are your immediate rivals. Focus on how you beat them on speed, quality, and convenience.
+            </p>
+          </div>
+        )}
+        {showRatingCallout && (
+          <div
+            className={`rounded-lg p-3 mb-4 flex items-center gap-3 text-sm font-medium ${
+              avgRating < 4.0
+                ? "bg-green-50 border border-green-200 text-green-800"
+                : "bg-muted/50 border border-border text-muted-foreground"
+            }`}
+          >
+            <Star className={`h-4 w-4 shrink-0 ${avgRating < 4.0 ? "text-green-600" : "text-muted-foreground"}`} />
+            {avgRating < 4.0 ? (
+              <span>
+                Average competitor rating is {avgRating.toFixed(1)}: below the 4.0 quality threshold. Low-quality competition means room for you to stand out.
+              </span>
+            ) : (
+              <span>
+                Average competitor rating is {avgRating.toFixed(1)}: this market has strong existing players. Quality will matter.
+              </span>
+            )}
+          </div>
+        )}
+        {/* Mobile: stacked cards avoid table column overlap */}
+        <div className="md:hidden divide-y divide-border rounded-lg border border-border">
+          {visible.map((c, index) => {
+            const conceptLabel = getCompetitorConceptLabel(c);
+            return (
+              <div key={c.placeId} className="p-4 space-y-2.5">
+                <p className="font-medium text-foreground text-sm leading-snug break-words">{c.name}</p>
+                <CompetitorBadges
+                  c={c}
+                  index={index}
+                  distanceMiles={c.distanceMiles}
+                  markDirectRivals={markDirectRivals}
+                />
+                <p className="text-sm text-foreground leading-snug break-words">
+                  <span className="text-muted-foreground">Service · Concept: </span>
+                  {conceptLabel}
+                </p>
+                <div className="grid grid-cols-2 gap-3 text-xs sm:grid-cols-4">
+                  <div>
+                    <p className="text-muted-foreground mb-0.5">Drive time</p>
+                    <p className="font-semibold text-foreground">{formatDriveTime(c.distanceMiles)}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground mb-0.5">Rating</p>
+                    <p className="font-semibold text-foreground inline-flex items-center gap-1">
+                      <Star className="h-3.5 w-3.5 text-yellow-500 fill-yellow-500 shrink-0" />
+                      {c.rating.toFixed(1)}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground mb-0.5">Reviews</p>
+                    <p className="font-semibold text-foreground">{c.userRatingsTotal}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground mb-0.5">Price</p>
+                    <p className="font-semibold text-foreground">{priceLevelLabel(c.priceLevel)}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop: full table */}
+        <div className="hidden md:block rounded-lg border border-border overflow-x-auto">
+          <Table className="min-w-[640px] w-full">
             <TableHeader>
               <TableRow className="bg-muted/50">
-                <TableHead className="font-semibold">Name</TableHead>
-                <TableHead className="font-semibold">Cuisine</TableHead>
-                <TableHead className="font-semibold text-center">Rating</TableHead>
-                <TableHead className="font-semibold text-center">Reviews</TableHead>
-                <TableHead className="font-semibold text-center">Price</TableHead>
+                <TableHead className="font-semibold min-w-[140px]">Name</TableHead>
+                <TableHead className="font-semibold text-center whitespace-nowrap">Drive time</TableHead>
+                <TableHead className="font-semibold min-w-[120px]">Service · Concept</TableHead>
+                <TableHead className="font-semibold text-center whitespace-nowrap">Rating</TableHead>
+                <TableHead className="font-semibold text-center whitespace-nowrap">Reviews</TableHead>
+                <TableHead className="font-semibold text-center whitespace-nowrap">Price</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {competitors.slice(0, 15).map((c) => (
+              {visible.map((c, index) => {
+                const conceptLabel = getCompetitorConceptLabel(c);
+                return (
                 <TableRow key={c.placeId} className="hover:bg-muted/30">
-                  <TableCell className="font-medium text-foreground">{c.name}</TableCell>
-                  <TableCell>
-                    <Badge variant="outline" className="text-xs">{c.cuisine}</Badge>
+                  <TableCell className="font-medium text-foreground align-top max-w-[200px]">
+                    <p className="break-words leading-snug">{c.name}</p>
+                    <div className="mt-1.5">
+                      <CompetitorBadges
+                      c={c}
+                      index={index}
+                      distanceMiles={c.distanceMiles}
+                      markDirectRivals={markDirectRivals}
+                    />
+                    </div>
                   </TableCell>
-                  <TableCell className="text-center">
-                    <span className="flex items-center justify-center gap-1">
-                      <Star className="h-3.5 w-3.5 text-yellow-500 fill-yellow-500" />
+                  <TableCell className="text-center text-sm font-medium text-foreground whitespace-nowrap align-top">
+                    {formatDriveTime(c.distanceMiles)}
+                  </TableCell>
+                  <TableCell className="align-top max-w-[180px]">
+                    <p className="text-sm font-medium text-foreground leading-snug break-words">{conceptLabel}</p>
+                  </TableCell>
+                  <TableCell className="text-center align-top whitespace-nowrap">
+                    <span className="inline-flex items-center justify-center gap-1 text-sm">
+                      <Star className="h-3.5 w-3.5 text-yellow-500 fill-yellow-500 shrink-0" />
                       {c.rating.toFixed(1)}
                     </span>
                   </TableCell>
-                  <TableCell className="text-center text-muted-foreground">{c.userRatingsTotal}</TableCell>
-                  <TableCell className="text-center">{priceLevelLabel(c.priceLevel)}</TableCell>
+                  <TableCell className="text-center text-sm text-muted-foreground align-top whitespace-nowrap">{c.userRatingsTotal}</TableCell>
+                  <TableCell className="text-center text-sm align-top whitespace-nowrap">{priceLevelLabel(c.priceLevel)}</TableCell>
                 </TableRow>
-              ))}
+              );})}
             </TableBody>
           </Table>
+        </div>
+        {hasMore && (
+          <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <p className="text-xs text-muted-foreground">
+              Showing {visible.length} of {sorted.length} restaurants · nearest drive time first
+              {competitorsCapped && sorted.length >= 60 ? " · 60+ found in search area" : ""}
+            </p>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="shrink-0"
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll ? "Show fewer" : `Show all ${sorted.length} restaurants`}
+            </Button>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+function PremiumInsightsSection() {
+  return (
+    <Card className="border-primary/20">
+      <CardHeader className="pb-3">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <Lock className="h-5 w-5 text-primary" />
+          </div>
+          <div>
+            <CardTitle className="text-lg">Premium Insights</CardTitle>
+            <p className="text-sm text-muted-foreground">Unlock deeper data to make a confident decision before signing</p>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-5 flex flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <TrendingUp className="h-5 w-5 text-primary" />
+              <p className="font-semibold text-foreground text-sm">Foot Traffic Estimate</p>
+              <Badge variant="secondary" className="text-xs ml-auto">Premium</Badge>
+            </div>
+            <p className="text-sm text-muted-foreground">Peak hours, daily volume estimate, and seasonal patterns for this address based on competitor activity and area type.</p>
+            <div className="h-16 rounded-lg bg-muted/40 flex items-center justify-center">
+              <Lock className="h-4 w-4 text-muted-foreground" />
+            </div>
+          </div>
+          <div className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-5 flex flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <FileText className="h-5 w-5 text-primary" />
+              <p className="font-semibold text-foreground text-sm">Lease Risk Assessment</p>
+              <Badge variant="secondary" className="text-xs ml-auto">Premium</Badge>
+            </div>
+            <p className="text-sm text-muted-foreground">Rent-to-revenue stress test, break-even timeline, and red flags to negotiate before you sign the lease.</p>
+            <div className="h-16 rounded-lg bg-muted/40 flex items-center justify-center">
+              <Lock className="h-4 w-4 text-muted-foreground" />
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 text-center">
+          <p className="text-xs text-muted-foreground">Available with RSF Premium</p>
         </div>
       </CardContent>
     </Card>
   );
 }
 
-function ConceptFitSection({ conceptFit }: { conceptFit: ConceptFit }) {
+function ConceptFitSection({ conceptFit, report }: { conceptFit: ConceptFit; report: FullReport }) {
+  const rec = conceptFit.recommendation;
+  const userMmf = buildUserConceptMenuMarketFit(report);
+  const recBg =
+    rec === "GO"
+      ? "bg-green-50 border-green-200 text-green-900"
+      : rec === "NO-GO"
+        ? "bg-red-50 border-red-200 text-red-900"
+        : "bg-amber-50 border-amber-200 text-amber-900";
+
   return (
-    <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-background">
-      <CardHeader className="pb-4">
-        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
-              <Target className="h-5 w-5 text-primary-foreground" />
+    <Card
+      className={`border-2 bg-card ${
+        rec === "GO" ? "border-green-400" : rec === "NO-GO" ? "border-red-400" : "border-amber-400"
+      }`}
+    >
+      <CardHeader className="pb-4 border-b border-border/50">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+            <div className="flex items-start gap-3 min-w-0">
+              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0">
+                <Target className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <div className="min-w-0">
+                <CardTitle className="text-lg flex items-center gap-2 flex-wrap">
+                  Your Concept Fit Analysis
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button type="button" className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-muted text-muted-foreground hover:text-foreground">
+                        <HelpCircle className="h-3.5 w-3.5" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="top" className="max-w-sm text-left">
+                      {CONCEPT_FIT_TOOLTIP}
+                    </TooltipContent>
+                  </Tooltip>
+                </CardTitle>
+                <p className="text-sm font-medium text-foreground mt-1">{conceptFit.userConceptSummary}</p>
+              </div>
             </div>
-            <div>
-              <CardTitle className="text-lg">Your Concept Verdict</CardTitle>
-              <p className="text-sm font-medium text-foreground mt-1">{conceptFit.userConceptSummary}</p>
-              <p className="text-sm text-muted-foreground mt-2">{conceptFit.summary}</p>
+            <div className="flex items-center gap-3 shrink-0 sm:text-right">
+              <div>
+                <p className="text-xs text-muted-foreground flex items-center gap-1 sm:justify-end">
+                  Concept fit score
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button type="button" aria-label="What is concept fit?">
+                        <HelpCircle className="h-3 w-3 text-muted-foreground" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent side="top" className="max-w-xs text-left">
+                      {CONCEPT_FIT_TOOLTIP}
+                    </TooltipContent>
+                  </Tooltip>
+                </p>
+                <p className={`text-3xl font-bold ${verdictScoreClass(rec)}`}>{conceptFit.fitScore}/10</p>
+              </div>
+              {recommendationBadge(rec)}
             </div>
           </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <div className="text-right">
-              <p className="text-xs text-muted-foreground">Concept fit</p>
-              <p className={`text-3xl font-bold ${scoreColor(conceptFit.fitScore)}`}>{conceptFit.fitScore}/10</p>
-            </div>
-            {recommendationBadge(conceptFit.recommendation)}
+
+          <div className={`rounded-xl border p-4 ${recBg}`}>
+            <p className="font-semibold text-sm">{recommendationHeadline(rec)}</p>
+            <p className="text-sm mt-1 opacity-90">{recommendationSummary(rec)}</p>
+            <p className="text-sm mt-2 opacity-80">{conceptFit.summary}</p>
           </div>
         </div>
       </CardHeader>
-      <CardContent className="space-y-6">
+
+      <CardContent className="space-y-4 pt-6">
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="p-4 rounded-lg border border-border/50 bg-card">
-            <p className="font-medium text-sm text-foreground mb-1">Competitive landscape</p>
-            <p className="text-sm text-muted-foreground">{conceptFit.competitiveVerdict}</p>
-            <p className="text-xs text-muted-foreground mt-2">
-              {conceptFit.directCompetitorCount} direct competitor(s) identified nearby.
-            </p>
-          </div>
-          <div className="p-4 rounded-lg border border-border/50 bg-card">
-            <p className="font-medium text-sm text-foreground mb-1">Why it works or fails here</p>
-            <p className="text-sm text-muted-foreground">{conceptFit.whyItWorksOrFails}</p>
-          </div>
+          <Card className="border-border/50 shadow-none">
+            <CardContent className="p-4">
+              <p className="font-semibold text-sm text-foreground mb-2">Competitive landscape</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{conceptFit.competitiveVerdict}</p>
+              <p className="text-xs text-muted-foreground mt-3 pt-3 border-t border-border/50">
+                {conceptFit.directCompetitorCount} direct competitor(s) identified nearby.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="border-border/50 shadow-none">
+            <CardContent className="p-4">
+              <p className="font-semibold text-sm text-foreground mb-2">Why it works or fails here</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{conceptFit.whyItWorksOrFails}</p>
+            </CardContent>
+          </Card>
         </div>
 
-        {(conceptFit.recommendation === "NO-GO" || conceptFit.recommendation === "CAUTION") && (
-          <>
-            {conceptFit.alternativeConcepts.length > 0 && (
-              <div>
-                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <RefreshCw className="h-4 w-4 text-primary" />
-                  Better concepts for this location
-                </h3>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {conceptFit.alternativeConcepts.map((alt, i) => (
-                    <div key={i} className="p-4 rounded-xl border border-border/50 bg-card">
-                      <div className="flex items-center justify-between gap-2 mb-2">
-                        <p className="font-semibold text-foreground">{alt.name}</p>
-                        <Badge variant="outline">{alt.fitScore}/10</Badge>
-                      </div>
-                      <p className="text-xs text-primary mb-1">
-                        {serviceModelLabel(alt.serviceModel)} · {alt.cuisineType}
-                      </p>
-                      <p className="text-sm text-muted-foreground">{alt.whyBetter}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+        {userMmf && (
+          <MenuMarketFitCard
+            mmf={userMmf}
+            label={report.conceptInput?.cuisineConcept}
+          />
+        )}
 
-            {conceptFit.alternativeLocationGuidance && (
-              <div className="p-4 rounded-lg border border-amber-200 bg-amber-50/80">
-                <p className="font-medium text-sm text-foreground mb-1 flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-amber-700" />
-                  Where your original concept might work better
-                </p>
-                <p className="text-sm text-muted-foreground">{conceptFit.alternativeLocationGuidance}</p>
-              </div>
-            )}
-          </>
+        {(rec === "NO-GO" || rec === "CAUTION") && conceptFit.alternativeConcepts.length > 0 && (
+          <div className="space-y-3">
+            <h3 className="font-semibold text-foreground flex items-center gap-2">
+              <RefreshCw className="h-4 w-4 text-primary" />
+              Better concepts for this location
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {conceptFit.alternativeConcepts.map((alt, i) => (
+                <Card key={i} className="border-border/50 shadow-none">
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <p className="font-semibold text-foreground">{alt.name}</p>
+                      <Badge variant="outline">{alt.fitScore}/10</Badge>
+                    </div>
+                    <p className="text-xs text-primary mb-2">
+                      {serviceModelLabel(alt.serviceModel)} · {alt.cuisineType}
+                    </p>
+                    <p className="text-sm text-muted-foreground">{alt.whyBetter}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {(rec === "NO-GO" || rec === "CAUTION") && conceptFit.alternativeLocationGuidance && (
+          <Card className="border-amber-200 bg-amber-50/50 shadow-none">
+            <CardContent className="p-4">
+              <p className="font-semibold text-sm text-foreground mb-2 flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-amber-700" />
+                Where your original concept might work better
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{conceptFit.alternativeLocationGuidance}</p>
+            </CardContent>
+          </Card>
         )}
       </CardContent>
     </Card>
@@ -185,6 +508,18 @@ function ConceptFitSection({ conceptFit }: { conceptFit: ConceptFit }) {
 
 function MarketLogicSection({ report }: { report: FullReport }) {
   const { marketAnalysis } = report;
+  const cuisineCounts = countCuisines(report.competitors);
+  const breakdown = formatCuisineBreakdown(cuisineCounts);
+  const reviewTotal = totalReviewCount(report.competitors);
+  const reviewVolume = formatReviewVolume(reviewTotal);
+  const differentiation = patternsToDifferentiationActions(
+    marketAnalysis.reviewSentiment.patterns,
+    marketAnalysis.reviewSentiment.topComplaints,
+    marketAnalysis.reviewSentiment.topPraises
+  );
+  const demographicsScan = parseDemographicsScan(marketAnalysis.demographics);
+  const footTrafficScan = parseFootTrafficScan(marketAnalysis.footTraffic);
+  const mappedLabel = mappedRestaurantLabel(report.competitors.length, report.competitorsCapped);
 
   return (
     <Card className="border-border/50">
@@ -199,58 +534,67 @@ function MarketLogicSection({ report }: { report: FullReport }) {
           </div>
         </div>
       </CardHeader>
-      <CardContent className="space-y-6">
-        {/* Cuisine Signals */}
+      <CardContent className="space-y-8">
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-3">
             <h4 className="font-semibold text-foreground flex items-center gap-2">
               <XCircle className="h-4 w-4 text-red-500" />
               Saturated Cuisines
             </h4>
-            <div className="space-y-2">
-              {marketAnalysis.saturatedCuisines.length > 0 ? (
-                marketAnalysis.saturatedCuisines.map((c) => (
-                  <div key={c} className="flex items-center gap-2 text-sm">
-                    <span className="text-red-500">✖</span>
-                    <span className="text-foreground">{c}</span>
-                    <Badge variant="outline" className="text-xs text-red-600 border-red-200 ml-auto">Saturated</Badge>
-                  </div>
-                ))
-              ) : (
-                <p className="text-sm text-muted-foreground">No heavily saturated cuisines detected</p>
-              )}
-            </div>
+            {marketAnalysis.saturatedCuisines.length > 0 ? (
+              <div className="space-y-2">
+                {marketAnalysis.saturatedCuisines.map((c) => {
+                  const count = cuisineCounts.find((x) => x.cuisine === c)?.count;
+                  return (
+                    <div key={c} className="flex items-center gap-2 text-sm">
+                      <span className="text-red-500">✖</span>
+                      <span className="text-foreground">{c}{count ? ` (${count} nearby)` : ""}</span>
+                      <Badge variant="outline" className="text-xs text-red-600 border-red-200 ml-auto">Saturated</Badge>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <p className="text-sm text-muted-foreground">No heavily saturated cuisines detected in mapped competitors.</p>
+            )}
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold text-foreground flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-green-500" />
-              Underserved Cuisines
+              Cuisine Coverage Near This Address
             </h4>
-            <div className="space-y-2">
-              {marketAnalysis.underservedCuisines.length > 0 ? (
-                marketAnalysis.underservedCuisines.map((c) => (
+            <p className="text-sm text-foreground font-medium">{breakdown}</p>
+            {marketAnalysis.underservedCuisines.length > 0 ? (
+              <div className="space-y-2">
+                {marketAnalysis.underservedCuisines.map((c) => (
                   <div key={c} className="flex items-center gap-2 text-sm">
                     <span className="text-green-500">✔</span>
                     <span className="text-foreground">{c}</span>
                     <Badge variant="outline" className="text-xs text-green-600 border-green-200 ml-auto">Opportunity</Badge>
                   </div>
-                ))
-              ) : (
-                <p className="text-sm text-muted-foreground">Market appears well-covered</p>
-              )}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                {cuisineCoverageSummary(marketAnalysis.underservedCuisines.length)}
+              </p>
+            )}
           </div>
         </div>
 
         <Separator />
 
-        {/* Review Sentiment */}
         <div className="space-y-4">
-          <h4 className="font-semibold text-foreground flex items-center gap-2">
-            <MessageSquare className="h-4 w-4 text-primary" />
-            Review Sentiment Analysis
-          </h4>
+          <div>
+            <h4 className="font-semibold text-foreground flex items-center gap-2">
+              <MessageSquare className="h-4 w-4 text-primary" />
+              What Customers Say About Nearby Restaurants
+            </h4>
+            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+              We read {reviewVolume} Google reviews from {mappedLabel} near this address to learn what people love and complain about.
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-red-50 rounded-lg p-4 border border-red-100">
@@ -283,34 +627,106 @@ function MarketLogicSection({ report }: { report: FullReport }) {
               </ul>
             </div>
           </div>
+        </div>
 
-          {/* Patterns */}
-          {marketAnalysis.reviewSentiment.patterns.length > 0 && (
-            <div className="bg-muted/50 rounded-lg p-4">
-              <p className="font-medium text-foreground text-sm mb-2">Key Market Patterns</p>
-              <ul className="space-y-1">
-                {marketAnalysis.reviewSentiment.patterns.map((pattern, i) => (
-                  <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                    <TrendingUp className="h-3.5 w-3.5 mt-0.5 text-primary shrink-0" />
-                    {pattern}
+        {differentiation.length > 0 && (
+          <>
+            <Separator />
+            <Card className="border-amber-200 bg-amber-50/40 shadow-none">
+              <CardContent className="p-5">
+                <p className="font-semibold text-amber-900 text-base mb-1 flex items-center gap-2">
+                  <Lightbulb className="h-5 w-5 text-amber-600" />
+                  3 Things You Must Do to Stand Out
+                </p>
+                <p className="text-sm text-amber-900/80 mb-4">
+                  Based on {reviewVolume} nearby reviews. If you open here, make these non-negotiable.
+                </p>
+                <ol className="space-y-3 list-none">
+                  {differentiation.map((action, i) => (
+                    <li key={i} className="flex gap-3 text-sm sm:text-base text-amber-950">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-200 text-sm font-bold text-amber-900">
+                        {i + 1}
+                      </span>
+                      <span className="leading-relaxed pt-0.5 font-medium">{action}</span>
+                    </li>
+                  ))}
+                </ol>
+              </CardContent>
+            </Card>
+          </>
+        )}
+
+        <Separator />
+
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="p-4 rounded-lg border border-border/50 space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <p className="font-medium text-foreground text-sm flex items-center gap-2">
+                <Users className="h-4 w-4 text-primary" />
+                Area Demographics
+              </p>
+              <Badge variant="outline" className="text-xs text-muted-foreground border-muted-foreground/30">AI Estimate</Badge>
+            </div>
+            <ul className="space-y-2">
+              {demographicsScan.map((item, i) => (
+                <li key={i} className="rounded-lg bg-muted/40 border border-border/50 p-3">
+                  <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-1">{item.label}</p>
+                  <p className="text-sm font-medium text-foreground leading-snug">{item.value}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-muted-foreground/70 italic">
+              Estimated from nearby restaurant types and review language. Not census data.
+            </p>
+          </div>
+        </div>
+
+        <div className="p-4 rounded-lg border border-border/50 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <p className="font-medium text-foreground text-sm flex items-center gap-2">
+              <TrendingUp className="h-4 w-4 text-primary" />
+              Foot Traffic Signal
+            </p>
+            {(() => {
+              const { level } = footTrafficScan;
+              const color =
+                level === "HIGH"
+                  ? "text-green-600 bg-green-50 border-green-200"
+                  : level === "LOW"
+                    ? "text-red-600 bg-red-50 border-red-200"
+                    : "text-yellow-600 bg-yellow-50 border-yellow-200";
+              return (
+                <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-sm font-bold ${color}`}>
+                  <Gauge className="h-4 w-4" />
+                  {level}
+                </div>
+              );
+            })()}
+          </div>
+          <p className="text-sm text-foreground leading-relaxed">{footTrafficScan.summary}</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            <div className="rounded-lg bg-muted/40 border border-border/50 p-3">
+              <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-2">Busiest times</p>
+              <ul className="space-y-1.5">
+                {footTrafficScan.peakTimes.map((time, i) => (
+                  <li key={i} className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    {time}
                   </li>
                 ))}
               </ul>
             </div>
-          )}
-        </div>
-
-        <Separator />
-
-        {/* Demographics & Foot Traffic */}
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="p-4 rounded-lg border border-border/50">
-            <p className="font-medium text-foreground text-sm mb-1">Demographics</p>
-            <p className="text-sm text-muted-foreground">{marketAnalysis.demographics}</p>
-          </div>
-          <div className="p-4 rounded-lg border border-border/50">
-            <p className="font-medium text-foreground text-sm mb-1">Foot Traffic</p>
-            <p className="text-sm text-muted-foreground">{marketAnalysis.footTraffic}</p>
+            <div className="rounded-lg bg-muted/40 border border-border/50 p-3">
+              <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-2">What drives traffic</p>
+              <ul className="space-y-1.5">
+                {footTrafficScan.drivers.map((driver, i) => (
+                  <li key={i} className="text-sm font-medium text-foreground flex items-start gap-2">
+                    <span className="text-primary mt-1 shrink-0">→</span>
+                    <span>{driver}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </CardContent>
@@ -318,7 +734,9 @@ function MarketLogicSection({ report }: { report: FullReport }) {
   );
 }
 
-function ConceptsSection({ concepts, score, recommendation, title }: { concepts: WinningConcept[]; score: number; recommendation: string; title?: string }) {
+function ConceptsSection({ concepts, score, recommendation, title, report }: { concepts: WinningConcept[]; score: number; recommendation: string; title?: string; report: FullReport }) {
+  const fallbackMmf = concepts.length === 0 ? buildUserConceptMenuMarketFit(report) : null;
+
   return (
     <Card className="border-border/50">
       <CardHeader className="pb-4">
@@ -328,8 +746,8 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
               <Lightbulb className="h-5 w-5 text-chart-4" />
             </div>
             <div>
-              <CardTitle className="text-lg">{title ?? "Opportunity & Winning Concepts"}</CardTitle>
-              <p className="text-sm text-muted-foreground">AI-generated concepts tailored to this market</p>
+              <CardTitle className="text-lg">{title ?? "Winning Concepts"}</CardTitle>
+              <p className="text-sm text-muted-foreground">Ranked by fit for this location. #1 is our top pick.</p>
             </div>
           </div>
         </div>
@@ -346,17 +764,32 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
               </div>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <span className={`text-4xl font-bold ${scoreColor(score)}`}>{score}/10</span>
+              <span className={`text-4xl font-bold ${scoreColor(score, recommendation)}`}>{score}/10</span>
               {recommendationBadge(recommendation)}
             </div>
           </div>
-          <Progress value={score * 10} className="h-3" />
+          <RecommendationProgress value={score * 10} recommendation={recommendation} className="h-3" />
         </div>
 
-        {/* Concepts */}
+        {fallbackMmf && (
+          <MenuMarketFitCard mmf={fallbackMmf} label={report.conceptInput?.cuisineConcept} />
+        )}
+
+        {concepts.length === 0 && !fallbackMmf && (
+          <p className="text-sm text-muted-foreground rounded-lg border border-border/50 bg-muted/30 p-4">
+            No alternative winning concepts were generated for this run. Check your concept fit analysis above for menu demand signals.
+          </p>
+        )}
+
+        {/* Winning concept cards — matches interactive prototype layout */}
         <div className="space-y-4">
-          {concepts.map((concept, i) => (
-            <div key={i} className="rounded-xl border border-border/50 overflow-hidden">
+          {concepts.map((concept, i) => {
+            const mmf = ensureMenuMarketFit(concept, report);
+            return (
+            <div
+              key={i}
+              className={`rounded-xl border overflow-hidden ${i === 0 ? "border-primary border-2 shadow-md" : "border-border/50"}`}
+            >
               <div className="bg-gradient-to-r from-primary/5 to-transparent p-4 sm:p-5 border-b border-border/50">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-0">
                   <div className="flex items-center gap-3">
@@ -364,7 +797,14 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
                       {i + 1}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-foreground">{concept.name}</h4>
+                      <h4 className="font-semibold text-foreground flex items-center gap-2 flex-wrap">
+                        {concept.name}
+                        {i === 0 && (
+                          <Badge className="bg-primary text-primary-foreground text-[10px] uppercase tracking-wide">
+                            Top pick
+                          </Badge>
+                        )}
+                      </h4>
                       <p className="text-xs text-muted-foreground">{concept.cuisineType}</p>
                     </div>
                   </div>
@@ -376,83 +816,36 @@ function ConceptsSection({ concepts, score, recommendation, title }: { concepts:
                   </div>
                 </div>
               </div>
-              <div className="p-5 space-y-4">
+              <div className="p-5 space-y-3">
+                <div className="rounded-lg border border-amber-200 bg-amber-50/80 px-3 py-2.5">
+                  <p className="text-[11px] font-bold uppercase tracking-wide text-amber-800 mb-1">Why choose this</p>
+                  <p className="text-xs text-amber-900 leading-relaxed">{concept.reasoning}</p>
+                </div>
+
                 <p className="text-sm text-muted-foreground leading-relaxed">{concept.description}</p>
 
                 <div>
-                  <p className="font-medium text-foreground text-sm mb-2 flex items-center gap-1.5">
-                    <Utensils className="h-3.5 w-3.5 text-primary" />
-                    Suggested Menu Items
-                  </p>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-xs font-semibold text-foreground mb-2">Suggested menu items</p>
+                  <div className="flex flex-wrap gap-1.5">
                     {concept.menuIdeas.map((item, j) => (
-                      <Badge key={j} variant="secondary" className="text-xs">{item}</Badge>
+                      <Badge key={j} variant="secondary" className="text-[11px] font-normal px-2 py-0.5">
+                        {item}
+                      </Badge>
                     ))}
                   </div>
                 </div>
 
-                <div>
-                  <p className="font-medium text-foreground text-sm mb-1 flex items-center gap-1.5">
-                    <Target className="h-3.5 w-3.5 text-primary" />
-                    Why This Works Here
-                  </p>
-                  <p className="text-sm text-muted-foreground">{concept.reasoning}</p>
-                </div>
-
-                {/* Menu-Market Fit Section */}
-                {concept.menuMarketFit && (
-                  <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-3">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                      <p className="font-medium text-foreground text-sm flex items-center gap-1.5">
-                        <Users className="h-3.5 w-3.5 text-primary" />
-                        Menu-Market Fit
-                      </p>
-                      <div className="flex items-center gap-2 ml-5 sm:ml-0">
-                        <span className="text-xs text-muted-foreground">Demand:</span>
-                        <span className={`font-bold text-sm ${scoreColor(concept.menuMarketFit.demandScore)}`}>
-                          {concept.menuMarketFit.demandScore}/10
-                        </span>
-                      </div>
-                    </div>
-                    <Progress value={concept.menuMarketFit.demandScore * 10} className="h-2" />
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {concept.menuMarketFit.demandExplanation}
-                    </p>
-                    <div className="grid grid-cols-1 gap-3 pt-1">
-                      <div className="flex gap-2">
-                        <Users className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-medium text-foreground">Population Match</p>
-                          <p className="text-xs text-muted-foreground">{concept.menuMarketFit.populationMatch}</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-2">
-                        <Search className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-medium text-foreground">Demand Signals</p>
-                          <p className="text-xs text-muted-foreground">{concept.menuMarketFit.searchDemandSignals}</p>
-                        </div>
-                      </div>
-                      <div className="flex gap-2">
-                        <ShieldCheck className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-medium text-foreground">Competitive Advantage</p>
-                          <p className="text-xs text-muted-foreground">{concept.menuMarketFit.competitiveAdvantage}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <MenuMarketFitCard mmf={mmf} variant="embedded" />
               </div>
             </div>
-          ))}
+          );})}
         </div>
       </CardContent>
     </Card>
   );
 }
 
-function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
+function EquipmentSection({ bundles, recommendation }: { bundles: EquipmentBundle[]; recommendation?: string }) {
   return (
     <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-background">
       <CardHeader className="pb-4">
@@ -463,9 +856,7 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
             </div>
             <div>
               <CardTitle className="text-lg">
-                <a href={HORECA.website} target="_blank" rel="noopener" className="hover:text-primary transition-colors">
-                  Horeca Store
-                </a>{" "}Equipment Checklist
+                Your Equipment Checklist: Powered by Horeca Store
               </CardTitle>
               <p className="text-sm text-muted-foreground">Equipment matched to your winning concepts. Shop at{" "}
                 <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">www.thehorecastore.com</a>
@@ -513,20 +904,41 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
                 ))}
               </div>
             </div>
-            <div className="bg-primary/5 p-4 border-t border-border/50">
+            <div className="bg-primary/5 p-4 border-t border-border/50 overflow-hidden">
               <a
                 href={bundle.ctaUrl}
                 target="_blank"
                 rel="noopener"
+                className="block w-full max-w-full"
               >
-                <Button className="w-full h-11 rounded-lg font-semibold shadow-lg shadow-primary/20">
-                  {bundle.ctaText}
-                  <ChevronRight className="ml-2 h-4 w-4" />
+                <Button className={`${MOBILE_WRAP_BUTTON} rounded-lg font-semibold shadow-lg shadow-primary/20`}>
+                  <span>{bundle.ctaText}</span>
+                  <ChevronRight className="h-4 w-4 shrink-0" />
                 </Button>
               </a>
             </div>
           </div>
         ))}
+
+        <div className="rounded-xl border border-border/50 bg-card p-6 space-y-4">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Horeca Store supplies hood systems, fryers, refrigeration, and full kitchen packages. Financing from $99/month.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a href={`mailto:${HORECA.email}`} className="flex-1">
+              <Button className="w-full rounded-lg font-semibold">
+                Talk to an Equipment Specialist
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+            <a href={HORECA.website} target="_blank" rel="noopener" className="flex-1">
+              <Button variant="outline" className="w-full rounded-lg font-semibold">
+                Browse Equipment
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
+            </a>
+          </div>
+        </div>
 
         {/* Horeca Store Mid-Report CTA */}
         <div className="rounded-xl border-2 border-primary/30 bg-primary/5 p-6">
@@ -559,28 +971,32 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
         </div>
 
         {/* Main CTA */}
-        <div className="bg-gradient-to-br from-[oklch(0.22_0.04_260)] to-[oklch(0.30_0.04_260)] rounded-xl p-8 text-center">
+        <div className="bg-gradient-to-br from-[oklch(0.22_0.04_260)] to-[oklch(0.30_0.04_260)] rounded-xl p-5 sm:p-8 text-center overflow-hidden">
           <a href={HORECA.website} target="_blank" rel="noopener">
             <img src={HORECA.logo} alt="Horeca Store" className="h-8 mx-auto mb-4 brightness-0 invert opacity-80" />
           </a>
           <h3 className="text-xl font-bold text-white mb-2">
-            Ready to Start Your Restaurant?
+            {recommendation === "NO-GO" || recommendation === "CAUTION"
+              ? "Talk to a Specialist Before You Commit"
+              : "Ready to Set Up Your Kitchen?"}
           </h3>
           <p className="text-white/70 text-sm mb-6 max-w-md mx-auto">
-            Get everything you need from professional kitchen equipment to expert guidance.{" "}
-            <span className="text-white font-semibold">Horeca Store</span> is your partner from site selection to grand opening.
+            {recommendation === "NO-GO" || recommendation === "CAUTION"
+              ? "This location has risks worth understanding before signing. Horeca Store's team works with new restaurant owners on concept fit, equipment planning, and lease strategy."
+              : "Get professional kitchen equipment matched to your concept. Horeca Store is your partner from site selection to grand opening."}
           </p>
           <a
             href={HORECA.links.equipment}
             target="_blank"
             rel="noopener"
+            className="block w-full max-w-md mx-auto"
           >
             <Button
               size="lg"
-              className="bg-white text-foreground hover:bg-white/90 h-12 px-8 rounded-xl font-semibold shadow-lg"
+              className={`${MOBILE_WRAP_BUTTON} bg-white text-foreground hover:bg-white/90 min-h-12 rounded-xl font-semibold shadow-lg text-sm sm:text-base`}
             >
-              <ShoppingCart className="mr-2 h-5 w-5" />
-              Shop Pre-Opening Equipment Bundles at Horeca Store
+              <ShoppingCart className="h-5 w-5 shrink-0" />
+              <span>Shop Pre-Opening Equipment Bundles at Horeca Store</span>
             </Button>
           </a>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-4 text-white/60 text-xs">
@@ -603,6 +1019,172 @@ function EquipmentSection({ bundles }: { bundles: EquipmentBundle[] }) {
   );
 }
 
+export function ReportScoreHeader({
+  report,
+  showActions = true,
+  onRunAnother,
+}: {
+  report: FullReport;
+  showActions?: boolean;
+  onRunAnother?: () => void;
+}) {
+  return (
+    <div className="bg-gradient-to-br from-primary/5 via-background to-background py-8 rounded-2xl border border-border/50">
+      <div className="px-6">
+        <div className="flex flex-col gap-4">
+          <div>
+            <Badge variant="secondary" className="mb-2 text-xs">
+              <Target className="h-3 w-3 mr-1" />
+              {report.conceptFit ? "Concept Fit Report" : "Full Opportunity Report"}
+            </Badge>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
+              {report.conceptFit
+                ? `${report.conceptFit.recommendation === "GO" ? "This Location Works for Your Concept" : report.conceptFit.recommendation === "NO-GO" ? "This Location Does Not Fit Your Concept" : "Proceed With Caution at This Location"}`
+                : "Location Opportunity Report"}
+            </h2>
+            <p className="text-muted-foreground flex items-start gap-1.5 text-sm">
+              <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+              <span className="break-words">{report.address}</span>
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            {report.conceptFit ? (
+              <>
+                <div className="text-left" title="How well your specific concept fits this location based on direct competition, service model, and market demand">
+                  <p className="text-xs text-muted-foreground">Your concept score</p>
+                  <p className={`text-3xl font-bold ${verdictScoreClass(report.conceptFit.recommendation)}`}>
+                    {report.conceptFit.fitScore}/10
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">concept fit</p>
+                </div>
+                {recommendationBadge(report.conceptFit.recommendation)}
+                <div className="hidden sm:block h-10 w-px bg-border" />
+                <div className="text-left" title="Overall opportunity score for this location regardless of concept, based on competition density, market gaps, and review signals">
+                  <p className="text-xs text-muted-foreground">Location overall</p>
+                  <p className={`text-xl font-bold ${scoreColor(report.opportunityScore, report.recommendation)}`}>
+                    {report.opportunityScore}/10
+                  </p>
+                  <p className="text-xs text-muted-foreground italic">location score</p>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="text-left sm:text-right">
+                  <p className="text-xs text-muted-foreground">Score</p>
+                  <p className={`text-3xl font-bold ${scoreColor(report.opportunityScore, report.recommendation)}`}>
+                    {report.opportunityScore}/10
+                  </p>
+                </div>
+                {recommendationBadge(report.recommendation)}
+              </>
+            )}
+            {showActions && onRunAnother && (
+              <button
+                onClick={onRunAnother}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5 border border-border/50 rounded-lg px-3 py-1.5"
+              >
+                <ArrowLeft className="h-3.5 w-3.5" />
+                Run Another Analysis
+              </button>
+            )}
+            {showActions && (
+              <>
+                <PremiumPdfDownloadButton report={report} />
+                <PremiumReportActions />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ReportBody({ report }: { report: FullReport }) {
+  return (
+    <div className="space-y-8">
+      {report.conceptFit && <ConceptFitSection conceptFit={report.conceptFit} report={report} />}
+
+      <Card className="border-border/50">
+        <CardContent className="p-6 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="flex items-center gap-3">
+              <Gauge className="h-6 w-6 text-primary shrink-0" />
+              <div>
+                <p className="font-semibold text-foreground">Location Opportunity Score</p>
+                <p className="text-xs text-muted-foreground">Based on competition density, market gaps, and demand signals from {report.competitors.length} nearby restaurants</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 sm:ml-auto shrink-0">
+              <span className={`text-4xl font-bold ${scoreColor(report.opportunityScore, report.recommendation)}`}>{report.opportunityScore}/10</span>
+              {recommendationBadge(report.recommendation)}
+            </div>
+          </div>
+          <div
+            className={`rounded-lg border px-4 py-3 text-sm ${
+              report.recommendation === "GO"
+                ? "bg-green-50 border-green-200 text-green-900"
+                : report.recommendation === "NO-GO"
+                  ? "bg-red-50 border-red-200 text-red-900"
+                  : "bg-amber-50 border-amber-200 text-amber-900"
+            }`}
+          >
+            <p className="font-semibold">{recommendationHeadline(report.recommendation)}</p>
+            <p className="mt-1 opacity-90">{recommendationSummary(report.recommendation)}</p>
+          </div>
+          <RecommendationProgress value={report.opportunityScore * 10} recommendation={report.recommendation} className="h-3" />
+        </CardContent>
+      </Card>
+
+      {report.directCompetitors && report.directCompetitors.length > 0 ? (
+        <>
+          <CompetitorTable
+            competitors={report.directCompetitors}
+            title="Direct Competitors for Your Concept"
+            subtitle={formatDirectCompetitorAreaSubtitle(
+              report.directCompetitors.length,
+              report.conceptInput?.serviceModel,
+              report.competitorsCapped
+            )}
+            originLat={report.lat}
+            originLng={report.lng}
+            markDirectRivals
+            competitorsCapped={report.competitorsCapped}
+          />
+          <CompetitorTable
+            competitors={report.competitors}
+            title="All Nearby Restaurants"
+            subtitle={formatCompetitorAreaSubtitle(
+              report.competitors.length,
+              report.conceptInput?.serviceModel,
+              report.competitorsCapped
+            )}
+            originLat={report.lat}
+            originLng={report.lng}
+            competitorsCapped={report.competitorsCapped}
+          />
+        </>
+      ) : (
+        <CompetitorTable
+          competitors={report.competitors}
+          originLat={report.lat}
+          originLng={report.lng}
+          competitorsCapped={report.competitorsCapped}
+        />
+      )}
+      <MarketLogicSection report={report} />
+      <ConceptsSection
+        concepts={report.concepts}
+        score={report.opportunityScore}
+        recommendation={report.recommendation}
+        title={report.conceptFit ? "Additional Winning Concepts for This Market" : undefined}
+        report={report}
+      />
+      <EquipmentSection bundles={report.equipmentBundles} recommendation={report.conceptFit?.recommendation ?? report.recommendation} />
+    </div>
+  );
+}
+
 // ---- Main Report Page ----
 
 export default function Report() {
@@ -618,6 +1200,7 @@ export default function Report() {
 
   const fullReport = trpc.analysis.fullReport.useMutation({
     onError: (err) => {
+      captureEvent("full_report_error", { error: err.message.slice(0, 120) });
       toast.error("Failed to generate report. Please try again.");
       console.error(err);
     },
@@ -639,6 +1222,11 @@ export default function Report() {
   // Update lead score when report is ready
   useEffect(() => {
     if (fullReport.data && leadId) {
+      captureEvent("full_report_viewed", {
+        recommendation: fullReport.data.recommendation,
+        opportunity_score: fullReport.data.opportunityScore,
+        concept_fit_score: fullReport.data.conceptFit?.fitScore ?? 0,
+      });
       updateScore.mutate({
         leadId,
         opportunityScore: fullReport.data.opportunityScore,
@@ -664,7 +1252,10 @@ export default function Report() {
             Our AI is analyzing competitors, reviews, and market fit for{" "}
             <span className="font-medium text-foreground">{address}</span>
             {concept && concept.serviceModel !== "explore" && (
-              <> — <span className="font-medium text-foreground">{concept.cuisineConcept}</span></>
+              <>
+                {", "}
+                <span className="font-medium text-foreground">{concept.cuisineConcept}</span>
+              </>
             )}
           </p>
           <div className="space-y-3">
@@ -714,7 +1305,6 @@ export default function Report() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header with Horeca Store branding */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border/50">
         <div className="container flex items-center justify-between h-14">
           <button
@@ -752,101 +1342,13 @@ export default function Report() {
       </div>
 
       {/* Report Header */}
-      <div className="bg-gradient-to-br from-primary/5 via-background to-background py-10">
-        <div className="container max-w-5xl">
-          <div className="flex flex-col gap-4">
-            <div>
-              <Badge variant="secondary" className="mb-2 text-xs">
-                <Target className="h-3 w-3 mr-1" />
-                {report.conceptFit ? "Concept Fit Report" : "Full Opportunity Report"}
-              </Badge>
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
-                {report.conceptFit ? "Concept Location Analysis" : "Location Analysis"}
-              </h1>
-              <p className="text-muted-foreground flex items-start gap-1.5 text-sm">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span className="break-words">{report.address}</span>
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              {report.conceptFit ? (
-                <>
-                  <div className="text-left">
-                    <p className="text-xs text-muted-foreground">Your concept</p>
-                    <p className={`text-3xl font-bold ${scoreColor(report.conceptFit.fitScore)}`}>
-                      {report.conceptFit.fitScore}/10
-                    </p>
-                  </div>
-                  {recommendationBadge(report.conceptFit.recommendation)}
-                  <div className="hidden sm:block h-10 w-px bg-border" />
-                  <div className="text-left">
-                    <p className="text-xs text-muted-foreground">Location overall</p>
-                    <p className={`text-xl font-bold ${scoreColor(report.opportunityScore)}`}>
-                      {report.opportunityScore}/10
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="text-left sm:text-right">
-                    <p className="text-xs text-muted-foreground">Score</p>
-                    <p className={`text-3xl font-bold ${scoreColor(report.opportunityScore)}`}>
-                      {report.opportunityScore}/10
-                    </p>
-                  </div>
-                  {recommendationBadge(report.recommendation)}
-                </>
-              )}
-{/* PDF Download button hidden - feature coming soon */}
-            </div>
-          </div>
-        </div>
+      <div className="container max-w-5xl py-10">
+        <ReportScoreHeader report={report} showActions onRunAnother={() => navigate("/")} />
       </div>
 
       {/* Report Sections */}
-      <div className="container max-w-5xl py-8 space-y-8">
-        {report.conceptFit && <ConceptFitSection conceptFit={report.conceptFit} />}
-        {report.directCompetitors && report.directCompetitors.length > 0 ? (
-          <>
-            <CompetitorTable
-              competitors={report.directCompetitors}
-              title="Direct Competitors for Your Concept"
-              subtitle={formatDirectCompetitorAreaSubtitle(
-                report.directCompetitors.length,
-                report.conceptInput?.serviceModel
-              )}
-            />
-            <CompetitorTable
-              competitors={report.competitors}
-              title="All Nearby Restaurants"
-              subtitle={formatCompetitorAreaSubtitle(
-                report.competitors.length,
-                report.conceptInput?.serviceModel
-              )}
-            />
-          </>
-        ) : (
-          <CompetitorTable competitors={report.competitors} />
-        )}
-        <MarketLogicSection report={report} />
-        <ConceptsSection
-          concepts={report.concepts}
-          score={report.opportunityScore}
-          recommendation={report.recommendation}
-          title={report.conceptFit ? "Additional Winning Concepts for This Market" : undefined}
-        />
-        <EquipmentSection bundles={report.equipmentBundles} />
-
-        {/* Social Sharing */}
-        <Card className="border-primary/20 bg-gradient-to-r from-primary/5 to-background">
-          <CardContent className="p-6">
-            <SocialShare
-              url="https://restaurantsitefinder.com"
-              title={`Restaurant Location Analysis for ${report.address}`}
-              text={`I just analyzed a restaurant location and got a ${report.opportunityScore}/10 opportunity score. Check out this free tool by Horeca Store!`}
-            />
-          </CardContent>
-        </Card>
+      <div className="container max-w-5xl px-4 sm:px-6 py-8 min-w-0">
+        <ReportBody report={report} />
       </div>
 
       {/* Footer with Horeca Store branding */}
@@ -888,7 +1390,7 @@ export default function Report() {
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-xs text-muted-foreground text-center md:text-left">
-                Restaurant Site Finder is a free tool provided by{" "}
+                Restaurant Site Finder is provided by{" "}
                 <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>{" "}
                 . {HORECA.tagline}.
               </p>

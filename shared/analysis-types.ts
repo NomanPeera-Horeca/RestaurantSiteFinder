@@ -11,6 +11,11 @@ export interface Competitor {
   address: string;
   lat: number;
   lng: number;
+  distanceMiles?: number;
+  /** Inferred service model label, e.g. Full Service, QSR / Drive-thru */
+  serviceModel?: string;
+  /** Display label: Service Model · Cuisine ($$) */
+  conceptLabel?: string;
 }
 
 /** Market analysis data */
@@ -103,6 +108,8 @@ export interface FullReport {
   conceptInput?: ConceptInput;
   conceptFit?: ConceptFit;
   searchRadiusMiles?: number;
+  /** True when Google Places results hit the 60-restaurant display cap. */
+  competitorsCapped?: boolean;
 }
 
 /** Initial scan result (before lead wall) */
