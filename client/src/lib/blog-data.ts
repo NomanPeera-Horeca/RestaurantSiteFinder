@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-foot-traffic-analysis-ai",
+    title: "Restaurant Foot Traffic Analysis: Find High-Demand Restaurant Locations with AI",
+    excerpt: "Learn how AI-powered restaurant foot traffic analysis reveals high-demand locations, customer behavior patterns, and predictive trends to guide smarter site selection and operations.",
+    date: "2026-07-04",
+    category: "Site Selection",
+    readTime: "15 min",
+  },
+  {
     slug: "restaurant-site-finder-checklist-15-factors",
     title: "Restaurant Site Finder Checklist: 15 Factors Every Restaurant Owner Should Analyze",
     excerpt: "Use this 15-factor Restaurant Site Finder checklist to evaluate demographics, foot traffic, competition, parking, lease terms, zoning, and growth potential before you sign a lease.",
