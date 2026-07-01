@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "placer-ai-alternative-restaurant-site-finder",
+    title: "Looking for a Placer.ai Alternative? Why RestaurantSiteFinder Is Built for Restaurant Growth",
+    excerpt: "Compare Placer.ai alternatives for restaurant operators and learn why RestaurantSiteFinder delivers F&B-specific trade areas, competitor tracking, and site selection at a fraction of enterprise cost.",
+    date: "2026-06-30",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-choose-a-restaurant-location",
     title: "How to Choose a Restaurant Location",
     excerpt: "A practical seven-step framework for how to choose a restaurant location: match your concept to trade-area demand, validate traffic and rent, and score sites before you sign a lease.",
