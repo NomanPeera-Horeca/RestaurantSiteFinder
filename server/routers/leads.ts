@@ -4,6 +4,15 @@ import { createLead, updateLeadScore, getAllLeads, getLeadById } from "../db";
 import { notifyOwner } from "../_core/notification";
 import { appendLeadToSheet, appendLeadScoreUpdate, appendMetricToSheet } from "../google-sheets";
 
+/** Empty string allowed; if provided, must contain at least 7 digits. */
+const optionalPhoneSchema = z
+  .string()
+  .trim()
+  .refine(
+    (value) => value.length === 0 || value.replace(/\D/g, "").length >= 7,
+    { message: "Please enter a valid phone number" },
+  );
+
 function ephemeralLeadId(): number {
   return Math.floor(Date.now() / 1000);
 }
@@ -52,7 +61,7 @@ export const leadRouter = router({
   capture: publicProcedure
     .input(z.object({
       email: z.string().email(),
-      phone: z.string().min(7),
+      phone: optionalPhoneSchema,
       address: z.string().optional(),
       lat: z.number().optional(),
       lng: z.number().optional(),

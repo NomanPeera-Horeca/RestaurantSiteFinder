@@ -29,9 +29,21 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
       onCaptured(data.leadId);
     },
     onError: (err) => {
-      const message = err.message.includes("Database")
-        ? "We couldn't save your contact info, but you can still view your report. Please try again."
-        : err.message || "Something went wrong. Please try again.";
+      let message = "Something went wrong. Please try again.";
+      if (err.message.includes("Database")) {
+        message = "We couldn't save your contact info, but you can still view your report. Please try again.";
+      } else {
+        try {
+          const parsed = JSON.parse(err.message) as Array<{ message?: string }>;
+          if (Array.isArray(parsed) && parsed[0]?.message) {
+            message = parsed[0].message;
+          }
+        } catch {
+          if (err.message && !err.message.startsWith("[")) {
+            message = err.message;
+          }
+        }
+      }
       toast.error(message);
       console.error(err);
     },
@@ -42,7 +54,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (!phone || phone.replace(/\D/g, "").length < 7) {
+    if (phone && phone.replace(/\D/g, "").length > 0 && phone.replace(/\D/g, "").length < 7) {
       newErrors.phone = "Please enter a valid phone number";
     }
     setErrors(newErrors);
@@ -53,8 +65,8 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
     e.preventDefault();
     if (!validate()) return;
     captureLead.mutate({
-      email,
-      phone,
+      email: email.trim(),
+      phone: phone.trim(),
       address,
       lat,
       lng,
@@ -98,12 +110,10 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
               <Shield className="h-6 w-6 text-primary-foreground" />
             </div>
             <h2 className="text-xl font-bold text-card-foreground mb-1">
-              Unlock Your Full Report
+              Your Report Is Ready
             </h2>
             <p className="text-sm text-muted-foreground">
-              Enter your details to access the complete Opportunity Report and personalized{" "}
-              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline font-medium">Horeca Store</a>{" "}
-              Equipment Checklist.
+              Your GO/NO-GO verdict is built. Enter your email and we'll show you the full analysis right now.
             </p>
           </div>
 
@@ -129,7 +139,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
 
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-sm font-medium text-card-foreground">
-                Phone Number
+                Phone Number <span className="font-normal text-muted-foreground">(optional)</span>
               </Label>
               <div className="relative">
                 <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -156,13 +166,13 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
                   Processing...
                 </>
               ) : (
-                "Get My Free Report"
+                "See My Full Report"
               )}
             </Button>
 
             <p className="text-xs text-center text-muted-foreground">
-              By continuing, you agree to receive communications from{" "}
-              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">Horeca Store</a>. We respect your privacy.
+              Your report is powered by{" "}
+              <a href={HORECA.website} target="_blank" rel="noopener" className="text-primary hover:underline">Horeca Store</a>. No spam, ever.
             </p>
             <div className="flex items-center justify-center pt-1">
               <a href={HORECA.website} target="_blank" rel="noopener">
