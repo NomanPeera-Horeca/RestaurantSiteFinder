@@ -15,16 +15,7 @@ interface SiteHeaderProps {
   active?: "home" | "name-generator" | "failure-rate" | "rent-calculator" | "location-analysis";
 }
 
-const guideActiveKeys = new Set([
-  "name-generator",
-  "failure-rate",
-  "rent-calculator",
-  "location-analysis",
-]);
-
 export function SiteHeader({ active }: SiteHeaderProps) {
-  const guidesActive = active ? guideActiveKeys.has(active) : false;
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border/50">
       <div className="container flex items-center justify-between h-16">
@@ -45,6 +36,24 @@ export function SiteHeader({ active }: SiteHeaderProps) {
           </a>
         </div>
         <div className="flex items-center gap-3 sm:gap-4">
+          <Link
+            href="/restaurant-location-analysis"
+            className={cn(
+              "text-xs sm:text-sm font-medium transition-colors hidden md:inline",
+              active === "location-analysis" ? "text-primary" : "text-muted-foreground hover:text-primary"
+            )}
+          >
+            Location Analysis
+          </Link>
+          <Link
+            href="/restaurant-name-generator"
+            className={cn(
+              "text-xs sm:text-sm font-medium transition-colors hidden md:inline",
+              active === "name-generator" ? "text-primary" : "text-muted-foreground hover:text-primary"
+            )}
+          >
+            Name Generator
+          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(
@@ -66,44 +75,26 @@ export function SiteHeader({ active }: SiteHeaderProps) {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          <Link
+            href="/restaurant-rent-calculator"
+            className={cn(
+              "text-xs sm:text-sm font-medium transition-colors",
+              active === "rent-calculator" ? "text-primary" : "text-muted-foreground hover:text-primary"
+            )}
+          >
+            Rent Calculator
+          </Link>
           <DropdownMenu>
             <DropdownMenuTrigger
               className={cn(
                 "inline-flex items-center gap-1 text-xs sm:text-sm font-medium transition-colors outline-none",
-                guidesActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                active === "failure-rate" ? "text-primary" : "text-muted-foreground hover:text-primary"
               )}
             >
-              Guides
+              Resources
               <ChevronDown className="h-3.5 w-3.5 opacity-70" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuItem asChild>
-                <a href="/blog">All Guides</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link
-                  href="/restaurant-location-analysis"
-                  className={cn(active === "location-analysis" && "text-primary font-medium")}
-                >
-                  Location Analysis
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link
-                  href="/restaurant-rent-calculator"
-                  className={cn(active === "rent-calculator" && "text-primary font-medium")}
-                >
-                  Rent Calculator
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link
-                  href="/restaurant-name-generator"
-                  className={cn(active === "name-generator" && "text-primary font-medium")}
-                >
-                  Name Generator
-                </Link>
-              </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link
                   href="/restaurant-failure-rate"
@@ -113,15 +104,35 @@ export function SiteHeader({ active }: SiteHeaderProps) {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/how-to-choose-restaurant-location">
-                  How to Choose a Location
+                <Link href="/how-to-choose-restaurant-location">How to Choose a Location</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/restaurant-location-analysis" className="md:hidden">
+                  Location Analysis
                 </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/restaurant-name-generator" className="md:hidden">
+                  Name Generator
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="/blog">Guides</a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="/glossary">Glossary</a>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <a
+            href="/blog"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:inline"
+          >
+            Guides
+          </a>
+          <a
             href="/glossary"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden sm:inline"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:inline"
           >
             Glossary
           </a>

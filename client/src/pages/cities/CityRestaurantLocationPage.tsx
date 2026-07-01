@@ -135,7 +135,7 @@ function InternalLinksSection() {
   return (
     <section className="py-16 border-t border-border/50">
       <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
-        More Guides for Restaurant Owners
+        More Free Tools for Restaurant Owners
       </h2>
       <ul className="space-y-4 max-w-3xl mx-auto px-4">
         <li>
@@ -300,6 +300,18 @@ export function CityRestaurantLocationPage({ config }: { config: CityLocationPag
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">{config.intro}</p>
           </header>
 
+          <AnalysisHeroCard
+            concept={concept}
+            onConceptChange={setConcept}
+            onAnalyze={handleAnalyze}
+            isLoading={initialScan.isPending}
+            canAnalyze={isConceptReady(concept)}
+            prefillAddress={prefillAddress}
+            prefillRevision={prefillRevision}
+          />
+
+          {scanData && <InitialScanPreview data={scanData} onUnlock={handleUnlockReport} />}
+
           <section className="mb-10 space-y-4">
             <h2 className="text-2xl font-bold text-foreground">
               Restaurant Location Analysis in {config.cityName}: What the Data Shows
@@ -364,18 +376,6 @@ export function CityRestaurantLocationPage({ config }: { config: CityLocationPag
               </p>
             ))}
           </section>
-
-          <AnalysisHeroCard
-            concept={concept}
-            onConceptChange={setConcept}
-            onAnalyze={handleAnalyze}
-            isLoading={initialScan.isPending}
-            canAnalyze={isConceptReady(concept)}
-            prefillAddress={prefillAddress}
-            prefillRevision={prefillRevision}
-          />
-
-          {scanData && <InitialScanPreview data={scanData} onUnlock={handleUnlockReport} />}
 
           <FaqSection config={config} items={faqItems} />
           <InternalLinksSection />
