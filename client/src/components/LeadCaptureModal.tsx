@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
+import { formatTrpcErrorMessage, trpcFieldErrors } from "@/lib/trpc-errors";
 import { HORECA } from "@/lib/horeca-brand";
 import { toast } from "sonner";
 import { X, Mail, Phone, Shield, Loader2 } from "lucide-react";
@@ -29,22 +30,11 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
       onCaptured(data.leadId);
     },
     onError: (err) => {
-      let message = "Something went wrong. Please try again.";
-      if (err.message.includes("Database")) {
-        message = "We couldn't save your contact info, but you can still view your report. Please try again.";
-      } else {
-        try {
-          const parsed = JSON.parse(err.message) as Array<{ message?: string }>;
-          if (Array.isArray(parsed) && parsed[0]?.message) {
-            message = parsed[0].message;
-          }
-        } catch {
-          if (err.message && !err.message.startsWith("[")) {
-            message = err.message;
-          }
-        }
+      const fieldErrors = trpcFieldErrors(err);
+      if (Object.keys(fieldErrors).length > 0) {
+        setErrors(prev => ({ ...prev, ...fieldErrors }));
       }
-      toast.error(message);
+      toast.error(formatTrpcErrorMessage(err));
       console.error(err);
     },
   });
