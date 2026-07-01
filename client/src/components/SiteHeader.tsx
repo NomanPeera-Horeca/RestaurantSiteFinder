@@ -12,7 +12,7 @@ import {
 import { ALL_CITY_CONFIGS } from "@/pages/cities/city-configs";
 
 interface SiteHeaderProps {
-  active?: "home" | "name-generator" | "failure-rate" | "rent-calculator" | "location-analysis";
+  active?: "home" | "name-generator" | "rent-calculator" | "location-analysis";
 }
 
 export function SiteHeader({ active }: SiteHeaderProps) {
@@ -84,57 +84,15 @@ export function SiteHeader({ active }: SiteHeaderProps) {
           >
             Rent Calculator
           </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              className={cn(
-                "inline-flex items-center gap-1 text-xs sm:text-sm font-medium transition-colors outline-none",
-                active === "failure-rate" ? "text-primary" : "text-muted-foreground hover:text-primary"
-              )}
-            >
-              Resources
-              <ChevronDown className="h-3.5 w-3.5 opacity-70" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuItem asChild>
-                <Link
-                  href="/restaurant-failure-rate"
-                  className={cn(active === "failure-rate" && "text-primary font-medium")}
-                >
-                  Restaurant Failure Rate
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/how-to-choose-restaurant-location">
-                  How to Choose a Location
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/restaurant-location-analysis" className="md:hidden">
-                  Location Analysis
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/restaurant-name-generator" className="md:hidden">
-                  Name Generator
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="/blog">Guides</a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="/glossary">Glossary</a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
           <a
             href="/blog"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:inline"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden md:inline"
           >
             Guides
           </a>
           <a
             href="/glossary"
-            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden lg:inline"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden md:inline"
           >
             Glossary
           </a>
