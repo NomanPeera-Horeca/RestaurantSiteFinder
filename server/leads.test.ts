@@ -87,21 +87,20 @@ describe("lead.capture", () => {
     ).rejects.toThrow();
   });
 
-  it("captures a lead with email only when phone is omitted", async () => {
+  it("rejects empty phone number", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
 
-    const result = await caller.lead.capture({
-      email: "owner@restaurant.com",
-      phone: "",
-      address: "123 Main St, New York, NY",
-    });
-
-    expect(result).toHaveProperty("leadId");
-    expect(result.leadId).toBe(42);
+    await expect(
+      caller.lead.capture({
+        email: "owner@restaurant.com",
+        phone: "",
+        address: "123 Main St, New York, NY",
+      })
+    ).rejects.toThrow();
   });
 
-  it("rejects short phone number when provided", async () => {
+  it("rejects short phone number", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
 

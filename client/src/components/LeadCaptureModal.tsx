@@ -54,7 +54,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (phone && phone.replace(/\D/g, "").length > 0 && phone.replace(/\D/g, "").length < 7) {
+    if (!phone || phone.replace(/\D/g, "").length < 7) {
       newErrors.phone = "Please enter a valid phone number";
     }
     setErrors(newErrors);
@@ -113,7 +113,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
               Your Report Is Ready
             </h2>
             <p className="text-sm text-muted-foreground">
-              Your GO/NO-GO verdict is built. Enter your email and we'll show you the full analysis right now.
+              Your GO/NO-GO verdict is built. Enter your email and phone number to see your full analysis right now.
             </p>
           </div>
 
@@ -139,7 +139,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
 
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-sm font-medium text-card-foreground">
-                Phone Number <span className="font-normal text-muted-foreground">(optional)</span>
+                Phone Number
               </Label>
               <div className="relative">
                 <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />

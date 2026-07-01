@@ -4,12 +4,13 @@ import { createLead, updateLeadScore, getAllLeads, getLeadById } from "../db";
 import { notifyOwner } from "../_core/notification";
 import { appendLeadToSheet, appendLeadScoreUpdate, appendMetricToSheet } from "../google-sheets";
 
-/** Empty string allowed; if provided, must contain at least 7 digits. */
-const optionalPhoneSchema = z
+/** Phone is required and must contain at least 7 digits. */
+const phoneSchema = z
   .string()
   .trim()
+  .min(1, { message: "Please enter a phone number" })
   .refine(
-    (value) => value.length === 0 || value.replace(/\D/g, "").length >= 7,
+    (value) => value.replace(/\D/g, "").length >= 7,
     { message: "Please enter a valid phone number" },
   );
 
@@ -61,7 +62,7 @@ export const leadRouter = router({
   capture: publicProcedure
     .input(z.object({
       email: z.string().email(),
-      phone: optionalPhoneSchema,
+      phone: phoneSchema,
       address: z.string().optional(),
       lat: z.number().optional(),
       lng: z.number().optional(),
