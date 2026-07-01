@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-finder-guide-opening-new-restaurant",
+    title: "Restaurant Site Finder Guide: Everything You Need Before Opening a New Restaurant",
+    excerpt: "A complete Restaurant Site Finder guide covering demographics, foot traffic, competition, zoning, lease terms, and a site-visit checklist before you sign your first lease.",
+    date: "2026-07-02",
+    category: "Site Selection",
+    readTime: "13 min",
+  },
+  {
     slug: "buxton-alternative-restaurant-site-finder-review",
     title: "Best Buxton Alternative for Restaurant Site Selection: RestaurantSiteFinder Review",
     excerpt: "Compare Buxton alternatives for restaurant operators and see why RestaurantSiteFinder delivers hospitality-specific trade areas, mobility insights, and GO/NO-GO scoring without enterprise CRE pricing.",
