@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
+import { formatTrpcErrorMessage, trpcFieldErrors } from "@/lib/trpc-errors";
 import { captureEvent, identifyLead } from "@/lib/posthog";
 import { LEAD_EMAIL_KEY } from "@/hooks/usePremium";
 import { HORECA } from "@/lib/horeca-brand";
@@ -40,11 +41,12 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
       onCaptured(data.leadId);
     },
     onError: (err) => {
-      captureEvent("lead_capture_failed", { error: err.message.slice(0, 120) });
-      const message = err.message.includes("Database")
-        ? "We couldn't save your contact info, but you can still view your report. Please try again."
-        : err.message || "Something went wrong. Please try again.";
-      toast.error(message);
+      captureEvent("lead_capture_failed", { error: formatTrpcErrorMessage(err).slice(0, 120) });
+      const fieldErrors = trpcFieldErrors(err);
+      if (Object.keys(fieldErrors).length > 0) {
+        setErrors(prev => ({ ...prev, ...fieldErrors }));
+      }
+      toast.error(formatTrpcErrorMessage(err));
       console.error(err);
     },
   });
@@ -54,7 +56,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (phone && phone.replace(/\D/g, "").length > 0 && phone.replace(/\D/g, "").length < 7) {
+    if (!phone || phone.replace(/\D/g, "").length < 7) {
       newErrors.phone = "Please enter a valid phone number";
     }
     setErrors(newErrors);
@@ -65,8 +67,8 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
     e.preventDefault();
     if (!validate()) return;
     captureLead.mutate({
-      email,
-      phone,
+      email: email.trim(),
+      phone: phone.trim(),
       address,
       lat,
       lng,
@@ -113,7 +115,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
               Your Report Is Ready
             </h2>
             <p className="text-sm text-muted-foreground">
-              Your location analysis is ready. Enter your email and we will show you the full report right now.
+              Your GO/NO-GO verdict is built. Enter your email and phone number to see your full analysis right now.
             </p>
           </div>
 
@@ -139,7 +141,7 @@ export function LeadCaptureModal({ address, lat, lng, concept, onClose, onCaptur
 
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-sm font-medium text-card-foreground">
-                Phone Number <span className="font-normal text-muted-foreground">(optional)</span>
+                Phone Number
               </Label>
               <div className="relative">
                 <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />

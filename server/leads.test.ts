@@ -87,6 +87,19 @@ describe("lead.capture", () => {
     ).rejects.toThrow();
   });
 
+  it("rejects empty phone number", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+
+    await expect(
+      caller.lead.capture({
+        email: "owner@restaurant.com",
+        phone: "",
+        address: "123 Main St, New York, NY",
+      })
+    ).rejects.toThrow();
+  });
+
   it("rejects short phone number", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);

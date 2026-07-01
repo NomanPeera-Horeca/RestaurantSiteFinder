@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
+import { formatTrpcErrorMessage, trpcFieldErrors } from "@/lib/trpc-errors";
 import { captureEvent, identifyLead } from "@/lib/posthog";
 import { LEAD_EMAIL_KEY } from "@/hooks/usePremium";
 import { PHONE_COUNTRIES, formatPhoneWithDial } from "@/lib/phone-countries";
@@ -50,8 +51,12 @@ export function LeadCaptureGate({
       onCaptured(data.leadId, normalizedEmail);
     },
     onError: (err) => {
-      captureEvent("lead_capture_failed", { error: err.message.slice(0, 120) });
-      toast.error(err.message || "Something went wrong. Please try again.");
+      captureEvent("lead_capture_failed", { error: formatTrpcErrorMessage(err).slice(0, 120) });
+      const fieldErrors = trpcFieldErrors(err);
+      if (Object.keys(fieldErrors).length > 0) {
+        setErrors(prev => ({ ...prev, ...fieldErrors }));
+      }
+      toast.error(formatTrpcErrorMessage(err));
     },
   });
 
