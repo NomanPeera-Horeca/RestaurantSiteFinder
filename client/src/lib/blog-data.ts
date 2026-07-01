@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "buxton-alternative-restaurant-site-finder-review",
+    title: "Best Buxton Alternative for Restaurant Site Selection: RestaurantSiteFinder Review",
+    excerpt: "Compare Buxton alternatives for restaurant operators and see why RestaurantSiteFinder delivers hospitality-specific trade areas, mobility insights, and GO/NO-GO scoring without enterprise CRE pricing.",
+    date: "2026-07-01",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
     slug: "placer-ai-alternative-restaurant-site-finder",
     title: "Looking for a Placer.ai Alternative? Why RestaurantSiteFinder Is Built for Restaurant Growth",
     excerpt: "Compare Placer.ai alternatives for restaurant operators and learn why RestaurantSiteFinder delivers F&B-specific trade areas, competitor tracking, and site selection at a fraction of enterprise cost.",
