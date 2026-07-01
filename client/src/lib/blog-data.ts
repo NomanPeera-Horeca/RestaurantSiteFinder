@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-finder-checklist-15-factors",
+    title: "Restaurant Site Finder Checklist: 15 Factors Every Restaurant Owner Should Analyze",
+    excerpt: "Use this 15-factor Restaurant Site Finder checklist to evaluate demographics, foot traffic, competition, parking, lease terms, zoning, and growth potential before you sign a lease.",
+    date: "2026-07-03",
+    category: "Site Selection",
+    readTime: "14 min",
+  },
+  {
     slug: "restaurant-site-finder-guide-opening-new-restaurant",
     title: "Restaurant Site Finder Guide: Everything You Need Before Opening a New Restaurant",
     excerpt: "A complete Restaurant Site Finder guide covering demographics, foot traffic, competition, zoning, lease terms, and a site-visit checklist before you sign your first lease.",
