@@ -25,4 +25,10 @@ export const SITE = {
   name: "Restaurant Site Finder",
   url: process.env.PUBLIC_URL || "https://restaurantsitefinder.com",
   toolCta: "Analyze your location free",
+  ogImage: "/og-image.png",
+  ogImageAlt: "Restaurant Site Finder — Free AI Restaurant Location Analysis",
 } as const;
+
+export function siteOgImageUrl(baseUrl: string = SITE.url): string {
+  return `${baseUrl.replace(/\/$/, "")}${SITE.ogImage}`;
+}
