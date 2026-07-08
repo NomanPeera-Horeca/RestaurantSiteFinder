@@ -13,6 +13,7 @@ type FeaturedTextLink = {
   type: "text";
   href: string;
   label: string;
+  title?: string;
 };
 
 type FeaturedItem = FeaturedImageBadge | FeaturedTextLink;
@@ -125,6 +126,12 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "block w-[260px] max-w-full h-auto object-contain border-0",
     rel: "dofollow noopener",
   },
+  {
+    type: "text",
+    href: "https://aitooltrek.com",
+    label: "AI Tool Trek",
+    title: "AI Tool Trek",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
@@ -148,6 +155,7 @@ function FeaturedItemContent({ item }: { item: FeaturedItem }) {
       href={item.href}
       target="_blank"
       rel="noopener noreferrer"
+      title={item.title}
       className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
     >
       {item.label}
