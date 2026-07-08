@@ -221,6 +221,10 @@ function featuredAtItemsHtml(): string {
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://indiehunt.io/project/restaurant-site-finder-by-horeca-store" target="_blank" rel="noopener">
         <img src="https://indiehunt.io/badges/indiehunt-badge-light.svg" alt="Featured on IndieHunt" width="265" height="58" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.freewebsubmission.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.freewebsubmission.com/images/fwsbutton11.gif" alt="Submit Your Site To The Web's Top 50 Search Engines for Free!" width="88" height="31" loading="lazy" />
       </a>`;
 }
 
