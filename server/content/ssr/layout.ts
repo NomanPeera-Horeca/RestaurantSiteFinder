@@ -117,6 +117,7 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
           </ul>
         </div>
       </div>
+      ${featuredAtBlock()}
       <div class="footer-bottom">
         <p>&copy; ${new Date().getFullYear()} ${escapeHtml(HORECA.name)}. ${escapeHtml(SITE.name)} is a free tool for restaurant owners.</p>
       </div>
@@ -124,6 +125,18 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
   </footer>
 </body>
 </html>`;
+}
+
+export function featuredAtBlock(): string {
+  return `
+  <div class="featured-at">
+    <p class="featured-at-label">Featured At</p>
+    <div class="featured-at-badges">
+      <a href="https://submitaitools.org" target="_blank" rel="noopener noreferrer">
+        <img src="https://submitaitools.org/static_submitaitools/images/submitaitools.png" alt="Submit AI Tools" width="200" height="60" loading="lazy" style="border-radius: 10px; width: 200px; height: 60px;" />
+      </a>
+    </div>
+  </div>`;
 }
 
 export function toolCtaBlock(): string {

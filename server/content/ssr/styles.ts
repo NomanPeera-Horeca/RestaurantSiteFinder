@@ -163,6 +163,10 @@ main { padding: 2rem 0 4rem; min-height: 60vh; }
 .site-footer li { margin-bottom: 0.5rem; }
 .site-footer a { color: var(--muted); font-size: 0.875rem; }
 .footer-bottom { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); text-align: center; }
+.featured-at { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 1.5rem; border-top: 1px solid var(--border); }
+.featured-at-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.featured-at-badges { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; }
+.featured-at-badges img { border-radius: 10px; width: 200px; height: 60px; object-fit: contain; }
 
 @media (max-width: 639px) {
   .nav { gap: 0.75rem; }
