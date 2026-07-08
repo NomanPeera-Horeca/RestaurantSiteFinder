@@ -199,6 +199,10 @@ export function featuredAtBlock(): string {
       <a href="https://trylaunch.ai/launch/restaurant-site-finder" target="_blank" rel="dofollow" style="display: inline-block; text-decoration: none;">
         <img src="https://trylaunch.ai/badges/badge-color.png" alt="Featured on Launch" height="53" loading="lazy" style="display: block; height: 53px; width: auto;" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://proofstories.io/directory/products/restaurant-site-finder/" target="_blank" rel="noopener">
+        <img src="https://proofstories.io/directory/badges/l/restaurant-site-finder.svg" alt="Listed on ProofStories" height="44" loading="lazy" style="height: 44px; width: auto;" />
+      </a>
     </div>
   </div>`;
 }

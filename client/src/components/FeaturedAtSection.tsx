@@ -182,6 +182,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "block h-[53px] w-auto object-contain",
     rel: "dofollow",
   },
+  {
+    type: "image",
+    href: "https://proofstories.io/directory/products/restaurant-site-finder/",
+    src: "https://proofstories.io/directory/badges/l/restaurant-site-finder.svg",
+    alt: "Listed on ProofStories",
+    width: 175,
+    height: 44,
+    className: "h-[44px] w-auto object-contain",
+    rel: "noopener",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
