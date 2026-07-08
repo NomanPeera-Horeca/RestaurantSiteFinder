@@ -172,6 +172,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "w-[150px] h-[48px] object-contain",
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://trylaunch.ai/launch/restaurant-site-finder",
+    src: "https://trylaunch.ai/badges/badge-color.png",
+    alt: "Featured on Launch",
+    width: 175,
+    height: 53,
+    className: "block h-[53px] w-auto object-contain",
+    rel: "dofollow",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
