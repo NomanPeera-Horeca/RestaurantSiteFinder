@@ -1,4 +1,4 @@
-import { HORECA, SITE } from "../brand";
+import { HORECA, SITE, siteOgImageUrl } from "../brand";
 import type { BlogFaq, BlogFrontmatter, BreadcrumbItem } from "../types";
 
 function orgRef() {
@@ -45,7 +45,7 @@ export function blogPostingJsonLd(
     "@type": ["BlogPosting", "Article"],
     headline: fm.title,
     description: fm.metaDescription,
-    image: HORECA.logo,
+    image: siteOgImageUrl(),
     author: orgRef(),
     publisher: {
       ...orgRef(),

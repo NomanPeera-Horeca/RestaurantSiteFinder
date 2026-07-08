@@ -1,4 +1,4 @@
-import { HORECA, SITE } from "../brand";
+import { HORECA, SITE, siteOgImageUrl } from "../brand";
 import { SSR_STYLES } from "./styles";
 
 export interface PageMeta {
@@ -22,7 +22,7 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
   const title = escapeHtml(meta.title);
   const desc = escapeHtml(meta.description);
   const canonical = escapeHtml(meta.canonical);
-  const ogImage = HORECA.logo;
+  const ogImage = siteOgImageUrl();
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -39,11 +39,13 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${desc}" />
   <meta property="og:image" content="${ogImage}" />
+  <meta property="og:image:alt" content="${escapeHtml(SITE.ogImageAlt)}" />
   <meta property="og:site_name" content="${escapeHtml(SITE.name)}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${desc}" />
   <meta name="twitter:image" content="${ogImage}" />
+  <meta name="twitter:image:alt" content="${escapeHtml(SITE.ogImageAlt)}" />
   <meta name="theme-color" content="#166534" />
   <link rel="icon" type="image/png" href="${HORECA.icon}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

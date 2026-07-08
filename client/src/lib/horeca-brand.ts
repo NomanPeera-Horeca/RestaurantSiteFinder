@@ -1,3 +1,10 @@
+export const SITE = {
+  name: "Restaurant Site Finder",
+  url: "https://restaurantsitefinder.com",
+  ogImage: "https://restaurantsitefinder.com/og-image.png",
+  ogImageAlt: "Restaurant Site Finder — Free AI Restaurant Location Analysis",
+} as const;
+
 export const HORECA = {
   name: "Horeca Store",
   tagline: "100,000+ restaurant equipment products",
