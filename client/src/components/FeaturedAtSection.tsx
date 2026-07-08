@@ -143,6 +143,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "w-[195px] h-auto object-contain",
     title: "Featured on LaunchVault",
   },
+  {
+    type: "image",
+    href: "https://huzzler.so/products/7xDqGxdOvl/restaurant-site-finder?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing",
+    src: "https://huzzler.so/assets/images/embeddable-badges/featured.png",
+    alt: "Huzzler Embed Badge",
+    width: 159,
+    height: 55,
+    className: "w-[159px] h-[55px] object-contain",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

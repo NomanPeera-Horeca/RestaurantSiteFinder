@@ -183,6 +183,10 @@ export function featuredAtBlock(): string {
       <a href="https://www.launchvault.dev" target="_blank" rel="noopener noreferrer" title="Featured on LaunchVault">
         <img src="https://www.launchvault.dev/images/badges/launch-valut-badge.svg" alt="Featured on LaunchVault" loading="lazy" style="width: 195px; height: auto;" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://huzzler.so/products/7xDqGxdOvl/restaurant-site-finder?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
+        <img alt="Huzzler Embed Badge" src="https://huzzler.so/assets/images/embeddable-badges/featured.png" width="159" height="55" loading="lazy" />
+      </a>
     </div>
   </div>`;
 }
