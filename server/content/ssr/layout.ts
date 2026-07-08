@@ -139,6 +139,8 @@ export function featuredAtBlock(): string {
       <a href="https://findly.tools/restaurant-site-finder?utm_source=restaurant-site-finder" target="_blank" rel="noopener noreferrer">
         <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" loading="lazy" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.aitoolzdir.com" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Toolz Dir</a>
     </div>
   </div>`;
 }

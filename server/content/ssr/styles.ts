@@ -168,6 +168,8 @@ main { padding: 2rem 0 4rem; min-height: 60vh; }
 .featured-at-badges { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem; }
 .featured-at-badges img { object-fit: contain; }
 .featured-at-separator { color: color-mix(in srgb, var(--muted) 40%, transparent); user-select: none; }
+.featured-at-link { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; }
+.featured-at-link:hover { color: var(--primary); }
 
 @media (max-width: 639px) {
   .nav { gap: 0.75rem; }
