@@ -191,6 +191,10 @@ export function featuredAtBlock(): string {
       <a href="https://launchboard.dev" target="_blank" rel="noopener">
         <img src="https://launchboard.dev/launchboard-badge.png" alt="Launched on LaunchBoard - Product Launch Platform" width="240" height="60" loading="lazy" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.foundrlist.com/product/restaurantsitefinder?utm_source=badge&amp;utm_medium=embed" target="_blank" rel="noopener">
+        <img src="https://www.foundrlist.com/api/badge/restaurantsitefinder" alt="Featured on FoundrList" width="150" height="48" loading="lazy" />
+      </a>
     </div>
   </div>`;
 }

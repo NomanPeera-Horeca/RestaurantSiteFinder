@@ -162,6 +162,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "w-[240px] h-[60px] object-contain",
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://www.foundrlist.com/product/restaurantsitefinder?utm_source=badge&utm_medium=embed",
+    src: "https://www.foundrlist.com/api/badge/restaurantsitefinder",
+    alt: "Featured on FoundrList",
+    width: 150,
+    height: 48,
+    className: "w-[150px] h-[48px] object-contain",
+    rel: "noopener",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
