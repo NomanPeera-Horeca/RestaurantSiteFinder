@@ -163,13 +163,21 @@ main { padding: 2rem 0 4rem; min-height: 60vh; }
 .site-footer li { margin-bottom: 0.5rem; }
 .site-footer a { color: var(--muted); font-size: 0.875rem; }
 .footer-bottom { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); text-align: center; }
-.featured-at { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 1.5rem; border-top: 1px solid var(--border); }
+.featured-at { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 1rem 0; margin-top: 1.5rem; border-top: 1px solid var(--border); }
 .featured-at-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin: 0; }
-.featured-at-badges { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; row-gap: 1rem; column-gap: 0.75rem; }
-.featured-at-badges img { object-fit: contain; }
-.featured-at-separator { color: color-mix(in srgb, var(--muted) 40%, transparent); user-select: none; }
-.featured-at-link { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; }
+.featured-at-marquee { width: 100%; overflow: hidden; mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); }
+.featured-at-marquee-track { display: flex; width: max-content; animation: featured-at-marquee 90s linear infinite; }
+.featured-at-marquee-track:hover { animation-play-state: paused; }
+.featured-at-marquee-set { display: flex; flex-shrink: 0; align-items: center; gap: 0.75rem; padding-right: 0.75rem; }
+.featured-at-marquee-set img { display: block; height: 54px; width: auto; max-width: none; object-fit: contain; }
+.featured-at-separator { color: color-mix(in srgb, var(--muted) 40%, transparent); user-select: none; flex-shrink: 0; }
+.featured-at-link { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .featured-at-link:hover { color: var(--primary); }
+@keyframes featured-at-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .featured-at-marquee { overflow-x: auto; mask-image: none; }
+  .featured-at-marquee-track { animation: none; }
+}
 
 @media (max-width: 639px) {
   .nav { gap: 0.75rem; }

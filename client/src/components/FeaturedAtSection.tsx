@@ -5,7 +5,7 @@ type FeaturedImageBadge = {
   alt: string;
   width: number;
   height: number;
-  className: string;
+  className?: string;
   rel?: string;
   title?: string;
 };
@@ -27,7 +27,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Submit AI Tools",
     width: 200,
     height: 60,
-    className: "rounded-[10px] w-[200px] h-[60px] object-contain",
   },
   {
     type: "image",
@@ -36,7 +35,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on Findly.tools",
     width: 175,
     height: 55,
-    className: "w-[175px] h-[55px] object-contain",
   },
   {
     type: "text",
@@ -50,7 +48,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Fazier badge",
     width: 120,
     height: 40,
-    className: "w-[120px] h-auto object-contain",
   },
   {
     type: "image",
@@ -59,7 +56,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Listed on Turbo0",
     width: 175,
     height: 54,
-    className: "h-[54px] w-auto object-contain",
   },
   {
     type: "image",
@@ -68,7 +64,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on Wired Business",
     width: 200,
     height: 54,
-    className: "w-[200px] h-[54px] object-contain",
   },
   {
     type: "image",
@@ -77,7 +72,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on Open-Launch",
     width: 200,
     height: 50,
-    className: "w-[200px] h-[50px] object-contain",
   },
   {
     type: "image",
@@ -86,7 +80,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on Super Launch",
     width: 300,
     height: 300,
-    className: "h-[54px] w-auto object-contain",
   },
   {
     type: "text",
@@ -100,7 +93,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Listed on Backlinkhubs",
     width: 200,
     height: 54,
-    className: "h-[54px] w-auto object-contain",
   },
   {
     type: "image",
@@ -109,7 +101,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Listed on MarketingDB",
     width: 190,
     height: 44,
-    className: "w-[190px] h-[44px] object-contain",
     rel: "noopener noreferrer nofollow sponsored",
   },
   {
@@ -124,7 +115,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Verified on DANG!",
     width: 260,
     height: 94,
-    className: "block w-[260px] max-w-full h-auto object-contain border-0",
     rel: "dofollow noopener",
   },
   {
@@ -140,7 +130,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on LaunchVault",
     width: 195,
     height: 54,
-    className: "w-[195px] h-auto object-contain",
     title: "Featured on LaunchVault",
   },
   {
@@ -150,7 +139,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Huzzler Embed Badge",
     width: 159,
     height: 55,
-    className: "w-[159px] h-[55px] object-contain",
   },
   {
     type: "image",
@@ -159,7 +147,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Launched on LaunchBoard - Product Launch Platform",
     width: 240,
     height: 60,
-    className: "w-[240px] h-[60px] object-contain",
     rel: "noopener",
   },
   {
@@ -169,7 +156,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on FoundrList",
     width: 150,
     height: 48,
-    className: "w-[150px] h-[48px] object-contain",
     rel: "noopener",
   },
   {
@@ -179,7 +165,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on Launch",
     width: 175,
     height: 53,
-    className: "block h-[53px] w-auto object-contain",
     rel: "dofollow",
   },
   {
@@ -189,7 +174,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Listed on ProofStories",
     width: 175,
     height: 44,
-    className: "h-[44px] w-auto object-contain",
     rel: "noopener",
   },
   {
@@ -199,7 +183,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on Saaspa.ge",
     width: 200,
     height: 60,
-    className: "w-[200px] h-[60px] object-contain",
     rel: "nofollow",
   },
   {
@@ -209,7 +192,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     alt: "Featured on IndieHunt",
     width: 265,
     height: 58,
-    className: "w-[265px] h-[58px] object-contain",
     rel: "noopener",
   },
 ];
@@ -223,7 +205,6 @@ function FeaturedItemContent({ item }: { item: FeaturedItem }) {
           alt={item.alt}
           width={item.width}
           height={item.height}
-          className={item.className}
           loading="lazy"
         />
       </a>
@@ -236,30 +217,41 @@ function FeaturedItemContent({ item }: { item: FeaturedItem }) {
       target="_blank"
       rel="noopener noreferrer"
       title={item.title}
-      className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+      className="featured-at-link text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
     >
       {item.label}
     </a>
   );
 }
 
+function FeaturedAtMarqueeSet({ items, ariaHidden }: { items: FeaturedItem[]; ariaHidden?: boolean }) {
+  return (
+    <div className="featured-at-marquee-set" aria-hidden={ariaHidden}>
+      {items.map((item, index) => (
+        <span key={`${item.href}-${index}`} className="inline-flex shrink-0 items-center gap-3">
+          {index > 0 && (
+            <span className="text-muted-foreground/40 select-none" aria-hidden="true">
+              ·
+            </span>
+          )}
+          <FeaturedItemContent item={item} />
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function FeaturedAtSection() {
   return (
-    <div className="flex flex-col items-center gap-4 py-6">
+    <div className="flex flex-col items-center gap-3 py-4">
       <p className="text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
         Featured At
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-4">
-        {FEATURED_ITEMS.map((item, index) => (
-          <div key={item.href} className="flex items-center gap-3">
-            {index > 0 && (
-              <span className="hidden sm:inline text-muted-foreground/40 select-none" aria-hidden="true">
-                ·
-              </span>
-            )}
-            <FeaturedItemContent item={item} />
-          </div>
-        ))}
+      <div className="featured-at-marquee">
+        <div className="featured-at-marquee-track">
+          <FeaturedAtMarqueeSet items={FEATURED_ITEMS} />
+          <FeaturedAtMarqueeSet items={FEATURED_ITEMS} ariaHidden />
+        </div>
       </div>
     </div>
   );
