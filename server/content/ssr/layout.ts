@@ -127,12 +127,23 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
 }
 
 export function featuredAtBlock(): string {
+  const items = featuredAtItemsHtml();
   return `
   <div class="featured-at">
     <p class="featured-at-label">Featured At</p>
-    <div class="featured-at-badges">
+    <div class="featured-at-marquee">
+      <div class="featured-at-marquee-track">
+        <div class="featured-at-marquee-set">${items}</div>
+        <div class="featured-at-marquee-set" aria-hidden="true">${items}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function featuredAtItemsHtml(): string {
+  return `
       <a href="https://submitaitools.org" target="_blank" rel="noopener noreferrer">
-        <img src="https://submitaitools.org/static_submitaitools/images/submitaitools.png" alt="Submit AI Tools" width="200" height="60" loading="lazy" style="border-radius: 10px; width: 200px; height: 60px;" />
+        <img src="https://submitaitools.org/static_submitaitools/images/submitaitools.png" alt="Submit AI Tools" width="200" height="60" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://findly.tools/restaurant-site-finder?utm_source=restaurant-site-finder" target="_blank" rel="noopener noreferrer">
@@ -146,7 +157,7 @@ export function featuredAtBlock(): string {
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://turbo0.com/item/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" loading="lazy" style="height: 54px; width: auto;" />
+        <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://wired.business" target="_blank" rel="noopener noreferrer">
@@ -158,13 +169,13 @@ export function featuredAtBlock(): string {
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.superlaun.ch/products/2795" target="_blank" rel="noopener noreferrer">
-        <img src="https://www.superlaun.ch/badge.png" alt="Featured on Super Launch" width="300" height="300" loading="lazy" style="height: 54px; width: auto;" />
+        <img src="https://www.superlaun.ch/badge.png" alt="Featured on Super Launch" width="300" height="300" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.voomo.ai/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Corporate Video Maker</a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com" target="_blank" rel="noopener noreferrer">
-        <img src="https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs" alt="Listed on Backlinkhubs" loading="lazy" style="height: 54px; width: auto;" />
+        <img src="https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs" alt="Listed on Backlinkhubs" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://marketingdb.live" target="_blank" rel="noopener noreferrer nofollow sponsored">
@@ -173,14 +184,14 @@ export function featuredAtBlock(): string {
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://z-image.net/" target="_blank" rel="noopener noreferrer" class="featured-at-link">Z-Image</a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;">
-        <img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" loading="lazy" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" />
+      <a href="https://dang.ai" target="_blank" rel="dofollow noopener">
+        <img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://aitooltrek.com" target="_blank" rel="noopener noreferrer" title="AI Tool Trek" class="featured-at-link">AI Tool Trek</a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.launchvault.dev" target="_blank" rel="noopener noreferrer" title="Featured on LaunchVault">
-        <img src="https://www.launchvault.dev/images/badges/launch-valut-badge.svg" alt="Featured on LaunchVault" loading="lazy" style="width: 195px; height: auto;" />
+        <img src="https://www.launchvault.dev/images/badges/launch-valut-badge.svg" alt="Featured on LaunchVault" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://huzzler.so/products/7xDqGxdOvl/restaurant-site-finder?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
@@ -195,12 +206,12 @@ export function featuredAtBlock(): string {
         <img src="https://www.foundrlist.com/api/badge/restaurantsitefinder" alt="Featured on FoundrList" width="150" height="48" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://trylaunch.ai/launch/restaurant-site-finder" target="_blank" rel="dofollow" style="display: inline-block; text-decoration: none;">
-        <img src="https://trylaunch.ai/badges/badge-color.png" alt="Featured on Launch" height="53" loading="lazy" style="display: block; height: 53px; width: auto;" />
+      <a href="https://trylaunch.ai/launch/restaurant-site-finder" target="_blank" rel="dofollow">
+        <img src="https://trylaunch.ai/badges/badge-color.png" alt="Featured on Launch" height="53" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://proofstories.io/directory/products/restaurant-site-finder/" target="_blank" rel="noopener">
-        <img src="https://proofstories.io/directory/badges/l/restaurant-site-finder.svg" alt="Listed on ProofStories" height="44" loading="lazy" style="height: 44px; width: auto;" />
+        <img src="https://proofstories.io/directory/badges/l/restaurant-site-finder.svg" alt="Listed on ProofStories" height="44" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://saaspa.ge/product/cmrc3d7r5000bjr04deu8y1n5" target="_blank" rel="nofollow">
@@ -209,9 +220,7 @@ export function featuredAtBlock(): string {
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://indiehunt.io/project/restaurant-site-finder-by-horeca-store" target="_blank" rel="noopener">
         <img src="https://indiehunt.io/badges/indiehunt-badge-light.svg" alt="Featured on IndieHunt" width="265" height="58" loading="lazy" />
-      </a>
-    </div>
-  </div>`;
+      </a>`;
 }
 
 export function toolCtaBlock(): string {

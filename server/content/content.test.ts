@@ -5,8 +5,8 @@ import { renderBlogArticle, renderBlogListing, renderGlossaryIndex, renderGlossa
 import { renderPrivacyPolicy, renderTermsOfService } from "./ssr/legal-pages";
 
 describe("content", () => {
-  it("loads 28 blog posts", () => {
-    expect(getAllBlogSlugs().length).toBe(28);
+  it("loads 32 blog posts", () => {
+    expect(getAllBlogSlugs().length).toBe(32);
     expect(loadAllBlogPosts().every(p => p.html.length > 500)).toBe(true);
   });
 

@@ -10,6 +10,30 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-selection-showdown-2026",
+    title: "RestaurantSiteFinder vs Placer.ai vs Buxton vs ESRI: Which Restaurant Site Selection Tool Actually Wins in 2026?",
+    excerpt: "Compare RestaurantSiteFinder, Placer.ai, Buxton, and ESRI across foot traffic, psychographics, GIS mapping, and usability to find the best site selection tool for your brand in 2026.",
+    date: "2026-07-08",
+    category: "Site Selection",
+    readTime: "14 min",
+  },
+  {
+    slug: "ai-predicts-restaurant-success-before-lease",
+    title: "How AI Predicts Your Next Restaurant's Success — Before You Sign the Lease",
+    excerpt: "Learn how AI uses demographics, foot traffic, GIS mapping, and revenue forecasting to predict restaurant success before you commit to a commercial lease.",
+    date: "2026-07-08",
+    category: "Site Selection",
+    readTime: "13 min",
+  },
+  {
+    slug: "2026-restaurant-location-analytics-buyers-guide",
+    title: "Placer.ai, Buxton, ESRI, or RestaurantSiteFinder? The 2026 Buyer's Guide to Restaurant Location Analytics",
+    excerpt: "Compare Placer.ai, Buxton, ESRI, and RestaurantSiteFinder in this 2026 buyer's guide—covering foot traffic, psychographics, GIS mapping, and F&B-specific site selection.",
+    date: "2026-07-08",
+    category: "Site Selection",
+    readTime: "13 min",
+  },
+  {
     slug: "restaurant-foot-traffic-analysis-ai",
     title: "Restaurant Foot Traffic Analysis: Find High-Demand Restaurant Locations with AI",
     excerpt: "Learn how AI-powered restaurant foot traffic analysis reveals high-demand locations, customer behavior patterns, and predictive trends to guide smarter site selection and operations.",
