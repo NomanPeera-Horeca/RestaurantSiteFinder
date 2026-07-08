@@ -194,6 +194,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 58,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://www.freewebsubmission.com",
+    src: "https://www.freewebsubmission.com/images/fwsbutton11.gif",
+    alt: "Submit Your Site To The Web's Top 50 Search Engines for Free!",
+    width: 88,
+    height: 31,
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
