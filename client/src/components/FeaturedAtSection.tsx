@@ -152,6 +152,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 55,
     className: "w-[159px] h-[55px] object-contain",
   },
+  {
+    type: "image",
+    href: "https://launchboard.dev",
+    src: "https://launchboard.dev/launchboard-badge.png",
+    alt: "Launched on LaunchBoard - Product Launch Platform",
+    width: 240,
+    height: 60,
+    className: "w-[240px] h-[60px] object-contain",
+    rel: "noopener",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
