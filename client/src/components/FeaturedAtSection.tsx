@@ -115,6 +115,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     href: "https://z-image.net/",
     label: "Z-Image",
   },
+  {
+    type: "image",
+    href: "https://dang.ai",
+    src: "https://assets.dang.ai/badges/dang-verified-dark.png",
+    alt: "Verified on DANG!",
+    width: 260,
+    height: 94,
+    className: "block w-[260px] max-w-full h-auto object-contain border-0",
+    rel: "dofollow noopener",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

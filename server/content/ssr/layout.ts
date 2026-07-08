@@ -173,6 +173,10 @@ export function featuredAtBlock(): string {
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://z-image.net/" target="_blank" rel="noopener noreferrer" class="featured-at-link">Z-Image</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;">
+        <img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" loading="lazy" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" />
+      </a>
     </div>
   </div>`;
 }
