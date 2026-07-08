@@ -171,6 +171,8 @@ export function featuredAtBlock(): string {
       <a href="https://marketingdb.live" target="_blank" rel="noopener noreferrer nofollow sponsored">
         <img src="https://marketingdb.live/badge.svg" alt="Listed on MarketingDB" width="190" height="44" loading="lazy" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://z-image.net/" target="_blank" rel="noopener noreferrer" class="featured-at-link">Z-Image</a>
     </div>
   </div>`;
 }

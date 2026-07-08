@@ -110,6 +110,11 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "w-[190px] h-[44px] object-contain",
     rel: "noopener noreferrer nofollow sponsored",
   },
+  {
+    type: "text",
+    href: "https://z-image.net/",
+    label: "Z-Image",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
