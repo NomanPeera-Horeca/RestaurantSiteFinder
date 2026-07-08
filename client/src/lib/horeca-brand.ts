@@ -1,7 +1,10 @@
 export const SITE = {
   name: "Restaurant Site Finder",
   url: "https://restaurantsitefinder.com",
-  ogImage: "https://restaurantsitefinder.com/og-image.png",
+  ogImage: "https://restaurantsitefinder.com/og-image.jpg",
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageType: "image/jpeg",
   ogImageAlt: "Restaurant Site Finder — Free AI Restaurant Location Analysis",
 } as const;
 
