@@ -85,6 +85,11 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 300,
     className: "h-[54px] w-auto object-contain",
   },
+  {
+    type: "text",
+    href: "https://www.voomo.ai/",
+    label: "AI Corporate Video Maker",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

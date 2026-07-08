@@ -161,6 +161,8 @@ export function featuredAtBlock(): string {
       <a href="https://www.superlaun.ch/products/2795" target="_blank" rel="noopener noreferrer">
         <img src="https://www.superlaun.ch/badge.png" alt="Featured on Super Launch" width="300" height="300" loading="lazy" style="height: 54px; width: auto;" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.voomo.ai/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Corporate Video Maker</a>
     </div>
   </div>`;
 }
