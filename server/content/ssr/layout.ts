@@ -141,6 +141,10 @@ export function featuredAtBlock(): string {
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.aitoolzdir.com" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Toolz Dir</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://fazier.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Fazier badge" loading="lazy" />
+      </a>
     </div>
   </div>`;
 }

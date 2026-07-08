@@ -40,6 +40,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     href: "https://www.aitoolzdir.com",
     label: "AI Toolz Dir",
   },
+  {
+    type: "image",
+    href: "https://fazier.com",
+    src: "https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light",
+    alt: "Fazier badge",
+    width: 120,
+    height: 40,
+    className: "w-[120px] h-auto object-contain",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
