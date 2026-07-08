@@ -167,6 +167,10 @@ export function featuredAtBlock(): string {
       <a href="https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com" target="_blank" rel="noopener noreferrer">
         <img src="https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs" alt="Listed on Backlinkhubs" loading="lazy" style="height: 54px; width: auto;" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://marketingdb.live" target="_blank" rel="noopener noreferrer nofollow sponsored">
+        <img src="https://marketingdb.live/badge.svg" alt="Listed on MarketingDB" width="190" height="44" loading="lazy" />
+      </a>
     </div>
   </div>`;
 }

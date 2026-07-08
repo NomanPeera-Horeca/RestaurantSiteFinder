@@ -6,6 +6,7 @@ type FeaturedImageBadge = {
   width: number;
   height: number;
   className: string;
+  rel?: string;
 };
 
 type FeaturedTextLink = {
@@ -99,12 +100,22 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     className: "h-[54px] w-auto object-contain",
   },
+  {
+    type: "image",
+    href: "https://marketingdb.live",
+    src: "https://marketingdb.live/badge.svg",
+    alt: "Listed on MarketingDB",
+    width: 190,
+    height: 44,
+    className: "w-[190px] h-[44px] object-contain",
+    rel: "noopener noreferrer nofollow sponsored",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
   if (item.type === "image") {
     return (
-      <a href={item.href} target="_blank" rel="noopener noreferrer">
+      <a href={item.href} target="_blank" rel={item.rel ?? "noopener noreferrer"}>
         <img
           src={item.src}
           alt={item.alt}
