@@ -18,7 +18,11 @@
     <meta property="og:url" content="https://restaurantsitefinder.com/" />
     <meta property="og:title" content="Free Restaurant Location Analysis Tool | Restaurant Site Finder" />
     <meta property="og:description" content="Free AI-powered restaurant location analysis. Get competitor mapping, market gaps, opportunity scoring &amp; equipment planning before you sign a lease." />
-    <meta property="og:image" content="https://restaurantsitefinder.com/og-image.png" />
+    <meta property="og:image" content="https://restaurantsitefinder.com/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://restaurantsitefinder.com/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Restaurant Site Finder — Free AI Restaurant Location Analysis" />
     <meta property="og:site_name" content="Restaurant Site Finder" />
 
@@ -27,7 +31,7 @@
     <meta name="twitter:url" content="https://restaurantsitefinder.com/" />
     <meta name="twitter:title" content="Free Restaurant Location Analysis Tool | Restaurant Site Finder" />
     <meta name="twitter:description" content="Free AI-powered restaurant location analysis. Get competitor mapping, market gaps, opportunity scoring &amp; equipment planning before you sign a lease." />
-    <meta name="twitter:image" content="https://restaurantsitefinder.com/og-image.png" />
+    <meta name="twitter:image" content="https://restaurantsitefinder.com/og-image.jpg" />
     <meta name="twitter:image:alt" content="Restaurant Site Finder — Free AI Restaurant Location Analysis" />
 
     <!-- Additional SEO -->
@@ -43,6 +47,20 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Organization",
+          "@id": "https://restaurantsitefinder.com/#organization",
+          "name": "Restaurant Site Finder",
+          "url": "https://restaurantsitefinder.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://restaurantsitefinder.com/og-image.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "image": "https://restaurantsitefinder.com/og-image.jpg",
+          "description": "Free AI-powered restaurant location analysis tool for competitor mapping, market gaps, and GO/NO-GO site selection."
+        },
+        {
           "@type": "WebApplication",
           "name": "Restaurant Site Finder",
           "alternateName": "Restaurant Site Finder by Horeca Store",
@@ -50,7 +68,8 @@
           "description": "Free AI-powered restaurant location analysis tool. Enter any U.S. address and your restaurant concept to get a GO or NO-GO verdict backed by competitor data, market gap analysis, and review sentiment. Built by Horeca Store.",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
-          "image": "https://restaurantsitefinder.com/og-image.png",
+          "image": "https://restaurantsitefinder.com/og-image.jpg",
+          "publisher": { "@id": "https://restaurantsitefinder.com/#organization" },
           "offers": {
             "@type": "Offer",
             "price": "0",

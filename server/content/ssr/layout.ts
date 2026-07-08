@@ -39,6 +39,10 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${desc}" />
   <meta property="og:image" content="${ogImage}" />
+  <meta property="og:image:secure_url" content="${ogImage}" />
+  <meta property="og:image:type" content="${SITE.ogImageType}" />
+  <meta property="og:image:width" content="${SITE.ogImageWidth}" />
+  <meta property="og:image:height" content="${SITE.ogImageHeight}" />
   <meta property="og:image:alt" content="${escapeHtml(SITE.ogImageAlt)}" />
   <meta property="og:site_name" content="${escapeHtml(SITE.name)}" />
   <meta name="twitter:card" content="summary_large_image" />

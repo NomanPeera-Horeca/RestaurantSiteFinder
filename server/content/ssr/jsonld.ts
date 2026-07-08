@@ -10,6 +10,22 @@ function orgRef() {
   };
 }
 
+function siteOrgRef() {
+  return {
+    "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.name,
+    url: SITE.url,
+    logo: {
+      "@type": "ImageObject",
+      url: siteOgImageUrl(),
+      width: SITE.ogImageWidth,
+      height: SITE.ogImageHeight,
+    },
+    image: siteOgImageUrl(),
+  };
+}
+
 export function breadcrumbJsonLd(items: BreadcrumbItem[]): object {
   return {
     "@context": "https://schema.org",
@@ -47,10 +63,7 @@ export function blogPostingJsonLd(
     description: fm.metaDescription,
     image: siteOgImageUrl(),
     author: orgRef(),
-    publisher: {
-      ...orgRef(),
-      "@type": "Organization",
-    },
+    publisher: siteOrgRef(),
     datePublished: fm.date,
     dateModified: fm.lastModified,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
