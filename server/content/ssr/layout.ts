@@ -135,6 +135,10 @@ export function featuredAtBlock(): string {
       <a href="https://submitaitools.org" target="_blank" rel="noopener noreferrer">
         <img src="https://submitaitools.org/static_submitaitools/images/submitaitools.png" alt="Submit AI Tools" width="200" height="60" loading="lazy" style="border-radius: 10px; width: 200px; height: 60px;" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://findly.tools/restaurant-site-finder?utm_source=restaurant-site-finder" target="_blank" rel="noopener noreferrer">
+        <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" loading="lazy" />
+      </a>
     </div>
   </div>`;
 }

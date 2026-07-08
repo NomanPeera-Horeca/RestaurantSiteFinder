@@ -3,6 +3,17 @@ const FEATURED_BADGES = [
     href: "https://submitaitools.org",
     src: "https://submitaitools.org/static_submitaitools/images/submitaitools.png",
     alt: "Submit AI Tools",
+    width: 200,
+    height: 60,
+    className: "rounded-[10px] w-[200px] h-[60px] object-contain",
+  },
+  {
+    href: "https://findly.tools/restaurant-site-finder?utm_source=restaurant-site-finder",
+    src: "https://findly.tools/badges/findly-tools-badge-light.svg",
+    alt: "Featured on Findly.tools",
+    width: 175,
+    height: 55,
+    className: "w-[175px] h-[55px] object-contain",
   },
 ] as const;
 
@@ -24,9 +35,9 @@ export function FeaturedAtSection() {
               <img
                 src={badge.src}
                 alt={badge.alt}
-                width={200}
-                height={60}
-                className="rounded-[10px] w-[200px] h-[60px] object-contain"
+                width={badge.width}
+                height={badge.height}
+                className={badge.className}
                 loading="lazy"
               />
             </a>
