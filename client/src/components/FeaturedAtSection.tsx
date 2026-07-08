@@ -49,6 +49,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 40,
     className: "w-[120px] h-auto object-contain",
   },
+  {
+    type: "image",
+    href: "https://turbo0.com/item/restaurant-site-finder",
+    src: "https://img.turbo0.com/badge-listed-light.svg",
+    alt: "Listed on Turbo0",
+    width: 175,
+    height: 54,
+    className: "h-[54px] w-auto object-contain",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

@@ -145,6 +145,10 @@ export function featuredAtBlock(): string {
       <a href="https://fazier.com" target="_blank" rel="noopener noreferrer">
         <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Fazier badge" loading="lazy" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://turbo0.com/item/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" loading="lazy" style="height: 54px; width: auto;" />
+      </a>
     </div>
   </div>`;
 }
