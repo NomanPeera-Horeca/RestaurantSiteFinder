@@ -23,6 +23,7 @@ import type { FullReport, Competitor, WinningConcept, EquipmentBundle, ConceptFi
 import { conceptFromSearchParams } from "@/lib/concept";
 import { captureEvent } from "@/lib/posthog";
 import { serviceModelLabel } from "../../../shared/concept-options";
+import { FeaturedAtSection } from "@/components/FeaturedAtSection";
 import { formatCompetitorAreaSubtitle, formatDirectCompetitorAreaSubtitle } from "../../../shared/search-config";
 import { formatDriveTime } from "../../../shared/geo";
 import { getCompetitorConceptLabel, proximityLabel } from "../../../shared/competitor-classifier";
@@ -1306,6 +1307,10 @@ export default function Report() {
                 All Equipment Categories
               </a>
             </div>
+
+            <Separator className="mb-2" />
+
+            <FeaturedAtSection />
 
             <Separator className="mb-4" />
 

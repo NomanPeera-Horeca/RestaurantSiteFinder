@@ -116,6 +116,7 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
           </ul>
         </div>
       </div>
+      ${featuredAtBlock()}
       <div class="footer-bottom">
         <p>&copy; ${new Date().getFullYear()} ${escapeHtml(HORECA.name)}. ${escapeHtml(SITE.name)} is a free tool for restaurant owners.</p>
       </div>
@@ -123,6 +124,94 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
   </footer>
 </body>
 </html>`;
+}
+
+export function featuredAtBlock(): string {
+  return `
+  <div class="featured-at">
+    <p class="featured-at-label">Featured At</p>
+    <div class="featured-at-badges">
+      <a href="https://submitaitools.org" target="_blank" rel="noopener noreferrer">
+        <img src="https://submitaitools.org/static_submitaitools/images/submitaitools.png" alt="Submit AI Tools" width="200" height="60" loading="lazy" style="border-radius: 10px; width: 200px; height: 60px;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://findly.tools/restaurant-site-finder?utm_source=restaurant-site-finder" target="_blank" rel="noopener noreferrer">
+        <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.aitoolzdir.com" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Toolz Dir</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://fazier.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Fazier badge" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://turbo0.com/item/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" loading="lazy" style="height: 54px; width: auto;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://wired.business" target="_blank" rel="noopener noreferrer">
+        <img src="https://wired.business/badge0-white.svg" alt="Featured on Wired Business" width="200" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://open-launch.com/projects/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
+        <img src="https://open-launch.com/api/badge/7193c6a8-bb4f-4668-af13-da78d0d7a545/featured-light.svg" alt="Featured on Open-Launch" width="200" height="50" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.superlaun.ch/products/2795" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.superlaun.ch/badge.png" alt="Featured on Super Launch" width="300" height="300" loading="lazy" style="height: 54px; width: auto;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.voomo.ai/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Corporate Video Maker</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com" target="_blank" rel="noopener noreferrer">
+        <img src="https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs" alt="Listed on Backlinkhubs" loading="lazy" style="height: 54px; width: auto;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://marketingdb.live" target="_blank" rel="noopener noreferrer nofollow sponsored">
+        <img src="https://marketingdb.live/badge.svg" alt="Listed on MarketingDB" width="190" height="44" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://z-image.net/" target="_blank" rel="noopener noreferrer" class="featured-at-link">Z-Image</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://dang.ai" target="_blank" rel="dofollow noopener" style="display:inline-block;text-decoration:none;">
+        <img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" loading="lazy" style="display:block;width:260px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://aitooltrek.com" target="_blank" rel="noopener noreferrer" title="AI Tool Trek" class="featured-at-link">AI Tool Trek</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.launchvault.dev" target="_blank" rel="noopener noreferrer" title="Featured on LaunchVault">
+        <img src="https://www.launchvault.dev/images/badges/launch-valut-badge.svg" alt="Featured on LaunchVault" loading="lazy" style="width: 195px; height: auto;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://huzzler.so/products/7xDqGxdOvl/restaurant-site-finder?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
+        <img alt="Huzzler Embed Badge" src="https://huzzler.so/assets/images/embeddable-badges/featured.png" width="159" height="55" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://launchboard.dev" target="_blank" rel="noopener">
+        <img src="https://launchboard.dev/launchboard-badge.png" alt="Launched on LaunchBoard - Product Launch Platform" width="240" height="60" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.foundrlist.com/product/restaurantsitefinder?utm_source=badge&amp;utm_medium=embed" target="_blank" rel="noopener">
+        <img src="https://www.foundrlist.com/api/badge/restaurantsitefinder" alt="Featured on FoundrList" width="150" height="48" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://trylaunch.ai/launch/restaurant-site-finder" target="_blank" rel="dofollow" style="display: inline-block; text-decoration: none;">
+        <img src="https://trylaunch.ai/badges/badge-color.png" alt="Featured on Launch" height="53" loading="lazy" style="display: block; height: 53px; width: auto;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://proofstories.io/directory/products/restaurant-site-finder/" target="_blank" rel="noopener">
+        <img src="https://proofstories.io/directory/badges/l/restaurant-site-finder.svg" alt="Listed on ProofStories" height="44" loading="lazy" style="height: 44px; width: auto;" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://saaspa.ge/product/cmrc3d7r5000bjr04deu8y1n5" target="_blank" rel="nofollow">
+        <img src="https://saaspa.ge/api/embed/product/cmrc3d7r5000bjr04deu8y1n5/badge.png?theme=orange" alt="Featured on Saaspa.ge" width="200" height="60" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://indiehunt.io/project/restaurant-site-finder-by-horeca-store" target="_blank" rel="noopener">
+        <img src="https://indiehunt.io/badges/indiehunt-badge-light.svg" alt="Featured on IndieHunt" width="265" height="58" loading="lazy" />
+      </a>
+    </div>
+  </div>`;
 }
 
 export function toolCtaBlock(): string {

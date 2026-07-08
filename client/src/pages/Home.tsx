@@ -13,6 +13,7 @@ import { HORECA } from "@/lib/horeca-brand";
 import { toast } from "sonner";
 import { PromoBannerStrip } from "@/components/PromoBanners";
 import { SocialShare } from "@/components/SocialShare";
+import { FeaturedAtSection } from "@/components/FeaturedAtSection";
 import { blogArticles } from "@/lib/blog-data";
 import {
   MapPin, BarChart3, Lightbulb, ShoppingCart,
@@ -721,6 +722,10 @@ export default function Home() {
                 </ul>
               </div>
             </div>
+
+            <Separator className="mb-2" />
+
+            <FeaturedAtSection />
 
             <Separator className="mb-6" />
 

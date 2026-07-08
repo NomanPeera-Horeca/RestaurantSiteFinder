@@ -1,0 +1,266 @@
+type FeaturedImageBadge = {
+  type: "image";
+  href: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className: string;
+  rel?: string;
+  title?: string;
+};
+
+type FeaturedTextLink = {
+  type: "text";
+  href: string;
+  label: string;
+  title?: string;
+};
+
+type FeaturedItem = FeaturedImageBadge | FeaturedTextLink;
+
+const FEATURED_ITEMS: FeaturedItem[] = [
+  {
+    type: "image",
+    href: "https://submitaitools.org",
+    src: "https://submitaitools.org/static_submitaitools/images/submitaitools.png",
+    alt: "Submit AI Tools",
+    width: 200,
+    height: 60,
+    className: "rounded-[10px] w-[200px] h-[60px] object-contain",
+  },
+  {
+    type: "image",
+    href: "https://findly.tools/restaurant-site-finder?utm_source=restaurant-site-finder",
+    src: "https://findly.tools/badges/findly-tools-badge-light.svg",
+    alt: "Featured on Findly.tools",
+    width: 175,
+    height: 55,
+    className: "w-[175px] h-[55px] object-contain",
+  },
+  {
+    type: "text",
+    href: "https://www.aitoolzdir.com",
+    label: "AI Toolz Dir",
+  },
+  {
+    type: "image",
+    href: "https://fazier.com",
+    src: "https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light",
+    alt: "Fazier badge",
+    width: 120,
+    height: 40,
+    className: "w-[120px] h-auto object-contain",
+  },
+  {
+    type: "image",
+    href: "https://turbo0.com/item/restaurant-site-finder",
+    src: "https://img.turbo0.com/badge-listed-light.svg",
+    alt: "Listed on Turbo0",
+    width: 175,
+    height: 54,
+    className: "h-[54px] w-auto object-contain",
+  },
+  {
+    type: "image",
+    href: "https://wired.business",
+    src: "https://wired.business/badge0-white.svg",
+    alt: "Featured on Wired Business",
+    width: 200,
+    height: 54,
+    className: "w-[200px] h-[54px] object-contain",
+  },
+  {
+    type: "image",
+    href: "https://open-launch.com/projects/restaurant-site-finder",
+    src: "https://open-launch.com/api/badge/7193c6a8-bb4f-4668-af13-da78d0d7a545/featured-light.svg",
+    alt: "Featured on Open-Launch",
+    width: 200,
+    height: 50,
+    className: "w-[200px] h-[50px] object-contain",
+  },
+  {
+    type: "image",
+    href: "https://www.superlaun.ch/products/2795",
+    src: "https://www.superlaun.ch/badge.png",
+    alt: "Featured on Super Launch",
+    width: 300,
+    height: 300,
+    className: "h-[54px] w-auto object-contain",
+  },
+  {
+    type: "text",
+    href: "https://www.voomo.ai/",
+    label: "AI Corporate Video Maker",
+  },
+  {
+    type: "image",
+    href: "https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com",
+    src: "https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs",
+    alt: "Listed on Backlinkhubs",
+    width: 200,
+    height: 54,
+    className: "h-[54px] w-auto object-contain",
+  },
+  {
+    type: "image",
+    href: "https://marketingdb.live",
+    src: "https://marketingdb.live/badge.svg",
+    alt: "Listed on MarketingDB",
+    width: 190,
+    height: 44,
+    className: "w-[190px] h-[44px] object-contain",
+    rel: "noopener noreferrer nofollow sponsored",
+  },
+  {
+    type: "text",
+    href: "https://z-image.net/",
+    label: "Z-Image",
+  },
+  {
+    type: "image",
+    href: "https://dang.ai",
+    src: "https://assets.dang.ai/badges/dang-verified-dark.png",
+    alt: "Verified on DANG!",
+    width: 260,
+    height: 94,
+    className: "block w-[260px] max-w-full h-auto object-contain border-0",
+    rel: "dofollow noopener",
+  },
+  {
+    type: "text",
+    href: "https://aitooltrek.com",
+    label: "AI Tool Trek",
+    title: "AI Tool Trek",
+  },
+  {
+    type: "image",
+    href: "https://www.launchvault.dev",
+    src: "https://www.launchvault.dev/images/badges/launch-valut-badge.svg",
+    alt: "Featured on LaunchVault",
+    width: 195,
+    height: 54,
+    className: "w-[195px] h-auto object-contain",
+    title: "Featured on LaunchVault",
+  },
+  {
+    type: "image",
+    href: "https://huzzler.so/products/7xDqGxdOvl/restaurant-site-finder?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing",
+    src: "https://huzzler.so/assets/images/embeddable-badges/featured.png",
+    alt: "Huzzler Embed Badge",
+    width: 159,
+    height: 55,
+    className: "w-[159px] h-[55px] object-contain",
+  },
+  {
+    type: "image",
+    href: "https://launchboard.dev",
+    src: "https://launchboard.dev/launchboard-badge.png",
+    alt: "Launched on LaunchBoard - Product Launch Platform",
+    width: 240,
+    height: 60,
+    className: "w-[240px] h-[60px] object-contain",
+    rel: "noopener",
+  },
+  {
+    type: "image",
+    href: "https://www.foundrlist.com/product/restaurantsitefinder?utm_source=badge&utm_medium=embed",
+    src: "https://www.foundrlist.com/api/badge/restaurantsitefinder",
+    alt: "Featured on FoundrList",
+    width: 150,
+    height: 48,
+    className: "w-[150px] h-[48px] object-contain",
+    rel: "noopener",
+  },
+  {
+    type: "image",
+    href: "https://trylaunch.ai/launch/restaurant-site-finder",
+    src: "https://trylaunch.ai/badges/badge-color.png",
+    alt: "Featured on Launch",
+    width: 175,
+    height: 53,
+    className: "block h-[53px] w-auto object-contain",
+    rel: "dofollow",
+  },
+  {
+    type: "image",
+    href: "https://proofstories.io/directory/products/restaurant-site-finder/",
+    src: "https://proofstories.io/directory/badges/l/restaurant-site-finder.svg",
+    alt: "Listed on ProofStories",
+    width: 175,
+    height: 44,
+    className: "h-[44px] w-auto object-contain",
+    rel: "noopener",
+  },
+  {
+    type: "image",
+    href: "https://saaspa.ge/product/cmrc3d7r5000bjr04deu8y1n5",
+    src: "https://saaspa.ge/api/embed/product/cmrc3d7r5000bjr04deu8y1n5/badge.png?theme=orange",
+    alt: "Featured on Saaspa.ge",
+    width: 200,
+    height: 60,
+    className: "w-[200px] h-[60px] object-contain",
+    rel: "nofollow",
+  },
+  {
+    type: "image",
+    href: "https://indiehunt.io/project/restaurant-site-finder-by-horeca-store",
+    src: "https://indiehunt.io/badges/indiehunt-badge-light.svg",
+    alt: "Featured on IndieHunt",
+    width: 265,
+    height: 58,
+    className: "w-[265px] h-[58px] object-contain",
+    rel: "noopener",
+  },
+];
+
+function FeaturedItemContent({ item }: { item: FeaturedItem }) {
+  if (item.type === "image") {
+    return (
+      <a href={item.href} target="_blank" rel={item.rel ?? "noopener noreferrer"} title={item.title}>
+        <img
+          src={item.src}
+          alt={item.alt}
+          width={item.width}
+          height={item.height}
+          className={item.className}
+          loading="lazy"
+        />
+      </a>
+    );
+  }
+
+  return (
+    <a
+      href={item.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={item.title}
+      className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+    >
+      {item.label}
+    </a>
+  );
+}
+
+export function FeaturedAtSection() {
+  return (
+    <div className="flex flex-col items-center gap-4 py-6">
+      <p className="text-[11px] font-medium tracking-[0.2em] text-muted-foreground uppercase">
+        Featured At
+      </p>
+      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-4">
+        {FEATURED_ITEMS.map((item, index) => (
+          <div key={item.href} className="flex items-center gap-3">
+            {index > 0 && (
+              <span className="hidden sm:inline text-muted-foreground/40 select-none" aria-hidden="true">
+                ·
+              </span>
+            )}
+            <FeaturedItemContent item={item} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
