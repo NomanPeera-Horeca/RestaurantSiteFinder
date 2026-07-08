@@ -58,6 +58,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     className: "h-[54px] w-auto object-contain",
   },
+  {
+    type: "image",
+    href: "https://wired.business",
+    src: "https://wired.business/badge0-white.svg",
+    alt: "Featured on Wired Business",
+    width: 200,
+    height: 54,
+    className: "w-[200px] h-[54px] object-contain",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

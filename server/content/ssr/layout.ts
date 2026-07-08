@@ -149,6 +149,10 @@ export function featuredAtBlock(): string {
       <a href="https://turbo0.com/item/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
         <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" loading="lazy" style="height: 54px; width: auto;" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://wired.business" target="_blank" rel="noopener noreferrer">
+        <img src="https://wired.business/badge0-white.svg" alt="Featured on Wired Business" width="200" height="54" loading="lazy" />
+      </a>
     </div>
   </div>`;
 }
