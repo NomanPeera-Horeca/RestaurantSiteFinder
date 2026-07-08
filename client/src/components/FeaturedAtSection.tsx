@@ -67,6 +67,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     className: "w-[200px] h-[54px] object-contain",
   },
+  {
+    type: "image",
+    href: "https://open-launch.com/projects/restaurant-site-finder",
+    src: "https://open-launch.com/api/badge/7193c6a8-bb4f-4668-af13-da78d0d7a545/featured-light.svg",
+    alt: "Featured on Open-Launch",
+    width: 200,
+    height: 50,
+    className: "w-[200px] h-[50px] object-contain",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

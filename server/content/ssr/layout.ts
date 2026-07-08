@@ -153,6 +153,10 @@ export function featuredAtBlock(): string {
       <a href="https://wired.business" target="_blank" rel="noopener noreferrer">
         <img src="https://wired.business/badge0-white.svg" alt="Featured on Wired Business" width="200" height="54" loading="lazy" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://open-launch.com/projects/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
+        <img src="https://open-launch.com/api/badge/7193c6a8-bb4f-4668-af13-da78d0d7a545/featured-light.svg" alt="Featured on Open-Launch" width="200" height="50" loading="lazy" />
+      </a>
     </div>
   </div>`;
 }
