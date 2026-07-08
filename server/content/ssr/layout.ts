@@ -179,6 +179,10 @@ export function featuredAtBlock(): string {
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://aitooltrek.com" target="_blank" rel="noopener noreferrer" title="AI Tool Trek" class="featured-at-link">AI Tool Trek</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.launchvault.dev" target="_blank" rel="noopener noreferrer" title="Featured on LaunchVault">
+        <img src="https://www.launchvault.dev/images/badges/launch-valut-badge.svg" alt="Featured on LaunchVault" loading="lazy" style="width: 195px; height: auto;" />
+      </a>
     </div>
   </div>`;
 }

@@ -7,6 +7,7 @@ type FeaturedImageBadge = {
   height: number;
   className: string;
   rel?: string;
+  title?: string;
 };
 
 type FeaturedTextLink = {
@@ -132,12 +133,22 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     label: "AI Tool Trek",
     title: "AI Tool Trek",
   },
+  {
+    type: "image",
+    href: "https://www.launchvault.dev",
+    src: "https://www.launchvault.dev/images/badges/launch-valut-badge.svg",
+    alt: "Featured on LaunchVault",
+    width: 195,
+    height: 54,
+    className: "w-[195px] h-auto object-contain",
+    title: "Featured on LaunchVault",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
   if (item.type === "image") {
     return (
-      <a href={item.href} target="_blank" rel={item.rel ?? "noopener noreferrer"}>
+      <a href={item.href} target="_blank" rel={item.rel ?? "noopener noreferrer"} title={item.title}>
         <img
           src={item.src}
           alt={item.alt}
