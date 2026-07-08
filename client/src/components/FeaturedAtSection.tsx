@@ -76,6 +76,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 50,
     className: "w-[200px] h-[50px] object-contain",
   },
+  {
+    type: "image",
+    href: "https://www.superlaun.ch/products/2795",
+    src: "https://www.superlaun.ch/badge.png",
+    alt: "Featured on Super Launch",
+    width: 300,
+    height: 300,
+    className: "h-[54px] w-auto object-contain",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

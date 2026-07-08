@@ -157,6 +157,10 @@ export function featuredAtBlock(): string {
       <a href="https://open-launch.com/projects/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
         <img src="https://open-launch.com/api/badge/7193c6a8-bb4f-4668-af13-da78d0d7a545/featured-light.svg" alt="Featured on Open-Launch" width="200" height="50" loading="lazy" />
       </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.superlaun.ch/products/2795" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.superlaun.ch/badge.png" alt="Featured on Super Launch" width="300" height="300" loading="lazy" style="height: 54px; width: auto;" />
+      </a>
     </div>
   </div>`;
 }
