@@ -202,6 +202,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "w-[200px] h-[60px] object-contain",
     rel: "nofollow",
   },
+  {
+    type: "image",
+    href: "https://indiehunt.io/project/restaurant-site-finder-by-horeca-store",
+    src: "https://indiehunt.io/badges/indiehunt-badge-light.svg",
+    alt: "Featured on IndieHunt",
+    width: 265,
+    height: 58,
+    className: "w-[265px] h-[58px] object-contain",
+    rel: "noopener",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
