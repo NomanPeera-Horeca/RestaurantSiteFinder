@@ -10,6 +10,22 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-location-intelligence-beyond-traffic-data",
+    title: "The New Rules of Restaurant Location Intelligence: Why Traffic Data Alone Isn't Enough Anymore",
+    excerpt: "Foot traffic counts and car clickers are no longer enough. Modern restaurant location intelligence requires psychographics, GIS trade areas, cross-visitation patterns, and predictive analytics to scale multi-location chains.",
+    date: "2026-07-08",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
+    slug: "restaurant-location-intelligence-franchise-ai-2026",
+    title: "Restaurant Location Intelligence in 2026: Why Franchise Owners Are Ditching Spreadsheets for AI",
+    excerpt: "Franchise owners are replacing static spreadsheets with AI-driven location intelligence—geospatial mapping, mobile trade areas, revenue forecasting, and cannibalization analysis—to scale with confidence in 2026.",
+    date: "2026-07-08",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "restaurant-site-selection-showdown-2026",
     title: "RestaurantSiteFinder vs Placer.ai vs Buxton vs ESRI: Which Restaurant Site Selection Tool Actually Wins in 2026?",
     excerpt: "Compare RestaurantSiteFinder, Placer.ai, Buxton, and ESRI across foot traffic, psychographics, GIS mapping, and usability to find the best site selection tool for your brand in 2026.",
