@@ -90,6 +90,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     href: "https://www.voomo.ai/",
     label: "AI Corporate Video Maker",
   },
+  {
+    type: "image",
+    href: "https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com",
+    src: "https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs",
+    alt: "Listed on Backlinkhubs",
+    width: 200,
+    height: 54,
+    className: "h-[54px] w-auto object-contain",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {

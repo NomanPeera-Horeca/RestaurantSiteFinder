@@ -163,6 +163,10 @@ export function featuredAtBlock(): string {
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.voomo.ai/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Corporate Video Maker</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com" target="_blank" rel="noopener noreferrer">
+        <img src="https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs" alt="Listed on Backlinkhubs" loading="lazy" style="height: 54px; width: auto;" />
+      </a>
     </div>
   </div>`;
 }
