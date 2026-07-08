@@ -192,6 +192,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     className: "h-[44px] w-auto object-contain",
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://saaspa.ge/product/cmrc3d7r5000bjr04deu8y1n5",
+    src: "https://saaspa.ge/api/embed/product/cmrc3d7r5000bjr04deu8y1n5/badge.png?theme=orange",
+    alt: "Featured on Saaspa.ge",
+    width: 200,
+    height: 60,
+    className: "w-[200px] h-[60px] object-contain",
+    rel: "nofollow",
+  },
 ];
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
