@@ -261,6 +261,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://goodaitools.com/ai/restaurantsitefinder",
+    src: "https://goodaitools.com/assets/images/badge-dark.png",
+    alt: "Good AI Tools",
+    width: 175,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
