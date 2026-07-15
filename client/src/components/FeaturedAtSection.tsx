@@ -324,6 +324,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://famed.tools/products/free-restaurant-location-analysis-tool?utm_source=famed.tools",
+    src: "https://famed.tools/badges/famed-tools-badge-light.svg",
+    alt: "Featured on famed.tools",
+    width: 150,
+    height: 48,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
