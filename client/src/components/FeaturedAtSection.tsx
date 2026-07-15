@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 type FeaturedImageBadge = {
   type: "image";
   href: string;
@@ -17,7 +19,13 @@ type FeaturedTextLink = {
   title?: string;
 };
 
-type FeaturedItem = FeaturedImageBadge | FeaturedTextLink;
+type FeaturedTinyStartupsBadge = {
+  type: "tiny-startups";
+  href: string;
+  rel?: string;
+};
+
+type FeaturedItem = FeaturedImageBadge | FeaturedTextLink | FeaturedTinyStartupsBadge;
 
 const FEATURED_ITEMS: FeaturedItem[] = [
   {
@@ -202,7 +210,45 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 88,
     height: 31,
   },
+  {
+    type: "tiny-startups",
+    href: "https://www.tinystartups.com/startup/restaurant-site-finder-2",
+    rel: "noopener",
+  },
 ];
+
+function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
+  const gradientId = useId().replace(/:/g, "");
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel={rel ?? "noopener noreferrer"}
+      title="Launched on Tiny Startups"
+      className="featured-at-tiny-startups"
+      aria-label="Launched on Tiny Startups"
+    >
+      <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <linearGradient id={gradientId} x1=".1" y1="0" x2=".9" y2="1">
+            <stop offset="0%" stopColor="#3525E6" />
+            <stop offset="55%" stopColor="#D81FE0" />
+            <stop offset="100%" stopColor="#22B8F0" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M50 6C52 32 68 48 94 50C68 52 52 68 50 94C48 68 32 52 6 50C32 48 48 32 50 6Z"
+          fill={`url(#${gradientId})`}
+        />
+      </svg>
+      <span className="featured-at-tiny-startups-copy">
+        <span className="featured-at-tiny-startups-eyebrow">Launched on</span>
+        <span className="featured-at-tiny-startups-name">Tiny Startups</span>
+      </span>
+    </a>
+  );
+}
 
 function FeaturedItemContent({ item }: { item: FeaturedItem }) {
   if (item.type === "image") {
@@ -217,6 +263,10 @@ function FeaturedItemContent({ item }: { item: FeaturedItem }) {
         />
       </a>
     );
+  }
+
+  if (item.type === "tiny-startups") {
+    return <TinyStartupsBadge href={item.href} rel={item.rel} />;
   }
 
   return (
