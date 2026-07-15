@@ -315,6 +315,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 58,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://saasgrow.app?ref=restaurantsitefinder.com",
+    src: "https://saasgrow.app/api/badge?type=featured&style=blue",
+    alt: "Restaurant Site Finder on SaaSGrow",
+    width: 240,
+    height: 54,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
