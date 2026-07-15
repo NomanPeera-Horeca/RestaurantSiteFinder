@@ -215,6 +215,11 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     href: "https://www.tinystartups.com/startup/restaurant-site-finder-2",
     rel: "noopener",
   },
+  {
+    type: "text",
+    href: "https://aitop10.tools/",
+    label: "AiTop10 Tools",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
