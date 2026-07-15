@@ -234,6 +234,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://starterbest.com",
+    src: "https://starterbest.com/badages-awards.svg",
+    alt: "Featured on Starter Best",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
