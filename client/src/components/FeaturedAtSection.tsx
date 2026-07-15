@@ -285,6 +285,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 200,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://similarlabs.com",
+    src: "https://similarlabs.com/similarlabs-embed-badge-light.svg",
+    alt: "List on Similarlabs",
+    width: 124,
+    height: 40,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
