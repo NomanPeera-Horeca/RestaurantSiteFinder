@@ -269,6 +269,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 175,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://drchecker.net/item/restaurantsitefinder.com",
+    src: "https://drchecker.net/api/badge?domain=restaurantsitefinder.com",
+    alt: "DR Checker - Domain Rating",
+    width: 200,
+    height: 120,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
