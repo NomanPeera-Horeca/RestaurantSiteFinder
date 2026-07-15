@@ -220,6 +220,11 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     href: "https://aitop10.tools/",
     label: "AiTop10 Tools",
   },
+  {
+    type: "text",
+    href: "https://indieai.directory/",
+    label: "Listed on IndieAI Directory",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
