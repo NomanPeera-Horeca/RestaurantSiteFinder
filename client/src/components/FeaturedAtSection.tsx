@@ -277,6 +277,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 200,
     height: 120,
   },
+  {
+    type: "image",
+    href: "https://dofollow.tools",
+    src: "https://dofollow.tools/badge/badge_transparent.svg",
+    alt: "Featured on Dofollow.Tools",
+    width: 200,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
