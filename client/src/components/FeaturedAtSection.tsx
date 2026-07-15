@@ -252,6 +252,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://saasfame.com/item/restaurant-site-finder",
+    src: "https://saasfame.com/badge-light.svg",
+    alt: "Featured on saasfame.com",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
