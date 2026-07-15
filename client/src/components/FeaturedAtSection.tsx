@@ -306,6 +306,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 240,
     height: 66,
   },
+  {
+    type: "image",
+    href: "https://earlyhunt.com/project/restaurant-site-finder",
+    src: "https://earlyhunt.com/badges/earlyhunt-badge-light.svg",
+    alt: "Featured on EarlyHunt",
+    width: 265,
+    height: 58,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
