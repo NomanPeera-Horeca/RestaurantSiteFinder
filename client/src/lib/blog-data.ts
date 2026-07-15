@@ -10,6 +10,46 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "maximizing-success-restaurant-site-analysis",
+    title: "Maximizing Success with Restaurant Site Analysis",
+    excerpt: "Replace gut-feel site picks with a restaurant site analysis tool: trade areas, demographics, foot traffic, competition, and predictive sales forecasts that protect ROI.",
+    date: "2026-07-15",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
+    slug: "key-factors-restaurant-location-planning",
+    title: "Key Factors in Restaurant Location Planning",
+    excerpt: "Master restaurant location planning: from demographics and trade areas to foot traffic vs. rent, accessibility, delivery radius, zoning, and lease terms, before you sign.",
+    date: "2026-07-15",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
+    slug: "key-factors-restaurant-location-analysis",
+    title: "Key Factors in Restaurant Location Analysis",
+    excerpt: "Discover the key factors in restaurant location analysis: demographics, psychographics, foot traffic, trade areas, competition, and predictive modeling that turn site selection into a data-backed decision.",
+    date: "2026-07-15",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
+    slug: "ai-restaurant-location-analysis",
+    title: "AI Restaurant Location Analysis - RestaurantSiteFinder",
+    excerpt: "Learn how AI restaurant location analysis uses mobility data, psychographics, and site scoring to turn real estate risk into a data-backed expansion decision.",
+    date: "2026-07-15",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
+    slug: "restaurant-site-finder-comprehensive-guide-2026",
+    title: "Restaurant Site Finder: A Comprehensive Guide 2026",
+    excerpt: "How to choose a winning restaurant location in 2026 using data, demographics, trade-area mapping, and AI, before you sign the lease.",
+    date: "2026-07-15",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-location-intelligence-beyond-traffic-data",
     title: "The New Rules of Restaurant Location Intelligence: Why Traffic Data Alone Isn't Enough Anymore",
     excerpt: "Foot traffic counts and car clickers are no longer enough. Modern restaurant location intelligence requires psychographics, GIS trade areas, cross-visitation patterns, and predictive analytics to scale multi-location chains.",

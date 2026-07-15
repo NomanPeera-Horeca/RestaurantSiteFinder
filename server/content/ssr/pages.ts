@@ -19,8 +19,7 @@ const base = () => siteConfig.url.replace(/\/$/, "");
 
 function glossaryPageTitle(termName: string): string {
   const needsArticle = /^[aeiouAEIOU]/.test(termName) ? "an" : "a";
-  const core = `What Is ${needsArticle} ${termName}? Definition & Guide`;
-  return `${core} | Restaurant Site Finder`;
+  return `What Is ${needsArticle} ${termName}? Definition & Guide`;
 }
 
 function glossaryMetaDescription(term: GlossaryTerm): string {
@@ -114,7 +113,7 @@ export function renderBlogListing(): string {
 
   return renderPage(
     {
-      title: "Restaurant Opening Guides & Site Selection Tips | Restaurant Site Finder",
+      title: "Restaurant Opening Guides & Site Selection Tips",
       description:
         "Free expert guides on choosing a restaurant location, site selection checklists, equipment, opening costs, permits, and market analysis.",
       canonical: url,
@@ -167,11 +166,9 @@ export function renderBlogArticle(slug: string): string | null {
     </article>`;
 
   const seoTitle = fm.metaTitle ?? fm.title;
-  const pageTitle =
-    seoTitle.length > 52 ? `${seoTitle.slice(0, 49)}...` : seoTitle;
   return renderPage(
     {
-      title: `${pageTitle} | Restaurant Site Finder`,
+      title: seoTitle,
       description: fm.metaDescription,
       canonical: url,
       ogType: "article",

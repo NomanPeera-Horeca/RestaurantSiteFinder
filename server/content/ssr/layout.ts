@@ -230,6 +230,65 @@ function featuredAtItemsHtml(): string {
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.freewebsubmission.com" target="_blank" rel="noopener noreferrer">
         <img src="https://www.freewebsubmission.com/images/fwsbutton11.gif" alt="Submit Your Site To The Web's Top 50 Search Engines for Free!" width="88" height="31" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://www.tinystartups.com/startup/restaurant-site-finder-2" target="_blank" rel="noopener" title="Launched on Tiny Startups" class="featured-at-tiny-startups" aria-label="Launched on Tiny Startups">
+        <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="tsg" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0%" stop-color="#3525E6" /><stop offset="55%" stop-color="#D81FE0" /><stop offset="100%" stop-color="#22B8F0" /></linearGradient></defs><path d="M50 6C52 32 68 48 94 50C68 52 52 68 50 94C48 68 32 52 6 50C32 48 48 32 50 6Z" fill="url(#tsg)" /></svg>
+        <span class="featured-at-tiny-startups-copy"><span class="featured-at-tiny-startups-eyebrow">Launched on</span><span class="featured-at-tiny-startups-name">Tiny Startups</span></span>
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://aitop10.tools/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AiTop10 Tools</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://indieai.directory/" target="_blank" rel="noopener noreferrer" class="featured-at-link">Listed on IndieAI Directory</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://dayslaunch.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://dayslaunch.com/badages-awards.svg" alt="Featured on Days Launch" width="175" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://starterbest.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://starterbest.com/badages-awards.svg" alt="Featured on Starter Best" width="175" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://theonestartup.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://theonestartup.com/badages-awards.svg" alt="Featured on The One Startup" width="175" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://saasfame.com/item/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
+        <img src="https://saasfame.com/badge-light.svg" alt="Featured on saasfame.com" width="175" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://goodaitools.com/ai/restaurantsitefinder" target="_blank" rel="noopener noreferrer">
+        <img src="https://goodaitools.com/assets/images/badge-dark.png" alt="Good AI Tools" width="175" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://drchecker.net/item/restaurantsitefinder.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://drchecker.net/api/badge?domain=restaurantsitefinder.com" alt="DR Checker - Domain Rating" width="200" height="120" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://dofollow.tools" target="_blank" rel="noopener noreferrer">
+        <img src="https://dofollow.tools/badge/badge_transparent.svg" alt="Featured on Dofollow.Tools" width="200" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://similarlabs.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://similarlabs.com/similarlabs-embed-badge-light.svg" alt="List on Similarlabs" width="124" height="40" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://animatephoto.io" target="_blank" rel="noopener noreferrer" class="featured-at-link">Animate Photo AI</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://submithunt.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://submithunt.com/badge-light.svg" alt="Featured on Submit Hunt" width="240" height="66" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://earlyhunt.com/project/restaurant-site-finder" target="_blank" rel="noopener">
+        <img src="https://earlyhunt.com/badges/earlyhunt-badge-light.svg" alt="Featured on EarlyHunt" width="265" height="58" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://saasgrow.app?ref=restaurantsitefinder.com" target="_blank" rel="noopener">
+        <img src="https://saasgrow.app/api/badge?type=featured&style=blue" alt="Restaurant Site Finder on SaaSGrow" width="240" height="54" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://famed.tools/products/free-restaurant-location-analysis-tool?utm_source=famed.tools" target="_blank" rel="noopener">
+        <img src="https://famed.tools/badges/famed-tools-badge-light.svg" alt="Featured on famed.tools" width="150" height="48" loading="lazy" />
       </a>`;
 }
 

@@ -5,7 +5,7 @@ export const SITE = {
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageType: "image/jpeg",
-  ogImageAlt: "Restaurant Site Finder — Free AI Restaurant Location Analysis",
+  ogImageAlt: "Restaurant Site Finder : Free AI Restaurant Location Analysis",
 } as const;
 
 export const HORECA = {

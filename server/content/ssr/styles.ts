@@ -175,6 +175,10 @@ main { padding: 2rem 0 4rem; min-height: 60vh; }
 .featured-at-link { font-size: 0.875rem; font-weight: 500; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .featured-at-link:hover { color: var(--primary); }
 @keyframes featured-at-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.featured-at-tiny-startups { display: inline-flex; align-items: center; gap: 0.55rem; height: 54px; padding: 0 0.85rem 0 0.55rem; border-radius: 12px; text-decoration: none; white-space: nowrap; color: #0e0b1f; background: linear-gradient(#fff, #fff) padding-box, linear-gradient(90deg, #3525e6, #d81fe0, #22b8f0) border-box; border: 2px solid transparent; font-family: Inter, system-ui, sans-serif; }
+.featured-at-tiny-startups-copy { display: flex; flex-direction: column; line-height: 1.15; }
+.featured-at-tiny-startups-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 8px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #6a6585; }
+.featured-at-tiny-startups-name { font-size: 14px; font-weight: 800; letter-spacing: -0.025em; }
 @media (prefers-reduced-motion: reduce) {
   .featured-at-marquee { overflow-x: auto; mask-image: none; }
   .featured-at-marquee-track { animation: none; }

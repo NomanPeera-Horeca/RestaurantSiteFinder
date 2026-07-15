@@ -94,20 +94,21 @@ export default function Home() {
 
         <div className="relative container">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
               <Shield className="h-4 w-4" />
-              According to Cornell University
+              Free GO / NO-GO analysis for your specific restaurant concept
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-2">
-              The #1 Reason Restaurants Fail Is Location.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-4">
+              Free AI-Powered Restaurant Location Analysis: Before You Sign the Lease
             </h1>
-            <p className="text-2xl sm:text-3xl font-semibold text-muted-foreground mb-6">
-              Run the numbers before you risk everything.
-            </p>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Most restaurant owners sign the lease on gut feeling, spend $200,000 on setup, then find out the location was wrong.
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground/90 mb-6">
+              Restaurant Site Selection, Backed by Data, Not Guesswork
+            </h2>
+
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
+              Choosing a restaurant location is the single most expensive, hardest-to-reverse decision you&apos;ll make before opening day. Restaurant Site Finder replaces gut instinct and expensive consultants with instant, AI-driven analysis: enter any address worldwide and get competitor mapping, market gaps, and a data-backed opportunity score in minutes, not weeks.
             </p>
 
             <AnalysisHeroCard
