@@ -298,6 +298,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     href: "https://animatephoto.io",
     label: "Animate Photo AI",
   },
+  {
+    type: "image",
+    href: "https://submithunt.com",
+    src: "https://submithunt.com/badge-light.svg",
+    alt: "Featured on Submit Hunt",
+    width: 240,
+    height: 66,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
