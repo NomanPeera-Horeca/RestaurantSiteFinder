@@ -112,12 +112,16 @@ export default function Home() {
               Free GO / NO-GO analysis for your specific restaurant concept
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
-              Don't sign that lease until you run the numbers.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-4">
+              Free AI-Powered Restaurant Location Analysis — Before You Sign the Lease
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              Pick your concept, enter a location, and get a GO or NO-GO built for what you&apos;re actually opening — not a generic restaurant score.
+            <h2 className="text-xl sm:text-2xl font-semibold text-foreground/90 mb-6">
+              Restaurant Site Selection, Backed by Data — Not Guesswork
+            </h2>
+
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
+              Choosing a restaurant location is the single most expensive, hardest-to-reverse decision you&apos;ll make before opening day. Restaurant Site Finder replaces gut instinct and expensive consultants with instant, AI-driven analysis — enter any address worldwide and get competitor mapping, market gaps, and a data-backed opportunity score in minutes, not weeks.
             </p>
 
             <AnalysisHeroCard
