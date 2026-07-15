@@ -225,6 +225,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     href: "https://indieai.directory/",
     label: "Listed on IndieAI Directory",
   },
+  {
+    type: "image",
+    href: "https://dayslaunch.com",
+    src: "https://dayslaunch.com/badages-awards.svg",
+    alt: "Featured on Days Launch",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
