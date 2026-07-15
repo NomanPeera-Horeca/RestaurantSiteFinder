@@ -293,6 +293,11 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 124,
     height: 40,
   },
+  {
+    type: "text",
+    href: "https://animatephoto.io",
+    label: "Animate Photo AI",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
