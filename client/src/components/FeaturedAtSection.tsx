@@ -243,6 +243,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://theonestartup.com",
+    src: "https://theonestartup.com/badages-awards.svg",
+    alt: "Featured on The One Startup",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
