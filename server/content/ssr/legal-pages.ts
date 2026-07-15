@@ -75,7 +75,7 @@ export function renderPrivacyPolicy(): string {
 
   return renderPage(
     {
-      title: "Privacy Policy | Restaurant Site Finder",
+      title: "Privacy Policy",
       description:
         "Privacy policy for Restaurant Site Finder — how Horeca Store collects, uses, and protects your data when you use our free location analysis tool.",
       canonical: url,
@@ -152,7 +152,7 @@ export function renderTermsOfService(): string {
 
   return renderPage(
     {
-      title: "Terms of Service | Restaurant Site Finder",
+      title: "Terms of Service",
       description:
         "Terms of Service for Restaurant Site Finder — acceptable use, disclaimers, and limitations for our free AI restaurant location analysis tool.",
       canonical: url,
@@ -227,7 +227,7 @@ export function renderContactPage(): string {
 
   return renderPage(
     {
-      title: "Contact | Restaurant Site Finder",
+      title: "Contact",
       description:
         "Contact Restaurant Site Finder and Horeca Store for support with free location analysis, restaurant equipment, and opening questions.",
       canonical: url,
