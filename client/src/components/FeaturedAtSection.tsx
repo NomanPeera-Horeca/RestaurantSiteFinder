@@ -400,6 +400,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 220,
     height: 48,
   },
+  {
+    type: "image",
+    href: "https://www.listbulb.com/tools/restaurantsitefinder",
+    src: "https://www.listbulb.com/featured-on-listbulb-light.svg",
+    alt: "Featured on ListBulb",
+    width: 240,
+    height: 240,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
