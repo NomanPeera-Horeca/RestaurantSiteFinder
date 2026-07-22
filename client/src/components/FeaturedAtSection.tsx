@@ -386,6 +386,12 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "text",
+    href: "https://allinai.tools",
+    label: "All in AI Tools",
+    title: "All The Best AI Tools",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
