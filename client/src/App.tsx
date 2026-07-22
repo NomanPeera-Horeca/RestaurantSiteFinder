@@ -10,6 +10,7 @@ import { capturePageview } from "./lib/posthog";
 import Home from "./pages/Home";
 import Analyze from "./pages/Analyze";
 import Report from "./pages/Report";
+import EmbedAnalyze from "./pages/EmbedAnalyze";
 import NameGenerator from "./pages/NameGenerator";
 import PremiumSuccess from "./pages/PremiumSuccess";
 import RestaurantFailureRate from "./pages/RestaurantFailureRate";
@@ -36,6 +37,7 @@ function Router() {
       <PostHogPageView />
       <Switch>
         <Route path={"/"} component={Home} />
+        <Route path={"/embed/analyze"} component={EmbedAnalyze} />
         <Route path={"/analyze"} component={Analyze} />
         <Route path={"/restaurant-name-generator"} component={NameGenerator} />
         <Route path={"/restaurant-failure-rate"} component={RestaurantFailureRate} />
@@ -56,15 +58,24 @@ function Router() {
   );
 }
 
+function AppShell() {
+  const [location] = useLocation();
+  const isEmbed = location.startsWith("/embed/");
+
+  return (
+    <TooltipProvider>
+      {!isEmbed && <FeedbackWidget />}
+      <Toaster richColors position="top-center" />
+      <Router />
+    </TooltipProvider>
+  );
+}
+
 function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <TooltipProvider>
-          <FeedbackWidget />
-          <Toaster richColors position="top-center" />
-          <Router />
-        </TooltipProvider>
+        <AppShell />
       </ThemeProvider>
     </ErrorBoundary>
   );
