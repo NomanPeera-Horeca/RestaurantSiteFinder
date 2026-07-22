@@ -351,6 +351,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "dofollow",
   },
+  {
+    type: "image",
+    href: "https://shipstry.com/",
+    src: "https://shipstry.com/badges/featured.svg",
+    alt: "Featured on Shipstry",
+    width: 220,
+    height: 52,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
