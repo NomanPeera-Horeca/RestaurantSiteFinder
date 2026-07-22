@@ -148,22 +148,53 @@ export function renderBlogArticle(slug: string): string | null {
       { name: "Guides", href: `${base()}/blog` },
       { name: fm.title },
     ])}
-    <article>
-      <header class="page-hero">
-        <p class="cat" style="font-size:0.75rem;color:var(--primary);font-weight:600;text-transform:uppercase;">${escapeHtml(fm.category)}</p>
-        <h1>${escapeHtml(fm.title)}</h1>
-        <div class="meta">
-          <span>By ${escapeHtml(fm.author)}</span>
-          <span>${escapeHtml(fm.date)}</span>
-          <span>${post.readTimeMinutes} min read</span>
+    <div class="blog-layout">
+      <div class="blog-main">
+        <article>
+          <header class="page-hero">
+            <p class="cat" style="font-size:0.75rem;color:var(--primary);font-weight:600;text-transform:uppercase;">${escapeHtml(fm.category)}</p>
+            <h1>${escapeHtml(fm.title)}</h1>
+            <div class="meta">
+              <span>By ${escapeHtml(fm.author)}</span>
+              <span>${escapeHtml(fm.date)}</span>
+              <span>${post.readTimeMinutes} min read</span>
+            </div>
+            <p class="excerpt">${escapeHtml(fm.excerpt)}</p>
+            <div class="tag-list">${tags}</div>
+          </header>
+          <div class="prose">${post.html}</div>
+          ${relatedPostsHtml(fm.relatedSlugs ?? [], fm.slug)}
+          ${toolCtaBlock()}
+        </article>
+      </div>
+      <aside class="blog-sidebar" aria-label="Restaurant location analysis tool">
+        <div class="blog-sidebar-intro">
+          <h2>Restaurant Location Analysis</h2>
+          <p>Enter any US address to get an instant opportunity score, competitor density map, market demand analysis, and concept fit score. The same location data that national chains pay 500 USD per month for, free for independent restaurant owners.</p>
         </div>
-        <p class="excerpt">${escapeHtml(fm.excerpt)}</p>
-        <div class="tag-list">${tags}</div>
-      </header>
-      <div class="prose">${post.html}</div>
-      ${relatedPostsHtml(fm.relatedSlugs ?? [], fm.slug)}
-      ${toolCtaBlock()}
-    </article>`;
+        <iframe
+          id="blog-analyze-embed"
+          class="blog-sidebar-embed"
+          src="/embed/analyze"
+          title="Restaurant location analysis"
+          loading="lazy"
+          referrerpolicy="same-origin"
+        ></iframe>
+      </aside>
+    </div>
+    <script>
+      (function () {
+        var iframe = document.getElementById("blog-analyze-embed");
+        if (!iframe) return;
+        window.addEventListener("message", function (event) {
+          if (event.origin !== window.location.origin) return;
+          var data = event.data;
+          if (!data || data.type !== "rsf-embed-height" || typeof data.height !== "number") return;
+          var next = Math.max(640, Math.ceil(data.height) + 8);
+          iframe.style.height = next + "px";
+        });
+      })();
+    </script>`;
 
   const seoTitle = fm.metaTitle ?? fm.title;
   return renderPage(
