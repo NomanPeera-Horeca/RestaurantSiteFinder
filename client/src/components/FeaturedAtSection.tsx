@@ -360,6 +360,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 52,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://www.startupinspire.com",
+    src: "https://www.startupinspire.com/images/badge_1.svg",
+    alt: "Featured on Startup Inspire",
+    width: 200,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
