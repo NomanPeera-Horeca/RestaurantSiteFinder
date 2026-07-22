@@ -429,15 +429,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
   },
   {
     type: "image",
-    href: "http://easydofollow.dev/saas/restaurant-site-finder",
-    src: "http://easydofollow.dev/badge/easydofollow-badge-light.svg",
-    alt: "Featured on EasyDoFollow",
-    width: 188,
-    height: 56,
-    rel: "noopener",
-  },
-  {
-    type: "image",
     href: "https://submitmysaas.com",
     src: "https://submitmysaas.com/featured-badge.png",
     alt: "Featured on SubmitMySaas",

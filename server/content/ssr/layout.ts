@@ -333,10 +333,6 @@ function featuredAtItemsHtml(): string {
         <img src="https://lemonlaunch.dev/badge/lemonlaunch-badge-light.svg" alt="Featured on LemonLaunch" width="188" height="56" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="http://easydofollow.dev/saas/restaurant-site-finder" target="_blank" rel="noopener">
-        <img src="http://easydofollow.dev/badge/easydofollow-badge-light.svg" alt="Featured on EasyDoFollow" width="188" height="56" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://submitmysaas.com" target="_blank" rel="noopener noreferrer">
         <img src="https://submitmysaas.com/featured-badge.png" alt="Featured on SubmitMySaas" width="175" height="54" loading="lazy" />
       </a>
