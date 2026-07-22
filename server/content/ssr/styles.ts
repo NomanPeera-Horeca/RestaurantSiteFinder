@@ -68,11 +68,6 @@ img { max-width: 100%; height: auto; }
     grid-template-columns: minmax(0, 1fr) minmax(22rem, 26rem);
     gap: 2.5rem;
   }
-  .blog-sidebar {
-    position: sticky;
-    top: 5.5rem;
-    align-self: start;
-  }
 }
 @media (max-width: 1023px) {
   .blog-sidebar { order: 2; }
