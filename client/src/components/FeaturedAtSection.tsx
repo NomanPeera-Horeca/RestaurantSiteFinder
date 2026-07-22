@@ -427,6 +427,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 56,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "http://easydofollow.dev/saas/restaurant-site-finder",
+    src: "http://easydofollow.dev/badge/easydofollow-badge-light.svg",
+    alt: "Featured on EasyDoFollow",
+    width: 188,
+    height: 56,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
