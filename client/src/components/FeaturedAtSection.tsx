@@ -436,6 +436,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 56,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://submitmysaas.com",
+    src: "https://submitmysaas.com/featured-badge.png",
+    alt: "Featured on SubmitMySaas",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
