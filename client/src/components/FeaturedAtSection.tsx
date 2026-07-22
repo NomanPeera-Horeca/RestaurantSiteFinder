@@ -368,6 +368,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 200,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://aitoolfame.com/item/restaurant-site-finder",
+    src: "https://aitoolfame.com/badge-light.svg",
+    alt: "Featured on aitoolfame.com",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
