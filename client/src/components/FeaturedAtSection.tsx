@@ -392,6 +392,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     label: "All in AI Tools",
     title: "All The Best AI Tools",
   },
+  {
+    type: "image",
+    href: "https://daniellaunches.com",
+    src: "https://daniellaunches.com/badge-light.svg",
+    alt: "Featured on DanielLaunches",
+    width: 220,
+    height: 48,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
