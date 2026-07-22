@@ -455,6 +455,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     rel: "noopener",
     title: "Restaurant Site Finder: Detailed review, analysis and comparison on AI Just Better",
   },
+  {
+    type: "image",
+    href: "https://geoly.net/item/restaurant-site-finder",
+    src: "https://geoly.net/badge-light.svg",
+    alt: "Featured on geoly.net",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
