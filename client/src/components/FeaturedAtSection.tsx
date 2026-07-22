@@ -409,6 +409,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 240,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://startupbase.io/products/restaurant-site-finder-3?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-light",
+    src: "https://statics.startupbase.io/site/badges/launched-on-sb.svg",
+    alt: "Launched on StartupBase",
+    width: 175,
+    height: 55,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
