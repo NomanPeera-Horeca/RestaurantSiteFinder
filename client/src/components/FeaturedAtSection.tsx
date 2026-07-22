@@ -377,6 +377,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://toolfame.com/item/restaurant-site-finder",
+    src: "https://toolfame.com/badge-light.svg",
+    alt: "Featured on toolfame.com",
+    width: 175,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
