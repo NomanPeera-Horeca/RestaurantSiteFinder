@@ -418,6 +418,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 55,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://lemonlaunch.dev/saas/restaurant-site-finder",
+    src: "https://lemonlaunch.dev/badge/lemonlaunch-badge-light.svg",
+    alt: "Featured on LemonLaunch",
+    width: 188,
+    height: 56,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
