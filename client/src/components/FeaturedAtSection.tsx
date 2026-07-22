@@ -445,6 +445,16 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://aijustbetter.com/item/restaurantsitefinder.com",
+    src: "https://cdn.aijustbetter.com/badges/badge-dark.svg",
+    alt: "Featured on AIJustBetter.com",
+    width: 212,
+    height: 55,
+    rel: "noopener",
+    title: "Restaurant Site Finder: Detailed review, analysis and comparison on AI Just Better",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
