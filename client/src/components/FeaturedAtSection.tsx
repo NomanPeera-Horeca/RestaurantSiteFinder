@@ -342,6 +342,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 58,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://toolfio.com",
+    src: "https://toolfio.com/toolfio-light-badge.png",
+    alt: "Featured on Toolfio",
+    width: 200,
+    height: 54,
+    rel: "dofollow",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
