@@ -10,6 +10,46 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "maximizing-restaurant-success-foot-traffic-insights",
+    title: "Maximizing Restaurant Success Through Foot Traffic Insights",
+    excerpt: "How restaurant foot traffic analysis: pedestrian volume, peak hours, weekday vs. weekend patterns, co-tenancy, and parking, reduces lease risk and lifts revenue.",
+    date: "2026-07-22",
+    category: "Site Selection",
+    readTime: "13 min",
+  },
+  {
+    slug: "how-restaurant-location-demographics-impact-success",
+    title: 'How Restaurant Location Demographics Impact Restaurant Success',
+    excerpt: 'How restaurant demographic analysis: density, age, income, lifestyle, employment, tourism, and spending: shapes traffic, check size, and concept fit before you sign a lease.',
+    date: "2026-07-22",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
+    slug: "streamlining-growth-restaurant-software-tools",
+    title: "Streamlining Growth with Restaurant Software Tools",
+    excerpt: "How restaurant expansion software, franchise management tools, and analytics streamline multi-location growth, plus how Restaurant Site Finder helps you pick the right sites first.",
+    date: "2026-07-22",
+    category: "Guides",
+    readTime: "14 min",
+  },
+  {
+    slug: "top-tools-finding-restaurant-locations",
+    title: "Top Tools for Finding Restaurant Locations",
+    excerpt: "Compare the top tools for finding restaurant locations: GIS, foot-traffic analytics, CRE platforms, and review apps, and why Restaurant Site Finder is the best restaurant-focused starting point.",
+    date: "2026-07-22",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
+    slug: "top-features-restaurant-market-analysis-tools",
+    title: "Top Features of Restaurant Market Analysis Tools",
+    excerpt: "The essential features of restaurant market analysis software: AI location scoring, demographics, foot traffic, competitor maps, forecasting, and dashboards that cut lease risk and support confident expansion.",
+    date: "2026-07-22",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "maximizing-success-restaurant-site-analysis",
     title: "Maximizing Success with Restaurant Site Analysis",
     excerpt: "Replace gut-feel site picks with a restaurant site analysis tool: trade areas, demographics, foot traffic, competition, and predictive sales forecasts that protect ROI.",
@@ -60,7 +100,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "restaurant-location-intelligence-franchise-ai-2026",
     title: "Restaurant Location Intelligence in 2026: Why Franchise Owners Are Ditching Spreadsheets for AI",
-    excerpt: "Franchise owners are replacing static spreadsheets with AI-driven location intelligence—geospatial mapping, mobile trade areas, revenue forecasting, and cannibalization analysis—to scale with confidence in 2026.",
+    excerpt: "Franchise owners are replacing static spreadsheets with AI-driven location intelligence: geospatial mapping, mobile trade areas, revenue forecasting, and cannibalization analysis: to scale with confidence in 2026.",
     date: "2026-07-08",
     category: "Site Selection",
     readTime: "10 min",
@@ -75,7 +115,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "ai-predicts-restaurant-success-before-lease",
-    title: "How AI Predicts Your Next Restaurant's Success — Before You Sign the Lease",
+    title: "How AI Predicts Your Next Restaurant's Success :  Before You Sign the Lease",
     excerpt: "Learn how AI uses demographics, foot traffic, GIS mapping, and revenue forecasting to predict restaurant success before you commit to a commercial lease.",
     date: "2026-07-08",
     category: "Site Selection",
@@ -84,7 +124,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "2026-restaurant-location-analytics-buyers-guide",
     title: "Placer.ai, Buxton, ESRI, or RestaurantSiteFinder? The 2026 Buyer's Guide to Restaurant Location Analytics",
-    excerpt: "Compare Placer.ai, Buxton, ESRI, and RestaurantSiteFinder in this 2026 buyer's guide—covering foot traffic, psychographics, GIS mapping, and F&B-specific site selection.",
+    excerpt: "Compare Placer.ai, Buxton, ESRI, and RestaurantSiteFinder in this 2026 buyer's guide: covering foot traffic, psychographics, GIS mapping, and F&B-specific site selection.",
     date: "2026-07-08",
     category: "Site Selection",
     readTime: "13 min",
