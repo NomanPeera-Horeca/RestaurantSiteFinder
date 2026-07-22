@@ -333,6 +333,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 48,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://auraplusplus.com/projects/ai-powered-restaurant-location-analysis",
+    src: "https://auraplusplus.com/images/badges/featured-on-light.svg",
+    alt: "Featured on Aura++",
+    width: 265,
+    height: 58,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
