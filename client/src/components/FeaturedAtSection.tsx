@@ -248,14 +248,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
   },
   {
     type: "image",
-    href: "https://dofollow.tools",
-    src: "https://dofollow.tools/badge/badge_transparent.svg",
-    alt: "Featured on Dofollow.Tools",
-    width: 200,
-    height: 54,
-  },
-  {
-    type: "image",
     href: "https://similarlabs.com",
     src: "https://similarlabs.com/similarlabs-embed-badge-light.svg",
     alt: "List on Similarlabs",
