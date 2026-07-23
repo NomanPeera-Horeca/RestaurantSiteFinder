@@ -252,15 +252,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
   },
   {
     type: "image",
-    href: "https://earlyhunt.com/project/restaurant-site-finder",
-    src: "https://earlyhunt.com/badges/earlyhunt-badge-light.svg",
-    alt: "Featured on EarlyHunt",
-    width: 265,
-    height: 58,
-    rel: "noopener",
-  },
-  {
-    type: "image",
     href: "https://famed.tools/products/free-restaurant-location-analysis-tool?utm_source=famed.tools",
     src: "https://famed.tools/badges/famed-tools-badge-light.svg",
     alt: "Featured on famed.tools",
