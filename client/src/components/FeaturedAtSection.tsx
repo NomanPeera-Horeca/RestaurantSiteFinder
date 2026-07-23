@@ -270,15 +270,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
   },
   {
     type: "image",
-    href: "https://saasgrow.app?ref=restaurantsitefinder.com",
-    src: "https://saasgrow.app/api/badge?type=featured&style=blue",
-    alt: "Restaurant Site Finder on SaaSGrow",
-    width: 240,
-    height: 54,
-    rel: "noopener",
-  },
-  {
-    type: "image",
     href: "https://famed.tools/products/free-restaurant-location-analysis-tool?utm_source=famed.tools",
     src: "https://famed.tools/badges/famed-tools-badge-light.svg",
     alt: "Featured on famed.tools",
