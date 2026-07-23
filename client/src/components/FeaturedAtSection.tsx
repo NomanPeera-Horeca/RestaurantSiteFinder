@@ -247,14 +247,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 120,
   },
   {
-    type: "image",
-    href: "https://similarlabs.com",
-    src: "https://similarlabs.com/similarlabs-embed-badge-light.svg",
-    alt: "List on Similarlabs",
-    width: 124,
-    height: 40,
-  },
-  {
     type: "text",
     href: "https://animatephoto.io",
     label: "Animate Photo AI",
