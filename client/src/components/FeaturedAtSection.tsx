@@ -240,14 +240,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
   },
   {
     type: "image",
-    href: "https://goodaitools.com/ai/restaurantsitefinder",
-    src: "https://goodaitools.com/assets/images/badge-dark.png",
-    alt: "Good AI Tools",
-    width: 175,
-    height: 54,
-  },
-  {
-    type: "image",
     href: "https://drchecker.net/item/restaurantsitefinder.com",
     src: "https://drchecker.net/api/badge?domain=restaurantsitefinder.com",
     alt: "DR Checker - Domain Rating",
