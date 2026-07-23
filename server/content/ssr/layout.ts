@@ -187,8 +187,6 @@ function featuredAtItemsHtml(): string {
         <img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://aitooltrek.com" target="_blank" rel="noopener noreferrer" title="AI Tool Trek" class="featured-at-link">AI Tool Trek</a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.launchvault.dev" target="_blank" rel="noopener noreferrer" title="Featured on LaunchVault">
         <img src="https://www.launchvault.dev/images/badges/launch-valut-badge.svg" alt="Featured on LaunchVault" loading="lazy" />
       </a>
