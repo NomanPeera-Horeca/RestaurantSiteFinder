@@ -181,10 +181,6 @@ function featuredAtItemsHtml(): string {
         <img src="https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs" alt="Listed on Backlinkhubs" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://marketingdb.live" target="_blank" rel="noopener noreferrer nofollow sponsored">
-        <img src="https://marketingdb.live/badge.svg" alt="Listed on MarketingDB" width="190" height="44" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://z-image.net/" target="_blank" rel="noopener noreferrer" class="featured-at-link">Z-Image</a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://dang.ai" target="_blank" rel="dofollow noopener">

@@ -95,15 +95,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
   },
   {
-    type: "image",
-    href: "https://marketingdb.live",
-    src: "https://marketingdb.live/badge.svg",
-    alt: "Listed on MarketingDB",
-    width: 190,
-    height: 44,
-    rel: "noopener noreferrer nofollow sponsored",
-  },
-  {
     type: "text",
     href: "https://z-image.net/",
     label: "Z-Image",
