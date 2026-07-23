@@ -174,10 +174,6 @@ function featuredAtItemsHtml(): string {
         <img src="https://open-launch.com/api/badge/7193c6a8-bb4f-4668-af13-da78d0d7a545/featured-light.svg" alt="Featured on Open-Launch" width="200" height="50" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://www.superlaun.ch/products/2795" target="_blank" rel="noopener noreferrer">
-        <img src="https://www.superlaun.ch/badge.png" alt="Featured on Super Launch" width="300" height="300" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.voomo.ai/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Corporate Video Maker</a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com" target="_blank" rel="noopener noreferrer">

@@ -82,14 +82,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 50,
   },
   {
-    type: "image",
-    href: "https://www.superlaun.ch/products/2795",
-    src: "https://www.superlaun.ch/badge.png",
-    alt: "Featured on Super Launch",
-    width: 300,
-    height: 300,
-  },
-  {
     type: "text",
     href: "https://www.voomo.ai/",
     label: "AI Corporate Video Maker",
