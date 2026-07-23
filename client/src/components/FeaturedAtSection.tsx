@@ -109,12 +109,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     rel: "dofollow noopener",
   },
   {
-    type: "text",
-    href: "https://aitooltrek.com",
-    label: "AI Tool Trek",
-    title: "AI Tool Trek",
-  },
-  {
     type: "image",
     href: "https://www.launchvault.dev",
     src: "https://www.launchvault.dev/images/badges/launch-valut-badge.svg",
