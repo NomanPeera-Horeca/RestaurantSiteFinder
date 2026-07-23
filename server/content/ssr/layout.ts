@@ -211,10 +211,6 @@ function featuredAtItemsHtml(): string {
         <img src="https://proofstories.io/directory/badges/l/restaurant-site-finder.svg" alt="Listed on ProofStories" height="44" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://saaspa.ge/product/cmrc3d7r5000bjr04deu8y1n5" target="_blank" rel="nofollow">
-        <img src="https://saaspa.ge/api/embed/product/cmrc3d7r5000bjr04deu8y1n5/badge.png?theme=orange" alt="Featured on Saaspa.ge" width="200" height="60" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://indiehunt.io/project/restaurant-site-finder-by-horeca-store" target="_blank" rel="noopener">
         <img src="https://indiehunt.io/badges/indiehunt-badge-light.svg" alt="Featured on IndieHunt" width="265" height="58" loading="lazy" />
       </a>
