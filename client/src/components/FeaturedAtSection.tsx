@@ -247,15 +247,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
   },
   {
     type: "image",
-    href: "https://famed.tools/products/free-restaurant-location-analysis-tool?utm_source=famed.tools",
-    src: "https://famed.tools/badges/famed-tools-badge-light.svg",
-    alt: "Featured on famed.tools",
-    width: 150,
-    height: 48,
-    rel: "noopener",
-  },
-  {
-    type: "image",
     href: "https://auraplusplus.com/projects/ai-powered-restaurant-location-analysis",
     src: "https://auraplusplus.com/images/badges/featured-on-light.svg",
     alt: "Featured on Aura++",
