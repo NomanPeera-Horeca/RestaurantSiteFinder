@@ -163,15 +163,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
   },
   {
     type: "image",
-    href: "https://saaspa.ge/product/cmrc3d7r5000bjr04deu8y1n5",
-    src: "https://saaspa.ge/api/embed/product/cmrc3d7r5000bjr04deu8y1n5/badge.png?theme=orange",
-    alt: "Featured on Saaspa.ge",
-    width: 200,
-    height: 60,
-    rel: "nofollow",
-  },
-  {
-    type: "image",
     href: "https://indiehunt.io/project/restaurant-site-finder-by-horeca-store",
     src: "https://indiehunt.io/badges/indiehunt-badge-light.svg",
     alt: "Featured on IndieHunt",
