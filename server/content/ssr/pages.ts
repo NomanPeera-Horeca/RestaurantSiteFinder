@@ -204,6 +204,7 @@ export function renderBlogArticle(slug: string): string | null {
       canonical: url,
       ogType: "article",
       jsonLdScripts: jsonLd,
+      footerVariant: fm.footerVariant,
     },
     body,
     "blog"

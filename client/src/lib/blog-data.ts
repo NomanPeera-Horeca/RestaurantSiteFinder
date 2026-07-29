@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-selection-analysis",
+    title: "Restaurant Site Selection Analysis: The Complete Guide to Choosing Your Next Location",
+    excerpt: "A complete guide to restaurant site selection analysis covering demographics, foot traffic, competitive density, trade area modeling, and AI-powered GO/NO-GO scoring before you sign a lease.",
+    date: "2026-07-29",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
     slug: "restaurant-foot-traffic-analysis-ai",
     title: "Restaurant Foot Traffic Analysis: Find High-Demand Restaurant Locations with AI",
     excerpt: "Learn how AI-powered restaurant foot traffic analysis reveals high-demand locations, customer behavior patterns, and predictive trends to guide smarter site selection and operations.",

@@ -18,6 +18,8 @@ export interface BlogFrontmatter {
   keywords: string[];
   faq: BlogFaq[];
   relatedSlugs?: string[];
+  /** Optional footer variant for SSR pages */
+  footerVariant?: "default" | "submitmysaas";
 }
 
 export interface BlogPost {

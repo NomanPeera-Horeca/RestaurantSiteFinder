@@ -8,6 +8,7 @@ export interface PageMeta {
   ogType?: string;
   jsonLdScripts?: string;
   noindex?: boolean;
+  footerVariant?: "default" | "submitmysaas";
 }
 
 function escapeHtml(s: string): string {
@@ -85,6 +86,19 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
   </main>
   <footer class="site-footer">
     <div class="container">
+      ${renderFooterGrid()}
+      ${meta.footerVariant === "submitmysaas" ? submitMySaasBadgeBlock() : featuredAtBlock()}
+      <div class="footer-bottom">
+        <p>&copy; ${new Date().getFullYear()} ${escapeHtml(HORECA.name)}. ${escapeHtml(SITE.name)} is a free tool for restaurant owners.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>`;
+}
+
+function renderFooterGrid(): string {
+  return `
       <div class="footer-grid">
         <div>
           <strong>${escapeHtml(SITE.name)}</strong>
@@ -122,15 +136,16 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
             <li><a href="${HORECA.phoneHref}">${HORECA.phone}</a></li>
           </ul>
         </div>
-      </div>
-      ${featuredAtBlock()}
-      <div class="footer-bottom">
-        <p>&copy; ${new Date().getFullYear()} ${escapeHtml(HORECA.name)}. ${escapeHtml(SITE.name)} is a free tool for restaurant owners.</p>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>`;
+      </div>`;
+}
+
+function submitMySaasBadgeBlock(): string {
+  return `
+  <div class="featured-at" style="justify-content:center;padding:1.5rem 0 0;">
+    <a href="https://submitmysaas.com" target="_blank" rel="noopener noreferrer">
+      <img src="https://submitmysaas.com/featured-badge.png" alt="Featured on SubmitMySaas" style="height:54px;width:auto;" loading="lazy" />
+    </a>
+  </div>`;
 }
 
 export function featuredAtBlock(): string {

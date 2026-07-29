@@ -25,6 +25,8 @@ function parseFrontmatter(data: Record<string, unknown>): BlogFrontmatter {
         }))
       : [],
     relatedSlugs: Array.isArray(data.relatedSlugs) ? data.relatedSlugs.map(String) : [],
+    footerVariant:
+      data.footerVariant === "submitmysaas" ? "submitmysaas" : undefined,
   };
 }
 
