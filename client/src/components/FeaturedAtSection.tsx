@@ -402,6 +402,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://www.verifiedtools.info/tools/restaurant-site-finder",
+    src: "https://www.verifiedtools.info/badge.svg",
+    alt: "One of the Verified Tools",
+    width: 200,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
