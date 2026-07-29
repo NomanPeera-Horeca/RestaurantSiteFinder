@@ -367,6 +367,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://bestsky.tools?utm_source=badge",
+    src: "https://assets.bestsky.tools/badges/featured-light.svg",
+    alt: "Featured on BestskyTools",
+    width: 150,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
