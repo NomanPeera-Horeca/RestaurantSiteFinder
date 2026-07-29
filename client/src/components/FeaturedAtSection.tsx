@@ -375,6 +375,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 150,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://uno.directory",
+    src: "https://uno.directory/uno-directory.svg",
+    alt: "Listed on Uno Directory",
+    width: 120,
+    height: 30,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
