@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-competitive-analysis-success",
+    title: "How to Do a Restaurant Competitive Analysis for Restaurant Success",
+    excerpt: "Learn how to do a restaurant competitive analysis—from identifying direct and indirect rivals to dissecting menus, guest experience, delivery zones, digital footprint, and SWOT strategy.",
+    date: "2026-07-30",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "effective-strategies-restaurant-market-research",
     title: "Effective Strategies for Restaurant Market Research",
     excerpt: "A complete guide to restaurant market research covering primary and secondary research, customer personas, competitive gap analysis, feasibility studies, SWOT, site selection, and hands-on dining insights.",
