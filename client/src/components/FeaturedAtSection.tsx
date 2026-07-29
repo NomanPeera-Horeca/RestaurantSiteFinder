@@ -453,6 +453,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 175,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://acidtools.com/ai/restaurantsitefinder",
+    src: "https://acidtools.com/assets/images/badge.png",
+    alt: "Acid Tools",
+    width: 175,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
