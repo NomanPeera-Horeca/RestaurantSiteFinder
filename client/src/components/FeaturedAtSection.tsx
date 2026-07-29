@@ -470,6 +470,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 56,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://shinylaunch.com/product/restaurantsitefinder",
+    src: "https://shinylaunch.com/assets/images/badge.png",
+    alt: "ShinyLaunch",
+    width: 175,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
