@@ -461,6 +461,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 175,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://aidirs.best/item/restaurant-site-finder",
+    src: "https://aidirs.best/light.svg",
+    alt: "Restaurant Site Finder - AI Restaurant Location Analysis | Aidirs",
+    width: 200,
+    height: 56,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
