@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "leveraging-ai-restaurant-market-insights",
+    title: "Leveraging AI for Restaurant Market Insights",
+    excerpt: "Learn how AI market analysis for restaurant location uses mobility data, psychographics, competitor mapping, and revenue forecasting to turn site selection into a data-driven science.",
+    date: "2026-07-30",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "leveraging-data-restaurant-success",
     title: "Leveraging Data for Restaurant Success",
     excerpt: "Learn how restaurant business intelligence turns POS, labor, inventory, and guest data into actionable strategies for menu engineering, waste reduction, staffing, and multi-unit growth.",
