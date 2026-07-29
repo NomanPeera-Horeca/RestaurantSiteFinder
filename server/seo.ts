@@ -99,6 +99,7 @@ Sitemap: ${base}/sitemap.xml
       urlEntry(`${base}/how-to-choose-restaurant-location`, { lastmod: today, changefreq: "monthly", priority: "0.85" }),
       urlEntry(`${base}/restaurant-rent-calculator`, { lastmod: today, changefreq: "monthly", priority: "0.85" }),
       urlEntry(`${base}/restaurant-location-analysis`, { lastmod: today, changefreq: "weekly", priority: "0.95" }),
+      urlEntry(`${base}/restaurant-site-selection-analysis`, { lastmod: today, changefreq: "monthly", priority: "0.9" }),
       urlEntry(`${base}/restaurant-location-analysis-houston`, { lastmod: today, changefreq: "monthly", priority: "0.8" }),
       urlEntry(`${base}/restaurant-location-analysis-chicago`, { lastmod: today, changefreq: "monthly", priority: "0.8" }),
       urlEntry(`${base}/restaurant-location-analysis-new-york`, { lastmod: today, changefreq: "monthly", priority: "0.8" }),

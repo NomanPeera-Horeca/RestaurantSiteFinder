@@ -18,6 +18,7 @@ import HowToChooseRestaurantLocation from "./pages/HowToChooseRestaurantLocation
 import RestaurantRentCalculator from "./pages/RestaurantRentCalculator";
 import RestaurantLocationAnalysis from "./pages/RestaurantLocationAnalysis";
 import HoustonRestaurantLocation from "./pages/cities/HoustonRestaurantLocation";
+import RestaurantSiteSelectionAnalysis from "./pages/RestaurantSiteSelectionAnalysis";
 import ChicagoRestaurantLocation from "./pages/cities/ChicagoRestaurantLocation";
 import NewYorkRestaurantLocation from "./pages/cities/NewYorkRestaurantLocation";
 import LosAngelesRestaurantLocation from "./pages/cities/LosAngelesRestaurantLocation";
@@ -44,6 +45,7 @@ function Router() {
         <Route path={"/how-to-choose-restaurant-location"} component={HowToChooseRestaurantLocation} />
         <Route path={"/restaurant-rent-calculator"} component={RestaurantRentCalculator} />
         <Route path={"/restaurant-location-analysis"} component={RestaurantLocationAnalysis} />
+        <Route path={"/restaurant-site-selection-analysis"} component={RestaurantSiteSelectionAnalysis} />
         <Route path={"/restaurant-location-analysis-houston"} component={HoustonRestaurantLocation} />
         <Route path={"/restaurant-location-analysis-chicago"} component={ChicagoRestaurantLocation} />
         <Route path={"/restaurant-location-analysis-new-york"} component={NewYorkRestaurantLocation} />
