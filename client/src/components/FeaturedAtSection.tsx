@@ -393,6 +393,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 60,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://neeed.directory",
+    src: "https://neeed.directory/badges/neeed-badge-light.svg",
+    alt: "Featured on neeed.directory",
+    width: 139,
+    height: 54,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
