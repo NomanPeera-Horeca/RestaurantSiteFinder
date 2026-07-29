@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "maximizing-efficiency-restaurant-analytics-software",
+    title: "Maximizing Efficiency with Restaurant Analytics Software",
+    excerpt: "Discover how restaurant analytics software delivers real-time sales reporting, inventory optimization, customer segmentation, and predictive forecasting to maximize efficiency and profitability.",
+    date: "2026-07-30",
+    category: "Operations",
+    readTime: "11 min",
+  },
+  {
     slug: "enhancing-restaurant-operations-business-intelligence",
     title: "Enhancing Restaurant Operations with Business Intelligence",
     excerpt: "Move beyond spreadsheets and basic POS reports—learn how restaurant business intelligence centralizes data, tracks prime cost and RevPASH, cuts waste, optimizes labor, and scales multi-unit operations.",
