@@ -445,6 +445,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://softwarebolt.com/product/restaurantsitefinder",
+    src: "https://softwarebolt.com/assets/images/badge.png",
+    alt: "Software Bolt",
+    width: 175,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
