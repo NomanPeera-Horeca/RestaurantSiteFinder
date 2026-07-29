@@ -384,6 +384,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 30,
     rel: "noopener",
   },
+  {
+    type: "image",
+    href: "https://toolrain.com/item/restaurant-site-finder",
+    src: "https://toolrain.com/badges/badge-listed-light.svg",
+    alt: "Listed on ToolRain",
+    width: 175,
+    height: 60,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
