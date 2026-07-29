@@ -478,6 +478,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 175,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://tooldirs.com",
+    src: "https://tooldirs.com/badge/badge_light.svg",
+    alt: "Featured on ToolDirs",
+    width: 200,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
