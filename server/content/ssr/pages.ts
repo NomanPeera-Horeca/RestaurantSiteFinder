@@ -52,6 +52,41 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
+function analyzeToolSidebarBlock(iframeId: string): string {
+  return `
+      <aside class="blog-sidebar" aria-label="Restaurant location analysis tool">
+        <div class="blog-sidebar-intro">
+          <h2>Restaurant Location Analysis</h2>
+          <p>Enter any US address to get an instant opportunity score, competitor density map, market demand analysis, and concept fit score. The same location data that national chains pay 500 USD per month for, free for independent restaurant owners.</p>
+        </div>
+        <iframe
+          id="${iframeId}"
+          class="blog-sidebar-embed"
+          src="/embed/analyze"
+          title="Restaurant location analysis"
+          loading="lazy"
+          referrerpolicy="same-origin"
+        ></iframe>
+      </aside>`;
+}
+
+function analyzeToolEmbedScript(iframeId: string): string {
+  return `
+    <script>
+      (function () {
+        var iframe = document.getElementById("${iframeId}");
+        if (!iframe) return;
+        window.addEventListener("message", function (event) {
+          if (event.origin !== window.location.origin) return;
+          var data = event.data;
+          if (!data || data.type !== "rsf-embed-height" || typeof data.height !== "number") return;
+          var next = Math.max(640, Math.ceil(data.height) + 8);
+          iframe.style.height = next + "px";
+        });
+      })();
+    </script>`;
+}
+
 function relatedPostsHtml(slugs: string[], currentSlug: string): string {
   const posts = loadAllBlogPosts().filter(
     p => slugs.includes(p.frontmatter.slug) && p.frontmatter.slug !== currentSlug
@@ -167,34 +202,9 @@ export function renderBlogArticle(slug: string): string | null {
           ${toolCtaBlock()}
         </article>
       </div>
-      <aside class="blog-sidebar" aria-label="Restaurant location analysis tool">
-        <div class="blog-sidebar-intro">
-          <h2>Restaurant Location Analysis</h2>
-          <p>Enter any US address to get an instant opportunity score, competitor density map, market demand analysis, and concept fit score. The same location data that national chains pay 500 USD per month for, free for independent restaurant owners.</p>
-        </div>
-        <iframe
-          id="blog-analyze-embed"
-          class="blog-sidebar-embed"
-          src="/embed/analyze"
-          title="Restaurant location analysis"
-          loading="lazy"
-          referrerpolicy="same-origin"
-        ></iframe>
-      </aside>
+      ${analyzeToolSidebarBlock("blog-analyze-embed")}
     </div>
-    <script>
-      (function () {
-        var iframe = document.getElementById("blog-analyze-embed");
-        if (!iframe) return;
-        window.addEventListener("message", function (event) {
-          if (event.origin !== window.location.origin) return;
-          var data = event.data;
-          if (!data || data.type !== "rsf-embed-height" || typeof data.height !== "number") return;
-          var next = Math.max(640, Math.ceil(data.height) + 8);
-          iframe.style.height = next + "px";
-        });
-      })();
-    </script>`;
+    ${analyzeToolEmbedScript("blog-analyze-embed")}`;
 
   const seoTitle = fm.metaTitle ?? fm.title;
   return renderPage(
@@ -312,25 +322,31 @@ export function renderGlossaryTerm(slug: string): string | null {
       { name: "Glossary", href: `${base()}/glossary` },
       { name: term.term },
     ])}
-    <article>
-      <header class="page-hero">
-        <p class="cat" style="font-size:0.75rem;color:var(--primary);font-weight:600;">${escapeHtml(term.category)}</p>
-        <h1>${escapeHtml(term.term)}</h1>
-        <p class="excerpt"><strong>Definition:</strong> ${escapeHtml(term.shortDefinition)}</p>
-      </header>
-      <div class="prose">${termLongHtml(term)}</div>
-      ${
-        relatedTermLinks
-          ? `<div class="related-links"><h3>Related terms</h3><ul>${relatedTermLinks}</ul></div>`
-          : ""
-      }
-      ${
-        relatedBlogLinks
-          ? `<div class="related-links"><h3>Related guides</h3><ul>${relatedBlogLinks}</ul></div>`
-          : ""
-      }
-      ${toolCtaBlock()}
-    </article>`;
+    <div class="blog-layout">
+      <div class="blog-main">
+        <article>
+          <header class="page-hero">
+            <p class="cat" style="font-size:0.75rem;color:var(--primary);font-weight:600;">${escapeHtml(term.category)}</p>
+            <h1>${escapeHtml(term.term)}</h1>
+            <p class="excerpt"><strong>Definition:</strong> ${escapeHtml(term.shortDefinition)}</p>
+          </header>
+          <div class="prose">${termLongHtml(term)}</div>
+          ${
+            relatedTermLinks
+              ? `<div class="related-links"><h3>Related terms</h3><ul>${relatedTermLinks}</ul></div>`
+              : ""
+          }
+          ${
+            relatedBlogLinks
+              ? `<div class="related-links"><h3>Related guides</h3><ul>${relatedBlogLinks}</ul></div>`
+              : ""
+          }
+          ${toolCtaBlock()}
+        </article>
+      </div>
+      ${analyzeToolSidebarBlock("glossary-analyze-embed")}
+    </div>
+    ${analyzeToolEmbedScript("glossary-analyze-embed")}`;
 
   return renderPage(
     {
