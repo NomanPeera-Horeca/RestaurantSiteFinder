@@ -411,6 +411,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://gets.tools",
+    src: "https://gets.tools/badge/badge_light.svg",
+    alt: "Featured on Gets.Tools",
+    width: 200,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
