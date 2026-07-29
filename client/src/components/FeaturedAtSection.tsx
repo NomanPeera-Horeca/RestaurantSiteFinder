@@ -419,6 +419,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 200,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://aifinder.site",
+    src: "https://aifinder.site/light-badge.png",
+    alt: "Discover more AI tools at aifinder.site",
+    width: 200,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
