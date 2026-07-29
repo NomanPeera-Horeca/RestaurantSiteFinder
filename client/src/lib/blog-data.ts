@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "maximizing-efficiency-restaurant-analytics-software",
+    title: "Maximizing Efficiency with Restaurant Analytics Software",
+    excerpt: "Discover how restaurant analytics software delivers real-time sales reporting, inventory optimization, customer segmentation, and predictive forecasting to maximize efficiency and profitability.",
+    date: "2026-07-30",
+    category: "Operations",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-site-selection-analysis",
     title: "Restaurant Site Selection Analysis: The Complete Guide to Choosing Your Next Location",
     excerpt: "A complete guide to restaurant site selection analysis covering demographics, foot traffic, competitive density, trade area modeling, and AI-powered GO/NO-GO scoring before you sign a lease.",
