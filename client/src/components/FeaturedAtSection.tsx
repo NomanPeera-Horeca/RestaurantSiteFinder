@@ -436,6 +436,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 230,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://navifyai.com/",
+    src: "https://navifyai.com/static/img/badge-dark.svg",
+    alt: "Featured on NavifyAI.com - AI Tools Directory",
+    width: 200,
+    height: 54,
+    rel: "noopener",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
