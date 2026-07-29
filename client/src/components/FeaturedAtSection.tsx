@@ -486,6 +486,15 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     width: 200,
     height: 54,
   },
+  {
+    type: "image",
+    href: "https://www.justsimple.tools",
+    src: "https://www.justsimple.tools/badge.svg",
+    alt: "Listed on JustSimple Tools",
+    width: 150,
+    height: 54,
+    rel: "noopener noreferrer",
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
