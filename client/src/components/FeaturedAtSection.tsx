@@ -428,6 +428,14 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 54,
     rel: "noopener noreferrer",
   },
+  {
+    type: "image",
+    href: "https://topfreeaitools.com/ai/restaurant-site-finder",
+    src: "https://ff65dcf08ebd5eb1c022b44dd88016ac.cdn.bubble.io/f1724746111294x515859147102912600/badge%20black.png",
+    alt: "Featured on Top Free AI Tools",
+    width: 230,
+    height: 54,
+  },
 ];
 
 function TinyStartupsBadge({ href, rel }: { href: string; rel?: string }) {
