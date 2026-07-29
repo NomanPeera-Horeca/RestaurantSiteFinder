@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "effective-strategies-restaurant-market-research",
+    title: "Effective Strategies for Restaurant Market Research",
+    excerpt: "A complete guide to restaurant market research covering primary and secondary research, customer personas, competitive gap analysis, feasibility studies, SWOT, site selection, and hands-on dining insights.",
+    date: "2026-07-30",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "leveraging-ai-restaurant-market-insights",
     title: "Leveraging AI for Restaurant Market Insights",
     excerpt: "Learn how AI market analysis for restaurant location uses mobility data, psychographics, competitor mapping, and revenue forecasting to turn site selection into a data-driven science.",
