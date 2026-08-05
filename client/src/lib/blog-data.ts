@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "enhancing-restaurant-operations-business-intelligence",
+    title: "Enhancing Restaurant Operations with Business Intelligence",
+    excerpt: "Move beyond spreadsheets and basic POS reports—learn how restaurant business intelligence centralizes data, tracks prime cost and RevPASH, cuts waste, optimizes labor, and scales multi-unit operations.",
+    date: "2026-08-06",
+    category: "Operations",
+    readTime: "10 min",
+  },
+  {
     slug: "maximizing-profits-restaurant-intelligence-tools",
     title: "Maximizing Profits Using Restaurant Intelligence Tools",
     excerpt: "Learn how restaurant intelligence tools turn POS and guest data into higher margins—through labor optimization, menu engineering, inventory control, dynamic pricing, and better customer experiences.",
