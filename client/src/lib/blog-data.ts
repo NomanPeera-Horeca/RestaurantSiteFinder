@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "maximizing-profits-restaurant-intelligence-tools",
+    title: "Maximizing Profits Using Restaurant Intelligence Tools",
+    excerpt: "Learn how restaurant intelligence tools turn POS and guest data into higher margins—through labor optimization, menu engineering, inventory control, dynamic pricing, and better customer experiences.",
+    date: "2026-08-06",
+    category: "Operations",
+    readTime: "12 min",
+  },
+  {
     slug: "top-restaurant-data-analytics-tools-reviewed",
     title: "Top Restaurant Data Analytics Tools Reviewed",
     excerpt: "An in-depth review of top restaurant data analytics tools including Tenzo, Oracle MICROS Simphony, Eat App, ClicData, GoodData, Quadratic, and more—with features, comparisons, and selection tips.",
