@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-restaurant-analytics-software-boosts-profits",
+    title: "How Restaurant Analytics Software Boosts Profits",
+    excerpt: "Discover how restaurant analytics software tracks KPIs, optimizes labor and inventory, segments customers, and integrates with POS systems to drive measurable profit growth.",
+    date: "2026-08-05",
+    category: "Operations",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-competitive-analysis-success",
     title: "How to Do a Restaurant Competitive Analysis for Restaurant Success",
     excerpt: "Learn how to do a restaurant competitive analysis—from identifying direct and indirect rivals to dissecting menus, guest experience, delivery zones, digital footprint, and SWOT strategy.",
