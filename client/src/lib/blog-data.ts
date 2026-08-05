@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-restaurant-analytics-software-boosts-profits",
+    title: "How Restaurant Analytics Software Boosts Profits",
+    excerpt: "Discover how restaurant analytics software tracks KPIs, optimizes labor and inventory, segments customers, and integrates with POS systems to drive measurable profit growth.",
+    date: "2026-08-05",
+    category: "Operations",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-site-selection-analysis",
     title: "Restaurant Site Selection Analysis: The Complete Guide to Choosing Your Next Location",
     excerpt: "A complete guide to restaurant site selection analysis covering demographics, foot traffic, competitive density, trade area modeling, and AI-powered GO/NO-GO scoring before you sign a lease.",
