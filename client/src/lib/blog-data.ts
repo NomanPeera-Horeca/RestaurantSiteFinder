@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "choosing-best-analytics-software-restaurants",
+    title: "Choosing the Best Analytics Software for Restaurants",
+    excerpt: "A buyer's guide to choosing the best restaurant analytics software—key metrics, core features, integration, comparisons, case studies, implementation tips, and future trends.",
+    date: "2026-08-05",
+    category: "Operations",
+    readTime: "12 min",
+  },
+  {
     slug: "how-restaurant-analytics-software-boosts-profits",
     title: "How Restaurant Analytics Software Boosts Profits",
     excerpt: "Discover how restaurant analytics software tracks KPIs, optimizes labor and inventory, segments customers, and integrates with POS systems to drive measurable profit growth.",
