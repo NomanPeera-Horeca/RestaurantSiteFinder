@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "find-perfect-location-restaurant-opening-california",
+    title: "Find the Perfect Location for Opening a Restaurant in California",
+    excerpt: "A practical, data-driven guide to finding the perfect restaurant location in California—demographics, foot traffic, Anaheim submarkets, competitor audits, ROI modeling, zoning, liquor licenses, and lease negotiation.",
+    date: "2026-08-12",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "unique-restaurant-name-generator-tools-reviewed",
     title: "Unique Restaurant Name Generator Tools Reviewed",
     excerpt: "A hands-on review of the best restaurant name generator tools—UpMenu, Squarespace, EatLive, Shopify, and Namelix—with features, comparisons, naming tips, SEO, and legal checks.",
