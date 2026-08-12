@@ -1,5 +1,6 @@
 ---
 title: "Ghost Kitchen vs Traditional Restaurant: Which Model Fits Your Concept?"
+metaTitle: "Ghost Kitchen vs Traditional Restaurant: Which Is Better?"
 slug: ghost-kitchen-vs-traditional-restaurant
 metaDescription: "Ghost kitchen vs traditional restaurant compared: costs, permits, margins, branding, and when delivery-only beats dine-in in 2026."
 date: "2026-05-28"

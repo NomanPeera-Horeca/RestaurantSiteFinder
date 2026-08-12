@@ -1,5 +1,6 @@
 ---
 title: "Restaurant Profit Margins and Unit Economics: A Practical Guide for Operators"
+metaTitle: "Restaurant Profit Margins & Unit Economics: Practical Guide"
 slug: restaurant-profit-margins-unit-economics
 metaDescription: "Understand restaurant profit margins, prime cost, contribution margin, and unit economics, with benchmarks and levers operators use in 2026."
 date: "2026-05-21"

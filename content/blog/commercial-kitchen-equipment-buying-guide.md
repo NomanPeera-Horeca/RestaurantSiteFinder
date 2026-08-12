@@ -1,5 +1,6 @@
 ---
 title: "Commercial Kitchen Equipment Buying Guide for New Restaurant Owners"
+metaTitle: "Commercial Kitchen Equipment Buying Guide for Restaurants"
 slug: commercial-kitchen-equipment-buying-guide
 metaDescription: "How to buy commercial kitchen equipment: budgets, specs, hoods, warranties, and vendor checks for new restaurant owners in 2026."
 date: "2026-05-16"
