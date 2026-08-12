@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "find-perfect-location-restaurant-opening-texas",
+    title: "Find the Perfect Location for Opening a Restaurant in Texas",
+    excerpt: "A numbers-backed guide to finding the perfect restaurant location in Texas—trade areas, metro markets, urban vs suburban sites, traffic counts, ROI modeling, zoning, health permits, drive-thru requirements, and lease negotiation.",
+    date: "2026-08-12",
+    category: "Site Selection",
+    readTime: "13 min",
+  },
+  {
     slug: "find-perfect-location-restaurant-opening-california",
     title: "Find the Perfect Location for Opening a Restaurant in California",
     excerpt: "A practical, data-driven guide to finding the perfect restaurant location in California—demographics, foot traffic, Anaheim submarkets, competitor audits, ROI modeling, zoning, liquor licenses, and lease negotiation.",
