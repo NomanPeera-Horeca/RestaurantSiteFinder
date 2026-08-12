@@ -1,5 +1,6 @@
 ---
 title: "Restaurant Permits and Licenses: The Complete U.S. Opening Checklist"
+metaTitle: "Restaurant Permits & Licenses: Complete US Opening Checklist"
 slug: restaurant-permits-licenses-guide
 metaDescription: "Restaurant permits and licenses explained: health, building, liquor, fire, signage, and timelines so you open legally and pass inspection the first time."
 date: "2026-05-24"

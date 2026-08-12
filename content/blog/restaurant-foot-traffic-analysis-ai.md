@@ -1,6 +1,6 @@
 ---
 title: "Restaurant Foot Traffic Analysis: Find High-Demand Restaurant Locations with AI"
-metaTitle: "AI-Driven Restaurant Traffic Analysis: Find High-Demand Spots"
+metaTitle: "AI-Driven Restaurant Traffic Analysis: Find High-Demand Spot"
 slug: restaurant-foot-traffic-analysis-ai
 metaDescription: >-
   Leverage AI for smarter restaurant growth with foot traffic analysis. Discover high-demand locations and boost revenue with enhanced customer engagement and predictive insights.

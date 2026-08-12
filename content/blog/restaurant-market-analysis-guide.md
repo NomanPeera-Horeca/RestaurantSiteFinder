@@ -1,5 +1,6 @@
 ---
 title: "Restaurant Market Analysis: How to Validate Demand Before You Sign"
+metaTitle: "Restaurant Market Analysis: Validate Demand Before You Sign"
 slug: restaurant-market-analysis-guide
 metaDescription: "Step-by-step restaurant market analysis: trade areas, competitor mapping, demand drivers, and sales forecasts you can defend to lenders."
 date: "2026-05-10"

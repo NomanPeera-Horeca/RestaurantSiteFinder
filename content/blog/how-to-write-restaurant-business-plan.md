@@ -1,5 +1,6 @@
 ---
 title: "How to Write a Restaurant Business Plan That Lenders and Investors Trust"
+metaTitle: "How to Write a Restaurant Business Plan Investors Trust"
 slug: how-to-write-restaurant-business-plan
 metaDescription: "Step-by-step guide to writing a restaurant business plan: market proof, unit economics, capital stack, and ops plan lenders expect in 2026."
 date: "2026-05-19"

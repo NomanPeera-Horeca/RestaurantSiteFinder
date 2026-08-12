@@ -1,5 +1,6 @@
 ---
 title: "How Much Does It Cost to Open a Restaurant in 2026? (Real Budget Ranges)"
+metaTitle: "How Much Does It Cost to Open a Restaurant in 2026?"
 slug: how-much-does-it-cost-to-open-a-restaurant-2026
 metaDescription: "2026 restaurant opening costs by concept: lease, build-out, equipment, permits, and working capital—with sample budgets and break-even math."
 date: "2026-05-07"

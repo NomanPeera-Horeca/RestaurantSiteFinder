@@ -1,5 +1,6 @@
 ---
 title: "Restaurant Equipment Checklist for New Owners (2026 Opening Guide)"
+metaTitle: "Restaurant Equipment Checklist for New Owners (2026)"
 slug: restaurant-equipment-checklist-new-owners
 metaDescription: "Complete restaurant equipment checklist for new owners: cooking, refrigeration, hood, smallwares, and budgets tied to your kitchen layout and menu."
 date: "2026-05-04"

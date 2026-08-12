@@ -1,5 +1,6 @@
 ---
 title: "Restaurant Concept Development: From Idea to Investable Brand"
+metaTitle: "Restaurant Concept Development—From Idea to Investable Brand"
 slug: restaurant-concept-development-guide
 metaDescription: "Develop a winning restaurant concept: positioning, menu architecture, guest experience, unit economics, and validation before lease and equipment spend."
 date: "2026-05-13"
