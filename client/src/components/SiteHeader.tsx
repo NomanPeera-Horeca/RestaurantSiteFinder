@@ -52,7 +52,7 @@ export function SiteHeader({ active }: SiteHeaderProps) {
               active === "name-generator" ? "text-primary" : "text-muted-foreground hover:text-primary"
             )}
           >
-            Name Generator
+            Restaurant Name Generator
           </Link>
           <DropdownMenu>
             <DropdownMenuTrigger
