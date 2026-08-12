@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "select-perfect-location-for-your-restaurant",
+    title: "Select the Perfect Location for Your Restaurant",
+    excerpt: "An expert site selection guide to choose the perfect restaurant location—concept fit, demographics, foot vs vehicle traffic, micro-location checks, zoning, cost comparison, lease tips, and a printable checklist.",
+    date: "2026-08-12",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "restaurant-location-strategy-most-profitable-spot",
     title: "Restaurant Location Strategy: How to Choose the Most Profitable Spot",
     excerpt: "A numbers-forward restaurant location strategy—concept fit, trade areas, foot traffic, competitor mapping, feasibility math, rent ratios, mall vs street, GIS, scoring, and lease negotiation to pick the most profitable spot.",
