@@ -45,11 +45,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     height: 55,
   },
   {
-    type: "text",
-    href: "https://www.aitoolzdir.com",
-    label: "AI Toolz Dir",
-  },
-  {
     type: "image",
     href: "https://fazier.com",
     src: "https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light",
@@ -63,14 +58,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     src: "https://img.turbo0.com/badge-listed-light.svg",
     alt: "Listed on Turbo0",
     width: 175,
-    height: 54,
-  },
-  {
-    type: "image",
-    href: "https://wired.business",
-    src: "https://wired.business/badge0-white.svg",
-    alt: "Featured on Wired Business",
-    width: 200,
     height: 54,
   },
   {
@@ -518,14 +505,6 @@ const FEATURED_ITEMS: FeaturedItem[] = [
     src: "https://firstlook.tools/badge/badge_light.svg",
     alt: "Featured on First Look",
     width: 200,
-    height: 54,
-  },
-  {
-    type: "image",
-    href: "https://goodaitools.com/ai/restaurantsitefinder",
-    src: "https://goodaitools.com/assets/images/badge.png",
-    alt: "Good AI Tools",
-    width: 175,
     height: 54,
   },
   {

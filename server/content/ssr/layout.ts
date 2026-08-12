@@ -172,18 +172,12 @@ function featuredAtItemsHtml(): string {
         <img src="https://findly.tools/badges/findly-tools-badge-light.svg" alt="Featured on Findly.tools" width="175" height="55" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://www.aitoolzdir.com" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Toolz Dir</a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://fazier.com" target="_blank" rel="noopener noreferrer">
         <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width="120" alt="Fazier badge" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://turbo0.com/item/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
         <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://wired.business" target="_blank" rel="noopener noreferrer">
-        <img src="https://wired.business/badge0-white.svg" alt="Featured on Wired Business" width="200" height="54" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://open-launch.com/projects/restaurant-site-finder" target="_blank" rel="noopener noreferrer">
