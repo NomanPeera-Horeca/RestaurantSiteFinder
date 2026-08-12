@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "unique-restaurant-name-generator-tools-reviewed",
+    title: "Unique Restaurant Name Generator Tools Reviewed",
+    excerpt: "A hands-on review of the best restaurant name generator tools—UpMenu, Squarespace, EatLive, Shopify, and Namelix—with features, comparisons, naming tips, SEO, and legal checks.",
+    date: "2026-08-12",
+    category: "Concept",
+    readTime: "9 min",
+  },
+  {
     slug: "enhancing-restaurant-operations-business-intelligence",
     title: "Enhancing Restaurant Operations with Business Intelligence",
     excerpt: "Move beyond spreadsheets and basic POS reports—learn how restaurant business intelligence centralizes data, tracks prime cost and RevPASH, cuts waste, optimizes labor, and scales multi-unit operations.",
