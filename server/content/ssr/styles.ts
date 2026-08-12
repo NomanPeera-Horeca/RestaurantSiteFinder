@@ -201,6 +201,8 @@ main { padding: 2rem 0 4rem; min-height: 60vh; }
 .related-links ul { margin: 0; padding-left: 1.25rem; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
 .tag { font-size: 0.75rem; background: var(--primary-light); color: var(--primary-dark); padding: 0.25rem 0.625rem; border-radius: 999px; }
+a.tag { text-decoration: none; transition: background 0.15s ease, color 0.15s ease; }
+a.tag:hover { background: var(--primary); color: #fff; text-decoration: none; }
 
 /* Footer */
 .site-footer { background: var(--card); border-top: 1px solid var(--border); padding: 3rem 0 2rem; margin-top: 2rem; }

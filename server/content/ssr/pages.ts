@@ -1,6 +1,7 @@
 import { HORECA, SITE } from "../brand";
 import { loadAllBlogPosts, loadBlogPost } from "../blog";
 import { getAllGlossaryTerms, getGlossaryByCategory, getGlossaryTerm } from "../glossary";
+import { resolveInternalLink } from "../internal-links";
 import { markdownToHtml } from "../markdown";
 import type { BlogFaq, GlossaryTerm } from "../types";
 import {
@@ -50,6 +51,18 @@ function escapeHtml(s: string): string {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function tagListHtml(tags: string[], currentSlug: string): string {
+  return tags
+    .map(tag => {
+      const href = resolveInternalLink(tag);
+      if (!href || href === `/blog/${currentSlug}`) {
+        return `<span class="tag">${escapeHtml(tag)}</span>`;
+      }
+      return `<a href="${base()}${href}" class="tag">${escapeHtml(tag)}</a>`;
+    })
+    .join("");
 }
 
 function analyzeToolSidebarBlock(iframeId: string): string {
@@ -175,7 +188,7 @@ export function renderBlogArticle(slug: string): string | null {
     faqPageJsonLd(fm.faq)
   );
 
-  const tags = fm.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
+  const tags = tagListHtml(fm.tags, fm.slug);
 
   const body = `
     ${breadcrumbHtml([
