@@ -186,18 +186,10 @@ function featuredAtItemsHtml(): string {
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.voomo.ai/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AI Corporate Video Maker</a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://backlinkhubs.com/?utm_source=badge&utm_medium=embed&utm_campaign=restaurantsitefinder-com" target="_blank" rel="noopener noreferrer">
-        <img src="https://backlinkhubs.com/badge.svg?theme=light&label=Listed%20on%20Backlinkhubs" alt="Listed on Backlinkhubs" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://z-image.net/" target="_blank" rel="noopener noreferrer" class="featured-at-link">Z-Image</a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://dang.ai" target="_blank" rel="dofollow noopener">
         <img src="https://assets.dang.ai/badges/dang-verified-dark.png" alt="Verified on DANG!" width="260" height="94" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://www.launchvault.dev" target="_blank" rel="noopener noreferrer" title="Featured on LaunchVault">
-        <img src="https://www.launchvault.dev/images/badges/launch-valut-badge.svg" alt="Featured on LaunchVault" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://huzzler.so/products/7xDqGxdOvl/restaurant-site-finder?utm_source=huzzler_product_website&utm_medium=badge&utm_campaign=free_listing" target="_blank" rel="noopener noreferrer">
@@ -214,14 +206,6 @@ function featuredAtItemsHtml(): string {
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://trylaunch.ai/launch/restaurant-site-finder" target="_blank" rel="dofollow">
         <img src="https://trylaunch.ai/badges/badge-color.png" alt="Featured on Launch" height="53" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://proofstories.io/directory/products/restaurant-site-finder/" target="_blank" rel="noopener">
-        <img src="https://proofstories.io/directory/badges/l/restaurant-site-finder.svg" alt="Listed on ProofStories" height="44" loading="lazy" />
-      </a>
-      <span class="featured-at-separator" aria-hidden="true">·</span>
-      <a href="https://indiehunt.io/project/restaurant-site-finder-by-horeca-store" target="_blank" rel="noopener">
-        <img src="https://indiehunt.io/badges/indiehunt-badge-light.svg" alt="Featured on IndieHunt" width="265" height="58" loading="lazy" />
       </a>
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.freewebsubmission.com" target="_blank" rel="noopener noreferrer">
