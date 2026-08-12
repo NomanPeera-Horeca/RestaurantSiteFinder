@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-location-strategy-most-profitable-spot",
+    title: "Restaurant Location Strategy: How to Choose the Most Profitable Spot",
+    excerpt: "A numbers-forward restaurant location strategy—concept fit, trade areas, foot traffic, competitor mapping, feasibility math, rent ratios, mall vs street, GIS, scoring, and lease negotiation to pick the most profitable spot.",
+    date: "2026-08-12",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "find-perfect-location-restaurant-opening-texas",
     title: "Find the Perfect Location for Opening a Restaurant in Texas",
     excerpt: "A numbers-backed guide to finding the perfect restaurant location in Texas—trade areas, metro markets, urban vs suburban sites, traffic counts, ROI modeling, zoning, health permits, drive-thru requirements, and lease negotiation.",
