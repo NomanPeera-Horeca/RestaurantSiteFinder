@@ -35,12 +35,12 @@ faq:
   - question: "What is the difference between primary and secondary restaurant research?"
     answer: "Primary research gathers first-hand data directly from potential customers via surveys and observations. Secondary research analyzes existing data like census reports, industry statistics, and published consumer trend reports."
   - question: "How do you find gaps in the local dining market?"
-    answer: "Map all direct and indirect competitors by cuisine, price point, hours, and target demographic. Look for underserved segments—such as family-friendly healthy options in a neighborhood full of bars or fast food."
+    answer: "Map all direct and indirect competitors by cuisine, price point, hours, and target demographic. Look for underserved segments, such as family-friendly healthy options in a neighborhood full of bars or fast food."
   - question: "Is Restaurant Site Finder free for market research?"
     answer: "Yes. Enter any US address for competitor mapping, demographic match, and opportunity scoring at restaurantsitefinder.com to complement your manual market research."
 ---
 
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li><strong>Restaurant market research</strong> is non-negotiable—passion alone does not pay the bills; data-driven preparation separates thriving restaurants from shuttered storefronts.</li><li>Combine primary research (surveys, focus groups) with secondary data (census, industry reports) for the most accurate picture.</li><li>Build customer personas, map competitive gaps, run a feasibility study, and apply SWOT before signing a lease.</li><li>Accelerate site research free at <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a>.</li></ul></div>
+<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li><strong>Restaurant market research</strong> is non-negotiable, passion alone does not pay the bills; data-driven preparation separates thriving restaurants from shuttered storefronts.</li><li>Combine primary research (surveys, focus groups) with secondary data (census, industry reports) for the most accurate picture.</li><li>Build customer personas, map competitive gaps, run a feasibility study, and apply SWOT before signing a lease.</li><li>Accelerate site research free at <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a>.</li></ul></div>
 
 Opening a restaurant is a dream shared by many, often fueled by a passion for culinary excellence and a desire to bring people together. However, the reality of the hospitality business is that passion alone does not pay the bills. The difference between a thriving local hotspot and a shuttered storefront usually comes down to one critical factor: preparation. This is where **restaurant market research** becomes the cornerstone of your business plan.
 
@@ -73,7 +73,7 @@ You cannot create a successful restaurant if you do not know who you are feeding
 
 A target audience is more than just an age range and an income bracket. To truly understand your potential guests, you need to create detailed **restaurant customer personas**. A persona is a semi-fictional representation of your ideal customer based on market research and real data.
 
-For example, instead of targeting "millennials," you might create a persona named "Eco-Conscious Emily"—a 28-year-old professional who values sustainable sourcing, prefers plant-based options, and is willing to pay a premium for ethically sourced ingredients. Building 3 to 4 distinct personas helps you tailor your marketing messages and menu offerings with laser precision.
+For example, instead of targeting "millennials," you might create a persona named "Eco-Conscious Emily", a 28-year-old professional who values sustainable sourcing, prefers plant-based options, and is willing to pay a premium for ethically sourced ingredients. Building 3 to 4 distinct personas helps you tailor your marketing messages and menu offerings with laser precision.
 
 ![Developing restaurant customer personas through market research and demographic analysis](/blog/effective-strategies-restaurant-market-research/image2.webp)
 
@@ -216,7 +216,7 @@ Primary research gathers first-hand customer data; secondary research analyzes e
 
 ### How do you find gaps in the local dining market?
 
-Map direct and indirect competitors by cuisine, price, hours, and demographic—then identify underserved segments in your trade area.
+Map direct and indirect competitors by cuisine, price, hours, and demographic, then identify underserved segments in your trade area.
 
 ### Is Restaurant Site Finder free for market research?
 

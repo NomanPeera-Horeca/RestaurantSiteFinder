@@ -14,7 +14,7 @@ tags:
   - trade area analysis
   - foot traffic
   - lease negotiation
-excerpt: "An expert site selection guide to choose the perfect restaurant location—concept fit, demographics, foot vs vehicle traffic, micro-location checks, zoning, cost comparison, lease tips, and a printable checklist."
+excerpt: "An expert site selection guide to choose the perfect restaurant location, concept fit, demographics, foot vs vehicle traffic, micro-location checks, zoning, cost comparison, lease tips, and a printable checklist."
 keywords:
   - select perfect location for your restaurant
   - restaurant location selection criteria
@@ -40,17 +40,17 @@ faq:
     answer: "Yes. Enter any US address at restaurantsitefinder.com for free AI competitor mapping, demographic match, and opportunity scoring."
 ---
 
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li><strong>Select the perfect location for your restaurant</strong> with evidence—concept fit, trade area data, and lease math—not gut feel alone.</li><li>Separate <strong>foot traffic vs vehicle traffic</strong>; busy streets only help if guests can stop and buy.</li><li>Kill bad deals early on zoning, hood/grease, and break-even sales vs total occupancy cost.</li><li>Screen addresses free at <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a>, then tour with a repeatable checklist.</li></ul></div>
+<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li><strong>Select the perfect location for your restaurant</strong> with evidence, concept fit, trade area data, and lease math, not gut feel alone.</li><li>Separate <strong>foot traffic vs vehicle traffic</strong>; busy streets only help if guests can stop and buy.</li><li>Kill bad deals early on zoning, hood/grease, and break-even sales vs total occupancy cost.</li><li>Screen addresses free at <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a>, then tour with a repeatable checklist.</li></ul></div>
 
-Selecting a location is the most consequential decision you'll make before your first plate hits the pass. You can refine a menu, retrain staff, and rebrand your concept—but a weak address can quietly drain sales for years.
+Selecting a location is the most consequential decision you'll make before your first plate hits the pass. You can refine a menu, retrain staff, and rebrand your concept, but a weak address can quietly drain sales for years.
 
-If you want to **select the perfect location for your restaurant**, you need a disciplined way to compare neighborhoods, storefronts, and lease terms using real data—not gut feel. This site selection guide walks you through practical **site selection criteria**, the most important **restaurant location selection factors**, and a step-by-step approach to **restaurant site analysis** so you can confidently choose the best location for a new restaurant—and avoid bad decisions that are hard to undo.
+If you want to **select the perfect location for your restaurant**, you need a disciplined way to compare neighborhoods, storefronts, and lease terms using real data, not gut feel. This site selection guide walks you through practical **site selection criteria**, the most important **restaurant location selection factors**, and a step-by-step approach to **restaurant site analysis** so you can confidently choose the best location for a new restaurant, and avoid bad decisions that are hard to undo.
 
 ![Expert guide to selecting the perfect restaurant location with site selection criteria](/blog/select-perfect-location-for-your-restaurant/image1.webp)
 
 ## Start With Concept–Location Fit (Before You Tour Spaces)
 
-The fastest way to waste time is touring spaces without defining what "good" means for your concept. Your first job is to translate the brand into **restaurant location selection criteria**—the non-negotiables you'll use to eliminate poor matches.
+The fastest way to waste time is touring spaces without defining what "good" means for your concept. Your first job is to translate the brand into **restaurant location selection criteria**, the non-negotiables you'll use to eliminate poor matches.
 
 ### Define Your Ideal Guest and Occasion
 
@@ -111,7 +111,7 @@ Use these tools to strengthen your **restaurant location analysis** and reduce g
 
 ## Foot Traffic vs Vehicle Traffic: Choose the Right Kind of Busy
 
-"High traffic" can mean two very different things. A location can be surrounded by people who never stop—or drivers who can't safely turn in.
+"High traffic" can mean two very different things. A location can be surrounded by people who never stop, or drivers who can't safely turn in.
 
 **When foot traffic wins**
 
@@ -131,7 +131,7 @@ Vehicle traffic can be a better match when:
 - You rely on weekend and evening trips
 - You offer easy parking, curbside, or drive-up convenience
 
-The key is not picking a "busy" street—it's selecting the traffic type that matches your conversion path. This **foot traffic vs vehicle traffic** distinction should be explicit in your **restaurant location selection factors**.
+The key is not picking a "busy" street, it's selecting the traffic type that matches your conversion path. This **foot traffic vs vehicle traffic** distinction should be explicit in your **restaurant location selection factors**.
 
 ## Competitive and Complementary Neighbors: Do a Real Restaurant Site Analysis
 
@@ -253,7 +253,7 @@ This is why **restaurant location analysis** must blend finance with operational
 
 ## Restaurant Lease Negotiation Tips That Protect Your Upside
 
-Your lease can either reduce risk—or lock you into a bad outcome. Use these **restaurant lease negotiation tips** to align the deal with the realities of launching a restaurant.
+Your lease can either reduce risk, or lock you into a bad outcome. Use these **restaurant lease negotiation tips** to align the deal with the realities of launching a restaurant.
 
 ### Prioritize Protections Over "Winning" on Base Rent
 
@@ -323,7 +323,7 @@ To **avoid bad restaurant location** outcomes, watch for these red flags:
 - Permitting complexity the landlord downplays
 - A space that forces a menu change you don't want (concept drift)
 
-When you see multiple red flags, the smartest move is often walking away—before sunk costs make the decision for you.
+When you see multiple red flags, the smartest move is often walking away, before sunk costs make the decision for you.
 
 ![Restaurant site selection checklist for choosing the perfect location](/blog/select-perfect-location-for-your-restaurant/image5.webp)
 
@@ -333,7 +333,7 @@ To **select the perfect location for your restaurant**, treat it like an evidenc
 
 Balance the **restaurant location pros and cons**, use a repeatable **restaurant site analysis** process, and negotiate a lease that protects your timeline and capital. Pair this guide with [restaurant location strategy: how to choose the most profitable spot](/blog/restaurant-location-strategy-most-profitable-spot) and [how to find the right location for your restaurant](/blog/how-to-find-right-location-restaurant).
 
-If you do it right, the location becomes a silent partner—delivering customers, simplifying operations, and giving your brand the best possible start.
+If you do it right, the location becomes a silent partner, delivering customers, simplifying operations, and giving your brand the best possible start.
 
 ## Frequently Asked Questions
 
@@ -347,7 +347,7 @@ Demand fit, traffic type, visibility, kitchen feasibility, realistic break-even 
 
 ### Is foot traffic or vehicle traffic more important?
 
-Match traffic to your concept—impulse grab-and-go vs planned dine-in visits with parking.
+Match traffic to your concept, impulse grab-and-go vs planned dine-in visits with parking.
 
 ### What should be on a restaurant site selection checklist?
 

@@ -209,6 +209,18 @@ function featuredAtItemsHtml(): string {
       <span class="featured-at-separator" aria-hidden="true">·</span>
       <a href="https://www.freewebsubmission.com" target="_blank" rel="noopener noreferrer">
         <img src="https://www.freewebsubmission.com/images/fwsbutton11.gif" alt="Submit Your Site To The Web's Top 50 Search Engines for Free!" width="88" height="31" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://aitop10.tools/" target="_blank" rel="noopener noreferrer" class="featured-at-link">AiTop10 Tools</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://animatephoto.io" target="_blank" rel="noopener noreferrer" class="featured-at-link">Animate Photo AI</a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://shipstry.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://shipstry.com/badges/featured.svg" alt="Featured on Shipstry" width="220" height="52" loading="lazy" />
+      </a>
+      <span class="featured-at-separator" aria-hidden="true">·</span>
+      <a href="https://daniellaunches.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://daniellaunches.com/badge-light.svg" alt="Featured on DanielLaunches" width="220" height="48" loading="lazy" />
       </a>`;
 }
 

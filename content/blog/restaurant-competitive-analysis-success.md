@@ -14,7 +14,7 @@ tags:
   - menu engineering
   - SWOT analysis
   - delivery strategy
-excerpt: "Learn how to do a restaurant competitive analysis—from identifying direct and indirect rivals to dissecting menus, guest experience, delivery zones, digital footprint, and SWOT strategy."
+excerpt: "Learn how to do a restaurant competitive analysis, from identifying direct and indirect rivals to dissecting menus, guest experience, delivery zones, digital footprint, and SWOT strategy."
 keywords:
   - restaurant competitor analysis
   - how to analyze restaurant competitors
@@ -31,9 +31,9 @@ faq:
   - question: "What is a restaurant competitor analysis?"
     answer: "It is the process of identifying direct and indirect competitors, evaluating their operational and marketing strategies, and using that information to sharpen your pricing, menu, marketing, and customer service."
   - question: "What is the difference between direct and indirect restaurant competitors?"
-    answer: "Direct competitors serve similar cuisine at a similar price point in the same area. Indirect competitors serve different food but compete for the same dining budget—such as a fast-casual salad bar pulling lunch traffic from a sit-down restaurant."
+    answer: "Direct competitors serve similar cuisine at a similar price point in the same area. Indirect competitors serve different food but compete for the same dining budget, such as a fast-casual salad bar pulling lunch traffic from a sit-down restaurant."
   - question: "How do you analyze a competitor's menu and pricing?"
-    answer: "Chart appetizer, entree, dessert, and beverage prices. Look for anchor items, highlighted dishes, bundle strategies, and premium positioning—then benchmark against your own menu engineering approach."
+    answer: "Chart appetizer, entree, dessert, and beverage prices. Look for anchor items, highlighted dishes, bundle strategies, and premium positioning, then benchmark against your own menu engineering approach."
   - question: "What should a restaurant secret shopper checklist include?"
     answer: "Curb appeal, host greeting, wait times, server knowledge, food quality (temperature, presentation, taste), bathroom cleanliness, and checkout experience."
   - question: "Is Restaurant Site Finder free for competitor mapping?"
@@ -92,7 +92,7 @@ You need to know how much your target demographic is willing to pay. Look at you
 
 **Menu engineering** is the study of the profitability and popularity of menu items. While you can't see a competitor's exact sales data, you can spot clues about their menu engineering.
 
-- Look for "anchor" items—the highly-priced dishes designed to make the rest of the menu look more affordable.
+- Look for "anchor" items, the highly-priced dishes designed to make the rest of the menu look more affordable.
 - Notice which items are highlighted with boxes, bold text, or photos. These are likely their high-margin "Stars" or "Puzzles" they are trying to push.
 
 By understanding their approach, you can begin **optimizing menu offerings against market rivals**. If every competitor is charging $18 for a standard burger with basic fries, you might find a competitive edge by offering a slightly smaller, higher-quality artisan burger for $16.
@@ -189,7 +189,7 @@ A **SWOT analysis** is a strategic planning technique used to identify Strengths
 
 ### Identifying Gaps in the Local Food Market
 
-The ultimate goal of this research is **identifying gaps in the local food market**. When you plot out everyone's price points, menu styles, and target demographics, you will inevitably see "white space"—areas of the market that are currently underserved.
+The ultimate goal of this research is **identifying gaps in the local food market**. When you plot out everyone's price points, menu styles, and target demographics, you will inevitably see "white space", areas of the market that are currently underserved.
 
 Perhaps your town has plenty of high-end steakhouses and cheap fast food, but lacks a mid-tier, family-friendly gastropub. Identifying these gaps allows you to pivot your business model to capture uncontested market share.
 
@@ -209,11 +209,11 @@ If you spot a trend early, you can introduce it as a limited-time offer on your 
 
 Running a successful restaurant requires a delicate balance of culinary passion and cold, calculated business strategy. A thorough, routine competitive analysis ensures that you are never flying blind.
 
-By taking the time to study your competitors—from **analyzing rival restaurant pricing strategies** and **mapping competitor delivery radius and reach**, to executing a rigorous **SWOT analysis**—you equip yourself with the insights needed to outmaneuver the competition.
+By taking the time to study your competitors, from **analyzing rival restaurant pricing strategies** and **mapping competitor delivery radius and reach**, to executing a rigorous **SWOT analysis**, you equip yourself with the insights needed to outmaneuver the competition.
 
 Remember, the goal is not to copy what the restaurant down the street is doing. The goal is to understand what they are doing, figure out what they are missing, and then do it vastly better.
 
-**Automate the first step.** Enter any address at [Restaurant Site Finder](https://restaurantsitefinder.com/) for instant competitor density mapping and opportunity scoring—then deepen your analysis with our [effective market research strategies](/blog/effective-strategies-restaurant-market-research) guide.
+**Automate the first step.** Enter any address at [Restaurant Site Finder](https://restaurantsitefinder.com/) for instant competitor density mapping and opportunity scoring, then deepen your analysis with our [effective market research strategies](/blog/effective-strategies-restaurant-market-research) guide.
 
 ## Frequently Asked Questions
 
