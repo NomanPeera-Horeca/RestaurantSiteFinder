@@ -21,7 +21,7 @@ export const HORECA = {
     cooking: "https://www.thehorecastore.com/commercial-cooking-equipment",
     equipment: "https://www.thehorecastore.com/restaurant-equipment",
     refrigeration: "https://www.thehorecastore.com/commercial-refrigeration-equipment",
-    categories: "https://www.thehorecastore.com/all-categories",
+    categories: "https://www.thehorecastore.com/restaurant-equipment",
     searchOrder: "https://www.thehorecastore.com/order-tracking",
   },
   social: {
