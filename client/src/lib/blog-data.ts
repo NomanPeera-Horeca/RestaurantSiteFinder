@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "maximizing-profitability-restaurant-bi-software",
+    title: "Maximizing Profitability with Restaurant BI Software",
+    excerpt: "How restaurant BI software turns POS, labor, inventory, and guest data into profit—covering food cost control, labor planning, menu engineering, loyalty analytics, and what to look for in a platform.",
+    date: "2026-08-19",
+    category: "Operations",
+    readTime: "9 min",
+  },
+  {
     slug: "essential-tips-starting-restaurant",
     title: "Essential Tips for Starting a Restaurant",
     excerpt: "Essential tips for starting a restaurant—concept clarity, business planning, location fit, menu design, team training, cost control, marketing, and a controlled opening before launch day.",
