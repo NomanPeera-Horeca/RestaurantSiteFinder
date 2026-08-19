@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "essential-tips-starting-restaurant",
+    title: "Essential Tips for Starting a Restaurant",
+    excerpt: "Essential tips for starting a restaurant—concept clarity, business planning, location fit, menu design, team training, cost control, marketing, and a controlled opening before launch day.",
+    date: "2026-08-19",
+    category: "Guides",
+    readTime: "10 min",
+  },
+  {
     slug: "select-perfect-location-for-your-restaurant",
     title: "Select the Perfect Location for Your Restaurant",
     excerpt: "An expert site selection guide to choose the perfect restaurant location—concept fit, demographics, foot vs vehicle traffic, micro-location checks, zoning, cost comparison, lease tips, and a printable checklist.",
