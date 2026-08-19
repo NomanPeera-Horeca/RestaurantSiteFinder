@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "choosing-site-drives-success-restaurant-business",
+    title: "Choosing a Site That Drives Success for Restaurant Business",
+    excerpt: "How to choose a restaurant site that drives success—concept fit, customer behavior, visibility, neighborhood demand, competition signals, lease checks, financial fit, and a practical site selection process.",
+    date: "2026-08-19",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "maximizing-profitability-restaurant-bi-software",
     title: "Maximizing Profitability with Restaurant BI Software",
     excerpt: "How restaurant BI software turns POS, labor, inventory, and guest data into profit—covering food cost control, labor planning, menu engineering, loyalty analytics, and what to look for in a platform.",
