@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "choosing-ideal-location-restaurants",
+    title: "Choosing the Ideal Location for Restaurants",
+    excerpt: "How to choose the ideal restaurant location—concept fit, market research, visibility, accessibility, cost balance, competition signals, operational readiness, and a practical site comparison process.",
+    date: "2026-08-19",
+    category: "Site Selection",
+    readTime: "9 min",
+  },
+  {
     slug: "choosing-site-drives-success-restaurant-business",
     title: "Choosing a Site That Drives Success for Restaurant Business",
     excerpt: "How to choose a restaurant site that drives success—concept fit, customer behavior, visibility, neighborhood demand, competition signals, lease checks, financial fit, and a practical site selection process.",
