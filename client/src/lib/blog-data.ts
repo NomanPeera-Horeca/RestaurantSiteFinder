@@ -155,11 +155,11 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "restaurant-site-selection-analysis",
-    title: "Restaurant Site Selection Analysis: The Complete Guide to Choosing Your Next Location",
-    excerpt: "A complete guide to restaurant site selection analysis covering demographics, foot traffic, competitive density, trade area modeling, and AI-powered GO/NO-GO scoring before you sign a lease.",
-    date: "2026-07-29",
+    title: "What Is Restaurant Site Selection Analysis?",
+    excerpt: "What restaurant site selection analysis includes—market demand, customer fit, competition, visibility, traffic, lease conditions, operational suitability, and a practical process for confident location decisions.",
+    date: "2026-08-19",
     category: "Site Selection",
-    readTime: "12 min",
+    readTime: "10 min",
   },
   {
     slug: "maximizing-restaurant-success-foot-traffic-insights",
