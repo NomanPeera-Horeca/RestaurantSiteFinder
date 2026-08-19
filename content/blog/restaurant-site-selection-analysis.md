@@ -41,15 +41,9 @@ faq:
     answer: "Define concept requirements, identify target markets, screen sites against criteria, visit at multiple dayparts, evaluate competitors and complements, estimate operational impact, compare risks and tradeoffs, and review the lease carefully before committing."
 ---
 
-<<<<<<< HEAD
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li>Restaurant site selection analysis replaces gut-feel leases with data on demographics, foot traffic, competition, and concept fit.</li><li>Location determines 60 to 70 percent of restaurant success, more than menu, chef, or marketing combined.</li><li>A complete analysis covers six pillars: demographics, traffic, competition, trade area, rent ratio, and concept-market fit.</li><li>Run a free GO/NO-GO analysis at <a href="/restaurant-site-selection-analysis">Restaurant Site Selection Analysis</a> or <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a> before signing any lease.</li></ul></div>
-
-Choosing where to open your next restaurant is the single highest-stakes real estate decision most operators will ever make. You can hire an award-winning chef, craft a menu that earns rave reviews, and invest in a stunning interior, but if the address is wrong, the odds of failure climb dramatically. Cornell University research consistently shows that **location accounts for 60 to 70 percent of a restaurant's success**, outweighing concept, food quality, service, and marketing combined.
-=======
 <div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li><strong>Restaurant site selection analysis</strong> evaluates whether a location can support a profitable restaurant, blending market data with on-site observation.</li><li>A complete review covers demand, customer fit, competition, visibility, traffic, lease terms, operational suitability, and risk factors.</li><li>Start with your concept and strategy, not the listing, then compare every site against the same criteria.</li><li>Run free AI scoring on candidate addresses at <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a>, then validate with our <a href="/blog/go-no-go-restaurant-location-decision">Go/No-Go framework</a>.</li></ul></div>
 
 Restaurant site selection analysis is the process of evaluating whether a specific location can support a profitable, sustainable restaurant. It brings together customer demand, competition, visibility, access, real estate conditions, and operational fit so owners can make decisions with more confidence. Instead of choosing a space because it "feels right," restaurant operators use analysis to understand who is nearby, how they behave, and whether the site matches the concept.
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)
 
 For new restaurants, expanding brands, landlords, franchise groups, and investors, the right location can reduce risk before major money is spent on leases, design, equipment, and hiring. A strong site selection strategy does not guarantee success, but it helps reveal the strengths, weaknesses, and tradeoffs of a location before commitment.
 
@@ -72,11 +66,7 @@ A complete review often includes:
 - **Operational suitability:** Whether the site supports kitchen flow, delivery, takeout, storage, staffing, and service speed.
 - **Risk factors:** Seasonality, zoning issues, construction disruption, parking limits, or dependence on one customer segment.
 
-<<<<<<< HEAD
-Traditional analysis relied on census data, drive-by traffic counts, and broker intuition. Modern **restaurant location analysis** adds smartphone mobility data, credit card spending signals, AI-powered scoring, and real-time competitive mapping, giving independent operators access to the same intelligence that national chains pay consultants $5,000 or more per site to produce.
-=======
 ## Why location decisions deserve more than instinct
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)
 
 Many restaurant ideas begin with energy and optimism. A busy corner, an attractive storefront, or a neighborhood with strong buzz can be exciting. But restaurants operate on tight margins, and a location that looks promising from the street may create hidden problems once daily operations begin.
 
@@ -88,11 +78,7 @@ That matters because a restaurant location is not just a place to sell food. It 
 
 ## The core ingredients of a strong site selection strategy
 
-<<<<<<< HEAD
-The cost of skipping analysis is staggering. A typical restaurant build-out runs $250,000 to $500,000. Add first-year operating losses, and a bad location can destroy $750,000 or more before you recognize the mistake. Site selection analysis costs nothing when you use free tools, and even paid enterprise platforms cost a fraction of one month of underperformance.
-=======
 A practical site selection strategy starts with the restaurant concept, not the real estate listing. Before comparing neighborhoods or storefronts, operators need to define what kind of demand they are trying to capture. A breakfast cafe, late-night bar, family restaurant, quick-service lunch spot, and fine-dining concept all need different location conditions.
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)
 
 The strategy should clarify the ideal customer, expected occasions, service model, space requirements, and access needs. From there, each potential site can be evaluated against the same criteria. This creates consistency and helps avoid chasing locations that look attractive but do not fit the business.
 
@@ -122,15 +108,6 @@ Good restaurant market research also looks at unmet needs. A market with many re
 
 Once the market looks promising, the individual site still needs careful review. Two locations in the same neighborhood can perform very differently because of visibility, access, layout, or customer movement. A restaurant can be in the right market and still choose the wrong corner.
 
-<<<<<<< HEAD
-- **Pedestrian counts** by daypart (breakfast, lunch, dinner, late night)
-- **Vehicle traffic** on adjacent roads (critical for drive-thru and quick-service)
-- **Visibility** from the street: can drivers see your signage from 200 feet?
-- **Parking access**, dedicated lot, street parking, or shared garage
-- **Anchor tenants** nearby that draw complementary traffic (grocery, fitness, office)
-
-Traditional site scouts stood on corners with clickers. Modern tools use anonymized smartphone mobility data to show actual visit patterns, dwell times, and cross-shopping behavior, revealing that a quiet-looking street may actually be a lunch corridor, or that a busy road has no pedestrian crossing access.
-=======
 Use this checklist to structure the site review:
 
 - **Visibility from key approaches:** Can people see the storefront while walking, driving, or passing through the area? Is signage clear from the directions customers actually travel?
@@ -141,17 +118,12 @@ Use this checklist to structure the site review:
 - **Utility and infrastructure readiness:** Restaurants often need specific ventilation, plumbing, electrical capacity, grease handling, and mechanical systems. Missing infrastructure can create delays and added cost.
 - **Lease flexibility and restrictions:** Exclusive-use clauses, signage limits, patio rules, delivery restrictions, operating-hour requirements, and renovation approvals can affect performance.
 - **Future area changes:** Roadwork, new housing, office vacancies, nearby development, or changing traffic patterns can improve or weaken a site over time.
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)
 
 This checklist should be used alongside professional real estate, legal, and financial review. Site selection is strategic, but lease obligations are serious business commitments. Our full [restaurant site selection checklist](/blog/restaurant-site-selection-checklist) expands each item.
 
 ## Competitive context is more useful than competitor counting
 
-<<<<<<< HEAD
-Knowing your competition is not about avoiding it entirely. Some competition validates demand. The question is whether the market is **underserved**, **balanced**, or **saturated** for your specific concept type.
-=======
 One common mistake is treating competition as a simple number. Operators may ask, "How many restaurants are nearby?" But a better question is, "What role would this restaurant play in the local dining mix?"
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)
 
 A strong dining district can help because customers already visit the area to eat. In that setting, competition may increase awareness and foot traffic. However, the restaurant still needs a clear reason to be chosen. That reason could be cuisine, convenience, value, atmosphere, speed, menu focus, service style, or a combination of factors.
 
@@ -187,11 +159,7 @@ Even experienced operators can make site selection mistakes when pressure is hig
 
 A low-rent site can become expensive if it lacks visibility, requires heavy buildout, or fails to attract enough customers. A high-traffic site can disappoint if the traffic is moving too fast, traveling in the wrong direction, or made up of people who are not likely to stop. A popular neighborhood can still be wrong if the restaurant's price point or service model does not match local demand.
 
-<<<<<<< HEAD
-Site selection analysis must stress-test your financial model against local lease rates. A $15,000/month lease requires $1.5 million in annual revenue at a 12 percent ratio, but only $1 million at 8 percent. That $500,000 revenue gap determines whether the location is viable.
-=======
 Watch out for these traps:
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)
 
 - Choosing a site because it is personally appealing rather than customer-aligned.
 - Assuming all [foot traffic](/glossary/foot-traffic) is useful traffic.
@@ -210,9 +178,6 @@ Restaurant site selection does not need to be overly complicated, but it should 
 
 Start with the concept and work outward:
 
-<<<<<<< HEAD
-This is where AI-powered tools deliver the most value: they can score dozens of candidate addresses against your concept profile in minutes, rather than relying on a broker's subjective recommendation.
-=======
 1. **Define the concept requirements.** Clarify the target customer, menu style, service model, seating needs, kitchen requirements, price point, and primary revenue channels.
 2. **Identify target markets.** Use restaurant market research to find neighborhoods or trade areas with the right mix of customers, demand drivers, and competitive opportunity.
 3. **Screen available sites.** Compare visibility, access, size, rent expectations, infrastructure, zoning, and lease conditions against the concept requirements.
@@ -221,7 +186,6 @@ This is where AI-powered tools deliver the most value: they can score dozens of 
 6. **Estimate operational impact.** Consider buildout needs, staffing flow, delivery access, storage, equipment placement, and guest experience.
 7. **Compare risks and tradeoffs.** No site is perfect. Document what is strong, what is uncertain, and what would need to be solved before moving forward.
 8. **Review the lease carefully.** Before committing, seek appropriate professional guidance on terms, restrictions, responsibilities, and long-term obligations.
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)
 
 This process creates a decision trail. If the team chooses the site, they know why. If they walk away, they can explain the concerns clearly and keep looking with better focus.
 
@@ -260,84 +224,4 @@ Restaurant location decisions are too important to rely on instinct alone. A tho
 
 Restaurant site selection analysis is ultimately about improving the odds before a major commitment is made. It cannot remove every risk, but it can reveal hidden issues, clarify tradeoffs, and strengthen the business case for a location. For anyone opening, relocating, or expanding a restaurant, that clarity is one of the most valuable ingredients in the planning process.
 
-<<<<<<< HEAD
-For a structured decision framework, see our [Go/No-Go restaurant location decision guide](/blog/go-no-go-restaurant-location-decision).
-
-![GO/NO-GO decision framework for restaurant site selection analysis showing data inputs, AI scoring engine, and decision outputs](/blog/restaurant-site-selection-analysis/image3.png)
-
-## Common Site Selection Mistakes to Avoid
-
-Even experienced operators fall into predictable traps:
-
-- **Chasing cheap rent.** The cheapest space is often cheap for a reason: poor visibility, bad access, or a dying corridor.
-- **Ignoring co-tenancy risk.** Opening next to an anchor tenant that closes six months later can cut your traffic in half.
-- **Over-relying on broker advice.** Brokers are paid to fill spaces, not to protect your investment. Verify every claim with data.
-- **Skipping competitive analysis.** "There's no Italian restaurant here" may mean no demand for Italian, not an opportunity.
-- **Analyzing only one address.** Always compare at least three candidates side by side. Relative ranking reveals weaknesses that absolute scores hide.
-- **Neglecting delivery radius.** Even dine-in restaurants now depend on delivery revenue. Analyze your 3-mile delivery catchment separately.
-
-## How AI Is Changing Restaurant Site Selection Analysis
-
-Artificial intelligence has democratized location intelligence. Tasks that once required a $5,000 consultant engagement now run in minutes:
-
-- **Automated competitor mapping** from Google Places and POI databases
-- **Demographic scoring** matched to your concept profile
-- **Market gap detection** identifying underserved cuisine types
-- **Opportunity scoring** combining multiple signals into a single GO/NO-GO number
-- **Side-by-side comparison** of multiple candidate addresses
-
-[Restaurant Site Finder](https://restaurantsitefinder.com/) packages these capabilities into a free tool built specifically for food and beverage operators, not generic retail analytics adapted for restaurants.
-
-The workflow is simple: enter any US address, select your restaurant concept, and receive an opportunity score, competitor density map, demographic match rating, and concept fit analysis. Provide your email to unlock the full report with detailed recommendations.
-
-## Restaurant Site Selection Analysis Checklist
-
-Use this checklist before signing any lease:
-
-1. Demographic profile matches target customer (income, age, household size)
-2. Foot traffic validated for primary daypart (not just total counts)
-3. Competitive density mapped within 1-mile and 3-mile radii
-4. Trade area catchment modeled with mobility data
-5. Rent-to-revenue ratio below 10 percent at conservative revenue estimates
-6. Concept-market fit score above 75
-7. Physical site visit completed at multiple dayparts
-8. Parking and visibility confirmed adequate
-9. Zoning confirmed for restaurant use
-10. Financial pro forma stress-tested with conservative assumptions
-11. GO/NO-GO score documented and reviewed by all stakeholders
-12. Walk-away terms defined before negotiations begin
-
-For an expanded 15-factor version, see our [Restaurant Site Finder checklist](/blog/restaurant-site-finder-checklist-15-factors).
-
-## Frequently Asked Questions
-
-### What is restaurant site selection analysis?
-
-It is the systematic evaluation of a potential restaurant location using demographics, foot traffic, competitive density, trade area modeling, and financial stress-testing to determine whether an address can support your concept before you sign a lease.
-
-### How long does a restaurant site selection analysis take?
-
-Traditional broker-led analysis can take two to four weeks per address. AI-powered tools like Restaurant Site Finder deliver initial opportunity scores, competitor maps, and demographic match in under three minutes for any US address.
-
-### What factors matter most in restaurant site selection?
-
-The six highest-impact factors are demographics and psychographics, foot traffic and visibility, competitive density, trade area catchment, rent-to-revenue ratio, and concept-market fit.
-
-### What is a GO/NO-GO score for restaurant locations?
-
-A GO/NO-GO score is a composite rating from 0 to 100 that combines competitor density, demographic match, market gap detection, and concept fit. Scores above 75 indicate strong fit, 50 to 75 warrant deeper due diligence, and below 50 suggest the location or concept needs rethinking.
-
-### Is Restaurant Site Finder free for site selection analysis?
-
-Yes. Enter any US address for competitor mapping, opportunity scoring, and concept suggestions. Provide email and phone to unlock the full GO/NO-GO report at [restaurantsitefinder.com](https://restaurantsitefinder.com/).
-
-## Run Your Free Site Selection Analysis Now
-
-You do not need a six-figure consulting budget to make a data-backed location decision. Whether you are evaluating your first restaurant location or your fifteenth franchise unit, the framework in this guide gives you the same analytical rigor that enterprise brands rely on.
-
-**Start with data, not gut feel.** Enter any US address into [Restaurant Site Selection Analysis](/restaurant-site-selection-analysis) and get an instant opportunity score, competitor map, and concept fit rating, free for independent restaurant owners.
-
-The right location will not guarantee success, but the wrong one will almost guarantee failure. Run your analysis before you sign.
-=======
 Run your candidate addresses through [Restaurant Site Finder](https://restaurantsitefinder.com/) for free AI competitor mapping, demographic match, and opportunity scoring, then apply the questions above before you sign.
->>>>>>> 2f51930 (content: rewrite restaurant site selection analysis blog post)

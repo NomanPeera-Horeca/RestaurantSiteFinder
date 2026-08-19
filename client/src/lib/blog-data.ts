@@ -12,7 +12,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "choosing-ideal-location-restaurants",
     title: "Choosing the Ideal Location for Restaurants",
-    excerpt: "How to choose the ideal restaurant location—concept fit, market research, visibility, accessibility, cost balance, competition signals, operational readiness, and a practical site comparison process.",
+    excerpt: "How to choose the ideal restaurant location, concept fit, market research, visibility, accessibility, cost balance, competition signals, operational readiness, and a practical site comparison process.",
     date: "2026-08-19",
     category: "Site Selection",
     readTime: "9 min",
@@ -20,7 +20,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "choosing-site-drives-success-restaurant-business",
     title: "Choosing a Site That Drives Success for Restaurant Business",
-    excerpt: "How to choose a restaurant site that drives success—concept fit, customer behavior, visibility, neighborhood demand, competition signals, lease checks, financial fit, and a practical site selection process.",
+    excerpt: "How to choose a restaurant site that drives success, concept fit, customer behavior, visibility, neighborhood demand, competition signals, lease checks, financial fit, and a practical site selection process.",
     date: "2026-08-19",
     category: "Site Selection",
     readTime: "10 min",
@@ -28,7 +28,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "maximizing-profitability-restaurant-bi-software",
     title: "Maximizing Profitability with Restaurant BI Software",
-    excerpt: "How restaurant BI software turns POS, labor, inventory, and guest data into profit—covering food cost control, labor planning, menu engineering, loyalty analytics, and what to look for in a platform.",
+    excerpt: "How restaurant BI software turns POS, labor, inventory, and guest data into profit, covering food cost control, labor planning, menu engineering, loyalty analytics, and what to look for in a platform.",
     date: "2026-08-19",
     category: "Operations",
     readTime: "9 min",
@@ -36,7 +36,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "essential-tips-starting-restaurant",
     title: "Essential Tips for Starting a Restaurant",
-    excerpt: "Essential tips for starting a restaurant—concept clarity, business planning, location fit, menu design, team training, cost control, marketing, and a controlled opening before launch day.",
+    excerpt: "Essential tips for starting a restaurant, concept clarity, business planning, location fit, menu design, team training, cost control, marketing, and a controlled opening before launch day.",
     date: "2026-08-19",
     category: "Guides",
     readTime: "10 min",
@@ -44,7 +44,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "select-perfect-location-for-your-restaurant",
     title: "Select the Perfect Location for Your Restaurant",
-    excerpt: "An expert site selection guide to choose the perfect restaurant location—concept fit, demographics, foot vs vehicle traffic, micro-location checks, zoning, cost comparison, lease tips, and a printable checklist.",
+    excerpt: "An expert site selection guide to choose the perfect restaurant location, concept fit, demographics, foot vs vehicle traffic, micro-location checks, zoning, cost comparison, lease tips, and a printable checklist.",
     date: "2026-08-12",
     category: "Site Selection",
     readTime: "10 min",
@@ -52,7 +52,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "restaurant-location-strategy-most-profitable-spot",
     title: "Restaurant Location Strategy: How to Choose the Most Profitable Spot",
-    excerpt: "A numbers-forward restaurant location strategy—concept fit, trade areas, foot traffic, competitor mapping, feasibility math, rent ratios, mall vs street, GIS, scoring, and lease negotiation to pick the most profitable spot.",
+    excerpt: "A numbers-forward restaurant location strategy, concept fit, trade areas, foot traffic, competitor mapping, feasibility math, rent ratios, mall vs street, GIS, scoring, and lease negotiation to pick the most profitable spot.",
     date: "2026-08-12",
     category: "Site Selection",
     readTime: "10 min",
@@ -60,7 +60,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "find-perfect-location-restaurant-opening-texas",
     title: "Find the Perfect Location for Opening a Restaurant in Texas",
-    excerpt: "A numbers-backed guide to finding the perfect restaurant location in Texas—trade areas, metro markets, urban vs suburban sites, traffic counts, ROI modeling, zoning, health permits, drive-thru requirements, and lease negotiation.",
+    excerpt: "A numbers-backed guide to finding the perfect restaurant location in Texas, trade areas, metro markets, urban vs suburban sites, traffic counts, ROI modeling, zoning, health permits, drive-thru requirements, and lease negotiation.",
     date: "2026-08-12",
     category: "Site Selection",
     readTime: "13 min",
@@ -68,7 +68,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "find-perfect-location-restaurant-opening-california",
     title: "Find the Perfect Location for Opening a Restaurant in California",
-    excerpt: "A practical, data-driven guide to finding the perfect restaurant location in California—demographics, foot traffic, Anaheim submarkets, competitor audits, ROI modeling, zoning, liquor licenses, and lease negotiation.",
+    excerpt: "A practical, data-driven guide to finding the perfect restaurant location in California, demographics, foot traffic, Anaheim submarkets, competitor audits, ROI modeling, zoning, liquor licenses, and lease negotiation.",
     date: "2026-08-12",
     category: "Site Selection",
     readTime: "11 min",
@@ -76,7 +76,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "unique-restaurant-name-generator-tools-reviewed",
     title: "Unique Restaurant Name Generator Tools Reviewed",
-    excerpt: "A hands-on review of the best restaurant name generator tools—UpMenu, Squarespace, EatLive, Shopify, and Namelix—with features, comparisons, naming tips, SEO, and legal checks.",
+    excerpt: "A hands-on review of the best restaurant name generator tools, UpMenu, Squarespace, EatLive, Shopify, and Namelix, with features, comparisons, naming tips, SEO, and legal checks.",
     date: "2026-08-12",
     category: "Concept",
     readTime: "9 min",
@@ -84,7 +84,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "restaurant-competitive-analysis-success",
     title: "How to Do a Restaurant Competitive Analysis for Restaurant Success",
-    excerpt: "Learn how to do a restaurant competitive analysis—from identifying direct and indirect rivals to dissecting menus, guest experience, delivery zones, digital footprint, and SWOT strategy.",
+    excerpt: "Learn how to do a restaurant competitive analysis, from identifying direct and indirect rivals to dissecting menus, guest experience, delivery zones, digital footprint, and SWOT strategy.",
     date: "2026-07-30",
     category: "Site Selection",
     readTime: "10 min",
@@ -124,7 +124,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "enhancing-restaurant-operations-business-intelligence",
     title: "Enhancing Restaurant Operations with Business Intelligence",
-    excerpt: "Move beyond spreadsheets and basic POS reports—learn how restaurant business intelligence centralizes data, tracks prime cost and RevPASH, cuts waste, optimizes labor, and scales multi-unit operations.",
+    excerpt: "Move beyond spreadsheets and basic POS reports, learn how restaurant business intelligence centralizes data, tracks prime cost and RevPASH, cuts waste, optimizes labor, and scales multi-unit operations.",
     date: "2026-08-06",
     category: "Operations",
     readTime: "10 min",
@@ -132,7 +132,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "maximizing-profits-restaurant-intelligence-tools",
     title: "Maximizing Profits Using Restaurant Intelligence Tools",
-    excerpt: "Learn how restaurant intelligence tools turn POS and guest data into higher margins—through labor optimization, menu engineering, inventory control, dynamic pricing, and better customer experiences.",
+    excerpt: "Learn how restaurant intelligence tools turn POS and guest data into higher margins, through labor optimization, menu engineering, inventory control, dynamic pricing, and better customer experiences.",
     date: "2026-08-06",
     category: "Operations",
     readTime: "12 min",
@@ -140,7 +140,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "top-restaurant-data-analytics-tools-reviewed",
     title: "Top Restaurant Data Analytics Tools Reviewed",
-    excerpt: "An in-depth review of top restaurant data analytics tools including Tenzo, Oracle MICROS Simphony, Eat App, ClicData, GoodData, Quadratic, and more—with features, comparisons, and selection tips.",
+    excerpt: "An in-depth review of top restaurant data analytics tools including Tenzo, Oracle MICROS Simphony, Eat App, ClicData, GoodData, Quadratic, and more, with features, comparisons, and selection tips.",
     date: "2026-08-05",
     category: "Operations",
     readTime: "13 min",
@@ -148,7 +148,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "choosing-best-analytics-software-restaurants",
     title: "Choosing the Best Analytics Software for Restaurants",
-    excerpt: "A buyer's guide to choosing the best restaurant analytics software—key metrics, core features, integration, comparisons, case studies, implementation tips, and future trends.",
+    excerpt: "A buyer's guide to choosing the best restaurant analytics software, key metrics, core features, integration, comparisons, case studies, implementation tips, and future trends.",
     date: "2026-08-05",
     category: "Operations",
     readTime: "12 min",
@@ -164,7 +164,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "restaurant-site-selection-analysis",
     title: "What Is Restaurant Site Selection Analysis?",
-    excerpt: "What restaurant site selection analysis includes—market demand, customer fit, competition, visibility, traffic, lease conditions, operational suitability, and a practical process for confident location decisions.",
+    excerpt: "What restaurant site selection analysis includes, market demand, customer fit, competition, visibility, traffic, lease conditions, operational suitability, and a practical process for confident location decisions.",
     date: "2026-08-19",
     category: "Site Selection",
     readTime: "10 min",
