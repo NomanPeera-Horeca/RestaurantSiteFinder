@@ -172,10 +172,10 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "maximizing-efficiency-restaurant-analytics-software",
     title: "Maximizing Efficiency with Restaurant Analytics Software",
-    excerpt: "Discover how restaurant analytics software delivers real-time sales reporting, inventory optimization, customer segmentation, and predictive forecasting to maximize efficiency and profitability.",
-    date: "2026-07-30",
+    excerpt: "How restaurant analytics software improves efficiency—visibility across sales, labor, inventory, and guest behavior; core metrics, daily decisions, integration, tool selection, and building a data-friendly culture.",
+    date: "2026-08-26",
     category: "Operations",
-    readTime: "11 min",
+    readTime: "10 min",
   },
   {
     slug: "restaurant-site-selection-analysis",
