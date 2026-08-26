@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "strategies-increase-restaurant-foot-traffic",
+    title: "Strategies to Increase Restaurant Foot Traffic",
+    excerpt: "Practical strategies to increase restaurant foot traffic—traffic pattern analysis, visibility, behavior-based offers, local partnerships, digital presence, events, peak-hour experience, and measurement.",
+    date: "2026-08-26",
+    category: "Marketing",
+    readTime: "8 min",
+  },
+  {
     slug: "what-is-prime-cost-restaurant-business",
     title: "What Is Prime Cost in Restaurant Business?",
     excerpt: "What prime cost is in restaurant business—the formula, what to include, target percentages, food cost and labor management, common mistakes, and a weekly operating rhythm to protect margins.",
