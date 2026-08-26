@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "what-is-prime-cost-restaurant-business",
+    title: "What Is Prime Cost in Restaurant Business?",
+    excerpt: "What prime cost is in restaurant business—the formula, what to include, target percentages, food cost and labor management, common mistakes, and a weekly operating rhythm to protect margins.",
+    date: "2026-08-26",
+    category: "Guides",
+    readTime: "9 min",
+  },
+  {
     slug: "top-strategies-restaurant-success-today",
     title: "Top Strategies for Restaurant Success Today",
     excerpt: "Practical strategies for restaurant success today—concept clarity, menu design, customer service, business planning, marketing, team culture, technology, and habits that keep operations improving.",
