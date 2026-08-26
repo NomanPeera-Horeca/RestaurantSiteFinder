@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "top-strategies-restaurant-success-today",
+    title: "Top Strategies for Restaurant Success Today",
+    excerpt: "Practical strategies for restaurant success today, concept clarity, menu design, customer service, business planning, marketing, team culture, technology, and habits that keep operations improving.",
+    date: "2026-08-26",
+    category: "Guides",
+    readTime: "9 min",
+  },
+  {
     slug: "what-is-a-ghost-kitchen",
     title: "What Is a Ghost Kitchen?",
     excerpt: "What a ghost kitchen is, delivery-first operations, virtual brands, cloud kitchens, common business models, benefits, challenges, and how the model differs from traditional restaurants.",
