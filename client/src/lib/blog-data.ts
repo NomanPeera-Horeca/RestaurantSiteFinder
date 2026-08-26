@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "what-is-a-ghost-kitchen",
+    title: "What Is a Ghost Kitchen?",
+    excerpt: "What a ghost kitchen is—delivery-first operations, virtual brands, cloud kitchens, common business models, benefits, challenges, and how the model differs from traditional restaurants.",
+    date: "2026-08-26",
+    category: "Guides",
+    readTime: "10 min",
+  },
+  {
     slug: "choosing-ideal-location-restaurants",
     title: "Choosing the Ideal Location for Restaurants",
     excerpt: "How to choose the ideal restaurant location—concept fit, market research, visibility, accessibility, cost balance, competition signals, operational readiness, and a practical site comparison process.",
