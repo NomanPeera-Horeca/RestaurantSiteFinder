@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-much-does-it-cost-to-open-a-restaurant-2026",
+    title: "How Much Does It Cost to Open a Restaurant in 2026",
+    excerpt: "How much it costs to open a restaurant in 2026—startup ranges by concept, full cost breakdown, one-time vs operating expenses, financial planning, working capital, funding options, and common budget mistakes.",
+    date: "2026-09-02",
+    category: "Finance",
+    readTime: "14 min",
+  },
+  {
     slug: "how-to-choose-best-location-restaurant",
     title: "How to Choose the Best Location for a Restaurant",
     excerpt: "How to choose the best restaurant location—concept fit, trade area demand, visibility, traffic patterns, competition, rent economics, building readiness, lease terms, and a practical site comparison process.",
