@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "best-restaurant-locations-what-makes-location-profitable",
+    title: "Best Restaurant Locations: What Makes a Location Profitable?",
+    excerpt: "What makes restaurant locations profitable—customer match, useful foot traffic, accessibility, competition, rent and total cost, neighborhood fit, operations, dayparts, digital visibility, warning signs, and location scoring.",
+    date: "2026-09-02",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-find-perfect-restaurant-location",
     title: "How to Find the Perfect Restaurant Location",
     excerpt: "How to find the perfect restaurant location—concept fit, neighborhood demand, visibility, access, competition, financial checks, operational fit, site scoring, repeat visits, lease review, and red flags.",
