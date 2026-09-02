@@ -10,6 +10,22 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-find-perfect-restaurant-location",
+    title: "How to Find the Perfect Restaurant Location",
+    excerpt: "How to find the perfect restaurant location—concept fit, neighborhood demand, visibility, access, competition, financial checks, operational fit, site scoring, repeat visits, lease review, and red flags.",
+    date: "2026-09-02",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
+    slug: "restaurant-startup-costs-complete-breakdown-expenses",
+    title: "Restaurant Startup Costs: Complete Breakdown of Expenses",
+    excerpt: "Complete breakdown of restaurant startup costs—one-time vs monthly expenses, lease, buildout, equipment, permits, technology, inventory, marketing, payroll, spreadsheet planning, financing, cost reduction, and budget checklist.",
+    date: "2026-09-02",
+    category: "Finance",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-start-restaurant-complete-guide-beginners",
     title: "How to Start a Restaurant: Complete Guide for Beginners",
     excerpt: "Complete beginner guide to starting a restaurant—concept, market validation, business model, business plan, menu, location, permits, suppliers, pricing, systems, hiring, marketing, soft opening, and launch checklist.",
