@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-start-restaurant-complete-guide-beginners",
+    title: "How to Start a Restaurant: Complete Guide for Beginners",
+    excerpt: "Complete beginner guide to starting a restaurant—concept, market validation, business model, business plan, menu, location, permits, suppliers, pricing, systems, hiring, marketing, soft opening, and launch checklist.",
+    date: "2026-09-02",
+    category: "Guides",
+    readTime: "13 min",
+  },
+  {
     slug: "how-much-does-it-cost-to-open-a-restaurant-2026",
     title: "How Much Does It Cost to Open a Restaurant in 2026",
     excerpt: "How much it costs to open a restaurant in 2026—startup ranges by concept, full cost breakdown, one-time vs operating expenses, financial planning, working capital, funding options, and common budget mistakes.",
