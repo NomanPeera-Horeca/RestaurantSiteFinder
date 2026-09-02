@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-choose-best-location-restaurant",
+    title: "How to Choose the Best Location for a Restaurant",
+    excerpt: "How to choose the best restaurant location—concept fit, trade area demand, visibility, traffic patterns, competition, rent economics, building readiness, lease terms, and a practical site comparison process.",
+    date: "2026-09-02",
+    category: "Site Selection",
+    readTime: "13 min",
+  },
+  {
     slug: "strategies-increase-restaurant-foot-traffic",
     title: "Strategies to Increase Restaurant Foot Traffic",
     excerpt: "Practical strategies to increase restaurant foot traffic—traffic pattern analysis, visibility, behavior-based offers, local partnerships, digital presence, events, peak-hour experience, and measurement.",
