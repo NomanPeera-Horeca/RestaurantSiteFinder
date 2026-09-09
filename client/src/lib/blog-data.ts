@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "why-location-is-important-for-restaurant",
+    title: "Why Location is Important for Restaurant",
+    excerpt: "Why location is important for restaurant success—customer behavior, visibility, convenience, market placement, location analysis checklist, positioning, accessibility, competition, and common mistakes to avoid.",
+    date: "2026-09-09",
+    category: "Site Selection",
+    readTime: "9 min",
+  },
+  {
     slug: "using-ai-choose-perfect-location-restaurant-business",
     title: "Using AI to Choose the Perfect Location for a Restaurant Business",
     excerpt: "Using AI to choose the perfect location for a restaurant business—demographics, foot traffic, competitor analysis, accessibility, validation checklists, expansion strategy, and blending data with human judgment.",
