@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "using-ai-choose-perfect-location-restaurant-business",
+    title: "Using AI to Choose the Perfect Location for a Restaurant Business",
+    excerpt: "Using AI to choose the perfect location for a restaurant business—demographics, foot traffic, competitor analysis, accessibility, validation checklists, expansion strategy, and blending data with human judgment.",
+    date: "2026-09-09",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "understanding-factors-influencing-restaurant-foot-traffic",
     title: "Understanding Factors Influencing Restaurant Foot Traffic",
     excerpt: "Understanding factors influencing restaurant foot traffic—awareness, motivation, ease, location, visibility, timing, foot traffic insights, customer experience, menu design, online presence, competition, promotions, and community connection.",
