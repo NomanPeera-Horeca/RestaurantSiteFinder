@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "understanding-factors-influencing-restaurant-foot-traffic",
+    title: "Understanding Factors Influencing Restaurant Foot Traffic",
+    excerpt: "Understanding factors influencing restaurant foot traffic—awareness, motivation, ease, location, visibility, timing, foot traffic insights, customer experience, menu design, online presence, competition, promotions, and community connection.",
+    date: "2026-09-09",
+    category: "Marketing",
+    readTime: "10 min",
+  },
+  {
     slug: "maximizing-profitability-restaurant-analytics",
     title: "Maximizing Profitability with Restaurant Analytics",
     excerpt: "Maximizing profitability with restaurant analytics—key metrics, menu strategy, waste and food cost control, labor planning, multi-location comparisons, SWOT analysis, software features, and building data habits.",
