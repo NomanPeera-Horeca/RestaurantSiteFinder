@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "creating-functional-ghost-kitchen-space",
+    title: "Creating a Functional Ghost Kitchen Space",
+    excerpt: "How to create a functional ghost kitchen space—menu-first layout, workflow zones, storage, cook line design, packaging and pickup, modular flexibility, technology, safety, and planning checklist.",
+    date: "2026-09-09",
+    category: "Guides",
+    readTime: "9 min",
+  },
+  {
     slug: "best-restaurant-locations-what-makes-location-profitable",
     title: "Best Restaurant Locations: What Makes a Location Profitable?",
     excerpt: "What makes restaurant locations profitable—customer match, useful foot traffic, accessibility, competition, rent and total cost, neighborhood fit, operations, dayparts, digital visibility, warning signs, and location scoring.",
