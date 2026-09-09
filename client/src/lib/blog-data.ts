@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "maximizing-profitability-restaurant-analytics",
+    title: "Maximizing Profitability with Restaurant Analytics",
+    excerpt: "Maximizing profitability with restaurant analytics—key metrics, menu strategy, waste and food cost control, labor planning, multi-location comparisons, SWOT analysis, software features, and building data habits.",
+    date: "2026-09-09",
+    category: "Operations",
+    readTime: "9 min",
+  },
+  {
     slug: "creating-functional-ghost-kitchen-space",
     title: "Creating a Functional Ghost Kitchen Space",
     excerpt: "How to create a functional ghost kitchen space—menu-first layout, workflow zones, storage, cook line design, packaging and pickup, modular flexibility, technology, safety, and planning checklist.",
