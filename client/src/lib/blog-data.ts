@@ -10,6 +10,22 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "creating-functional-ghost-kitchen-space",
+    title: "Creating a Functional Ghost Kitchen Space",
+    excerpt: "How to create a functional ghost kitchen space: menu-first layout, workflow zones, storage, cook line design, packaging and pickup, modular flexibility, technology, safety, and planning checklist.",
+    date: "2026-09-09",
+    category: "Guides",
+    readTime: "9 min",
+  },
+  {
+    slug: "how-to-start-restaurant-complete-guide-beginners",
+    title: "How to Start a Restaurant: Complete Guide for Beginners",
+    excerpt: "Complete beginner guide to starting a restaurant: concept, market validation, business model, business plan, menu, location, permits, suppliers, pricing, systems, hiring, marketing, soft opening, and launch checklist.",
+    date: "2026-09-02",
+    category: "Guides",
+    readTime: "13 min",
+  },
+  {
     slug: "strategies-increase-restaurant-foot-traffic",
     title: "Strategies to Increase Restaurant Foot Traffic",
     excerpt: "Practical strategies to increase restaurant foot traffic, traffic pattern analysis, visibility, behavior-based offers, local partnerships, digital presence, events, peak-hour experience, and measurement.",
