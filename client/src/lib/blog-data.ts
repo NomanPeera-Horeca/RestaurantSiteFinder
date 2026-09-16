@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-rent-how-much-should-you-pay",
+    title: "Restaurant Rent: How Much Should You Pay?",
+    excerpt: "Restaurant rent—how much you should pay, sales-based affordability tests, full occupancy costs, commercial rent drivers, NYC considerations, food truck vs restaurant, lease terms, checklist, and smart cost management.",
+    date: "2026-09-16",
+    category: "Finance",
+    readTime: "9 min",
+  },
+  {
     slug: "what-percentage-sales-should-rent-be-restaurant",
     title: "What Percentage of Sales Should Rent Be for a Restaurant",
     excerpt: "What percentage of sales should rent be for a restaurant—6% base rent benchmark, 10% total occupancy cost, calculation formula, percentage rent leases, negotiation strategies, and affordability checklist.",
