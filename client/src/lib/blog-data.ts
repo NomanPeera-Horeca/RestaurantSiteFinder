@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "what-percentage-sales-should-rent-be-restaurant",
+    title: "What Percentage of Sales Should Rent Be for a Restaurant",
+    excerpt: "What percentage of sales should rent be for a restaurant—6% base rent benchmark, 10% total occupancy cost, calculation formula, percentage rent leases, negotiation strategies, and affordability checklist.",
+    date: "2026-09-16",
+    category: "Finance",
+    readTime: "9 min",
+  },
+  {
     slug: "why-location-is-important-for-restaurant",
     title: "Why Location is Important for Restaurant",
     excerpt: "Why location is important for restaurant success—customer behavior, visibility, convenience, market placement, location analysis checklist, positioning, accessibility, competition, and common mistakes to avoid.",
