@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-choose-restaurant-location-based-on-foot-traffic",
+    title: "How to Choose a Restaurant Location Based on Foot Traffic",
+    excerpt: "How to choose a restaurant location based on foot traffic—concept fit, buying intent, foot traffic analysis, visibility, customer flow, traffic patterns, competition, operational fit, common mistakes, and selection framework.",
+    date: "2026-09-16",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "restaurant-rent-how-much-should-you-pay",
     title: "Restaurant Rent: How Much Should You Pay?",
     excerpt: "Restaurant rent—how much you should pay, sales-based affordability tests, full occupancy costs, commercial rent drivers, NYC considerations, food truck vs restaurant, lease terms, checklist, and smart cost management.",
