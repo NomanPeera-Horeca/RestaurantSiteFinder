@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-demographic-analysis-find-target-customers",
+    title: "Restaurant Demographic Analysis: How to Find Your Target Customers",
+    excerpt: "Restaurant demographic analysis—how to find your target customers using internal data, local market research, customer segments, surveys, menu and marketing alignment, tools, common mistakes, and ongoing analysis rhythm.",
+    date: "2026-09-16",
+    category: "Marketing",
+    readTime: "10 min",
+  },
+  {
     slug: "restaurant-location-analysis-15-factors-signing-lease",
     title: "Restaurant Location Analysis: 15 Factors to Check Before Signing a Lease",
     excerpt: "Restaurant location analysis—15 factors to check before signing a lease: concept fit, demographics, daypart demand, visibility, access, parking, foot traffic, competition, lease economics, buildout, labor, regulations, operating costs, site comparison, and red flags.",
