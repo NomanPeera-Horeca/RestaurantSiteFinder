@@ -10,6 +10,14 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-location-analysis-15-factors-signing-lease",
+    title: "Restaurant Location Analysis: 15 Factors to Check Before Signing a Lease",
+    excerpt: "Restaurant location analysis—15 factors to check before signing a lease: concept fit, demographics, daypart demand, visibility, access, parking, foot traffic, competition, lease economics, buildout, labor, regulations, operating costs, site comparison, and red flags.",
+    date: "2026-09-16",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "how-to-choose-restaurant-location-based-on-foot-traffic",
     title: "How to Choose a Restaurant Location Based on Foot Traffic",
     excerpt: "How to choose a restaurant location based on foot traffic—concept fit, buying intent, foot traffic analysis, visibility, customer flow, traffic patterns, competition, operational fit, common mistakes, and selection framework.",
