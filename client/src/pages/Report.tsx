@@ -903,7 +903,7 @@ function EquipmentSection({ bundles, recommendation }: { bundles: EquipmentBundl
         {/* Main CTA */}
         <div className="bg-gradient-to-br from-[oklch(0.22_0.04_260)] to-[oklch(0.30_0.04_260)] rounded-xl p-8 text-center">
           <a href={HORECA.website} target="_blank" rel="noopener">
-            <img src={HORECA.logo} alt="Horeca Store" className="h-8 mx-auto mb-4 brightness-0 invert opacity-80" />
+            <img src={HORECA.logo} alt="Horeca Store" className="h-8 mx-auto mb-4 opacity-90" />
           </a>
           <h3 className="text-xl font-bold text-white mb-2">
             {recommendation === "NO-GO" || recommendation === "CAUTION"
