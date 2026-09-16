@@ -74,7 +74,7 @@ export function renderPage(meta: PageMeta, body: string, activeNav?: string): st
         <a href="${SITE.url}/blog"${activeNav === "blog" ? ' class="active"' : ""}>Guides</a>
         <a href="${SITE.url}/glossary"${activeNav === "glossary" ? ' class="active"' : ""}>Glossary</a>
         <a href="${HORECA.website}" target="_blank" rel="noopener" class="horeca-logo">
-          <img src="${HORECA.logo}" alt="${escapeHtml(HORECA.name)} logo" width="120" height="28" loading="lazy" />
+          <img src="${HORECA.logo}" alt="${escapeHtml(HORECA.name)} logo" height="28" style="height:28px;width:auto" loading="lazy" />
         </a>
       </nav>
     </div>

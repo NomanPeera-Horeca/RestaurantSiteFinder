@@ -582,7 +582,7 @@ export default function NameGenerator() {
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex items-center gap-2 mb-3">
                       <img
-                        src="https://d2xsxph8kpxj0f.cloudfront.net/310519663403284701/HwLz9SBGbDEkubjg5ygWVH/favicon-192_49573d7a.png"
+                        src={HORECA.icon}
                         alt="Horeca Store"
                         className="h-5 w-5 rounded"
                       />
