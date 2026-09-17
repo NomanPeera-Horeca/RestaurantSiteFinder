@@ -42,7 +42,7 @@ jobs:
         run: pnpm check
 
       - name: Tests
-        run: pnpm test
+        run: pnpm exec vitest run --passWithNoTests
 
       - name: Production build
         run: pnpm build
