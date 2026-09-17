@@ -1,25 +1,25 @@
 ---
-title: "Restaurant Location Analysis: 15 Factors to Check Before Signing a Lease"
-metaTitle: "Restaurant Location Checklist: 15 Key Factors Before Leasing"
+title: "Restaurant Lease Due Diligence: 15 Site Checks Before You Sign"
+metaTitle: "Restaurant Lease Due Diligence: 15 Site Checks"
 slug: restaurant-location-analysis-15-factors-signing-lease
-metaDescription: "Discover 15 key factors for successful restaurant location analysis before signing a lease. Enhance your location strategy with our comprehensive."
+metaDescription: "Use a restaurant lease due diligence checklist covering demand, access, parking, competition, buildout, zoning, labor, and occupancy costs before signing."
 date: "2026-09-16"
 lastModified: "2026-09-16"
 author: "Horeca Store"
 category: "Site Selection"
 tags:
-  - restaurant location analysis
-  - site selection checklist
+  - restaurant lease due diligence
+  - restaurant site due diligence
   - lease signing
-  - restaurant placement
-  - location strategy
-excerpt: "Restaurant location analysis, 15 factors to check before signing a lease: concept fit, demographics, daypart demand, visibility, access, parking, foot traffic, competition, lease economics, buildout, labor, regulations, operating costs, site comparison, and red flags."
+  - restaurant property inspection
+  - site selection
+excerpt: "Restaurant lease due diligence, 15 checks covering concept fit, demographics, dayparts, access, parking, competition, economics, buildout, labor, zoning, and site-level operating costs."
 keywords:
-  - restaurant location analysis 15 factors
-  - check before signing restaurant lease
-  - restaurant location checklist
-  - restaurant site selection factors
-  - location analysis before lease
+  - restaurant lease due diligence
+  - restaurant lease due diligence checklist
+  - restaurant site due diligence
+  - what to check before signing restaurant lease
+  - restaurant property inspection checklist
 relatedSlugs:
   - restaurant-site-finder-checklist-15-factors
   - go-no-go-restaurant-location-decision
@@ -27,9 +27,9 @@ relatedSlugs:
   - what-percentage-sales-should-rent-be-restaurant
   - how-to-choose-restaurant-location-based-on-foot-traffic
 faq:
-  - question: "What should restaurant location analysis tell you before signing a lease?"
+  - question: "What should restaurant lease due diligence tell you before signing?"
     answer: "It should tell you whether the site can realistically support your sales, service model, labor needs, delivery radius, and rent burden. Match the right restaurant placement to the right customers, dayparts, competitors, access points, and cost structure, not just a busy street."
-  - question: "What are the 15 factors to check before signing a restaurant lease?"
+  - question: "What are the 15 restaurant site due diligence checks?"
     answer: "Concept fit, demographics, daypart demand, visibility, accessibility, parking and delivery logistics, foot traffic quality, vehicle traffic, competition, neighboring demand generators, lease economics, buildout complexity, labor market access, regulations and zoning, and unit-level operating costs."
   - question: "How do you compare two restaurant sites fairly?"
     answer: "Score the same factors with the same assumptions, then stress-test under conservative, moderate, and optimistic scenarios. Define concept requirements, map the trade area, observe during key dayparts, build a competitor map, model unit economics, and document risks."
@@ -39,17 +39,17 @@ faq:
     answer: "No. Software reveals patterns in mobility, demographics, and competition, but you still need to walk the block, review the lease with qualified professionals, and validate assumptions. The best process combines field observation with data."
 ---
 
-<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li><strong>Restaurant location analysis</strong> before signing a lease should confirm the site can support sales, service model, labor, delivery, and rent, not just look busy on a tour.</li><li>Check all 15 factors: concept fit through unit-level operating costs, then compare sites with the same assumptions and stress tests.</li><li>Walk the block at your key dayparts; layer in demographics, competition, and lease economics before committing.</li><li>Screen candidate addresses free at <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a>, then apply our <a href="/blog/go-no-go-restaurant-location-decision">Go/No-Go framework</a>.</li></ul></div>
+<div class="tldr-box"><p><strong>Key Takeaways</strong></p><ul><li><strong>Restaurant lease due diligence</strong> should confirm the site can support sales, service model, labor, delivery, and rent, not just look busy on a tour.</li><li>Check all 15 factors: concept fit through unit-level operating costs, then compare sites with the same assumptions and stress tests.</li><li>Walk the block at your key dayparts; layer in demographics, competition, and lease economics before committing.</li><li>Screen candidate addresses free at <a href="https://restaurantsitefinder.com/">Restaurant Site Finder</a>, then apply our <a href="/blog/go-no-go-restaurant-location-decision">Go/No-Go framework</a>.</li></ul></div>
 
-A great restaurant lease can become a growth engine, while the wrong one can drain cash before the concept has a fair chance. Restaurant location analysis helps you evaluate demand, access, competition, operating costs, and customer fit before you commit. Use this guide as a practical restaurant location analysis checklist for comparing sites, asking better questions, and building a location strategy that matches your concept.
+A great restaurant lease can become a growth engine, while the wrong one can drain cash before the concept has a fair chance. Restaurant lease due diligence helps you evaluate demand, access, competition, operating costs, physical constraints, and customer fit before you commit. Use this guide as a practical restaurant location analysis checklist for comparing sites, asking better questions, and building a location strategy that matches your concept.
 
 ![Restaurant location analysis, 15 factors to check before signing a lease](/blog/restaurant-location-analysis-15-factors-signing-lease/image1.webp)
 
-## What should restaurant location analysis tell you before you sign?
+## What should restaurant lease due diligence tell you before you sign?
 
-Restaurant location analysis should tell you whether a specific site can realistically support your sales, service model, labor needs, delivery radius, and rent burden. It is not just about finding a busy street; it is about matching the right restaurant placement to the right customers, dayparts, competitors, access points, and cost structure. Good restaurant site selection turns a promising address into a tested business assumption, not a guess.
+Restaurant lease due diligence should tell you whether a specific site can realistically support your sales, service model, labor needs, delivery radius, buildout requirements, and rent burden. It is not just about finding a busy street; it is about matching the right restaurant placement to the right customers, dayparts, competitors, access points, and cost structure. Good restaurant site selection turns a promising address into a tested business assumption, not a guess.
 
-The best restaurant location analysis combines field observation with data. Walk the block at breakfast, lunch, dinner, and late night if relevant. Then layer in location intelligence, restaurant demographics analysis, traffic patterns, nearby anchors, competitor density, and lease economics. The goal is simple: understand who is nearby, why they would choose you, and whether the site can make money after occupancy and operating costs.
+The strongest lease due diligence combines field observation with data. Walk the block at breakfast, lunch, dinner, and late night if relevant. Then layer in location intelligence, restaurant demographics analysis, traffic patterns, nearby anchors, competitor density, and lease economics. The goal is simple: understand who is nearby, why they would choose you, and whether the site can make money after occupancy and operating costs.
 
 ## 1. Concept fit with the trade area
 

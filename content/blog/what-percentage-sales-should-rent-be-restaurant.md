@@ -45,11 +45,11 @@ For many restaurants, rent works best when it stays low enough to leave room for
 
 ## What percentage of sales should rent be for a restaurant?
 
-A practical rule of thumb is that restaurant rent as a percentage of sales should usually fall somewhere below 6% for base rent, while total occupancy cost should generally stay below 10% of sales. Occupancy cost is broader than rent: it can include base rent, common area maintenance charges, property tax pass-throughs, building insurance, and other required property-related costs. The Counselors of Real Estate notes the common industry rule that rent should generally be no more than 6% of total sales, with total occupancy cost no more than 10%.
+A practical rule of thumb is that restaurant rent as a percentage of sales should usually fall somewhere below 6% for base rent, while total occupancy cost should generally stay below 10% of sales. Occupancy cost is broader than rent: it can include base rent, common area maintenance charges, property tax pass-throughs, building insurance, and other required property-related costs. [The Counselors of Real Estate](https://cre.org/real-estate-issues/the-stages-in-the-life-of-a-restaurant-property/) notes the common industry rule of thumb that rent should generally be no more than 6% of total sales, with total occupancy cost no more than 10%.
 
 That benchmark gives you a quick way to judge whether a site is financially realistic. If a restaurant expects $1,200,000 in annual sales, then 6% rent equals $72,000 per year, or $6,000 per month. If the same location also has CAM, taxes, insurance, and other occupancy charges, those costs should be included before deciding whether the lease is affordable.
 
-The National Restaurant Association reported that restaurant occupancy costs were more than 5% of sales in 2024, with differences by restaurant type and location. That helps show why the "right" restaurant rent percentage depends on the whole business model rather than rent alone.
+The [National Restaurant Association](https://restaurant.org/research-and-media/research/restaurant-economic-insights/analysis-commentary/restaurant-occupancy-costs-were-more-than-5-of-sales-in-2024/) reported median occupancy costs of 5.7% of sales for full-service respondents and 5.2% for limited-service respondents in 2024, with meaningful variation by location. That helps show why the "right" restaurant rent percentage depends on the whole business model rather than rent alone.
 
 ## Rent is only one part of occupancy cost
 

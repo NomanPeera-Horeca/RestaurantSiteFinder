@@ -2,7 +2,7 @@
 title: "Restaurant Rent: How Much Should You Pay?"
 metaTitle: "Restaurant Rent Costs: Smart Strategies to Pay Right"
 slug: restaurant-rent-how-much-should-you-pay
-metaDescription: "Determine the ideal restaurant rent with our guide, covering costs, lease terms, and location impacts. Master commercial rent and optimize food."
+metaDescription: "Learn how much restaurant rent you can afford using sales, occupancy costs, lease terms, buildout risk, and conservative cash-flow tests before signing."
 date: "2026-09-16"
 lastModified: "2026-09-16"
 author: "Horeca Store"
