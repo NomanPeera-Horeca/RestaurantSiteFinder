@@ -2,7 +2,7 @@
 title: "How to Choose a Restaurant Location Based on Foot Traffic"
 metaTitle: "Choose Restaurant Location: Foot Traffic Strategy"
 slug: how-to-choose-restaurant-location-based-on-foot-traffic
-metaDescription: "Discover how to choose a restaurant location based on foot traffic to boost visibility and customer flow. Learn effective location strategies for."
+metaDescription: "Choose a restaurant location using foot traffic quality, customer intent, visibility, access, dayparts, and real-world observation before signing a lease."
 date: "2026-09-16"
 lastModified: "2026-09-16"
 author: "Horeca Store"
