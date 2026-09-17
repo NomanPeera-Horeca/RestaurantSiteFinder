@@ -1,0 +1,76 @@
+name: Vinayak cleanup verification
+
+on:
+  push:
+    branches:
+      - cleanup/vinayak-sep17
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "ChatGPT Release Bot"
+          git config user.email "noreply@openai.com"
+
+      - name: Apply local Horeca logo fix
+        run: |
+          git fetch origin content/vinayak
+          git cherry-pick 4f02ddd051657392fb6e83639f18ac11f0bf0add
+
+      - name: Clean and verify blog content
+        run: node scripts/cleanup-sep17.mjs
+
+      - name: Set up pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.4.1 --activate
+          pnpm --version
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm check
+
+      - name: Tests
+        run: pnpm test
+
+      - name: Production build
+        run: pnpm build
+
+      - name: Production-style smoke test
+        run: |
+          NODE_ENV=production PORT=4173 node dist/index.js >/tmp/rsf-server.log 2>&1 &
+          SERVER_PID=$!
+          cleanup() { kill "$SERVER_PID" 2>/dev/null || true; }
+          trap cleanup EXIT
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:4173/ >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:4173/blog/what-percentage-sales-should-rent-be-restaurant | grep -q "What Percentage of Sales Should Rent Be for a Restaurant"
+          curl -fsS http://127.0.0.1:4173/blog/restaurant-rent-how-much-should-you-pay | grep -q "Restaurant Rent: How Much Should You Pay"
+          curl -fsS http://127.0.0.1:4173/blog/how-to-choose-restaurant-location-based-on-foot-traffic | grep -q "How to Choose a Restaurant Location Based on Foot Traffic"
+          curl -fsS http://127.0.0.1:4173/blog/restaurant-location-analysis-15-factors-signing-lease | grep -q "Restaurant Lease Due Diligence"
+          curl -fsS http://127.0.0.1:4173/blog/restaurant-demographic-analysis-find-target-customers | grep -q "Restaurant Customer Demographics"
+          curl -fsS http://127.0.0.1:4173/horeca-store-logo.png >/dev/null
+          curl -fsS http://127.0.0.1:4173/horeca-store-icon.png >/dev/null
+
+      - name: Commit verified release changes
+        run: |
+          git add client server content
+          if git diff --cached --quiet; then
+            echo "No release changes to commit"
+          else
+            git commit -m "fix: clean Vinayak content and local Horeca branding [skip ci]"
+            git push origin HEAD:cleanup/vinayak-sep17
+          fi
