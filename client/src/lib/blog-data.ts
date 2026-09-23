@@ -345,10 +345,11 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "leveraging-data-restaurant-success",
     title: "Leveraging Data for Restaurant Success",
-    excerpt: "Learn how restaurant business intelligence turns POS, labor, inventory, and guest data into actionable strategies for menu engineering, waste reduction, staffing, and multi-unit growth.",
+    excerpt:
+      "Leveraging data for restaurant success—restaurant business intelligence across sales, menu, labor, inventory, and guest engagement; practical rhythms, sales team visibility, tool selection, metrics, and data culture.",
     date: "2026-07-30",
     category: "Operations",
-    readTime: "12 min",
+    readTime: "11 min",
   },
   {
     slug: "maximizing-efficiency-restaurant-analytics-software",
