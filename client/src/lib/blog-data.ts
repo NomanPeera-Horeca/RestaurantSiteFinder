@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "boost-profits-effective-restaurant-analytics",
+    title: "Boost Profits with Effective Restaurant Analytics",
+    excerpt:
+      "Boost profits with effective restaurant analytics—connect POS, labor, inventory, and guest data to improve pricing, staffing, menu mix, QSR speed, multi-location benchmarks, SWOT planning, and daily management habits.",
+    date: "2026-09-23",
+    category: "Operations",
+    readTime: "12 min",
+  },
+  {
     slug: "restaurant-pos-systems-multi-channel-ordering",
     title: "3 Restaurant POS Systems That Make Multi-Channel Ordering Easier",
     excerpt:
