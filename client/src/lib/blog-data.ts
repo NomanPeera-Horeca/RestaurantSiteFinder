@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "using-restaurant-analytics-increase-profits",
+    title: "Using Restaurant Analytics to Increase Profits",
+    excerpt:
+      "Using restaurant analytics to increase profits—POS, menu, labor, and guest data; core metrics; menu and pricing analytics; forecasting, marketing, revenue tools, weekly routines, and mistakes that erode margin.",
+    date: "2026-09-23",
+    category: "Operations",
+    readTime: "14 min",
+  },
+  {
     slug: "leveraging-customer-analytics-boost-restaurant-success",
     title: "Leveraging Customer Analytics to Boost Restaurant Success",
     excerpt:
