@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-pos-systems-multi-channel-ordering",
+    title: "3 Restaurant POS Systems That Make Multi-Channel Ordering Easier",
+    excerpt:
+      "Three restaurant POS systems for multi-channel ordering—Orders.co, Square, and GoTab—compared on delivery apps, direct ordering, menu sync, kitchen routing, reporting, and which fits dine-in, delivery-heavy, or hospitality venues.",
+    date: "2026-09-23",
+    category: "Operations",
+    readTime: "9 min",
+  },
+  {
     slug: "restaurant-demographic-analysis-find-target-customers",
     title: "Restaurant Demographic Analysis: How to Find Your Target Customers",
     excerpt: "Restaurant demographic analysis—how to find your target customers using internal data, local market research, customer segments, surveys, menu and marketing alignment, tools, common mistakes, and ongoing analysis rhythm.",
