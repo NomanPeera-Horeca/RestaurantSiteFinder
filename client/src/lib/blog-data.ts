@@ -309,11 +309,12 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "effective-strategies-restaurant-market-research",
-    title: "Effective Strategies for Restaurant Market Research",
-    excerpt: "A complete guide to restaurant market research covering primary and secondary research, customer personas, competitive gap analysis, feasibility studies, SWOT, site selection, and hands-on dining insights.",
+    title: "Essential Strategies for Restaurant Market Research",
+    excerpt:
+      "Essential strategies for restaurant market research—clear objectives, guest profiles, dining trends, location evaluation, competitor gaps, surveys, menu and pricing decisions, post-launch performance, and a simple ongoing research rhythm.",
     date: "2026-07-30",
     category: "Site Selection",
-    readTime: "10 min",
+    readTime: "13 min",
   },
   {
     slug: "leveraging-ai-restaurant-market-insights",
