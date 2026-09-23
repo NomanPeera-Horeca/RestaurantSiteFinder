@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-use-data-analytics-improve-restaurant-revenue",
+    title: "How To Use Data Analytics to Improve Your Restaurant Revenue",
+    excerpt:
+      "How to use data analytics to improve restaurant revenue—POS, menu, labor, and guest data; core metrics; menu and pricing analytics; forecasting, marketing, revenue tools, weekly routines, and common mistakes.",
+    date: "2026-09-23",
+    category: "Operations",
+    readTime: "14 min",
+  },
+  {
     slug: "boost-profits-effective-restaurant-analytics",
     title: "Boost Profits with Effective Restaurant Analytics",
     excerpt:
