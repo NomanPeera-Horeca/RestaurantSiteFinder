@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "leveraging-customer-analytics-boost-restaurant-success",
+    title: "Leveraging Customer Analytics to Boost Restaurant Success",
+    excerpt:
+      "Leveraging customer analytics to boost restaurant success—POS, loyalty, and feedback data; key guest metrics; smarter marketing segments; analytics tools, menu and ops decisions, data privacy, and a practical start plan.",
+    date: "2026-09-23",
+    category: "Marketing",
+    readTime: "13 min",
+  },
+  {
     slug: "how-to-use-data-analytics-improve-restaurant-revenue",
     title: "How To Use Data Analytics to Improve Your Restaurant Revenue",
     excerpt:
