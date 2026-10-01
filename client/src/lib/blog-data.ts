@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-much-foot-traffic-restaurant-need-successful",
+    title: "How Much Foot Traffic Does a Restaurant Need to Be Successful?",
+    excerpt:
+      "How much foot traffic a restaurant needs to be successful—daily guest targets from revenue math, profitable conversion, metrics to track, visibility and local search, repeat visits, off-peak plans, and a practical traffic growth sequence.",
+    date: "2026-10-01",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
     slug: "best-places-open-restaurant-usa-25-cities-2026",
     title: "Best Places to Open a Restaurant in the USA: 25 Cities to Consider in 2026",
     excerpt:
