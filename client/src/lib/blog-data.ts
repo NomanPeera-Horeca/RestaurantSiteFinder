@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "best-places-open-restaurant-usa-25-cities-2026",
+    title: "Best Places to Open a Restaurant in the USA: 25 Cities to Consider in 2026",
+    excerpt:
+      "Best places to open a restaurant in the USA in 2026—25 cities to consider, what makes a strong restaurant market, profitability factors, site selection steps, and why population growth alone is not enough.",
+    date: "2026-10-01",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "using-restaurant-analytics-increase-profits",
     title: "Using Restaurant Analytics to Increase Profits",
     excerpt:
