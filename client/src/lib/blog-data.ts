@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-rent-calculator-how-much-rent-afford",
+    title: "Restaurant Rent Calculator: How Much Rent Can You Afford?",
+    excerpt:
+      "Restaurant rent calculator guide—how much rent you can afford from sales and occupancy cost, core formulas, percentage-of-sales targets, full lease cost estimator, scenarios, budgeting, negotiation, and pre-sign checklist.",
+    date: "2026-10-01",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "analyze-restaurant-location-without-consultant",
     title: "How to Analyze a Restaurant Location Without Hiring a Consultant",
     excerpt:
