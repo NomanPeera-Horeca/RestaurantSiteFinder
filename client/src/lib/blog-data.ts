@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-selection-software-what-to-look-for",
+    title: "Restaurant Site Selection Software: What Should You Look For?",
+    excerpt:
+      "Restaurant site selection software—what to look for in data integration, trade areas, traffic quality, custom scoring, predictive analytics, lease and financial workflows, collaboration, and vendor evaluation checklists.",
+    date: "2026-10-01",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
     slug: "restaurant-rent-calculator-how-much-rent-afford",
     title: "Restaurant Rent Calculator: How Much Rent Can You Afford?",
     excerpt:
