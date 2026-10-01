@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "analyze-restaurant-location-without-consultant",
+    title: "How to Analyze a Restaurant Location Without Hiring a Consultant",
+    excerpt:
+      "How to analyze a restaurant location without a consultant—concept fit, market and site layers, a 100-point scorecard, lease and traffic checks, DIY data sources, operating cost models, red flags, and a final go/no-go summary.",
+    date: "2026-10-01",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "how-much-foot-traffic-restaurant-need-successful",
     title: "How Much Foot Traffic Does a Restaurant Need to Be Successful?",
     excerpt:
