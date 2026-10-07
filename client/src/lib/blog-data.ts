@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-know-restaurant-location-will-be-profitable",
+    title: "How to Know If a Restaurant Location Will Be Profitable",
+    excerpt:
+      "How to know if a restaurant location will be profitable—demand, concept fit, competition, access, occupancy cost, and break-even checks before you sign a lease.",
+    date: "2026-10-07",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "analyze-restaurant-competition-before-opening",
     title: "How to Analyze Restaurant Competition Before Opening",
     excerpt:
