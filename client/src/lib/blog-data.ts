@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-measure-foot-traffic-restaurant-location",
+    title: "How to Measure Foot Traffic for a Restaurant Location",
+    excerpt:
+      "How to measure foot traffic for a restaurant location—manual counts, mobility data, anchors, competition, market data, rent math, and concept-specific site checks.",
+    date: "2026-10-07",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-market-analysis-evaluate-new-market",
     title: "Restaurant Market Analysis: How to Evaluate a New Market",
     excerpt:
