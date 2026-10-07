@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "analyze-restaurant-competition-before-opening",
+    title: "How to Analyze Restaurant Competition Before Opening",
+    excerpt:
+      "How to analyze restaurant competition before opening—competitor maps, menu and pricing reviews, demographics, foot traffic, reviews, SWOT, benchmarking, and positioning.",
+    date: "2026-10-07",
+    category: "Site Selection",
+    readTime: "14 min",
+  },
+  {
     slug: "restaurant-site-selection-complete-guide-new-owners",
     title: "Restaurant Site Selection: Complete Guide for New Owners",
     excerpt:
