@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-market-analysis-evaluate-new-market",
+    title: "Restaurant Market Analysis: How to Evaluate a New Market",
+    excerpt:
+      "How to evaluate a new restaurant market—demographics, demand, competition, costs, zoning, delivery, location types, lease setup, and ongoing performance tracking.",
+    date: "2026-10-07",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-know-restaurant-location-will-be-profitable",
     title: "How to Know If a Restaurant Location Will Be Profitable",
     excerpt:
