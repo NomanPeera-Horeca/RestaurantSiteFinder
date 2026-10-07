@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-selection-complete-guide-new-owners",
+    title: "Restaurant Site Selection: Complete Guide for New Owners",
+    excerpt:
+      "A practical restaurant site selection guide for new owners—concept fit, trade areas, traffic, competition, lease math, checklists, and tools before you sign.",
+    date: "2026-10-07",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
     slug: "restaurant-site-selection-software-what-to-look-for",
     title: "Restaurant Site Selection Software: What Should You Look For?",
     excerpt:
