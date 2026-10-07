@@ -50,9 +50,9 @@ The three restaurant POS systems below approach multi-channel ordering in differ
 
 ## 1. Orders.co
 
-![Restaurant POS for multi-channel ordering—Orders.co](/blog/restaurant-pos-systems-multi-channel-ordering/image1.webp)
+<img src="/blog/restaurant-pos-systems-multi-channel-ordering/orders-co-restaurant-pos-multi-channel-ordering.webp" alt="Orders.co restaurant POS for multi-channel ordering" width="1000" height="625" loading="lazy" decoding="async" />
 
-Orders.co brings POS, online ordering, delivery apps, kitchen operations, loyalty, and marketing together in one system. Instead of watching separate screens for each channel, staff work from one centralized system where DoorDash, Uber Eats, Grubhub, ezCater, direct website, phone, and dine-in orders all flow in. Orders can be managed in one place regardless of the source.
+[Orders.co](https://orders.co/) brings POS, online ordering, delivery apps, kitchen operations, loyalty, and marketing together in one system. Instead of watching separate screens for each channel, staff work from one centralized system where DoorDash, Uber Eats, Grubhub, ezCater, direct website, phone, and dine-in orders all flow in. Orders can be managed in one place regardless of the source.
 
 ### Channel by channel
 
@@ -82,7 +82,7 @@ Customer feedback consistently highlights easier order management, useful automa
 
 ## 2. Square
 
-![Restaurant POS multi-channel ordering—Square ecosystem](/blog/restaurant-pos-systems-multi-channel-ordering/image2.webp)
+<img src="/blog/restaurant-pos-systems-multi-channel-ordering/square-restaurant-pos-multi-channel-ordering.webp" alt="Square restaurant POS for multi-channel ordering" width="1000" height="625" loading="lazy" decoding="async" />
 
 Square combines restaurant POS and payment processing with online ordering, delivery integrations, inventory tools, customer management, and other business features. Restaurants can use the same ecosystem for in-person transactions and digital orders, which can simplify operations for businesses that do not want to manage several unrelated systems.
 
@@ -120,7 +120,7 @@ The platform tends to appeal most to businesses that want a recognizable POS and
 
 ## 3. GoTab
 
-![Multi-channel restaurant POS—GoTab ordering flexibility](/blog/restaurant-pos-systems-multi-channel-ordering/image3.webp)
+<img src="/blog/restaurant-pos-systems-multi-channel-ordering/gotab-restaurant-pos-multi-channel-ordering.webp" alt="GoTab restaurant POS for multi-channel ordering" width="1000" height="486" loading="lazy" decoding="async" />
 
 GoTab focuses on flexible ordering and payment workflows for restaurants, bars, breweries, food halls, and other hospitality businesses. Its approach is particularly suited to venues where customers may order in several different ways, including traditional staff-assisted service and QR-based ordering.
 
