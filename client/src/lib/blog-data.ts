@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-site-selection-checklist-25-things-before-lease",
+    title: "Restaurant Site Selection Checklist: 25 Things to Check Before Signing a Lease",
+    excerpt:
+      "Restaurant site selection checklist—25 things to check before signing a lease: market fit, dayparts, trade area, visibility, parking, kitchen systems, rent math, TI allowance, permits, neighbors, and exit flexibility.",
+    date: "2026-10-14",
+    category: "Site Selection",
+    readTime: "12 min",
+  },
+  {
     slug: "restaurant-market-feasibility-study-evaluate-location-before-investing",
     title: "Restaurant Market Feasibility Study: How to Evaluate a Location Before Investing",
     excerpt:
