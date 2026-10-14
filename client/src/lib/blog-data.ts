@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "ai-help-restaurant-owners-reduce-business-risk-before-opening",
+    title: "How AI Can Help Restaurant Owners Reduce Business Risk Before Opening",
+    excerpt:
+      "How AI helps restaurant owners reduce business risk before opening—market research, location and competitor analysis, demographics, startup costs, scenarios, limits, and a pre-opening checklist.",
+    date: "2026-10-14",
+    category: "Site Selection",
+    readTime: "8 min",
+  },
+  {
     slug: "best-locations-fast-casual-restaurant-traffic-demographics-competition",
     title: "Best Locations for a Fast-Casual Restaurant: Traffic, Demographics, and Competition",
     excerpt:
