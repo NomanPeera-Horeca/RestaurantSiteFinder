@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-market-feasibility-study-evaluate-location-before-investing",
+    title: "Restaurant Market Feasibility Study: How to Evaluate a Location Before Investing",
+    excerpt:
+      "Restaurant market feasibility study—concept fit, trade areas, demand, competition, costs, scoring, location comparison, checklist, and AI-assisted research before you invest.",
+    date: "2026-10-14",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-choose-best-location-coffee-shop-cafe",
     title: "How to Choose the Best Location for a Coffee Shop or Café",
     excerpt:
