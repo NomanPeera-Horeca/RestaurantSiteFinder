@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-choose-best-location-coffee-shop-cafe",
+    title: "How to Choose the Best Location for a Coffee Shop or Café",
+    excerpt:
+      "How to choose the best location for a coffee shop or café—location types, demographics, foot traffic, competition, rent, break-even math, process, checklist, and mistakes to avoid.",
+    date: "2026-10-14",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "ai-help-restaurant-owners-reduce-business-risk-before-opening",
     title: "How AI Can Help Restaurant Owners Reduce Business Risk Before Opening",
     excerpt:
