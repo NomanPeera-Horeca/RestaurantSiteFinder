@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "best-locations-fast-casual-restaurant-traffic-demographics-competition",
+    title: "Best Locations for a Fast-Casual Restaurant: Traffic, Demographics, and Competition",
+    excerpt:
+      "Best fast-casual restaurant locations—traffic patterns, demographics, trade areas, competition, rent, access, checklists, and a practical site comparison workflow.",
+    date: "2026-10-14",
+    category: "Site Selection",
+    readTime: "9 min",
+  },
+  {
     slug: "how-to-measure-foot-traffic-restaurant-location",
     title: "How to Measure Foot Traffic for a Restaurant Location",
     excerpt:
