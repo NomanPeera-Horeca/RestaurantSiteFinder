@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-start-restaurant-business-idea-to-grand-opening",
+    title: "How to Start a Restaurant Business From Business Idea to Grand Opening",
+    excerpt:
+      "How to start a restaurant business from idea to grand opening—concept, market research, business plan, startup budget, location, floor plan, permits, menu, equipment, staff, soft opening, and launch checklist.",
+    date: "2026-10-22",
+    category: "Guides",
+    readTime: "14 min",
+  },
+  {
     slug: "restaurant-site-selection-checklist-25-things-before-lease",
     title: "Restaurant Site Selection Checklist: 25 Things to Check Before Signing a Lease",
     excerpt:
