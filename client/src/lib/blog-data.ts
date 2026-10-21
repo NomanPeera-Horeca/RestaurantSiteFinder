@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-data-analytics-smarter-business-decisions",
+    title: "Restaurant Data Analytics: How to Make Smarter Business Decisions",
+    excerpt:
+      "Restaurant data analytics for smarter decisions—data sources, KPIs, sales and customer analysis, menu profitability matrix, operational costs, margin review, market research, workflow, and tools.",
+    date: "2026-10-22",
+    category: "Operations",
+    readTime: "11 min",
+  },
+  {
     slug: "analyze-restaurant-competition-before-choosing-location",
     title: "How to Analyze Restaurant Competition Before Choosing a Location",
     excerpt:
