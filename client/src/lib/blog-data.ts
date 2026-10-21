@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "opening-a-restaurant-checklist",
+    title: "Opening a Restaurant Checklist: Everything to Do Before Launch Day",
+    excerpt:
+      "Opening a restaurant checklist—concept, market research, business plan, location, permits, floor plan, menu, team, technology, marketing, final pre-opening controls, soft opening, and launch-day tasks.",
+    date: "2026-10-22",
+    category: "Guides",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-start-restaurant-business-idea-to-grand-opening",
     title: "How to Start a Restaurant Business From Business Idea to Grand Opening",
     excerpt:
