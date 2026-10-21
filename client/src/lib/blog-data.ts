@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-startup-checklist-first-time-entrepreneurs",
+    title: "Restaurant Startup Checklist: Essential Steps for First-Time Entrepreneurs",
+    excerpt:
+      "Restaurant startup checklist for first-time entrepreneurs—12 essential steps from concept and market research through business plan, budget, location, permits, floor plan, equipment, menu pricing, systems, hiring, launch, timeline, and common mistakes.",
+    date: "2026-10-22",
+    category: "Guides",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-data-analytics-smarter-business-decisions",
     title: "Restaurant Data Analytics: How to Make Smarter Business Decisions",
     excerpt:
