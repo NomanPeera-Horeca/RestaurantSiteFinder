@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-choose-restaurant-location-delivery-first-ghost-kitchens",
+    title: "How to Choose a Restaurant Location for Delivery-First and Ghost Kitchens",
+    excerpt:
+      "How to choose a restaurant location for delivery-first and ghost kitchens—location brief, operating model, demand research, route tests, pickup and kitchen inspection, full-cost budgets, permits, and site comparison.",
+    date: "2026-10-28",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "high-foot-traffic-vs-high-restaurant-sales-which-location-better",
     title: "High Foot Traffic vs. High Restaurant Sales: Which Location Is Actually Better?",
     excerpt:
