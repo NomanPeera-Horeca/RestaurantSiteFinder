@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-market-saturation-too-many-restaurants-area",
+    title: "Restaurant Market Saturation: How to Know When an Area Has Too Many Restaurants",
+    excerpt:
+      "How to know when an area has too many restaurants for your concept—define your trade area, measure direct and indirect competition, spot oversupply signals, tie demand to break-even math, test gaps, and use proceed/revise/reject gates.",
+    date: "2026-10-28",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "how-to-find-profitable-restaurant-locations-2026-data-driven-guide",
     title: "How to Find Profitable Restaurant Locations in 2026: A Data-Driven Guide",
     excerpt:

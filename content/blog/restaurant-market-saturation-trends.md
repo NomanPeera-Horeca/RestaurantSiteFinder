@@ -21,6 +21,7 @@ keywords:
   - restaurant market share
   - saturated market
 relatedSlugs:
+  - restaurant-market-saturation-too-many-restaurants-area
   - restaurant-market-analysis-guide
   - trade-area-analysis-restaurants
   - go-no-go-restaurant-location-decision
