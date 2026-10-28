@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "best-restaurant-location-analysis-tools-small-business-2026",
+    title: "Best Restaurant Location Analysis Tools for Small Businesses in 2026",
+    excerpt:
+      "Best restaurant location analysis tools for small businesses in 2026—when to use Restaurant Site Finder, Census Business Builder, Esri, Placer.ai, and SiteZeus; buying checklist, workflow, and common report mistakes.",
+    date: "2026-10-28",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "restaurant-startup-checklist-first-time-entrepreneurs",
     title: "Restaurant Startup Checklist: Essential Steps for First-Time Entrepreneurs",
     excerpt:
