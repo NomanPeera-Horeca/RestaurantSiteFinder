@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-find-profitable-restaurant-locations-2026-data-driven-guide",
+    title: "How to Find Profitable Restaurant Locations in 2026: A Data-Driven Guide",
+    excerpt:
+      "How to find profitable restaurant locations in 2026—a data-driven guide with trade-area mapping, traceable research files, site analysis, occasion-based competition, break-even models, property verification, scorecards, and stress tests.",
+    date: "2026-10-28",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "restaurant-investment-analysis-assess-location-before-spending-100000",
     title: "Restaurant Investment Analysis: How to Assess a Location Before Spending $100,000+",
     excerpt:
