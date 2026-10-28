@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "high-foot-traffic-vs-high-restaurant-sales-which-location-better",
+    title: "High Foot Traffic vs. High Restaurant Sales: Which Location Is Actually Better?",
+    excerpt:
+      "High foot traffic vs high restaurant sales—which location is better? Compare customer fit, buying behavior, dayparts, conservative sales forecasts, and occupancy cost instead of treating busy sidewalks as proof of demand.",
+    date: "2026-10-28",
+    category: "Site Selection",
+    readTime: "7 min",
+  },
+  {
     slug: "best-restaurant-location-analysis-tools-small-business-2026",
     title: "Best Restaurant Location Analysis Tools for Small Businesses in 2026",
     excerpt:
