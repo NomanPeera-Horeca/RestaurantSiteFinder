@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-investment-analysis-assess-location-before-spending-100000",
+    title: "Restaurant Investment Analysis: How to Assess a Location Before Spending $100,000+",
+    excerpt:
+      "Restaurant investment analysis—assess a location before spending $100,000+ with demand testing, competitor review, property due diligence, profitability and cash models, stress tests, and a weighted decision file.",
+    date: "2026-10-28",
+    category: "Site Selection",
+    readTime: "9 min",
+  },
+  {
     slug: "how-to-choose-restaurant-location-delivery-first-ghost-kitchens",
     title: "How to Choose a Restaurant Location for Delivery-First and Ghost Kitchens",
     excerpt:
