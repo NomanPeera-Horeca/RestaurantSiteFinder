@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-zoning-laws-grease-trap-regulations-before-sign-lease",
+    title: "Restaurant Zoning Laws and Grease Trap Regulations: What to Check Before You Sign",
+    excerpt:
+      "Restaurant zoning laws and grease trap regulations—verify permitted use, permit matrix, occupancy history, interceptor sizing and access, FOG maintenance, lease protections for approval risk, and a pre-sign decision checklist.",
+    date: "2026-11-04",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "commercial-restaurant-lease-negotiations-key-clauses-never-sign",
     title: "Commercial Restaurant Lease Negotiations: Key Clauses Operators Must Never Sign",
     excerpt:
