@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "commercial-restaurant-lease-negotiations-key-clauses-never-sign",
+    title: "Commercial Restaurant Lease Negotiations: Key Clauses Operators Must Never Sign",
+    excerpt:
+      "Commercial restaurant lease negotiations—clauses to never sign blindly: personal guaranties, rent commencement, open-ended CAM, as-is delivery, permitted use, relocation, assignment, defaults, renewal deadlines, and a pre-sign checklist.",
+    date: "2026-11-04",
+    category: "Finance",
+    readTime: "9 min",
+  },
+  {
     slug: "how-to-choose-best-restaurant-location-10-step-feasibility-checklist",
     title: "How to Choose the Best Location for a Restaurant: The 10-Step Feasibility Checklist",
     excerpt:
