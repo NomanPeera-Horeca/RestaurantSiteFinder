@@ -22,6 +22,7 @@ keywords:
   - restaurant location strategy
   - choose restaurant location wisely
 relatedSlugs:
+  - how-to-choose-best-restaurant-location-10-step-feasibility-checklist
   - how-to-choose-restaurant-location
   - choosing-ideal-location-restaurants
   - select-perfect-location-for-your-restaurant

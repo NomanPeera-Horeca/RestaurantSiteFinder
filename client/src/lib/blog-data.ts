@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-choose-best-restaurant-location-10-step-feasibility-checklist",
+    title: "How to Choose the Best Location for a Restaurant: The 10-Step Feasibility Checklist",
+    excerpt:
+      "A 10-step restaurant location feasibility checklist—concept brief, customer fit, timed demand observations, competitor mapping, arrival tests, break-even math, building inspection, permits, logistics, and finalist scorecards.",
+    date: "2026-11-04",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-market-saturation-too-many-restaurants-area",
     title: "Restaurant Market Saturation: How to Know When an Area Has Too Many Restaurants",
     excerpt:
