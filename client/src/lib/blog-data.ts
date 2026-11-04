@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "drive-thru-vs-fast-casual-vs-fine-dining-restaurant-footprint",
+    title: "Drive-Thru vs Fast-Casual vs Fine Dining: Matching Your Concept to the Right Footprint",
+    excerpt:
+      "Drive-thru vs fast-casual vs fine dining footprints—format priorities, drive-thru queue and site rules, fast-casual ordering and pickup routes, fine-dining service flow, square-foot worksheets, and property validation.",
+    date: "2026-11-04",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "ghost-kitchen-vs-brick-mortar-site-selection-cost-comparison",
     title: "Ghost Kitchen vs Traditional Brick-and-Mortar: Site Selection and Cost Comparison",
     excerpt:
