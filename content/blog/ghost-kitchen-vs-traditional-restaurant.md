@@ -21,6 +21,7 @@ keywords:
   - delivery-only restaurant
   - commissary kitchen
 relatedSlugs:
+  - ghost-kitchen-vs-brick-mortar-site-selection-cost-comparison
   - restaurant-concept-development-guide
   - how-much-does-it-cost-to-open-a-restaurant-2026
   - restaurant-profit-margins-unit-economics

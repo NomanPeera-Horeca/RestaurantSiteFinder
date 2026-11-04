@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "ghost-kitchen-vs-brick-mortar-site-selection-cost-comparison",
+    title: "Ghost Kitchen vs Traditional Brick-and-Mortar: Site Selection and Cost Comparison",
+    excerpt:
+      "Ghost kitchen vs brick-and-mortar site selection and cost comparison—cloud kitchen location requirements, traditional arrival checks, setup budgets, overhead worksheets, order break-even math, and finalist decision files.",
+    date: "2026-11-04",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "restaurant-zoning-laws-grease-trap-regulations-before-sign-lease",
     title: "Restaurant Zoning Laws and Grease Trap Regulations: What to Check Before You Sign",
     excerpt:
