@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "are-ghost-kitchens-profitable-costs-revenue-profit-margins",
+    title: "Are Ghost Kitchens Profitable? Costs, Revenue, and Profit Margins Explained",
+    excerpt:
+      "Are ghost kitchens profitable? Margins, contribution per order, full budgets, illustrative break-even, revenue by channel, delivery territory, operational levers, and a decision checklist before you expand.",
+    date: "2026-11-18",
+    category: "Finance",
+    readTime: "11 min",
+  },
+  {
     slug: "how-to-start-a-ghost-kitchen-location-costs-equipment-planning",
     title: "How to Start a Ghost Kitchen: Location, Costs, Equipment, and Planning",
     excerpt:

@@ -22,6 +22,7 @@ keywords:
   - ghost kitchen equipment
   - ghost kitchen requirements
 relatedSlugs:
+  - are-ghost-kitchens-profitable-costs-revenue-profit-margins
   - what-is-a-ghost-kitchen-complete-guide-restaurant-owners
   - what-is-a-ghost-kitchen
   - how-to-choose-restaurant-location-delivery-first-ghost-kitchens
