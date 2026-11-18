@@ -22,6 +22,7 @@ keywords:
   - cloud kitchen dark kitchen
   - virtual restaurant
 relatedSlugs:
+  - how-to-start-a-ghost-kitchen-location-costs-equipment-planning
   - what-is-a-ghost-kitchen
   - ghost-kitchen-vs-traditional-which-business-model-better
   - how-to-choose-restaurant-location-delivery-first-ghost-kitchens

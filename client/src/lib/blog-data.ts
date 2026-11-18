@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-start-a-ghost-kitchen-location-costs-equipment-planning",
+    title: "How to Start a Ghost Kitchen: Location, Costs, Equipment, and Planning",
+    excerpt:
+      "How to start a ghost kitchen—startup cost ranges, quote checklist, location shortlist, shared vs dedicated space, equipment by task, layout and pickup, permits, contribution per order, and controlled launch.",
+    date: "2026-11-18",
+    category: "Guides",
+    readTime: "10 min",
+  },
+  {
     slug: "what-is-a-ghost-kitchen-complete-guide-restaurant-owners",
     title: "What Is a Ghost Kitchen? A Complete Guide for Restaurant Owners",
     excerpt:
