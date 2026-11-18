@@ -22,6 +22,7 @@ keywords:
   - delivery kitchen location strategy
   - virtual restaurant location
 relatedSlugs:
+  - how-to-choose-best-location-ghost-kitchen-business
   - ghost-kitchen-vs-traditional-restaurant
   - what-is-a-ghost-kitchen
   - creating-functional-ghost-kitchen-space

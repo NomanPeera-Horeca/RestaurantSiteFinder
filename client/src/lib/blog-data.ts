@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "how-to-choose-best-location-ghost-kitchen-business",
+    title: "How to Choose the Best Location for a Ghost Kitchen Business",
+    excerpt:
+      "How to choose the best location for a ghost kitchen business—customer fit, delivery route trials, pickup workflow, infrastructure checks, permitted use, kitchen model comparison, full-cost worksheet, and scorecard.",
+    date: "2026-11-18",
+    category: "Site Selection",
+    readTime: "11 min",
+  },
+  {
     slug: "are-ghost-kitchens-profitable-costs-revenue-profit-margins",
     title: "Are Ghost Kitchens Profitable? Costs, Revenue, and Profit Margins Explained",
     excerpt:
