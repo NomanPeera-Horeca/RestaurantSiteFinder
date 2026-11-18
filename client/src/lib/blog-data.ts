@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "what-is-a-ghost-kitchen-complete-guide-restaurant-owners",
+    title: "What Is a Ghost Kitchen? A Complete Guide for Restaurant Owners",
+    excerpt:
+      "What is a ghost kitchen—a complete guide for restaurant owners covering operating models, budgets, contribution per order, location checklists, menu and workflow design, delivery channels, compliance, and growth signals.",
+    date: "2026-11-18",
+    category: "Guides",
+    readTime: "11 min",
+  },
+  {
     slug: "ghost-kitchen-vs-traditional-which-business-model-better",
     title: "Ghost Kitchen vs. Traditional Restaurant: Which Business Model Is Better?",
     excerpt:

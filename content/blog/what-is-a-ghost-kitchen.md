@@ -22,6 +22,7 @@ keywords:
   - virtual kitchen concept
   - cloud kitchen explained
 relatedSlugs:
+  - what-is-a-ghost-kitchen-complete-guide-restaurant-owners
   - ghost-kitchen-vs-traditional-restaurant
   - how-to-choose-restaurant-location
   - restaurant-permits-licenses-guide
