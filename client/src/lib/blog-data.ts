@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "ghost-kitchen-vs-traditional-which-business-model-better",
+    title: "Ghost Kitchen vs. Traditional Restaurant: Which Business Model Is Better?",
+    excerpt:
+      "Ghost kitchen vs traditional restaurant—which business model is better? Compare operating commitments, startup and order economics, packaging and capacity, location, facility agreements, and evidence-based pilot tests.",
+    date: "2026-11-18",
+    category: "Concept",
+    readTime: "10 min",
+  },
+  {
     slug: "drive-thru-vs-fast-casual-vs-fine-dining-restaurant-footprint",
     title: "Drive-Thru vs Fast-Casual vs Fine Dining: Matching Your Concept to the Right Footprint",
     excerpt:
