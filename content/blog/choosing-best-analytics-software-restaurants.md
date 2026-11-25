@@ -22,6 +22,7 @@ keywords:
   - choose restaurant analytics platform
   - food service analytics tools
 relatedSlugs:
+  - best-analytics-software-restaurants-features-benefits-comparison
   - how-restaurant-analytics-software-boosts-profits
   - maximizing-efficiency-restaurant-analytics-software
   - leveraging-data-restaurant-success

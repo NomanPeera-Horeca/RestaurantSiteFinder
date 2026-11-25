@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "best-analytics-software-restaurants-features-benefits-comparison",
+    title: "Best Analytics Software for Restaurants: Features, Benefits, and Comparison",
+    excerpt:
+      "Best restaurant analytics software compared for 2026—reservation, POS, forecasting, and back-office platforms; table utilization KPIs, integration checklists, data reconciliation, pricing models, pilots, and site research vs operating analytics.",
+    date: "2026-11-25",
+    category: "Operations",
+    readTime: "12 min",
+  },
+  {
     slug: "how-to-choose-best-location-ghost-kitchen-business",
     title: "How to Choose the Best Location for a Ghost Kitchen Business",
     excerpt:
