@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "what-is-prime-cost-restaurant-formula-examples-benchmarks",
+    title: "What Is Prime Cost in a Restaurant? Formula, Examples, and Benchmarks",
+    excerpt:
+      "Prime cost formula, worked COGS and loaded labor examples, QSR vs full-service benchmarks, weekly inventory routine, and targeted levers on food, labor, menu, and sales—without mistaking percentage for profit.",
+    date: "2026-11-25",
+    category: "Operations",
+    readTime: "10 min",
+  },
+  {
     slug: "restaurant-failure-rate-statistics-what-data-reveals-industry",
     title: "Restaurant Failure Rate Statistics: What the Data Reveals About the Industry",
     excerpt:

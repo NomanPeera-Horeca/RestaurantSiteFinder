@@ -22,6 +22,7 @@ keywords:
   - food cost management prime cost
   - restaurant labor and COGS
 relatedSlugs:
+  - what-is-prime-cost-restaurant-formula-examples-benchmarks
   - restaurant-profit-margins-unit-economics
   - maximizing-efficiency-restaurant-analytics-software
   - how-to-write-restaurant-business-plan
