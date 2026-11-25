@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "restaurant-failure-rate-statistics-what-data-reveals-industry",
+    title: "Restaurant Failure Rate Statistics: What the Data Reveals About the Industry",
+    excerpt:
+      "Restaurant failure rate statistics explained—first-year myths, BLS cohort survival, how failure is defined, post-pandemic closure data, segment comparisons, and planning tests that turn benchmarks into decisions.",
+    date: "2026-11-25",
+    category: "Guides",
+    readTime: "11 min",
+  },
+  {
     slug: "analyze-restaurant-market-demand-before-opening-new-location",
     title: "How to Analyze Restaurant Market Demand Before Opening a New Location",
     excerpt:

@@ -22,6 +22,7 @@ keywords:
   - restaurant success rate
   - restaurant location failure
 relatedSlugs:
+  - restaurant-failure-rate-statistics-what-data-reveals-industry
   - how-to-choose-a-restaurant-location
   - go-no-go-restaurant-location-decision
   - restaurant-profit-margins-unit-economics
