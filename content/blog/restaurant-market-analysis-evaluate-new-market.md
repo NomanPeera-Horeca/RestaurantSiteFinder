@@ -22,6 +22,7 @@ keywords:
   - restaurant site selection market research
   - restaurant market analysis guide
 relatedSlugs:
+  - analyze-restaurant-market-demand-before-opening-new-location
   - restaurant-market-analysis-guide
   - effective-strategies-restaurant-market-research
   - how-to-choose-a-restaurant-location

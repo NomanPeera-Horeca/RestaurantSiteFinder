@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "analyze-restaurant-market-demand-before-opening-new-location",
+    title: "How to Analyze Restaurant Market Demand Before Opening a New Location",
+    excerpt:
+      "How to analyze restaurant market demand before a new location—transaction maps, demographic fit, saturation vs gaps, service-area tests, break-even orders, validation pilots, and decision memos.",
+    date: "2026-11-25",
+    category: "Site Selection",
+    readTime: "10 min",
+  },
+  {
     slug: "best-analytics-software-restaurants-features-benefits-comparison",
     title: "Best Analytics Software for Restaurants: Features, Benefits, and Comparison",
     excerpt:
