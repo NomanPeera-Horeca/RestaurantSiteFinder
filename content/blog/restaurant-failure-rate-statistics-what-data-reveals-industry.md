@@ -22,6 +22,7 @@ keywords:
   - BLS restaurant survival
   - debunk 90 percent restaurant failure
 relatedSlugs:
+  - what-percentage-of-restaurants-fail-statistics-facts-industry-insights
   - restaurant-failure-rate
   - ai-help-restaurant-owners-reduce-business-risk-before-opening
   - analyze-restaurant-market-demand-before-opening-new-location

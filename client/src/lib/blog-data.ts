@@ -10,6 +10,15 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: "what-percentage-of-restaurants-fail-statistics-facts-industry-insights",
+    title: "What Percentage of Restaurants Fail? Statistics, Facts, and Industry Insights",
+    excerpt:
+      "What percentage of restaurants fail—17% vs 26% first-year studies, BLS survival curves, closure vs turnover definitions, cash and margin discipline, site checklist, and weekly operating reviews.",
+    date: "2026-11-25",
+    category: "Guides",
+    readTime: "9 min",
+  },
+  {
     slug: "what-is-prime-cost-restaurant-formula-examples-benchmarks",
     title: "What Is Prime Cost in a Restaurant? Formula, Examples, and Benchmarks",
     excerpt:
